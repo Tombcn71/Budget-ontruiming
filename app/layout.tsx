@@ -11,6 +11,32 @@ export const metadata: Metadata = {
   description:
     "Vindt u een goedkopere offerte? Wij betalen u het verschil terug. Zo is Budget Ontruiming altijd uw voordeligste keuze.",
   generator: "v0.app",
+  keywords: "woningontruiming, ontruiming, huis ontruimen, bezemschoon opleveren, spoedontruiming, inboedel ontruiming, haaglanden, rijnmond",
+  authors: [{ name: "Budget Ontruiming" }],
+  openGraph: {
+    title: "Budget Ontruiming - Woningontruiming voor de Laagste Prijs",
+    description: "Vindt u een goedkopere offerte? Wij betalen u het verschil terug.",
+    url: "https://budgetontruiming.nl",
+    siteName: "Budget Ontruiming",
+    locale: "nl_NL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Budget Ontruiming - Woningontruiming voor de Laagste Prijs",
+    description: "Vindt u een goedkopere offerte? Wij betalen u het verschil terug.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function RootLayout({
