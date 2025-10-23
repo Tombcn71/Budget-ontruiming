@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { put } from '@vercel/blob'
 
 export async function POST(request: Request) {
   try {
@@ -12,21 +13,47 @@ export async function POST(request: Request) {
       )
     }
 
-    // Convert to base64 for local testing (no Vercel Blob needed)
-    const bytes = await file.arrayBuffer()
-    const buffer = Buffer.from(bytes)
-    const base64 = buffer.toString('base64')
-    const dataUrl = `data:${file.type};base64,${base64}`
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      return NextResponse.json(
+        { error: 'Alleen afbeeldingen zijn toegestaan' },
+        { status: 400 }
+      )
+    }
+
+    // Validate file size (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      return NextResponse.json(
+        { error: 'Bestand is te groot (max 10MB)' },
+        { status: 400 }
+      )
+    }
+
+    // Generate unique filename with timestamp
+    const timestamp = Date.now()
+    const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_')
+    const filename = `ontruiming-${timestamp}-${sanitizedName}`
+
+    // Upload to Vercel Blob
+    const blob = await put(filename, file, {
+      access: 'public',
+      addRandomSuffix: true,
+    })
 
     return NextResponse.json({
-      url: dataUrl,
-      pathname: file.name,
-      downloadUrl: dataUrl,
+      url: blob.url,
+      pathname: blob.pathname,
+      downloadUrl: blob.downloadUrl,
+      size: file.size,
+      contentType: file.type,
     })
   } catch (error) {
     console.error('Upload error:', error)
     return NextResponse.json(
-      { error: 'Upload mislukt' },
+      { 
+        error: 'Upload mislukt',
+        details: error instanceof Error ? error.message : 'Onbekende fout'
+      },
       { status: 500 }
     )
   }
