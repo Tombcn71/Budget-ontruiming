@@ -1,6 +1,6 @@
 import { TopBanner } from "@/components/top-banner"
 import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
+import { HeroAI } from "@/components/hero-ai"
 import { Services } from "@/components/services"
 import { PriceGuarantee } from "@/components/price-guarantee"
 import { HowItWorks } from "@/components/how-it-works"
@@ -13,7 +13,7 @@ export default function Home() {
     <main className="min-h-screen">
       <TopBanner />
       <Header />
-      <Hero />
+      <HeroAI />
       
       <HowItWorks />
       <Footer />

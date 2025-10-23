@@ -1,0 +1,118 @@
+import OpenAI from 'openai'
+import { NextResponse } from 'next/server'
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+})
+
+// Use Node.js runtime for better compatibility
+export const maxDuration = 60
+
+interface AnalysisResult {
+  room_type: string
+  furniture: Array<{
+    item: string
+    quantity: number
+    size: 'small' | 'medium' | 'large'
+  }>
+  boxes_estimate: number
+  volume_level: 'empty' | 'sparse' | 'half' | 'full' | 'very_full'
+  floor_visible_percentage: number
+  special_items: string[]
+  access_notes: string
+  estimated_hours: number
+}
+
+export async function POST(request: Request) {
+  try {
+    const { imageUrl } = await request.json()
+
+    if (!imageUrl) {
+      return NextResponse.json(
+        { error: 'Geen foto URL opgegeven' },
+        { status: 400 }
+      )
+    }
+
+    const response = await openai.chat.completions.create({
+      model: 'gpt-4o',
+      messages: [
+        {
+          role: 'system',
+          content: `Je bent een expert in het inschatten van verhuizingen en woningontruimingen. 
+Analyseer de foto en geef een gedetailleerde inventaris van alle items, meubels en de staat van de ruimte.
+
+Geef je antwoord ALLEEN als valid JSON in dit formaat:
+{
+  "room_type": "woonkamer/slaapkamer/keuken/etc",
+  "furniture": [
+    {"item": "bank", "quantity": 1, "size": "large"},
+    {"item": "salontafel", "quantity": 1, "size": "medium"}
+  ],
+  "boxes_estimate": 10,
+  "volume_level": "half",
+  "floor_visible_percentage": 60,
+  "special_items": ["piano", "grote kast"],
+  "access_notes": "Smalle gang, trap aanwezig",
+  "estimated_hours": 3
+}
+
+Let op:
+- Tel ALLE zichtbare meubels en items
+- Schat dozen/tassen/rommel realistisch in
+- volume_level: empty (0-10%), sparse (10-30%), half (30-60%), full (60-85%), very_full (85-100%)
+- floor_visible_percentage: hoeveel % vloer is zichtbaar/vrij
+- special_items: zware/fragiele items die extra aandacht vragen
+- estimated_hours: geschatte uren voor 2 personen om te ontruimen`
+        },
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'text',
+              text: 'Analyseer deze ruimte en geef een gedetailleerde inventaris voor een woningontruiming.'
+            },
+            {
+              type: 'image_url',
+              image_url: {
+                url: imageUrl,
+                detail: 'high'
+              }
+            }
+          ]
+        }
+      ],
+      response_format: { type: 'json_object' },
+      max_tokens: 1000,
+    })
+
+    const content = response.choices[0]?.message?.content
+
+    if (!content) {
+      throw new Error('Geen response van AI')
+    }
+
+    const analysis: AnalysisResult = JSON.parse(content)
+
+    return NextResponse.json({
+      success: true,
+      analysis,
+      usage: {
+        prompt_tokens: response.usage?.prompt_tokens || 0,
+        completion_tokens: response.usage?.completion_tokens || 0,
+        total_tokens: response.usage?.total_tokens || 0,
+      }
+    })
+
+  } catch (error) {
+    console.error('Analysis error:', error)
+    return NextResponse.json(
+      { 
+        error: 'Analyse mislukt',
+        details: error instanceof Error ? error.message : 'Onbekende fout'
+      },
+      { status: 500 }
+    )
+  }
+}
+
