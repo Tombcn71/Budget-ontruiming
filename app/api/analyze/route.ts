@@ -1,12 +1,19 @@
 import OpenAI from 'openai'
 import { NextResponse } from 'next/server'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-
 // Use Node.js runtime for better compatibility
 export const maxDuration = 60
+
+// Initialize OpenAI client lazily to avoid build-time errors
+function getOpenAIClient() {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error('OPENAI_API_KEY is not configured')
+  }
+  
+  return new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  })
+}
 
 interface AnalysisResult {
   room_type: string
@@ -34,6 +41,7 @@ export async function POST(request: Request) {
       )
     }
 
+    const openai = getOpenAIClient()
     const response = await openai.chat.completions.create({
       model: 'gpt-4o',
       messages: [
