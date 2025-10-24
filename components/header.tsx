@@ -1,8 +1,18 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 import Link from "next/link"
 
 export function Header() {
+  const openCalendly = () => {
+    if (typeof window !== 'undefined' && (window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({
+        url: 'https://calendly.com/budgetontruiming/belafspraak'
+      })
+    }
+  }
+
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4 lg:px-8">
@@ -61,11 +71,12 @@ export function Header() {
             >
               Help
             </a>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm lg:text-base" asChild>
-              <a href="https://calendly.com/budgetontruiming/belafspraak" target="_blank" rel="noopener noreferrer">
-                <span className="sm:hidden">Gratis Advies</span>
-                <span className="hidden sm:inline">Gratis Adviesgesprek</span>
-              </a>
+            <Button 
+              onClick={openCalendly}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm lg:text-base"
+            >
+              <span className="sm:hidden">Gratis Advies</span>
+              <span className="hidden sm:inline">Gratis Adviesgesprek</span>
             </Button>
           </div>
         </div>
