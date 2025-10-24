@@ -127,9 +127,17 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
       }
 
       setAnalysisResults(results)
+      
+      console.log('📊 Alle AI analyses:', results)
+      console.log('📋 Form data voor berekening:', formData)
 
       // Bereken echte prijs op basis van AI analyse
       const priceCalculation = calculatePriceFromAI(formData, results)
+      
+      console.log('💰 Berekende prijs:', priceCalculation)
+      console.log('💰 Totaal:', priceCalculation.total)
+      console.log('💰 Breakdown:', priceCalculation.breakdown)
+      
       setPriceResult({
         total: priceCalculation.total,
         breakdown: {
@@ -139,6 +147,8 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
           extras: priceCalculation.breakdown.extras,
         }
       })
+      
+      console.log('✅ Prijs state updated')
     } catch (error) {
       console.error('Analysis error:', error)
       alert('Er ging iets mis bij de analyse. Probeer opnieuw.')
