@@ -72,32 +72,58 @@ export function calculatePriceFromAI(
   analysisResults: Array<{ analysis: AIAnalysis }>
 ): { total: number; breakdown: { items: number; labor: number; transport: number; extras: number } } {
   let itemsCost = 0
-  let totalEstimatedHours = 0
+  let maxEstimatedHours = 0
   let specialItemsSurcharge = 0
+  let totalBoxes = 0
+  
+  // Verzamel alle unieke meubels (geen duplicaten over foto's heen)
+  const allFurniture: Record<string, { quantity: number; size: string }> = {}
+  let highestVolumeMultiplier = 1.0
 
-  // 1. Analyse alle kamers
+  // 1. Combineer analyses (het zijn foto's van DEZELFDE woning)
   analysisResults.forEach(({ analysis }) => {
-    // Bereken kosten voor meubels
+    // Neem de HOOGSTE volume multiplier (meest vol)
+    const volumeMultiplier = BASE_RATES.volumeMultiplier[analysis.volume_level] || 1.0
+    if (volumeMultiplier > highestVolumeMultiplier) {
+      highestVolumeMultiplier = volumeMultiplier
+    }
+
+    // Tel dozen op (totaal over alle kamers)
+    totalBoxes += analysis.boxes_estimate
+
+    // Combineer meubels (neem hoogste aantal per item)
     analysis.furniture.forEach((furniture) => {
-      const furnitureCost = BASE_RATES.furnitureSize[furniture.size] || 40
-      itemsCost += furnitureCost * furniture.quantity
+      const key = `${furniture.item.toLowerCase()}-${furniture.size}`
+      if (!allFurniture[key] || allFurniture[key].quantity < furniture.quantity) {
+        allFurniture[key] = {
+          quantity: furniture.quantity,
+          size: furniture.size,
+        }
+      }
     })
 
-    // Dozen kosten (€5 per doos)
-    itemsCost += analysis.boxes_estimate * 5
+    // Neem MAX uren (niet optellen!)
+    if (analysis.estimated_hours > maxEstimatedHours) {
+      maxEstimatedHours = analysis.estimated_hours
+    }
 
-    // Volume multiplier toepassen
-    const volumeMultiplier = BASE_RATES.volumeMultiplier[analysis.volume_level] || 1.0
-    itemsCost *= volumeMultiplier
-
-    // Geschatte uren optellen
-    totalEstimatedHours += analysis.estimated_hours || 3
-
-    // Speciale items surcharge
+    // Speciale items (uniek)
     if (analysis.special_items && analysis.special_items.length > 0) {
       specialItemsSurcharge += analysis.special_items.length * 50
     }
   })
+
+  // Bereken meubelkosten
+  Object.values(allFurniture).forEach((furniture) => {
+    const furnitureCost = BASE_RATES.furnitureSize[furniture.size as keyof typeof BASE_RATES.furnitureSize] || 40
+    itemsCost += furnitureCost * furniture.quantity
+  })
+
+  // Dozen kosten (€5 per doos)
+  itemsCost += totalBoxes * 5
+
+  // Volume multiplier toepassen op totaal
+  itemsCost *= highestVolumeMultiplier
 
   // 2. Vierkante meters basis
   const sqmRate = BASE_RATES.squareMeter[formData.vierkanteMeter as keyof typeof BASE_RATES.squareMeter] || 6
@@ -117,8 +143,12 @@ export function calculatePriceFromAI(
   if (formData.schilderwerk) extrasCost += BASE_RATES.extraServices.schilderwerk
   if (formData.gordijnenVerwijderen) extrasCost += BASE_RATES.extraServices.gordijnenVerwijderen
 
-  // 5. Arbeid (2 personen)
-  const laborCost = Math.ceil(totalEstimatedHours) * BASE_RATES.laborHourlyRate * 2
+  // 5. Arbeid (2 personen) - gebruik MAX uren, niet totaal!
+  // En maak het realistischer: basis + extra tijd voor volume
+  const baseHours = Math.max(2, maxEstimatedHours)
+  const volumeHourMultiplier = highestVolumeMultiplier
+  const totalHours = Math.ceil(baseHours * volumeHourMultiplier)
+  const laborCost = totalHours * BASE_RATES.laborHourlyRate * 2
 
   // 6. Transport
   const transportCost = BASE_RATES.baseTransport
