@@ -172,7 +172,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
           <div className="flex items-center gap-2 mb-3">
             <Sparkles className="w-10 h-10 lg:w-7 lg:h-7 text-primary" />
             <h3 className="font-bold text-xl text-foreground">
-              Directe prijsindicatie met onze slimme AI tool.
+              Direct een prijsindicatie met onze slimme AI tool.
             </h3>
           </div>
           <p className="text-sm italic text-muted-foreground mb-4">
