@@ -72,39 +72,55 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
           })
           
           if (!analyzeRes.ok) {
-            console.warn('AI analyse mislukt, gebruik fallback schatting')
-            // Fallback: Geschatte analyse op basis van kamergrootte
+            const errorData = await analyzeRes.json()
+            console.warn('AI analyse mislukt:', errorData)
+            console.warn('⚠️ Gebruik fallback schatting - voeg OpenAI credits toe voor echte AI analyse')
+            
+            // Slimmere fallback op basis van vierkante meters
+            const sqm = parseInt(formData.vierkanteMeter?.split('-')[0] || '75')
+            const estimatedItems = Math.max(3, Math.floor(sqm / 15))
+            const estimatedBoxes = Math.max(5, Math.floor(sqm / 10))
+            const estimatedHours = Math.max(2, Math.floor(sqm / 25))
+            
             const analysis = {
               room_type: 'algemeen',
               furniture: [
-                { item: 'diversen', quantity: 5, size: 'medium' as const }
+                { item: 'diversen', quantity: estimatedItems, size: 'medium' as const }
               ],
-              boxes_estimate: 8,
+              boxes_estimate: estimatedBoxes,
               volume_level: 'half' as const,
               floor_visible_percentage: 50,
               special_items: [],
-              access_notes: 'Standaard toegang',
-              estimated_hours: 3,
+              access_notes: 'Geschatte analyse (geen AI)',
+              estimated_hours: estimatedHours,
             }
             results.push({ url, analysis })
           } else {
-            const { analysis } = await analyzeRes.json()
-            results.push({ url, analysis })
+            const responseData = await analyzeRes.json()
+            console.log('✅ AI Analyse succesvol:', responseData)
+            results.push({ url, analysis: responseData.analysis })
           }
         } catch (error) {
-          console.error('AI analyse error:', error)
-          // Fallback analyse
+          console.error('❌ AI analyse error:', error)
+          console.warn('⚠️ Gebruik fallback schatting')
+          
+          // Slimmere fallback op basis van vierkante meters
+          const sqm = parseInt(formData.vierkanteMeter?.split('-')[0] || '75')
+          const estimatedItems = Math.max(3, Math.floor(sqm / 15))
+          const estimatedBoxes = Math.max(5, Math.floor(sqm / 10))
+          const estimatedHours = Math.max(2, Math.floor(sqm / 25))
+          
           const analysis = {
             room_type: 'algemeen',
             furniture: [
-              { item: 'diversen', quantity: 5, size: 'medium' as const }
+              { item: 'diversen', quantity: estimatedItems, size: 'medium' as const }
             ],
-            boxes_estimate: 8,
+            boxes_estimate: estimatedBoxes,
             volume_level: 'half' as const,
             floor_visible_percentage: 50,
             special_items: [],
-            access_notes: 'Standaard toegang',
-            estimated_hours: 3,
+            access_notes: 'Geschatte analyse (fout opgetreden)',
+            estimated_hours: estimatedHours,
           }
           results.push({ url, analysis })
         }

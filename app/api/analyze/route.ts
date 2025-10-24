@@ -33,6 +33,8 @@ interface AnalysisResult {
 export async function POST(request: Request) {
   try {
     const { imageUrl } = await request.json()
+    
+    console.log('🔍 AI Analyse gestart voor foto')
 
     if (!imageUrl) {
       return NextResponse.json(
@@ -40,8 +42,13 @@ export async function POST(request: Request) {
         { status: 400 }
       )
     }
+    
+    console.log('🔑 OpenAI API Key aanwezig:', !!process.env.OPENAI_API_KEY)
+    console.log('🔑 API Key preview:', process.env.OPENAI_API_KEY?.substring(0, 10) + '...')
 
     const openai = getOpenAIClient()
+    console.log('📡 OpenAI request verzenden...')
+    
     const response = await openai.chat.completions.create({
       model: 'gpt-4o',
       messages: [
@@ -101,6 +108,10 @@ Let op:
     }
 
     const analysis: AnalysisResult = JSON.parse(content)
+    
+    console.log('✅ AI Analyse succesvol!')
+    console.log('📊 Tokens gebruikt:', response.usage?.total_tokens || 0)
+    console.log('🪑 Meubels gevonden:', analysis.furniture.length)
 
     return NextResponse.json({
       success: true,
@@ -112,12 +123,32 @@ Let op:
       }
     })
 
-  } catch (error) {
-    console.error('Analysis error:', error)
+  } catch (error: any) {
+    console.error('❌ Analysis error:', error)
+    console.error('Error details:', {
+      message: error.message,
+      status: error.status,
+      code: error.code,
+      type: error.type,
+    })
+    
+    // Specifieke error voor quota issues
+    if (error.status === 429 || error.code === 'insufficient_quota') {
+      return NextResponse.json(
+        { 
+          error: 'OpenAI quota overschreden',
+          details: 'Voeg credits toe op platform.openai.com/account/billing',
+          code: 'QUOTA_EXCEEDED'
+        },
+        { status: 429 }
+      )
+    }
+    
     return NextResponse.json(
       { 
         error: 'Analyse mislukt',
-        details: error instanceof Error ? error.message : 'Onbekende fout'
+        details: error.message || 'Onbekende fout',
+        code: error.code || 'UNKNOWN'
       },
       { status: 500 }
     )
