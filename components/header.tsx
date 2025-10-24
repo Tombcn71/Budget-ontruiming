@@ -5,12 +5,33 @@ import { ChevronDown } from "lucide-react"
 import Link from "next/link"
 
 export function Header() {
-  const openCalendly = () => {
-    if (typeof window !== 'undefined' && (window as any).Calendly) {
-      (window as any).Calendly.initPopupWidget({
-        url: 'https://calendly.com/tbvanreijn'
-      })
+  const openCalendly = (e: React.MouseEvent) => {
+    e.preventDefault()
+    
+    // Check if Calendly is loaded, retry if not
+    if (typeof window !== 'undefined') {
+      if ((window as any).Calendly) {
+        (window as any).Calendly.initPopupWidget({
+          url: 'https://calendly.com/tbvanreijn'
+        })
+        return false
+      } else {
+        // If Calendly not loaded yet, load script and try again
+        console.warn('Calendly script not loaded yet, loading...')
+        const script = document.createElement('script')
+        script.src = 'https://assets.calendly.com/assets/external/widget.js'
+        script.async = true
+        script.onload = () => {
+          if ((window as any).Calendly) {
+            (window as any).Calendly.initPopupWidget({
+              url: 'https://calendly.com/tbvanreijn'
+            })
+          }
+        }
+        document.body.appendChild(script)
+      }
     }
+    return false
   }
 
   return (
