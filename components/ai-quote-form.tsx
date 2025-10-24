@@ -430,6 +430,35 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
             )}
           </div>
 
+          {/* AI Analyse Details */}
+          {analysisResults.length > 0 && (
+            <div className="bg-muted/30 rounded-lg p-4 text-left">
+              <h4 className="font-bold text-base text-foreground mb-3">🤖 AI Analyse Resultaten:</h4>
+              <div className="space-y-3">
+                {analysisResults.map((result, idx) => (
+                  <div key={idx} className="bg-background rounded-md p-3">
+                    <p className="font-semibold text-sm text-foreground mb-2">
+                      📸 Foto {idx + 1}: {result.analysis.room_type}
+                    </p>
+                    <div className="text-xs text-muted-foreground space-y-1">
+                      <p>
+                        <strong>Meubels:</strong>{' '}
+                        {result.analysis.furniture.map((f: any) => `${f.quantity}x ${f.item} (${f.size})`).join(', ') || 'Geen'}
+                      </p>
+                      <p><strong>Dozen/tassen:</strong> ~{result.analysis.boxes_estimate}</p>
+                      <p><strong>Volume niveau:</strong> {result.analysis.volume_level}</p>
+                      <p><strong>Vloer zichtbaar:</strong> {result.analysis.floor_visible_percentage}%</p>
+                      {result.analysis.special_items && result.analysis.special_items.length > 0 && (
+                        <p><strong>Bijzondere items:</strong> {result.analysis.special_items.join(', ')}</p>
+                      )}
+                      <p><strong>Geschatte uren:</strong> {result.analysis.estimated_hours}u (2 personen)</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="bg-primary/10 rounded-lg p-4">
             <p className="text-foreground font-bold text-lg mb-2">💰 Laagste Prijs Garantie</p>
             <p className="text-foreground text-sm">
