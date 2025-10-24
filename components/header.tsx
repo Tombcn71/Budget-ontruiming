@@ -8,7 +8,7 @@ export function Header() {
   const openCalendly = () => {
     if (typeof window !== 'undefined' && (window as any).Calendly) {
       (window as any).Calendly.initPopupWidget({
-        url: 'https://calendly.com/budgetontruiming/belafspraak'
+        url: 'https://calendly.com/tbvanreijn'
       })
     }
   }
