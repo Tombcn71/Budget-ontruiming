@@ -61,8 +61,11 @@ export function Header() {
             >
               Help
             </a>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold" asChild>
-              <a href="https://calendly.com/budgetontruiming/belafspraak" target="_blank" rel="noopener noreferrer">Gratis Adviesgesprek</a>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm lg:text-base" asChild>
+              <a href="https://calendly.com/budgetontruiming/belafspraak" target="_blank" rel="noopener noreferrer">
+                <span className="sm:hidden">Gratis Advies</span>
+                <span className="hidden sm:inline">Gratis Adviesgesprek</span>
+              </a>
             </Button>
           </div>
         </div>

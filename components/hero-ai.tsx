@@ -14,10 +14,14 @@ export function HeroAI() {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-8 lg:py-16">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-          <div>
-            <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight text-balance">
+          <div className="text-center lg:text-left">
+            <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
               Ontruimingen zonder gedoe met laagste prijs garantie.
             </h1>
+
+            <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
+              Vindt u een goedkopere offerte? Wij gaan eronder.
+            </p>
 
             <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
               Vindt u een goedkopere offerte? Wij betalen u het verschil terug. Zo bent u ervan verzekerd dat u de laagste prijs betaald.
