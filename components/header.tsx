@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 import Link from "next/link"
@@ -62,7 +64,16 @@ export function Header() {
               Help
             </a>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm lg:text-base" asChild>
-              <a href="https://calendly.com/tbvanreijn" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (typeof window !== 'undefined' && (window as any).Calendly) {
+                    (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/tbvanreijn'});
+                  }
+                  return false;
+                }}
+              >
                 <span className="sm:hidden">Gratis Advies</span>
                 <span className="hidden sm:inline">Gratis Adviesgesprek</span>
               </a>
