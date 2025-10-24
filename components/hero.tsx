@@ -64,7 +64,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-balance">
-              Ontruimingen met laagste prijs garantie.
+              Ontruimingen zonder gedoe met laagste prijs garantie.
             </h1>
 
             <p className="text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">

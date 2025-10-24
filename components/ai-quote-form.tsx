@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Progress } from "@/components/ui/progress"
 import { ChevronLeft, ChevronRight, Loader2, Check, Sparkles } from "lucide-react"
 import { PhotoUpload } from "@/components/photo-upload"
+import { calculatePriceFromAI } from "@/lib/pricing/ai-calculator"
 
 interface AIQuoteFormProps {
   className?: string
@@ -63,25 +64,63 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
         })
         const { url } = await uploadRes.json()
 
-        const analyzeRes = await fetch('/api/analyze', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ imageUrl: url }),
-        })
-        const { analysis } = await analyzeRes.json()
-        
-        results.push({ url, analysis })
+        try {
+          const analyzeRes = await fetch('/api/analyze', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ imageUrl: url }),
+          })
+          
+          if (!analyzeRes.ok) {
+            console.warn('AI analyse mislukt, gebruik fallback schatting')
+            // Fallback: Geschatte analyse op basis van kamergrootte
+            const analysis = {
+              room_type: 'algemeen',
+              furniture: [
+                { item: 'diversen', quantity: 5, size: 'medium' as const }
+              ],
+              boxes_estimate: 8,
+              volume_level: 'half' as const,
+              floor_visible_percentage: 50,
+              special_items: [],
+              access_notes: 'Standaard toegang',
+              estimated_hours: 3,
+            }
+            results.push({ url, analysis })
+          } else {
+            const { analysis } = await analyzeRes.json()
+            results.push({ url, analysis })
+          }
+        } catch (error) {
+          console.error('AI analyse error:', error)
+          // Fallback analyse
+          const analysis = {
+            room_type: 'algemeen',
+            furniture: [
+              { item: 'diversen', quantity: 5, size: 'medium' as const }
+            ],
+            boxes_estimate: 8,
+            volume_level: 'half' as const,
+            floor_visible_percentage: 50,
+            special_items: [],
+            access_notes: 'Standaard toegang',
+            estimated_hours: 3,
+          }
+          results.push({ url, analysis })
+        }
       }
 
       setAnalysisResults(results)
 
-      const totalPrice = 850
+      // Bereken echte prijs op basis van AI analyse
+      const priceCalculation = calculatePriceFromAI(formData, results)
       setPriceResult({
-        total: totalPrice,
+        total: priceCalculation.total,
         breakdown: {
-          items: 450,
-          labor: 250,
-          transport: 150,
+          items: priceCalculation.breakdown.items,
+          labor: priceCalculation.breakdown.labor,
+          transport: priceCalculation.breakdown.transport,
+          extras: priceCalculation.breakdown.extras,
         }
       })
     } catch (error) {
@@ -357,6 +396,12 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               <span className="text-muted-foreground">Transport</span>
               <span className="font-medium">€{priceResult?.breakdown.transport || 150}</span>
             </div>
+            {priceResult?.breakdown.extras && priceResult.breakdown.extras > 0 && (
+              <div className="flex justify-between text-sm border-t border-border pt-2">
+                <span className="text-muted-foreground">Extra werkzaamheden</span>
+                <span className="font-medium">€{priceResult.breakdown.extras}</span>
+              </div>
+            )}
           </div>
 
           <div className="bg-primary/10 rounded-lg p-4">
