@@ -12,18 +12,18 @@ export function HeroAI() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-12 lg:py-16">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-8 lg:py-16">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-balance">
+            <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight text-balance">
               Ontruimingen zonder gedoe met laagste prijs garantie.
             </h1>
 
-            <p className="text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
+            <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
               Vindt u een goedkopere offerte? Wij betalen u het verschil terug. Zo bent u ervan verzekerd dat u de laagste prijs betaald.
             </p>
 
-            <div className="flex flex-wrap gap-4 text-md text-white">
+            <div className="hidden sm:flex flex-wrap gap-4 text-md text-white">
               <span>Woningen</span>
               <span>|</span>
               <span>Bedrijfsruimtes</span>
