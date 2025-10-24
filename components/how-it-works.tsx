@@ -16,7 +16,7 @@ export function HowItWorks() {
             <div className="text-6xl lg:text-7xl font-bold text-primary mb-4">01</div>
             <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3">Prijs berekenen</h3>
             <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
-Ons slimme AI formulier berekent direct jouw prijs. Goedkoper gevonden? Wij betalen het
+Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig Goedkoper gevonden? Wij betalen het
               verschil.          </p>
           </div>
 

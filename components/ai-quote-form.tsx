@@ -170,13 +170,13 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
       {currentStep < 3 ? (
         <>
           <div className="flex items-center gap-2 mb-3">
-            <Sparkles className="w-5 h-5 text-primary" />
+            <Sparkles className="w-7 h-7 text-primary" />
             <h3 className="font-bold text-xl text-foreground">
-              Direct prijsindicatie met onze slimme AI tool
+              Directe prijsindicatie met onze AI tool, geen huisbezoek meer nodig.
             </h3>
           </div>
           <p className="text-sm italic text-muted-foreground mb-4">
-            {currentStep === 1 && "Even een paar vragen beantwoorden"}
+            {currentStep === 1 && "Even een paar vragen beantwoorden en wat foto's uploaden dat is alles"}
             {currentStep === 2 && "Selecteer extra werkzaamheden en upload minimaal 3 foto's"}
           </p>
 
