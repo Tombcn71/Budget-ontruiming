@@ -16,7 +16,7 @@ export function TopBanner() {
           <div className="flex-1 text-center">
             {/* Mobile: Korte tekst */}
             <span className="text-sm sm:hidden text-white font-medium">
-              Ergens anders goedkoper? Wij betalen het verschil!
+              Laagste prijsgarantie! Ergens anders goedkoper? Wij betalen het verschil!
             </span>
             
             {/* Desktop: Volledige tekst */}
