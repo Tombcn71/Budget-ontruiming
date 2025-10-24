@@ -422,13 +422,48 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               <span className="text-muted-foreground">Transport</span>
               <span className="font-medium">€{priceResult?.breakdown.transport || 150}</span>
             </div>
-            {priceResult?.breakdown.extras && priceResult.breakdown.extras > 0 && (
-              <div className="flex justify-between text-sm border-t border-border pt-2">
-                <span className="text-muted-foreground">Extra werkzaamheden</span>
-                <span className="font-medium">€{priceResult.breakdown.extras}</span>
-              </div>
-            )}
           </div>
+
+          {/* Extra werkzaamheden gespecificeerd */}
+          {(formData.vloerVerwijderen || formData.behangVerwijderen || formData.gaatjesToppen || formData.schilderwerk || formData.gordijnenVerwijderen) && (
+            <div className="bg-background rounded-lg p-4 space-y-2 text-left border-2 border-primary/20">
+              <h4 className="font-semibold text-sm text-foreground mb-2">🔧 Extra Werkzaamheden:</h4>
+              {formData.vloerVerwijderen && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">• Vloer verwijderen</span>
+                  <span className="font-medium">€150</span>
+                </div>
+              )}
+              {formData.behangVerwijderen && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">• Behang verwijderen</span>
+                  <span className="font-medium">€200</span>
+                </div>
+              )}
+              {formData.gaatjesToppen && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">• Gaatjes stoppen</span>
+                  <span className="font-medium">€100</span>
+                </div>
+              )}
+              {formData.schilderwerk && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">• Schilderwerk</span>
+                  <span className="font-medium">€250</span>
+                </div>
+              )}
+              {formData.gordijnenVerwijderen && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">• Gordijnen verwijderen</span>
+                  <span className="font-medium">€50</span>
+                </div>
+              )}
+              <div className="flex justify-between text-sm border-t border-border pt-2 font-semibold">
+                <span className="text-foreground">Subtotaal extra werkzaamheden</span>
+                <span className="text-primary">€{priceResult?.breakdown.extras || 0}</span>
+              </div>
+            </div>
+          )}
 
           {/* AI Analyse Details */}
           {analysisResults.length > 0 && (
