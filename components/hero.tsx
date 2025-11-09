@@ -68,7 +68,7 @@ export function Hero() {
             </h1>
 
             <p className="text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-              Vindt u een goedkopere offerte? Wij betalen u het verschil terug. Zo bent u ervan verzekerd dat u de laatste
+              Vindt u een goedkopere offerte? Wij duiken onder die prijs!. Zo bent u ervan verzekerd dat u de laatste
               prijs betaald.
             </p>
 
@@ -345,7 +345,7 @@ export function Hero() {
                   <div className="bg-primary/10 rounded-lg p-4">
                     <p className="text-foreground font-bold text-lg mb-2">Onze Prijsgarantie:</p>
                     <p className="text-foreground text-sm">
-                      Vindt u elders een lagere prijs? Dan betalen wij u het verschil terug!
+                      Vindt u elders een lagere prijs? Dan duiken wij onder die prijs!!
                     </p>
                   </div>
 

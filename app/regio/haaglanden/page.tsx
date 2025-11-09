@@ -56,9 +56,8 @@ export default function HaaglandenPage() {
                 </ul>
                 <h3 className="text-2xl font-bold text-foreground mt-8 mb-4">Laagste Prijs Garantie</h3>
                 <p className="mb-4">
-                  Wij garanderen u de laagste prijs voor uw woningontruiming in Haaglanden. Vindt u binnen 48 uur na
-                  onze offerte een goedkopere, vergelijkbare offerte bij een ander erkend bedrijf? Dan betalen wij u
-                  het verschil terug. Zo simpel is het.
+                  Wij garanderen u de laagste prijs voor uw woningontruiming in Haaglanden. Vindt u het elders goedkoper? Wij duiken onder die prijs!
+                  Zo simpel is het.
                 </p>
                 <p>
                   Klik hierboven op uw gemeente voor specifieke informatie, lokale prijzen en veelgestelde vragen

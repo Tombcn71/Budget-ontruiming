@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Ridderkerk - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Ridderkerk. Centrum, Bolnes, Rijsoord en Slikkerveer. Vindt u goedkoper? Wij betalen het verschil! Direct beschikbaar.",
+    "Professionele woningontruiming in Ridderkerk. Centrum, Bolnes, Rijsoord en Slikkerveer. Vindt u goedkoper? Wij duiken onder die prijs!! Direct beschikbaar.",
   keywords:
     "woningontruiming ridderkerk, ontruiming ridderkerk, huis ontruimen ridderkerk, ontruiming bolnes, ontruiming rijsoord, ontruiming slikkerveer, bezemschoon opleveren ridderkerk, spoedontruiming ridderkerk",
   openGraph: {
     title: "Woningontruiming Ridderkerk - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Ridderkerk. Centrum, Bolnes, Rijsoord en Slikkerveer. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Ridderkerk. Centrum, Bolnes, Rijsoord en Slikkerveer. Vindt u goedkoper? Wij duiken onder die prijs!!",
     url: "https://budgetontruiming.nl/woningontruiming-ridderkerk",
     type: "website",
     locale: "nl_NL",

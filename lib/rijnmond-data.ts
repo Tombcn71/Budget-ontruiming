@@ -7,7 +7,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Goeree-Overflakkee - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming op Goeree-Overflakkee. Vindt u goedkoper? Wij betalen het verschil. Alle kernen bereikbaar.",
+      "Professionele woningontruiming op Goeree-Overflakkee. Vindt u goedkoper? Wij duiken onder die prijs!. Alle kernen bereikbaar.",
     wijken: ["Middelharnis", "Oude-Tonge", "Dirksland", "Sommelsdijk", "Stellendam", "Ouddorp"],
     postcodes: "3240-3259",
     prijzen: {
@@ -70,7 +70,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Krimpen aan den IJssel - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Krimpen aan den IJssel. Vindt u goedkoper? Wij betalen het verschil. Alle wijken.",
+      "Professionele woningontruiming in Krimpen aan den IJssel. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken.",
     wijken: ["Krimpen Centrum", "Stormpolder", "Lekkerkerk"],
     postcodes: "2920-2925",
     prijzen: {
@@ -121,7 +121,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
       },
       {
         question: "Wat is de laagste prijs garantie?",
-        answer: "Als u binnen 48 uur goedkoper vindt, betalen wij het verschil terug.",
+        answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
       },
     ],
   },
@@ -131,7 +131,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Lansingerland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Lansingerland. Vindt u goedkoper? Wij betalen het verschil. Berkel en Rodenrijs, Bleiswijk en Bergschenhoek.",
+      "Professionele woningontruiming in Lansingerland. Vindt u goedkoper? Wij duiken onder die prijs!. Berkel en Rodenrijs, Bleiswijk en Bergschenhoek.",
     wijken: ["Berkel en Rodenrijs", "Bleiswijk", "Bergschenhoek"],
     postcodes: "2650-2665",
     prijzen: {
@@ -192,7 +192,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Maassluis - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Maassluis. Vindt u goedkoper? Wij betalen het verschil. Haven stad met persoonlijke service.",
+      "Professionele woningontruiming in Maassluis. Vindt u goedkoper? Wij duiken onder die prijs!. Haven stad met persoonlijke service.",
     wijken: ["Maassluis Centrum", "Steendijkpolder", "Koningshoek"],
     postcodes: "3140-3149",
     prijzen: {
@@ -243,7 +243,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
       },
       {
         question: "Wat is de laagste prijs garantie?",
-        answer: "Als u binnen 48 uur goedkoper vindt, betalen wij het verschil terug.",
+        answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
       },
     ],
   },
@@ -253,7 +253,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Nissewaard - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Nissewaard. Vindt u goedkoper? Wij betalen het verschil. Spijkenisse en Bernisse.",
+      "Professionele woningontruiming in Nissewaard. Vindt u goedkoper? Wij duiken onder die prijs!. Spijkenisse en Bernisse.",
     wijken: ["Spijkenisse", "Bernisse", "Heenvliet"],
     postcodes: "3200-3209",
     prijzen: {
@@ -314,7 +314,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Ridderkerk - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Ridderkerk. Vindt u goedkoper? Wij betalen het verschil. Alle wijken bereikbaar.",
+      "Professionele woningontruiming in Ridderkerk. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken bereikbaar.",
     wijken: ["Ridderkerk Centrum", "Bolnes", "Rijsoord", "Slikkerveer"],
     postcodes: "2980-2989",
     prijzen: {
@@ -375,7 +375,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Rotterdam - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Rotterdam. Vindt u goedkoper? Wij betalen het verschil. Alle wijken, 24/7 bereikbaar.",
+      "Professionele woningontruiming in Rotterdam. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, 24/7 bereikbaar.",
     wijken: [
       "Centrum",
       "Noord",
@@ -450,7 +450,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Schiedam - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Schiedam. Vindt u goedkoper? Wij betalen het verschil. Alle wijken, snel bereikbaar.",
+      "Professionele woningontruiming in Schiedam. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, snel bereikbaar.",
     wijken: ["Schiedam Centrum", "Nieuwland", "Groenoord", "Kethel", "Spaland"],
     postcodes: "3110-3125",
     prijzen: {
@@ -511,7 +511,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Vlaardingen - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Vlaardingen. Vindt u goedkoper? Wij betalen het verschil. Alle wijken bereikbaar.",
+      "Professionele woningontruiming in Vlaardingen. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken bereikbaar.",
     wijken: ["Vlaardingen Centrum", "Westwijk", "Babberspolder", "Holy", "Ambacht"],
     postcodes: "3130-3137",
     prijzen: {
@@ -562,7 +562,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
       },
       {
         question: "Wat is de laagste prijs garantie?",
-        answer: "Als u binnen 48 uur goedkoper vindt, betalen wij het verschil terug.",
+        answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
       },
     ],
   },
@@ -572,7 +572,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Voorne aan Zee - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming op Voorne aan Zee. Vindt u goedkoper? Wij betalen het verschil. Rockanje en omgeving.",
+      "Professionele woningontruiming op Voorne aan Zee. Vindt u goedkoper? Wij duiken onder die prijs!. Rockanje en omgeving.",
     wijken: ["Rockanje", "Tinte"],
     postcodes: "3233-3235",
     prijzen: {

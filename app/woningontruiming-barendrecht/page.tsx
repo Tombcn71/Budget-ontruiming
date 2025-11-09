@@ -12,12 +12,12 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Barendrecht - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Barendrecht. Carnisselande, Oost, West en Centrum. Vindt u goedkoper? Wij betalen het verschil! Direct beschikbaar.",
+    "Professionele woningontruiming in Barendrecht. Carnisselande, Oost, West en Centrum. Vindt u goedkoper? Wij duiken onder die prijs!! Direct beschikbaar.",
   keywords:
     "woningontruiming barendrecht, ontruiming barendrecht, huis ontruimen barendrecht, bezemschoon opleveren barendrecht, woningontruiming carnisselande, gezinswoning ontruimen barendrecht, spoedontruiming barendrecht",
   openGraph: {
     title: "Woningontruiming Barendrecht - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Barendrecht. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Barendrecht. Vindt u goedkoper? Wij duiken onder die prijs!!",
     url: "https://budgetontruiming.nl/woningontruiming-barendrecht",
     type: "website",
     locale: "nl_NL",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Woningontruiming Barendrecht - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Barendrecht. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Barendrecht. Vindt u goedkoper? Wij duiken onder die prijs!!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-barendrecht",

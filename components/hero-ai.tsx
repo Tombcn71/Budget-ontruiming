@@ -24,7 +24,7 @@ export function HeroAI() {
             </p>
 
             <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-              Vindt u een goedkopere offerte? Wij betalen u het verschil terug. Zo bent u ervan verzekerd dat u de laagste prijs betaald.
+              Vindt u een goedkopere offerte? Wij duiken onder die prijs!. Zo bent u ervan verzekerd dat u de laagste prijs betaald.
             </p>
 
             <div className="hidden sm:flex flex-wrap gap-4 text-md text-white">

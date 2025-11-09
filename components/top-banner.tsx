@@ -16,12 +16,12 @@ export function TopBanner() {
           <div className="flex-1 text-center">
             {/* Mobile: Korte tekst */}
             <span className="text-sm sm:hidden text-white font-medium">
-              Laagste prijsgarantie! Ergens anders goedkoper? Wij betalen het verschil!
+              Laagste prijsgarantie! Ergens anders goedkoper? Wij duiken onder die prijs!!
             </span>
             
             {/* Desktop: Volledige tekst */}
             <span className="hidden sm:inline text-sm text-white font-medium">
-              Woningontruiming met laagste prijs garantie. Ergens anders goedkoper? Wij betalen het verschil! Krijg een prijsindicatie in 1 minuut!
+              Woningontruiming met laagste prijs garantie. Ergens anders goedkoper? Wij duiken onder die prijs!! Krijg een prijsindicatie in 1 minuut!
             </span>
           </div>
           

@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Rotterdam - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Rotterdam. Alle wijken: Noord, Zuid, West, Oost, Centrum. Vindt u goedkoper? Wij betalen het verschil! 24/7 bereikbaar.",
+    "Professionele woningontruiming in Rotterdam. Alle wijken: Noord, Zuid, West, Oost, Centrum. Vindt u goedkoper? Wij duiken onder die prijs!! 24/7 bereikbaar.",
   keywords:
     "woningontruiming rotterdam, ontruiming rotterdam, huis ontruimen rotterdam, bezemschoon opleveren rotterdam, woning leeghalen rotterdam, spoedontruiming rotterdam, appartement ontruimen rotterdam, hoogbouw ontruimen rotterdam",
   openGraph: {
     title: "Woningontruiming Rotterdam - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Rotterdam. Alle wijken, 24/7 bereikbaar. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Rotterdam. Alle wijken, 24/7 bereikbaar. Vindt u goedkoper? Wij duiken onder die prijs!!",
     url: "https://budgetontruiming.nl/woningontruiming-rotterdam",
     type: "website",
     locale: "nl_NL",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Rotterdam - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Rotterdam. Alle wijken, 24/7 bereikbaar. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Rotterdam. Alle wijken, 24/7 bereikbaar. Vindt u goedkoper? Wij duiken onder die prijs!!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-rotterdam",

@@ -12,7 +12,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Wassenaar - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Discrete en professionele woningontruiming in Wassenaar. Specialist in villa's en landhuizen. Vindt u goedkoper? Wij betalen het verschil!",
+    "Discrete en professionele woningontruiming in Wassenaar. Specialist in villa's en landhuizen. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming wassenaar, ontruiming wassenaar, villa ontruimen wassenaar, landhuis ontruimen wassenaar, discrete ontruiming wassenaar, bezemschoon opleveren wassenaar, groot huis ontruimen wassenaar, luxe woning ontruimen",
   openGraph: {
@@ -54,7 +54,7 @@ export default function WassenaarPage() {
       <main>
         <GemeenteHero
           gemeenteNaam="Wassenaar"
-          subtitle="Discrete en professionele woningontruiming in Wassenaar. Specialist in villa's en landhuizen. Vindt u goedkoper? Wij betalen het verschil terug."
+          subtitle="Discrete en professionele woningontruiming in Wassenaar. Specialist in villa's en landhuizen. Vindt u goedkoper? Wij duiken onder die prijs! terug."
         />
         <HowItWorks />
         <GemeenteSeoContent data={data} />

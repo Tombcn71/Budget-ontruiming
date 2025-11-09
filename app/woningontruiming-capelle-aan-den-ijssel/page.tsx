@@ -12,12 +12,12 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Capelle aan den IJssel - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Capelle aan den IJssel. Schollevaar, Fascinatio, 't Slag. Hoogbouw specialist. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Capelle aan den IJssel. Schollevaar, Fascinatio, 't Slag. Hoogbouw specialist. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming capelle aan den ijssel, ontruiming capelle, huis ontruimen capelle, hoogbouw ontruimen capelle, appartement ontruimen capelle, bezemschoon opleveren capelle, spoedontruiming capelle aan den ijssel",
   openGraph: {
     title: "Woningontruiming Capelle Aan Den Ijssel - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Capelle Aan Den Ijssel. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Capelle Aan Den Ijssel. Vindt u goedkoper? Wij duiken onder die prijs!!",
     url: "https://budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel",
     type: "website",
     locale: "nl_NL",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Woningontruiming Capelle Aan Den Ijssel - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Capelle Aan Den Ijssel. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Capelle Aan Den Ijssel. Vindt u goedkoper? Wij duiken onder die prijs!!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel",

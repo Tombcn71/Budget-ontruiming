@@ -536,7 +536,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
           <div className="bg-primary/10 rounded-lg p-4">
             <p className="text-foreground font-bold text-lg mb-2">💰 Laagste Prijs Garantie</p>
             <p className="text-foreground text-sm">
-              Vindt u elders een lagere prijs? Dan betalen wij het verschil terug!
+              Vindt u elders een lagere prijs? Dan duiken wij onder die prijs!!
             </p>
           </div>
 

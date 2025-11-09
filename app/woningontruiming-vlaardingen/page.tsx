@@ -12,12 +12,12 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Vlaardingen - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Vlaardingen. Centrum, Westwijk, Holy, Ambacht. Haven stad met persoonlijke service. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Vlaardingen. Centrum, Westwijk, Holy, Ambacht. Haven stad met persoonlijke service. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming vlaardingen, ontruiming vlaardingen, huis ontruimen vlaardingen, bezemschoon opleveren vlaardingen, ontruiming westwijk, ontruiming holy vlaardingen, spoedontruiming vlaardingen",
   openGraph: {
     title: "Woningontruiming Vlaardingen - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Vlaardingen. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Vlaardingen. Vindt u goedkoper? Wij duiken onder die prijs!!",
     url: "https://budgetontruiming.nl/woningontruiming-vlaardingen",
     type: "website",
     locale: "nl_NL",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Woningontruiming Vlaardingen - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Vlaardingen. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Vlaardingen. Vindt u goedkoper? Wij duiken onder die prijs!!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-vlaardingen",

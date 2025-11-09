@@ -12,7 +12,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Midden-Delfland - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Midden-Delfland. Maassluis, Schipluiden, Maasland en Den Hoorn. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Midden-Delfland. Maassluis, Schipluiden, Maasland en Den Hoorn. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming midden-delfland, ontruiming maassluis, ontruiming schipluiden, ontruiming maasland, huis ontruimen midden-delfland, bezemschoon opleveren maassluis, boerderij ontruimen, spoedontruiming midden-delfland",
   openGraph: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Midden-Delfland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Midden-Delfland. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Midden-Delfland. Vindt u goedkoper? Wij duiken onder die prijs!!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-midden-delfland",

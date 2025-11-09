@@ -12,7 +12,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Nissewaard - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Nissewaard. Spijkenisse, Bernisse en Heenvliet. Hoogbouw specialist. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Nissewaard. Spijkenisse, Bernisse en Heenvliet. Hoogbouw specialist. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming nissewaard, ontruiming spijkenisse, ontruiming bernisse, huis ontruimen nissewaard, hoogbouw ontruimen spijkenisse, bezemschoon opleveren nissewaard, spoedontruiming spijkenisse",
   openGraph: {

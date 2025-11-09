@@ -12,7 +12,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Lansingerland - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Lansingerland. Berkel en Rodenrijs, Bleiswijk en Bergschenhoek. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Lansingerland. Berkel en Rodenrijs, Bleiswijk en Bergschenhoek. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming lansingerland, ontruiming berkel en rodenrijs, ontruiming bleiswijk, ontruiming bergschenhoek, huis ontruimen lansingerland, bezemschoon opleveren lansingerland, spoedontruiming lansingerland",
   openGraph: {

@@ -12,12 +12,12 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Schiedam - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Schiedam. Centrum, Nieuwland, Groenoord. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Schiedam. Centrum, Nieuwland, Groenoord. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming schiedam, ontruiming schiedam, huis ontruimen schiedam, bezemschoon opleveren schiedam, woning leeghalen schiedam, spoedontruiming schiedam",
   openGraph: {
     title: "Woningontruiming Schiedam - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Schiedam. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Schiedam. Vindt u goedkoper? Wij duiken onder die prijs!!",
     url: "https://budgetontruiming.nl/woningontruiming-schiedam",
     type: "website",
     locale: "nl_NL",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Woningontruiming Schiedam - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Schiedam. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Schiedam. Vindt u goedkoper? Wij duiken onder die prijs!!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-schiedam",

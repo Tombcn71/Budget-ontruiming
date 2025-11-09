@@ -32,7 +32,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Den Haag - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij betalen het verschil. Bezemschoon opleveren, na overlijden, seniorenverhuizing.",
+      "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij duiken onder die prijs!. Bezemschoon opleveren, na overlijden, seniorenverhuizing.",
     wijken: [
       "Centrum & Zeeheldenkwartier",
       "Segbroek & Valkenboskwartier",
@@ -55,7 +55,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       "Lokale kennis van alle Haagse wijken en hun specifieke toegankelijkheid",
       "Ervaring met zowel monumentale panden als moderne nieuwbouw",
       "Snel beschikbaar, vaak binnen 24-48 uur",
-      "Laagste prijs garantie - vindt u goedkoper? Wij betalen het verschil",
+      "Laagste prijs garantie - vindt u goedkoper? Wij duiken onder die prijs!",
       "Specialisatie in bezemschoon opleveren volgens Haagse huurvoorwaarden",
     ],
     situaties: [
@@ -104,7 +104,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat is jullie laagste prijs garantie?",
         answer:
-          "Als u binnen 48 uur na onze offerte een goedkopere, vergelijkbare offerte vindt van een ander erkend bedrijf, betalen wij het verschil terug. Zo bent u altijd verzekerd van de beste prijs voor uw woningontruiming in Den Haag.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs!. Zo bent u altijd verzekerd van de beste prijs voor uw woningontruiming in Den Haag.",
       },
     ],
   },
@@ -114,7 +114,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Delft - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Delft. Vindt u goedkoper? Wij betalen het verschil. Studentenwoningen, gezinswoningen en seniorenverhuizingen.",
+      "Professionele woningontruiming in Delft. Vindt u goedkoper? Wij duiken onder die prijs!. Studentenwoningen, gezinswoningen en seniorenverhuizingen.",
     wijken: [
       "Binnenstad",
       "Tanthof",
@@ -180,7 +180,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat is de laagste prijs garantie?",
         answer:
-          "Als u binnen 48 uur een goedkopere offerte vindt voor vergelijkbare diensten, betalen wij het verschil terug. Zo weet u zeker dat u de beste prijs krijgt.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs!. Zo weet u zeker dat u de beste prijs krijgt.",
       },
     ],
   },
@@ -190,7 +190,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Leidschendam-Voorburg - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Leidschendam-Voorburg. Vindt u goedkoper? Wij betalen het verschil. Alle wijken, alle woningtypes.",
+      "Professionele woningontruiming in Leidschendam-Voorburg. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, alle woningtypes.",
     wijken: ["Leidschendam", "Voorburg", "Stompwijk", "Het Centrum", "De Korte Akkeren", "Hofwijk"],
     postcodes: "2260-2275",
     prijzen: {
@@ -248,7 +248,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Hoe werkt de laagste prijs garantie precies?",
         answer:
-          "Vindt u binnen 48 uur na onze offerte een lagere prijs bij een vergelijkbaar bedrijf? Dan betalen wij het verschil terug. Simpel en eerlijk.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs!. Simpel en eerlijk.",
       },
     ],
   },
@@ -258,7 +258,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Midden-Delfland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Midden-Delfland (Maassluis, Schipluiden, Maasland). Vindt u goedkoper? Wij betalen het verschil.",
+      "Professionele woningontruiming in Midden-Delfland (Maassluis, Schipluiden, Maasland). Vindt u goedkoper? Wij duiken onder die prijs!.",
     wijken: ["Maassluis", "Schipluiden", "Maasland", "Den Hoorn"],
     postcodes: "2636-2652",
     prijzen: {
@@ -321,7 +321,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij betalen het verschil. Snel, betrouwbaar en betaalbaar.",
+      "Professionele woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij duiken onder die prijs!. Snel, betrouwbaar en betaalbaar.",
     wijken: ["Pijnacker Centrum", "Pijnacker-Zuid", "Nootdorp", "Delfgauw", "Keijzershof"],
     postcodes: "2640-2649",
     prijzen: {
@@ -389,7 +389,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Rijswijk - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij betalen het verschil. Alle wijken, snelle service.",
+      "Professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, snelle service.",
     wijken: ["Rijswijk Centrum", "Sion", "Steenvoorde", "Oud-Rijswijk", "Plaspoelpolder", "In de Bogaard"],
     postcodes: "2280-2289",
     prijzen: {
@@ -442,7 +442,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat is de laagste prijs garantie?",
         answer:
-          "Als u binnen 48 uur een goedkopere offerte vindt voor dezelfde diensten bij een vergelijkbaar bedrijf, betalen wij u het verschil terug.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
       },
     ],
   },
@@ -452,7 +452,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Wassenaar - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Wassenaar. Vindt u goedkoper? Wij betalen het verschil. Discrete service voor villa's en landhuizen.",
+      "Professionele woningontruiming in Wassenaar. Vindt u goedkoper? Wij duiken onder die prijs!. Discrete service voor villa's en landhuizen.",
     wijken: ["Wassenaar Dorp", "De Kieviet", "Duinrell", "Kerkehout", "Rijksstraatweg"],
     postcodes: "2240-2249",
     prijzen: {
@@ -520,7 +520,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Westland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Westland (Naaldwijk, Wateringen, Monster, De Lier). Vindt u goedkoper? Wij betalen het verschil.",
+      "Professionele woningontruiming in Westland (Naaldwijk, Wateringen, Monster, De Lier). Vindt u goedkoper? Wij duiken onder die prijs!.",
     wijken: ["Naaldwijk", "Wateringen", "Monster", "De Lier", "'s-Gravenzande", "Poeldijk", "Ter Heijde"],
     postcodes: "2260-2275, 2670-2685",
     prijzen: {
@@ -583,7 +583,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Zoetermeer - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Zoetermeer. Vindt u goedkoper? Wij betalen het verschil. Alle wijken, snelle service.",
+      "Professionele woningontruiming in Zoetermeer. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, snelle service.",
     wijken: [
       "Zoetermeer Centrum",
       "Meerzicht",
@@ -656,7 +656,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat houdt de laagste prijs garantie in?",
         answer:
-          "Als u binnen 48 uur na onze offerte een goedkopere, vergelijkbare offerte vindt, betalen wij het verschil terug. Zo weet u zeker dat u bij ons altijd de beste prijs krijgt.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs!. Zo weet u zeker dat u bij ons altijd de beste prijs krijgt.",
       },
     ],
   },
@@ -666,7 +666,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Albrandswaard - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Albrandswaard. Vindt u goedkoper? Wij betalen het verschil. Poortugaal, Rhoon en omgeving.",
+      "Professionele woningontruiming in Albrandswaard. Vindt u goedkoper? Wij duiken onder die prijs!. Poortugaal, Rhoon en omgeving.",
     wijken: ["Poortugaal", "Rhoon"],
     postcodes: "3160-3161",
     prijzen: {
@@ -723,7 +723,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat is de laagste prijs garantie?",
         answer:
-          "Als u binnen 48 uur een goedkopere offerte vindt voor vergelijkbare diensten, betalen wij het verschil terug.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
       },
     ],
   },
@@ -733,7 +733,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Barendrecht - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Barendrecht. Vindt u goedkoper? Wij betalen het verschil. Alle wijken, snelle service.",
+      "Professionele woningontruiming in Barendrecht. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, snelle service.",
     wijken: ["Carnisselande", "Barendrecht Centrum", "Oost-Barendrecht", "West-Barendrecht"],
     postcodes: "2990-2995",
     prijzen: {
@@ -797,7 +797,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Capelle aan den IJssel - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Capelle aan den IJssel. Vindt u goedkoper? Wij betalen het verschil. Alle wijken bereikbaar.",
+      "Professionele woningontruiming in Capelle aan den IJssel. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken bereikbaar.",
     wijken: ["Capelle Centrum", "Schollevaar", "Fascinatio", "'t Slag", "Oostgaarde"],
     postcodes: "2900-2907",
     prijzen: {

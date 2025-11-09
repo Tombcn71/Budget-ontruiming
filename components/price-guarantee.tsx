@@ -26,7 +26,7 @@ export function PriceGuarantee() {
                   </div>
                   <h3 className="text-lg lg:text-xl font-bold text-foreground mb-2">Beste Prijs</h3>
                   <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
-                    Goedkopere offerte gevonden? Wij betalen het verschil terug.
+                    Goedkopere offerte gevonden? Wij duiken onder die prijs!.
                   </p>
                 </div>
 

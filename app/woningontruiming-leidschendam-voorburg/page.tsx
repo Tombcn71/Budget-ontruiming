@@ -12,7 +12,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Leidschendam-Voorburg - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Leidschendam-Voorburg. Alle wijken, alle woningtypes. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Leidschendam-Voorburg. Alle wijken, alle woningtypes. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming leidschendam-voorburg, ontruiming voorburg, ontruiming leidschendam, huis ontruimen voorburg, bezemschoon opleveren leidschendam, woning leeghalen voorburg, spoedontruiming leidschendam, inboedel ontruiming voorburg",
   openGraph: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Leidschendam-Voorburg - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Leidschendam-Voorburg. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Leidschendam-Voorburg. Vindt u goedkoper? Wij duiken onder die prijs!!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
@@ -55,7 +55,7 @@ export default function LeidschenJamVoorburgPage() {
       <main>
         <GemeenteHero
           gemeenteNaam="Leidschendam-Voorburg"
-          subtitle="Professionele woningontruiming in Leidschendam-Voorburg tegen de laagste prijs. Vindt u goedkoper? Wij betalen het verschil terug!"
+          subtitle="Professionele woningontruiming in Leidschendam-Voorburg tegen de laagste prijs. Vindt u goedkoper? Wij duiken onder die prijs! terug!"
         />
         <HowItWorks />
         <GemeenteSeoContent data={data} />

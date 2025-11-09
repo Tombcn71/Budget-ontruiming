@@ -12,7 +12,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Pijnacker-Nootdorp. Snel, betrouwbaar en betaalbaar. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Pijnacker-Nootdorp. Snel, betrouwbaar en betaalbaar. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming pijnacker-nootdorp, ontruiming pijnacker, ontruiming nootdorp, huis ontruimen pijnacker, bezemschoon opleveren nootdorp, woning leeghalen delfgauw, spoedontruiming pijnacker, inboedel ontruiming nootdorp",
   openGraph: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij duiken onder die prijs!!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",
@@ -55,7 +55,7 @@ export default function PijnackerNootdorpPage() {
       <main>
         <GemeenteHero
           gemeenteNaam="Pijnacker-Nootdorp"
-          subtitle="Snelle en betaalbare woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij betalen het verschil terug. Vraag nu uw offerte aan!"
+          subtitle="Snelle en betaalbare woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij duiken onder die prijs! terug. Vraag nu uw offerte aan!"
         />
         <HowItWorks />
         <GemeenteSeoContent data={data} />

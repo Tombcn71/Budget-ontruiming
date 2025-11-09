@@ -12,7 +12,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Rijswijk - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Rijswijk. Alle wijken, snelle service. Vindt u goedkoper? Wij betalen het verschil! Direct beschikbaar.",
+    "Professionele woningontruiming in Rijswijk. Alle wijken, snelle service. Vindt u goedkoper? Wij duiken onder die prijs!! Direct beschikbaar.",
   keywords:
     "woningontruiming rijswijk, ontruiming rijswijk, huis ontruimen rijswijk, bezemschoon opleveren rijswijk, woning leeghalen rijswijk, appartement ontruimen rijswijk, spoedontruiming rijswijk, inboedel ontruiming rijswijk",
   openGraph: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Woningontruiming Rijswijk - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij duiken onder die prijs!!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-rijswijk",
@@ -54,7 +54,7 @@ export default function RijswijkPage() {
       <main>
         <GemeenteHero
           gemeenteNaam="Rijswijk"
-          subtitle="Snelle en professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij betalen het verschil terug. Vraag nu uw gratis offerte aan!"
+          subtitle="Snelle en professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij duiken onder die prijs! terug. Vraag nu uw gratis offerte aan!"
         />
         <HowItWorks />
         <GemeenteSeoContent data={data} />

@@ -12,7 +12,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Goeree-Overflakkee - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming op Goeree-Overflakkee. Middelharnis, Ouddorp, Dirksland. Eiland specialist. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming op Goeree-Overflakkee. Middelharnis, Ouddorp, Dirksland. Eiland specialist. Vindt u goedkoper? Wij duiken onder die prijs!!",
   keywords:
     "woningontruiming goeree-overflakkee, ontruiming middelharnis, ontruiming ouddorp, ontruiming dirksland, vakantiehuis ontruimen goeree, huis ontruimen goeree-overflakkee, bezemschoon opleveren eiland",
   openGraph: {
