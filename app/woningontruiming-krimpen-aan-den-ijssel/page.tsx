@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Krimpen aan den IJssel - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Krimpen aan den IJssel vanaf €600. Krimpen Centrum, Stormpolder en Lekkerkerk. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Krimpen aan den IJssel. Krimpen Centrum, Stormpolder en Lekkerkerk. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming krimpen aan den ijssel, ontruiming krimpen, huis ontruimen krimpen, ontruiming lekkerkerk, bezemschoon opleveren krimpen, woning leeghalen lekkerkerk, spoedontruiming krimpen",
   openGraph: {
     title: "Woningontruiming Krimpen aan den IJssel - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Krimpen aan den IJssel vanaf €600. Krimpen en Lekkerkerk.",
+      "Professionele woningontruiming in Krimpen aan den IJssel. Krimpen en Lekkerkerk.",
     url: "https://budgetontruiming.nl/woningontruiming-krimpen-aan-den-ijssel",
     type: "website",
     locale: "nl_NL",

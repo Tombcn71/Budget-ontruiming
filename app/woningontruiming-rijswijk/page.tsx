@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Rijswijk - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Rijswijk vanaf €620. Alle wijken, snelle service. Vindt u goedkoper? Wij betalen het verschil! Direct beschikbaar.",
+    "Professionele woningontruiming in Rijswijk. Alle wijken, snelle service. Vindt u goedkoper? Wij betalen het verschil! Direct beschikbaar.",
   keywords:
     "woningontruiming rijswijk, ontruiming rijswijk, huis ontruimen rijswijk, bezemschoon opleveren rijswijk, woning leeghalen rijswijk, appartement ontruimen rijswijk, spoedontruiming rijswijk, inboedel ontruiming rijswijk",
   openGraph: {
     title: "Woningontruiming Rijswijk - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Rijswijk vanaf €620. Alle wijken, snelle service. Direct beschikbaar!",
+      "Professionele woningontruiming in Rijswijk. Alle wijken, snelle service. Direct beschikbaar!",
     url: "https://budgetontruiming.nl/woningontruiming-rijswijk",
     type: "website",
     locale: "nl_NL",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Woningontruiming Rijswijk - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Rijswijk vanaf €620. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij betalen het verschil!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-rijswijk",

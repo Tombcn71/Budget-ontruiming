@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Pijnacker-Nootdorp vanaf €590. Snel, betrouwbaar en betaalbaar. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Pijnacker-Nootdorp. Snel, betrouwbaar en betaalbaar. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming pijnacker-nootdorp, ontruiming pijnacker, ontruiming nootdorp, huis ontruimen pijnacker, bezemschoon opleveren nootdorp, woning leeghalen delfgauw, spoedontruiming pijnacker, inboedel ontruiming nootdorp",
   openGraph: {
     title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Pijnacker-Nootdorp vanaf €590. Snel, betrouwbaar en betaalbaar. Direct beschikbaar!",
+      "Professionele woningontruiming in Pijnacker-Nootdorp. Snel, betrouwbaar en betaalbaar. Direct beschikbaar!",
     url: "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",
     type: "website",
     locale: "nl_NL",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Pijnacker-Nootdorp vanaf €590. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij betalen het verschil!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",

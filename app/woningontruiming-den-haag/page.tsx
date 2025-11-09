@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Den Haag - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Den Haag vanaf €650. Vindt u goedkoper? Wij betalen het verschil! Bezemschoon opleveren, na overlijden, spoedontruiming. Direct beschikbaar.",
+    "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij betalen het verschil! Bezemschoon opleveren, na overlijden, spoedontruiming. Direct beschikbaar.",
   keywords:
     "woningontruiming den haag, ontruiming den haag, huis ontruimen den haag, bezemschoon opleveren den haag, woning leeghalen den haag, ontruiming na overlijden den haag, spoedontruiming den haag, inboedel ontruiming den haag",
   openGraph: {
     title: "Woningontruiming Den Haag - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Den Haag vanaf €650. Vindt u goedkoper? Wij betalen het verschil! Direct beschikbaar.",
+      "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij betalen het verschil! Direct beschikbaar.",
     url: "https://budgetontruiming.nl/woningontruiming-den-haag",
     type: "website",
     locale: "nl_NL",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Den Haag - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Den Haag vanaf €650. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij betalen het verschil!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-den-haag",

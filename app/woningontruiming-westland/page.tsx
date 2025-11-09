@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Westland - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Westland vanaf €580. Naaldwijk, Wateringen, Monster, De Lier en 's-Gravenzande. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Westland. Naaldwijk, Wateringen, Monster, De Lier en 's-Gravenzande. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming westland, ontruiming naaldwijk, ontruiming wateringen, ontruiming monster, ontruiming de lier, huis ontruimen westland, bezemschoon opleveren westland, kas ontruimen, spoedontruiming westland",
   openGraph: {
     title: "Woningontruiming Westland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Westland vanaf €580. Naaldwijk, Wateringen, Monster en De Lier. Direct beschikbaar!",
+      "Professionele woningontruiming in Westland. Naaldwijk, Wateringen, Monster en De Lier. Direct beschikbaar!",
     url: "https://budgetontruiming.nl/woningontruiming-westland",
     type: "website",
     locale: "nl_NL",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Westland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Westland vanaf €580. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Westland. Vindt u goedkoper? Wij betalen het verschil!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-westland",

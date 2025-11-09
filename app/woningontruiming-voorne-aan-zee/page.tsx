@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Voorne aan Zee - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Voorne aan Zee vanaf €630. Rockanje en kustgebied. Vakantiehuis specialist. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Voorne aan Zee. Rockanje en kustgebied. Vakantiehuis specialist. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming voorne aan zee, ontruiming rockanje, vakantiehuis ontruimen rockanje, huis ontruimen voorne aan zee, bezemschoon opleveren rockanje, strandhuisje ontruimen, kustgebied ontruiming",
   openGraph: {
     title: "Woningontruiming Voorne aan Zee - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Voorne aan Zee vanaf €630. Rockanje en kustgebied.",
+      "Professionele woningontruiming in Voorne aan Zee. Rockanje en kustgebied.",
     url: "https://budgetontruiming.nl/woningontruiming-voorne-aan-zee",
     type: "website",
     locale: "nl_NL",

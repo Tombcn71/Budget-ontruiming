@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Albrandswaard - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Albrandswaard vanaf €600. Poortugaal en Rhoon. Kleinschalig met persoonlijke service. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Albrandswaard. Poortugaal en Rhoon. Kleinschalig met persoonlijke service. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming albrandswaard, ontruiming albrandswaard, huis ontruimen poortugaal, ontruiming rhoon, bezemschoon opleveren albrandswaard, woning leeghalen poortugaal, spoedontruiming rhoon",
   openGraph: {
     title: "Woningontruiming Albrandswaard - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Albrandswaard vanaf €600. Poortugaal en Rhoon.",
+      "Professionele woningontruiming in Albrandswaard. Poortugaal en Rhoon.",
     url: "https://budgetontruiming.nl/woningontruiming-albrandswaard",
     type: "website",
     locale: "nl_NL",

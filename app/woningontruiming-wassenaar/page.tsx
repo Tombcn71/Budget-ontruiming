@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Wassenaar - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Discrete en professionele woningontruiming in Wassenaar vanaf €650. Specialist in villa's en landhuizen. Vindt u goedkoper? Wij betalen het verschil!",
+    "Discrete en professionele woningontruiming in Wassenaar. Specialist in villa's en landhuizen. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming wassenaar, ontruiming wassenaar, villa ontruimen wassenaar, landhuis ontruimen wassenaar, discrete ontruiming wassenaar, bezemschoon opleveren wassenaar, groot huis ontruimen wassenaar, luxe woning ontruimen",
   openGraph: {
     title: "Woningontruiming Wassenaar - Laagste Prijs Garantie",
     description:
-      "Discrete en professionele woningontruiming in Wassenaar vanaf €650. Specialist in villa's en landhuizen.",
+      "Discrete en professionele woningontruiming in Wassenaar. Specialist in villa's en landhuizen.",
     url: "https://budgetontruiming.nl/woningontruiming-wassenaar",
     type: "website",
     locale: "nl_NL",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Woningontruiming Wassenaar - Laagste Prijs Garantie",
-    description: "Discrete woningontruiming in Wassenaar vanaf €650. Specialist in villa's en landhuizen.",
+    description: "Discrete woningontruiming in Wassenaar. Specialist in villa's en landhuizen.",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-wassenaar",

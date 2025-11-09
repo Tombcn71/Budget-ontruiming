@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Maassluis - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Maassluis vanaf €590. Historische havenstad met karakteristieke panden. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Maassluis. Historische havenstad met karakteristieke panden. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming maassluis, ontruiming maassluis, huis ontruimen maassluis, bezemschoon opleveren maassluis, historische woning ontruimen maassluis, woning leeghalen maassluis, spoedontruiming maassluis",
   openGraph: {
     title: "Woningontruiming Maassluis - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Maassluis vanaf €590. Historische havenstad.",
+      "Professionele woningontruiming in Maassluis. Historische havenstad.",
     url: "https://budgetontruiming.nl/woningontruiming-maassluis",
     type: "website",
     locale: "nl_NL",

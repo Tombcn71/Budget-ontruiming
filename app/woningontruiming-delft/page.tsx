@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Delft - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Delft vanaf €600. Studentenwoningen, gezinswoningen en seniorenverhuizingen. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Delft. Studentenwoningen, gezinswoningen en seniorenverhuizingen. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming delft, ontruiming delft, huis ontruimen delft, studentenwoning ontruimen delft, bezemschoon opleveren delft, kamer ontruimen delft, inboedel ontruiming delft, spoedontruiming delft",
   openGraph: {
     title: "Woningontruiming Delft - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Delft vanaf €600. Studentenwoningen, gezinswoningen en seniorenverhuizingen. Direct beschikbaar!",
+      "Professionele woningontruiming in Delft. Studentenwoningen, gezinswoningen en seniorenverhuizingen. Direct beschikbaar!",
     url: "https://budgetontruiming.nl/woningontruiming-delft",
     type: "website",
     locale: "nl_NL",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Delft - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Delft vanaf €600. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Delft. Vindt u goedkoper? Wij betalen het verschil!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-delft",

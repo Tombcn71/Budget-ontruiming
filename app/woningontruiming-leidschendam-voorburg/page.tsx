@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Leidschendam-Voorburg - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Leidschendam-Voorburg vanaf €600. Alle wijken, alle woningtypes. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Leidschendam-Voorburg. Alle wijken, alle woningtypes. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming leidschendam-voorburg, ontruiming voorburg, ontruiming leidschendam, huis ontruimen voorburg, bezemschoon opleveren leidschendam, woning leeghalen voorburg, spoedontruiming leidschendam, inboedel ontruiming voorburg",
   openGraph: {
     title: "Woningontruiming Leidschendam-Voorburg - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Leidschendam-Voorburg vanaf €600. Alle wijken, alle woningtypes. Direct beschikbaar!",
+      "Professionele woningontruiming in Leidschendam-Voorburg. Alle wijken, alle woningtypes. Direct beschikbaar!",
     url: "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
     type: "website",
     locale: "nl_NL",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Leidschendam-Voorburg - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Leidschendam-Voorburg vanaf €600. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Leidschendam-Voorburg. Vindt u goedkoper? Wij betalen het verschil!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",

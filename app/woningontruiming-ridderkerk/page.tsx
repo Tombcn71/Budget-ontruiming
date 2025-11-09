@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Ridderkerk - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Ridderkerk vanaf €610. Centrum, Bolnes, Rijsoord en Slikkerveer. Vindt u goedkoper? Wij betalen het verschil! Direct beschikbaar.",
+    "Professionele woningontruiming in Ridderkerk. Centrum, Bolnes, Rijsoord en Slikkerveer. Vindt u goedkoper? Wij betalen het verschil! Direct beschikbaar.",
   keywords:
     "woningontruiming ridderkerk, ontruiming ridderkerk, huis ontruimen ridderkerk, ontruiming bolnes, ontruiming rijsoord, ontruiming slikkerveer, bezemschoon opleveren ridderkerk, spoedontruiming ridderkerk",
   openGraph: {
     title: "Woningontruiming Ridderkerk - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Ridderkerk vanaf €610. Centrum, Bolnes, Rijsoord en Slikkerveer. Vindt u goedkoper? Wij betalen het verschil!",
+      "Professionele woningontruiming in Ridderkerk. Centrum, Bolnes, Rijsoord en Slikkerveer. Vindt u goedkoper? Wij betalen het verschil!",
     url: "https://budgetontruiming.nl/woningontruiming-ridderkerk",
     type: "website",
     locale: "nl_NL",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Woningontruiming Ridderkerk - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Ridderkerk vanaf €610. Alle kernen bereikbaar.",
+      "Professionele woningontruiming in Ridderkerk. Alle kernen bereikbaar.",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-ridderkerk",

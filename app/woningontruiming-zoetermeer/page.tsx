@@ -12,13 +12,13 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 export const metadata: Metadata = {
   title: "Woningontruiming Zoetermeer - Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in Zoetermeer vanaf €600. Alle wijken: Meerzicht, Rokkeveen, Palenstein. Vindt u goedkoper? Wij betalen het verschil!",
+    "Professionele woningontruiming in Zoetermeer. Alle wijken: Meerzicht, Rokkeveen, Palenstein. Vindt u goedkoper? Wij betalen het verschil!",
   keywords:
     "woningontruiming zoetermeer, ontruiming zoetermeer, huis ontruimen zoetermeer, bezemschoon opleveren zoetermeer, woning leeghalen zoetermeer, appartement ontruimen zoetermeer, spoedontruiming zoetermeer, inboedel ontruiming zoetermeer",
   openGraph: {
     title: "Woningontruiming Zoetermeer - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Zoetermeer vanaf €600. Alle wijken, snelle service. Direct beschikbaar!",
+      "Professionele woningontruiming in Zoetermeer. Alle wijken, snelle service. Direct beschikbaar!",
     url: "https://budgetontruiming.nl/woningontruiming-zoetermeer",
     type: "website",
     locale: "nl_NL",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Woningontruiming Zoetermeer - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Zoetermeer vanaf €600. Vindt u goedkoper? Wij betalen het verschil!",
+    description: "Professionele woningontruiming in Zoetermeer. Vindt u goedkoper? Wij betalen het verschil!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-zoetermeer",
