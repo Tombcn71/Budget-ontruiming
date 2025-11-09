@@ -55,7 +55,7 @@ export default function PijnackerNootdorpPage() {
       <main>
         <GemeenteHero
           gemeenteNaam="Pijnacker-Nootdorp"
-          subtitle="Snelle en betaalbare woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij duiken onder die prijs! terug. Vraag nu uw offerte aan!"
+          subtitle="Snelle en betaalbare woningontruiming in Pijnacker-Nootdorp. Vindt u het elders goedkoper? Wij duiken onder die prijs! Vraag nu uw offerte aan!"
         />
         <HowItWorks />
         <GemeenteSeoContent data={data} />

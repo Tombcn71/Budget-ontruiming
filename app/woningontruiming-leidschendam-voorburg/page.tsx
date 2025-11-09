@@ -55,7 +55,7 @@ export default function LeidschenJamVoorburgPage() {
       <main>
         <GemeenteHero
           gemeenteNaam="Leidschendam-Voorburg"
-          subtitle="Professionele woningontruiming in Leidschendam-Voorburg tegen de laagste prijs. Vindt u goedkoper? Wij duiken onder die prijs! terug!"
+          subtitle="Professionele woningontruiming in Leidschendam-Voorburg tegen de laagste prijs. Vindt u het elders goedkoper? Wij duiken onder die prijs!"
         />
         <HowItWorks />
         <GemeenteSeoContent data={data} />

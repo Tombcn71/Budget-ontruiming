@@ -54,7 +54,7 @@ export default function RijswijkPage() {
       <main>
         <GemeenteHero
           gemeenteNaam="Rijswijk"
-          subtitle="Snelle en professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij duiken onder die prijs! terug. Vraag nu uw gratis offerte aan!"
+          subtitle="Snelle en professionele woningontruiming in Rijswijk. Vindt u het elders goedkoper? Wij duiken onder die prijs! Vraag nu uw gratis offerte aan!"
         />
         <HowItWorks />
         <GemeenteSeoContent data={data} />

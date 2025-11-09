@@ -7,7 +7,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Goeree-Overflakkee - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming op Goeree-Overflakkee. Vindt u goedkoper? Wij duiken onder die prijs!. Alle kernen bereikbaar.",
+      "Professionele woningontruiming op Goeree-Overflakkee. Vindt u goedkoper? Wij duiken onder die prijs! Alle kernen bereikbaar.",
     wijken: ["Middelharnis", "Oude-Tonge", "Dirksland", "Sommelsdijk", "Stellendam", "Ouddorp"],
     postcodes: "3240-3259",
     prijzen: {
@@ -45,11 +45,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming op Goeree-Overflakkee?",
-        answer:
-          "Een appartement kost €620-€1.100, een rijtjeshuis €1.100-€1.700 en een vrijstaande woning €1.700-€2.800. Met onze laagste prijs garantie betaalt u de beste prijs.",
-      },
-      {
         question: "Werken jullie in alle kernen?",
         answer:
           "Ja, wij werken overal op Goeree-Overflakkee: Middelharnis, Sommelsdijk, Dirksland, Oude-Tonge, Ouddorp, Stellendam en alle andere kernen.",
@@ -70,7 +65,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Krimpen aan den IJssel - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Krimpen aan den IJssel. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken.",
+      "Professionele woningontruiming in Krimpen aan den IJssel. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken.",
     wijken: ["Krimpen Centrum", "Stormpolder", "Lekkerkerk"],
     postcodes: "2920-2925",
     prijzen: {
@@ -107,11 +102,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Krimpen aan den IJssel?",
-        answer:
-          "Een appartement kost €600-€1.050, een rijtjeshuis €1.050-€1.650 en een vrijstaande woning €1.650-€2.600. Laagste prijs gegarandeerd.",
-      },
-      {
         question: "Werken jullie ook in Lekkerkerk?",
         answer: "Ja, wij werken in heel Krimpen aan den IJssel inclusief Lekkerkerk.",
       },
@@ -121,7 +111,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
       },
       {
         question: "Wat is de laagste prijs garantie?",
-        answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
+        answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs!",
       },
     ],
   },
@@ -131,7 +121,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Lansingerland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Lansingerland. Vindt u goedkoper? Wij duiken onder die prijs!. Berkel en Rodenrijs, Bleiswijk en Bergschenhoek.",
+      "Professionele woningontruiming in Lansingerland. Vindt u goedkoper? Wij duiken onder die prijs! Berkel en Rodenrijs, Bleiswijk en Bergschenhoek.",
     wijken: ["Berkel en Rodenrijs", "Bleiswijk", "Bergschenhoek"],
     postcodes: "2650-2665",
     prijzen: {
@@ -168,11 +158,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Lansingerland?",
-        answer:
-          "Een appartement kost €600-€1.050, een rijtjeshuis €1.050-€1.650 en een vrijstaande woning €1.650-€2.600. Laagste prijs gegarandeerd.",
-      },
-      {
         question: "Werken jullie in alle kernen?",
         answer: "Ja, wij werken in Berkel en Rodenrijs, Bleiswijk én Bergschenhoek.",
       },
@@ -192,7 +177,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Maassluis - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Maassluis. Vindt u goedkoper? Wij duiken onder die prijs!. Haven stad met persoonlijke service.",
+      "Professionele woningontruiming in Maassluis. Vindt u goedkoper? Wij duiken onder die prijs! Haven stad met persoonlijke service.",
     wijken: ["Maassluis Centrum", "Steendijkpolder", "Koningshoek"],
     postcodes: "3140-3149",
     prijzen: {
@@ -229,11 +214,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Maassluis?",
-        answer:
-          "Een appartement kost €590-€1.030, een rijtjeshuis €1.030-€1.620 en een vrijstaande woning €1.620-€2.550. Laagste prijs gegarandeerd.",
-      },
-      {
         question: "Hebben jullie ervaring met oudere panden?",
         answer: "Ja, wij hebben veel ervaring met historische en karakteristieke woningen in Maassluis.",
       },
@@ -243,7 +223,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
       },
       {
         question: "Wat is de laagste prijs garantie?",
-        answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
+        answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs!",
       },
     ],
   },
@@ -253,7 +233,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Nissewaard - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Nissewaard. Vindt u goedkoper? Wij duiken onder die prijs!. Spijkenisse en Bernisse.",
+      "Professionele woningontruiming in Nissewaard. Vindt u goedkoper? Wij duiken onder die prijs! Spijkenisse en Bernisse.",
     wijken: ["Spijkenisse", "Bernisse", "Heenvliet"],
     postcodes: "3200-3209",
     prijzen: {
@@ -290,11 +270,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Nissewaard?",
-        answer:
-          "Een appartement kost €600-€1.050, een rijtjeshuis €1.050-€1.650 en een vrijstaande woning €1.650-€2.600. Laagste prijs gegarandeerd.",
-      },
-      {
         question: "Werken jullie in Spijkenisse en Bernisse?",
         answer: "Ja, wij werken in heel Nissewaard: Spijkenisse, Bernisse en Heenvliet.",
       },
@@ -314,7 +289,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Ridderkerk - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Ridderkerk. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken bereikbaar.",
+      "Professionele woningontruiming in Ridderkerk. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken bereikbaar.",
     wijken: ["Ridderkerk Centrum", "Bolnes", "Rijsoord", "Slikkerveer"],
     postcodes: "2980-2989",
     prijzen: {
@@ -351,11 +326,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Ridderkerk?",
-        answer:
-          "Een appartement kost €610-€1.070, een rijtjeshuis €1.070-€1.680 en een vrijstaande woning €1.680-€2.700. Laagste prijs gegarandeerd.",
-      },
-      {
         question: "Werken jullie in alle kernen?",
         answer: "Ja, wij werken in heel Ridderkerk inclusief Bolnes, Rijsoord en Slikkerveer.",
       },
@@ -375,7 +345,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Rotterdam - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Rotterdam. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, 24/7 bereikbaar.",
+      "Professionele woningontruiming in Rotterdam. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken, 24/7 bereikbaar.",
     wijken: [
       "Centrum",
       "Noord",
@@ -424,11 +394,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Rotterdam?",
-        answer:
-          "Een appartement kost €650-€1.150, een rijtjeshuis €1.150-€1.800 en een vrijstaande woning €1.800-€3.000. Laagste prijs gegarandeerd.",
-      },
-      {
         question: "Werken jullie in alle Rotterdamse wijken?",
         answer:
           "Ja, wij werken in heel Rotterdam: Centrum, Noord, Zuid, West, Oost, Kralingen, Feijenoord, Charlois, IJsselmonde en Prins Alexander.",
@@ -450,7 +415,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Schiedam - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Schiedam. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, snel bereikbaar.",
+      "Professionele woningontruiming in Schiedam. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken, snel bereikbaar.",
     wijken: ["Schiedam Centrum", "Nieuwland", "Groenoord", "Kethel", "Spaland"],
     postcodes: "3110-3125",
     prijzen: {
@@ -487,11 +452,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Schiedam?",
-        answer:
-          "Een appartement kost €620-€1.080, een rijtjeshuis €1.080-€1.690 en een vrijstaande woning €1.690-€2.750. Laagste prijs gegarandeerd.",
-      },
-      {
         question: "Werken jullie in alle wijken van Schiedam?",
         answer: "Ja, wij werken in heel Schiedam: Centrum, Nieuwland, Groenoord, Kethel en Spaland.",
       },
@@ -511,7 +471,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Vlaardingen - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Vlaardingen. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken bereikbaar.",
+      "Professionele woningontruiming in Vlaardingen. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken bereikbaar.",
     wijken: ["Vlaardingen Centrum", "Westwijk", "Babberspolder", "Holy", "Ambacht"],
     postcodes: "3130-3137",
     prijzen: {
@@ -548,11 +508,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Vlaardingen?",
-        answer:
-          "Een appartement kost €610-€1.070, een rijtjeshuis €1.070-€1.680 en een vrijstaande woning €1.680-€2.700. Laagste prijs gegarandeerd.",
-      },
-      {
         question: "Werken jullie in alle wijken?",
         answer: "Ja, wij werken in heel Vlaardingen inclusief alle wijken.",
       },
@@ -562,7 +517,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
       },
       {
         question: "Wat is de laagste prijs garantie?",
-        answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
+        answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs!",
       },
     ],
   },
@@ -572,7 +527,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Voorne aan Zee - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming op Voorne aan Zee. Vindt u goedkoper? Wij duiken onder die prijs!. Rockanje en omgeving.",
+      "Professionele woningontruiming op Voorne aan Zee. Vindt u goedkoper? Wij duiken onder die prijs! Rockanje en omgeving.",
     wijken: ["Rockanje", "Tinte"],
     postcodes: "3233-3235",
     prijzen: {
@@ -608,11 +563,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
       },
     ],
     faq: [
-      {
-        question: "Wat kost woningontruiming op Voorne aan Zee?",
-        answer:
-          "Een appartement kost €630-€1.100, een rijtjeshuis €1.100-€1.700 en een vrijstaande woning €1.700-€2.800. Laagste prijs gegarandeerd.",
-      },
       {
         question: "Ontruimen jullie ook vakantiewoningen?",
         answer: "Ja, wij hebben ervaring met zowel vakantiewoningen als permanente bewoning.",

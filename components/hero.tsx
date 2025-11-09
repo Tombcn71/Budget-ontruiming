@@ -68,8 +68,8 @@ export function Hero() {
             </h1>
 
             <p className="text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-              Vindt u een goedkopere offerte? Wij duiken onder die prijs!. Zo bent u ervan verzekerd dat u de laatste
-              prijs betaald.
+              Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u ervan verzekerd dat u de laagste
+              prijs betaalt.
             </p>
 
             <div className="flex flex-wrap gap-4 text-md text-white">

@@ -55,7 +55,7 @@ export default function DenHaagPage() {
       <main>
         <GemeenteHero
           gemeenteNaam="Den Haag"
-          subtitle="Vindt u een goedkopere offerte voor woningontruiming in Den Haag? Wij betalen u het verschil terug. Zo bent u ervan verzekerd dat u de laagste prijs betaalt."
+          subtitle="Vindt u het elders goedkoper voor woningontruiming in Den Haag? Wij duiken onder die prijs! Zo bent u ervan verzekerd dat u de laagste prijs betaalt."
         />
         <HowItWorks />
         <GemeenteSeoContent data={data} />

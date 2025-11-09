@@ -32,7 +32,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Den Haag - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij duiken onder die prijs!. Bezemschoon opleveren, na overlijden, seniorenverhuizing.",
+      "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij duiken onder die prijs! Bezemschoon opleveren, na overlijden, seniorenverhuizing.",
     wijken: [
       "Centrum & Zeeheldenkwartier",
       "Segbroek & Valkenboskwartier",
@@ -104,7 +104,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat is jullie laagste prijs garantie?",
         answer:
-          "Vindt u het elders goedkoper? Wij duiken onder die prijs!. Zo bent u altijd verzekerd van de beste prijs voor uw woningontruiming in Den Haag.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u altijd verzekerd van de beste prijs voor uw woningontruiming in Den Haag.",
       },
     ],
   },
@@ -114,7 +114,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Delft - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Delft. Vindt u goedkoper? Wij duiken onder die prijs!. Studentenwoningen, gezinswoningen en seniorenverhuizingen.",
+      "Professionele woningontruiming in Delft. Vindt u goedkoper? Wij duiken onder die prijs! Studentenwoningen, gezinswoningen en seniorenverhuizingen.",
     wijken: [
       "Binnenstad",
       "Tanthof",
@@ -180,7 +180,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat is de laagste prijs garantie?",
         answer:
-          "Vindt u het elders goedkoper? Wij duiken onder die prijs!. Zo weet u zeker dat u de beste prijs krijgt.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo weet u zeker dat u de beste prijs krijgt.",
       },
     ],
   },
@@ -190,7 +190,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Leidschendam-Voorburg - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Leidschendam-Voorburg. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, alle woningtypes.",
+      "Professionele woningontruiming in Leidschendam-Voorburg. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken, alle woningtypes.",
     wijken: ["Leidschendam", "Voorburg", "Stompwijk", "Het Centrum", "De Korte Akkeren", "Hofwijk"],
     postcodes: "2260-2275",
     prijzen: {
@@ -231,11 +231,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat zijn de kosten voor woningontruiming in Leidschendam-Voorburg?",
-        answer:
-          "Een appartement kost €600-€1.050, een rijtjeshuis €1.050-€1.650 en een vrijstaande woning €1.650-€2.600. Met onze laagste prijs garantie betaalt u gegarandeerd niet te veel.",
-      },
-      {
         question: "Hoe snel kunnen jullie starten?",
         answer:
           "Meestal kunnen we binnen 1-3 werkdagen beginnen. Bij spoed is ontruiming vaak al binnen 24 uur mogelijk.",
@@ -248,7 +243,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Hoe werkt de laagste prijs garantie precies?",
         answer:
-          "Vindt u het elders goedkoper? Wij duiken onder die prijs!. Simpel en eerlijk.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs! Simpel en eerlijk.",
       },
     ],
   },
@@ -258,7 +253,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Midden-Delfland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Midden-Delfland (Maassluis, Schipluiden, Maasland). Vindt u goedkoper? Wij duiken onder die prijs!.",
+      "Professionele woningontruiming in Midden-Delfland (Maassluis, Schipluiden, Maasland). Vindt u goedkoper? Wij duiken onder die prijs!",
     wijken: ["Maassluis", "Schipluiden", "Maasland", "Den Hoorn"],
     postcodes: "2636-2652",
     prijzen: {
@@ -321,7 +316,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij duiken onder die prijs!. Snel, betrouwbaar en betaalbaar.",
+      "Professionele woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij duiken onder die prijs! Snel, betrouwbaar en betaalbaar.",
     wijken: ["Pijnacker Centrum", "Pijnacker-Zuid", "Nootdorp", "Delfgauw", "Keijzershof"],
     postcodes: "2640-2649",
     prijzen: {
@@ -362,11 +357,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Pijnacker-Nootdorp?",
-        answer:
-          "Een appartement ontruimen kost €590-€1.020, een rijtjeshuis €1.020-€1.600 en een vrijstaande woning €1.600-€2.500. Met onze laagste prijs garantie betaalt u gegarandeerd de beste prijs.",
-      },
-      {
         question: "Werken jullie ook in Delfgauw?",
         answer:
           "Ja, wij werken in heel Pijnacker-Nootdorp inclusief Delfgauw, alle wijken in Pijnacker en Nootdorp.",
@@ -389,7 +379,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Rijswijk - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, snelle service.",
+      "Professionele woningontruiming in Rijswijk. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken, snelle service.",
     wijken: ["Rijswijk Centrum", "Sion", "Steenvoorde", "Oud-Rijswijk", "Plaspoelpolder", "In de Bogaard"],
     postcodes: "2280-2289",
     prijzen: {
@@ -442,7 +432,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat is de laagste prijs garantie?",
         answer:
-          "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs!",
       },
     ],
   },
@@ -452,7 +442,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Wassenaar - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Wassenaar. Vindt u goedkoper? Wij duiken onder die prijs!. Discrete service voor villa's en landhuizen.",
+      "Professionele woningontruiming in Wassenaar. Vindt u goedkoper? Wij duiken onder die prijs! Discrete service voor villa's en landhuizen.",
     wijken: ["Wassenaar Dorp", "De Kieviet", "Duinrell", "Kerkehout", "Rijksstraatweg"],
     postcodes: "2240-2249",
     prijzen: {
@@ -493,11 +483,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Wassenaar?",
-        answer:
-          "Voor een appartement rekenen we €650-€1.100, voor een rijtjeshuis €1.100-€1.750 en voor een vrijstaande woning of villa €1.750-€3.500. Dankzij onze laagste prijs garantie weet u zeker dat u de beste prijs krijgt.",
-      },
-      {
         question: "Hoe discreet werken jullie?",
         answer:
           "Wij begrijpen dat privacy belangrijk is in Wassenaar. Onze medewerkers werken professioneel en discreet, zonder opvallende voertuigen of onnodige aandacht.",
@@ -520,7 +505,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Westland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Westland (Naaldwijk, Wateringen, Monster, De Lier). Vindt u goedkoper? Wij duiken onder die prijs!.",
+      "Professionele woningontruiming in Westland (Naaldwijk, Wateringen, Monster, De Lier). Vindt u goedkoper? Wij duiken onder die prijs!",
     wijken: ["Naaldwijk", "Wateringen", "Monster", "De Lier", "'s-Gravenzande", "Poeldijk", "Ter Heijde"],
     postcodes: "2260-2275, 2670-2685",
     prijzen: {
@@ -583,7 +568,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Haaglanden",
     title: "Woningontruiming Zoetermeer - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Zoetermeer. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, snelle service.",
+      "Professionele woningontruiming in Zoetermeer. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken, snelle service.",
     wijken: [
       "Zoetermeer Centrum",
       "Meerzicht",
@@ -634,11 +619,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Zoetermeer?",
-        answer:
-          "De kosten zijn €600-€1.050 voor een appartement, €1.050-€1.650 voor een rijtjeshuis en €1.650-€2.600 voor een vrijstaande woning. Onze laagste prijs garantie zorgt ervoor dat u nooit te veel betaalt.",
-      },
-      {
         question: "Werken jullie in alle wijken van Zoetermeer?",
         answer:
           "Ja, van Dorp tot Oosterheem, van Meerzicht tot Seghwaert – wij werken in heel Zoetermeer.",
@@ -656,7 +636,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat houdt de laagste prijs garantie in?",
         answer:
-          "Vindt u het elders goedkoper? Wij duiken onder die prijs!. Zo weet u zeker dat u bij ons altijd de beste prijs krijgt.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo weet u zeker dat u bij ons altijd de beste prijs krijgt.",
       },
     ],
   },
@@ -666,7 +646,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Albrandswaard - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Albrandswaard. Vindt u goedkoper? Wij duiken onder die prijs!. Poortugaal, Rhoon en omgeving.",
+      "Professionele woningontruiming in Albrandswaard. Vindt u goedkoper? Wij duiken onder die prijs! Poortugaal, Rhoon en omgeving.",
     wijken: ["Poortugaal", "Rhoon"],
     postcodes: "3160-3161",
     prijzen: {
@@ -707,11 +687,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Albrandswaard?",
-        answer:
-          "Een appartement kost €600-€1.050, een rijtjeshuis €1.050-€1.650 en een vrijstaande woning €1.650-€2.600. Met onze laagste prijs garantie betaalt u gegarandeerd de beste prijs.",
-      },
-      {
         question: "Werken jullie in Poortugaal en Rhoon?",
         answer: "Ja, wij werken in heel Albrandswaard inclusief Poortugaal en Rhoon.",
       },
@@ -723,7 +698,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       {
         question: "Wat is de laagste prijs garantie?",
         answer:
-          "Vindt u het elders goedkoper? Wij duiken onder die prijs!.",
+          "Vindt u het elders goedkoper? Wij duiken onder die prijs!",
       },
     ],
   },
@@ -733,7 +708,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Barendrecht - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Barendrecht. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken, snelle service.",
+      "Professionele woningontruiming in Barendrecht. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken, snelle service.",
     wijken: ["Carnisselande", "Barendrecht Centrum", "Oost-Barendrecht", "West-Barendrecht"],
     postcodes: "2990-2995",
     prijzen: {
@@ -773,11 +748,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost woningontruiming in Barendrecht?",
-        answer:
-          "De kosten zijn €610-€1.070 voor een appartement, €1.070-€1.680 voor een rijtjeshuis en €1.680-€2.700 voor een vrijstaande woning. Onze laagste prijs garantie zorgt dat u nooit te veel betaalt.",
-      },
-      {
         question: "Werken jullie ook in Carnisselande?",
         answer: "Ja, wij werken in heel Barendrecht inclusief Carnisselande, Oost en West.",
       },
@@ -797,7 +767,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Capelle aan den IJssel - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Capelle aan den IJssel. Vindt u goedkoper? Wij duiken onder die prijs!. Alle wijken bereikbaar.",
+      "Professionele woningontruiming in Capelle aan den IJssel. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken bereikbaar.",
     wijken: ["Capelle Centrum", "Schollevaar", "Fascinatio", "'t Slag", "Oostgaarde"],
     postcodes: "2900-2907",
     prijzen: {
@@ -836,11 +806,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
       },
     ],
     faq: [
-      {
-        question: "Wat kost woningontruiming in Capelle aan den IJssel?",
-        answer:
-          "Een appartement kost €620-€1.080, een rijtjeshuis €1.080-€1.690 en een vrijstaande woning €1.690-€2.750. Met onze laagste prijs garantie bent u verzekerd van de beste prijs.",
-      },
       {
         question: "Werken jullie ook in hoogbouw?",
         answer:

@@ -25,7 +25,7 @@ export function GemeenteHero({ gemeenteNaam, subtitle }: GemeenteHeroProps) {
             </h1>
 
             <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
-              Vindt u een goedkopere offerte? Wij gaan eronder zodat u altijd de laagste prijs betaald.
+              Vindt u het elders goedkoper? Wij duiken onder die prijs!
             </p>
 
             <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">

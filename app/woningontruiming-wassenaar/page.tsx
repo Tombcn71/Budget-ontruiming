@@ -54,7 +54,7 @@ export default function WassenaarPage() {
       <main>
         <GemeenteHero
           gemeenteNaam="Wassenaar"
-          subtitle="Discrete en professionele woningontruiming in Wassenaar. Specialist in villa's en landhuizen. Vindt u goedkoper? Wij duiken onder die prijs! terug."
+          subtitle="Discrete en professionele woningontruiming in Wassenaar. Specialist in villa's en landhuizen. Vindt u het elders goedkoper? Wij duiken onder die prijs!"
         />
         <HowItWorks />
         <GemeenteSeoContent data={data} />
