@@ -74,44 +74,6 @@ export function GemeenteSeoContent({ data }: GemeenteSeoContentProps) {
         </div>
       </section>
 
-      {/* Prijzen */}
-      <section className="py-12 lg:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
-              Wat kost een woningontruiming in {data.naam}?
-            </h2>
-            <p className="text-center text-muted-foreground mb-8 text-lg">
-              Indicatieve prijzen voor woningontruiming in {data.naam}. Met onze laagste prijs garantie betaalt u
-              gegarandeerd de beste prijs.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="p-6 bg-white border-0 shadow-sm text-center">
-                <h3 className="font-bold text-foreground mb-2">Appartement</h3>
-                <p className="text-sm text-muted-foreground mb-4">40-70 m²</p>
-                <p className="text-2xl font-bold text-primary">{data.prijzen.appartement}</p>
-              </Card>
-              <Card className="p-6 bg-white border-0 shadow-sm text-center">
-                <h3 className="font-bold text-foreground mb-2">Rijtjeshuis</h3>
-                <p className="text-sm text-muted-foreground mb-4">70-120 m²</p>
-                <p className="text-2xl font-bold text-primary">{data.prijzen.rijtjeshuis}</p>
-              </Card>
-              <Card className="p-6 bg-white border-0 shadow-sm text-center">
-                <h3 className="font-bold text-foreground mb-2">Vrijstaande woning</h3>
-                <p className="text-sm text-muted-foreground mb-4">120+ m²</p>
-                <p className="text-2xl font-bold text-primary">{data.prijzen.vrijstaand}</p>
-              </Card>
-            </div>
-            <div className="mt-8 bg-primary/10 rounded-lg p-6 text-center">
-              <h3 className="font-bold text-foreground text-xl mb-2">💰 Laagste Prijs Garantie</h3>
-              <p className="text-foreground">
-                Vindt u binnen 48 uur een goedkopere offerte? Dan betalen wij het verschil terug!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 lg:px-8">

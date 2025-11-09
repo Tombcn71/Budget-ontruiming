@@ -82,11 +82,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost een woningontruiming in Den Haag?",
-        answer:
-          "De kosten variëren per woningtype. Een klein appartement (40-70m²) kost gemiddeld €650-€1.100, een rijtjeshuis €1.100-€1.700, en een vrijstaande woning €1.700-€2.800. Met onze laagste prijs garantie bent u verzekerd van de beste prijs.",
-      },
-      {
         question: "Hoe snel kunnen jullie een woning in Den Haag ontruimen?",
         answer:
           "In de meeste gevallen kunnen we binnen 1-2 werkdagen starten. Bij spoedeisende situaties is ontruiming binnen 24 uur mogelijk. De duur van de ontruiming hangt af van de grootte en toegankelijkheid van de woning.",
@@ -167,11 +162,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
       },
     ],
     faq: [
-      {
-        question: "Wat kost een woningontruiming in Delft?",
-        answer:
-          "Voor een appartement of studentenwoning rekenen we €600-€1.000, voor een rijtjeshuis €1.000-€1.600, en voor een vrijstaande woning €1.600-€2.500. Dankzij onze laagste prijs garantie betaalt u nooit te veel.",
-      },
       {
         question: "Kunnen jullie ook kleine studentenkamers ontruimen?",
         answer:
@@ -309,11 +299,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost een woningontruiming in Midden-Delfland?",
-        answer:
-          "De prijzen variëren van €580-€1.000 voor een appartement, €1.000-€1.550 voor een rijtjeshuis tot €1.550-€2.400 voor een vrijstaande woning. Dankzij onze laagste prijs garantie bent u verzekerd van de beste deal.",
-      },
-      {
         question: "Komen jullie ook in de kleinere kernen zoals Den Hoorn?",
         answer:
           "Ja, wij werken in heel Midden-Delfland: Maassluis, Schipluiden, Maasland én Den Hoorn. Geen enkele locatie is te afgelegen.",
@@ -445,11 +430,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
     ],
     faq: [
       {
-        question: "Wat kost een woningontruiming in Rijswijk?",
-        answer:
-          "De kosten zijn €620-€1.080 voor een appartement, €1.080-€1.680 voor een rijtjeshuis en €1.680-€2.650 voor een vrijstaande woning. Onze laagste prijs garantie zorgt dat u nooit te veel betaalt.",
-      },
-      {
         question: "Hoe werken jullie in hoogbouw?",
         answer:
           "Wij hebben ervaring met hoogbouw en gebruiken de lift indien beschikbaar. Ook regelen we beschermingsmateriaal voor het trappenhuis om schade te voorkomen.",
@@ -580,11 +560,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
       },
     ],
     faq: [
-      {
-        question: "Wat kost een woningontruiming in Westland?",
-        answer:
-          "Een appartement ontruimen kost €580-€1.000, een rijtjeshuis €1.000-€1.550 en een vrijstaande woning €1.550-€2.500. Met onze laagste prijs garantie bent u verzekerd van de beste prijs.",
-      },
       {
         question: "Werken jullie in alle kernen van Westland?",
         answer:
