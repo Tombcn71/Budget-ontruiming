@@ -430,26 +430,26 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               <h4 className="font-semibold text-sm text-foreground mb-2">🔧 Extra Werkzaamheden:</h4>
               {formData.vloerVerwijderen && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Vloer verwijderen</span>
-                  <span className="font-medium">€150</span>
+                  <span className="text-muted-foreground">• Vloer verwijderen ({parseInt(formData.vierkanteMeter.split('-')[0])}m² × €3)</span>
+                  <span className="font-medium">€{(parseInt(formData.vierkanteMeter.split('-')[0]) * 3).toLocaleString('nl-NL')}</span>
                 </div>
               )}
               {formData.behangVerwijderen && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Behang verwijderen</span>
-                  <span className="font-medium">€200</span>
+                  <span className="text-muted-foreground">• Behang verwijderen ({parseInt(formData.vierkanteMeter.split('-')[0])}m² × €5)</span>
+                  <span className="font-medium">€{(parseInt(formData.vierkanteMeter.split('-')[0]) * 5).toLocaleString('nl-NL')}</span>
                 </div>
               )}
               {formData.gaatjesToppen && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Gaatjes stoppen</span>
-                  <span className="font-medium">€100</span>
+                  <span className="text-muted-foreground">• Gaatjes stoppen ({parseInt(formData.vierkanteMeter.split('-')[0])}m² × €1)</span>
+                  <span className="font-medium">€{(parseInt(formData.vierkanteMeter.split('-')[0]) * 1).toLocaleString('nl-NL')}</span>
                 </div>
               )}
               {formData.schilderwerk && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Schilderwerk</span>
-                  <span className="font-medium">€250</span>
+                  <span className="text-muted-foreground">• Schilderwerk ({parseInt(formData.vierkanteMeter.split('-')[0])}m² × €8)</span>
+                  <span className="font-medium">€{(parseInt(formData.vierkanteMeter.split('-')[0]) * 8).toLocaleString('nl-NL')}</span>
                 </div>
               )}
               {formData.gordijnenVerwijderen && (
