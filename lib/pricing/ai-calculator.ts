@@ -27,71 +27,92 @@ interface AIAnalysis {
   estimated_hours: number
 }
 
-// Basis tarieven
+// Basis tarieven - gebaseerd op BTI Ontruimingen tariefstructuur
 const BASE_RATES = {
-  squareMeter: {
-    '0-50': 8,
-    '50-75': 7,
-    '75-100': 6.5,
-    '100-150': 6,
-    '150-200': 5.5,
-    '200+': 5,
+  // Base prijzen per woningtype (gebruikt als startpunt)
+  woningType: {
+    'seniorenkamer': { min: 250, max: 450, avgM2: 25 },
+    'appartement': { min: 450, max: 850, avgM2: 60 },
+    'eengezinswoning': { min: 750, max: 1500, avgM2: 120 },
+    'bedrijfspand': { min: 400, max: 1500, avgM2: 100 },
   },
+  
+  // Verdieping surcharge
   floor: {
     'begane-grond': 0,
     '1e-verdieping': 75,
     '2e-verdieping': 150,
     '3e-verdieping': 250,
   },
+  
+  // Meubel kosten (voor AI detection fine-tuning)
   furnitureSize: {
-    small: 15,
-    medium: 40,
-    large: 80,
+    small: 10,    // Klein meubelstuk
+    medium: 25,   // Gemiddeld meubelstuk
+    large: 50,    // Groot meubelstuk
   },
+  
+  // Volume impact multiplier (voor AI analyse)
   volumeMultiplier: {
-    empty: 0.5,
-    sparse: 0.7,
-    half: 1.0,
-    full: 1.3,
-    very_full: 1.6,
+    empty: 0.7,      // Bijna leeg
+    sparse: 0.85,    // Weinig spullen
+    half: 1.0,       // Normaal gevuld
+    full: 1.2,       // Vol
+    very_full: 1.4,  // Zeer vol
   },
+  
+  // Extra diensten (per m2 waar van toepassing)
   extraServices: {
-    vloerVerwijderen: 150,
-    behangVerwijderen: 200,
-    gaatjesToppen: 100,
-    schilderwerk: 250,
-    gordijnenVerwijderen: 50,
+    vloerVerwijderen: 3,      // €3 per m2
+    behangVerwijderen: 5,     // €5 per m2
+    gaatjesToppen: 1,         // €1 per m2
+    schilderwerk: 8,          // €8 per m2
+    gordijnenVerwijderen: 50, // Flat rate (niet per m2)
   },
+  
   baseTransport: 150,
-  laborHourlyRate: 45, // per persoon per uur
-  minPrice: 450,
+  specialItemSurcharge: 50,
+  boxCost: 5,
+  minPrice: 250, // Minimum voor seniorenkamer
 }
 
 export function calculatePriceFromAI(
   formData: FormData,
   analysisResults: Array<{ analysis: AIAnalysis }>
 ): { total: number; breakdown: { items: number; labor: number; transport: number; extras: number } } {
-  let itemsCost = 0
-  let maxEstimatedHours = 0
-  let specialItemsSurcharge = 0
-  let totalBoxes = 0
   
-  // Verzamel alle unieke meubels (geen duplicaten over foto's heen)
+  // Parse vierkante meters
+  const m2String = formData.vierkanteMeter || '50-75'
+  const m2Value = parseInt(m2String.split('-')[0]) || 60
+  
+  // 1. START: Base prijs op basis van woningtype
+  const woningTypeKey = formData.woningType as keyof typeof BASE_RATES.woningType
+  const woningTypeData = BASE_RATES.woningType[woningTypeKey] || BASE_RATES.woningType.appartement
+  
+  // Interpoleer prijs binnen min-max range op basis van m2
+  // Hoe groter de woning t.o.v. gemiddelde, hoe hoger binnen de range
+  const m2Ratio = Math.min(Math.max(m2Value / woningTypeData.avgM2, 0.5), 2.0)
+  const basePrice = woningTypeData.min + ((woningTypeData.max - woningTypeData.min) * (m2Ratio - 0.5) / 1.5)
+  
+  let itemsCost = basePrice
+  
+  // 2. FINE-TUNING: AI-detected items (meubels, dozen, volume)
+  let totalBoxes = 0
+  let specialItemsSurcharge = 0
   const allFurniture: Record<string, { quantity: number; size: string }> = {}
   let highestVolumeMultiplier = 1.0
 
-  // 1. Combineer analyses (het zijn foto's van DEZELFDE woning)
   analysisResults.forEach(({ analysis }) => {
-    // Neem de HOOGSTE volume multiplier (meest vol)
+    // Hoogste volume multiplier
     const volumeMultiplier = BASE_RATES.volumeMultiplier[analysis.volume_level] || 1.0
     if (volumeMultiplier > highestVolumeMultiplier) {
       highestVolumeMultiplier = volumeMultiplier
     }
 
-    // Tel dozen op (totaal over alle kamers)
+    // Tel dozen op
     totalBoxes += analysis.boxes_estimate
 
-    // Combineer meubels (neem hoogste aantal per item)
+    // Combineer meubels (neem hoogste aantal per uniek item)
     analysis.furniture.forEach((furniture) => {
       const key = `${furniture.item.toLowerCase()}-${furniture.size}`
       if (!allFurniture[key] || allFurniture[key].quantity < furniture.quantity) {
@@ -102,66 +123,60 @@ export function calculatePriceFromAI(
       }
     })
 
-    // Neem MAX uren (niet optellen!)
-    if (analysis.estimated_hours > maxEstimatedHours) {
-      maxEstimatedHours = analysis.estimated_hours
-    }
-
-    // Speciale items (uniek)
+    // Speciale items surcharge
     if (analysis.special_items && analysis.special_items.length > 0) {
-      specialItemsSurcharge += analysis.special_items.length * 50
+      specialItemsSurcharge += analysis.special_items.length * BASE_RATES.specialItemSurcharge
     }
   })
 
-  // Bereken meubelkosten
+  // Bereken meubelkosten (fine-tuning bovenop base)
+  let furnitureCost = 0
   Object.values(allFurniture).forEach((furniture) => {
-    const furnitureCost = BASE_RATES.furnitureSize[furniture.size as keyof typeof BASE_RATES.furnitureSize] || 40
-    itemsCost += furnitureCost * furniture.quantity
+    const cost = BASE_RATES.furnitureSize[furniture.size as keyof typeof BASE_RATES.furnitureSize] || 25
+    furnitureCost += cost * furniture.quantity
   })
 
-  // Dozen kosten (€5 per doos)
-  itemsCost += totalBoxes * 5
+  // Dozen kosten
+  const boxesCost = totalBoxes * BASE_RATES.boxCost
 
-  // Volume multiplier toepassen op totaal
-  itemsCost *= highestVolumeMultiplier
+  // Pas volume multiplier toe op AI-detected items (niet op base price)
+  const aiItemsCost = (furnitureCost + boxesCost) * highestVolumeMultiplier
+  
+  itemsCost += aiItemsCost + specialItemsSurcharge
 
-  // 2. Vierkante meters basis
-  const sqmRate = BASE_RATES.squareMeter[formData.vierkanteMeter as keyof typeof BASE_RATES.squareMeter] || 6
-  const sqmValue = parseInt(formData.vierkanteMeter.split('-')[0]) || 75
-  const sqmCost = sqmValue * sqmRate
-
-  itemsCost += sqmCost
-
-  // 3. Verdieping surcharge
+  // 3. VERDIEPING SURCHARGE
   const floorSurcharge = BASE_RATES.floor[formData.verdieping as keyof typeof BASE_RATES.floor] || 0
 
-  // 4. Extra werkzaamheden
+  // 4. EXTRA DIENSTEN (per m2 behalve gordijnen)
   let extrasCost = 0
-  if (formData.vloerVerwijderen) extrasCost += BASE_RATES.extraServices.vloerVerwijderen
-  if (formData.behangVerwijderen) extrasCost += BASE_RATES.extraServices.behangVerwijderen
-  if (formData.gaatjesToppen) extrasCost += BASE_RATES.extraServices.gaatjesToppen
-  if (formData.schilderwerk) extrasCost += BASE_RATES.extraServices.schilderwerk
-  if (formData.gordijnenVerwijderen) extrasCost += BASE_RATES.extraServices.gordijnenVerwijderen
+  if (formData.vloerVerwijderen) {
+    extrasCost += BASE_RATES.extraServices.vloerVerwijderen * m2Value
+  }
+  if (formData.behangVerwijderen) {
+    extrasCost += BASE_RATES.extraServices.behangVerwijderen * m2Value
+  }
+  if (formData.gaatjesToppen) {
+    extrasCost += BASE_RATES.extraServices.gaatjesToppen * m2Value
+  }
+  if (formData.schilderwerk) {
+    extrasCost += BASE_RATES.extraServices.schilderwerk * m2Value
+  }
+  if (formData.gordijnenVerwijderen) {
+    extrasCost += BASE_RATES.extraServices.gordijnenVerwijderen // Flat rate
+  }
 
-  // 5. Arbeid (2 personen) - gebruik MAX uren, niet totaal!
-  // En maak het realistischer: basis + extra tijd voor volume
-  const baseHours = Math.max(2, maxEstimatedHours)
-  const volumeHourMultiplier = highestVolumeMultiplier
-  const totalHours = Math.ceil(baseHours * volumeHourMultiplier)
-  const laborCost = totalHours * BASE_RATES.laborHourlyRate * 2
-
-  // 6. Transport
+  // 5. TRANSPORT (altijd)
   const transportCost = BASE_RATES.baseTransport
 
-  // Totaal berekenen
-  const subtotal = itemsCost + floorSurcharge + specialItemsSurcharge + extrasCost + laborCost + transportCost
+  // TOTAAL BEREKENEN
+  const subtotal = itemsCost + floorSurcharge + extrasCost + transportCost
   const total = Math.max(subtotal, BASE_RATES.minPrice)
 
   return {
     total: Math.round(total),
     breakdown: {
       items: Math.round(itemsCost + floorSurcharge + specialItemsSurcharge),
-      labor: Math.round(laborCost),
+      labor: 0, // Nu opgenomen in base price per woningtype
       transport: transportCost,
       extras: Math.round(extrasCost),
     },

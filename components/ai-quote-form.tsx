@@ -213,10 +213,10 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       <SelectValue placeholder="Selecteer type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="appartement">Appartement</SelectItem>
-                      <SelectItem value="tussenwoning">Tussenwoning</SelectItem>
-                      <SelectItem value="hoekwoning">Hoekwoning</SelectItem>
-                      <SelectItem value="vrijstaand">Vrijstaande woning</SelectItem>
+                      <SelectItem value="seniorenkamer">Seniorenkamer / Zorgkamer</SelectItem>
+                      <SelectItem value="appartement">Appartement (2-3 kamers)</SelectItem>
+                      <SelectItem value="eengezinswoning">Eengezinswoning</SelectItem>
+                      <SelectItem value="bedrijfspand">Bedrijfspand</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
