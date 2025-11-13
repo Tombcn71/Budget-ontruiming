@@ -6,9 +6,13 @@ interface FormData {
   vierkanteMeter: string
   verdieping: string
   vloerVerwijderen: boolean
+  vloerM2: string
   behangVerwijderen: boolean
+  behangM2: string
   gaatjesToppen: boolean
+  gaatjesM2: string
   schilderwerk: boolean
+  schilderwerkM2: string
   gordijnenVerwijderen: boolean
 }
 
@@ -147,19 +151,23 @@ export function calculatePriceFromAI(
   // 3. VERDIEPING SURCHARGE
   const floorSurcharge = BASE_RATES.floor[formData.verdieping as keyof typeof BASE_RATES.floor] || 0
 
-  // 4. EXTRA DIENSTEN (per m2 behalve gordijnen)
+  // 4. EXTRA DIENSTEN (exacte m² opgegeven door klant)
   let extrasCost = 0
-  if (formData.vloerVerwijderen) {
-    extrasCost += BASE_RATES.extraServices.vloerVerwijderen * m2Value
+  if (formData.vloerVerwijderen && formData.vloerM2) {
+    const vloerM2 = parseInt(formData.vloerM2)
+    extrasCost += BASE_RATES.extraServices.vloerVerwijderen * vloerM2
   }
-  if (formData.behangVerwijderen) {
-    extrasCost += BASE_RATES.extraServices.behangVerwijderen * m2Value
+  if (formData.behangVerwijderen && formData.behangM2) {
+    const behangM2 = parseInt(formData.behangM2)
+    extrasCost += BASE_RATES.extraServices.behangVerwijderen * behangM2
   }
-  if (formData.gaatjesToppen) {
-    extrasCost += BASE_RATES.extraServices.gaatjesToppen * m2Value
+  if (formData.gaatjesToppen && formData.gaatjesM2) {
+    const gaatjesM2 = parseInt(formData.gaatjesM2)
+    extrasCost += BASE_RATES.extraServices.gaatjesToppen * gaatjesM2
   }
-  if (formData.schilderwerk) {
-    extrasCost += BASE_RATES.extraServices.schilderwerk * m2Value
+  if (formData.schilderwerk && formData.schilderwerkM2) {
+    const schilderwerkM2 = parseInt(formData.schilderwerkM2)
+    extrasCost += BASE_RATES.extraServices.schilderwerk * schilderwerkM2
   }
   if (formData.gordijnenVerwijderen) {
     extrasCost += BASE_RATES.extraServices.gordijnenVerwijderen // Flat rate

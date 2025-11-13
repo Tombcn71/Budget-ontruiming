@@ -29,9 +29,13 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
     vierkanteMeter: "",
     verdieping: "",
     vloerVerwijderen: false,
+    vloerM2: "",
     behangVerwijderen: false,
+    behangM2: "",
     gaatjesToppen: false,
+    gaatjesM2: "",
     schilderwerk: false,
+    schilderwerkM2: "",
     gordijnenVerwijderen: false,
     naam: "",
     email: "",
@@ -266,52 +270,116 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                 <div className="space-y-3">
                   <Label className="text-foreground text-sm block">Extra Werkzaamheden (optioneel)</Label>
                   
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="vloer"
-                      checked={formData.vloerVerwijderen}
-                      onCheckedChange={(checked) => setFormData({ ...formData, vloerVerwijderen: checked as boolean })}
-                      className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                    />
-                    <label htmlFor="vloer" className="text-sm text-foreground cursor-pointer">
-                      Vloer verwijderen
-                    </label>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="vloer"
+                        checked={formData.vloerVerwijderen}
+                        onCheckedChange={(checked) => setFormData({ ...formData, vloerVerwijderen: checked as boolean, vloerM2: checked ? formData.vloerM2 : "" })}
+                        className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                      />
+                      <label htmlFor="vloer" className="text-sm text-foreground cursor-pointer">
+                        Vloer verwijderen (€3/m²)
+                      </label>
+                    </div>
+                    {formData.vloerVerwijderen && (
+                      <div className="ml-6 space-y-1">
+                        <Input
+                          type="number"
+                          placeholder="Hoeveel m² vloer?"
+                          value={formData.vloerM2}
+                          onChange={(e) => setFormData({ ...formData, vloerM2: e.target.value })}
+                          className="bg-background border-border h-10"
+                          min="1"
+                          required
+                        />
+                        <p className="text-xs text-muted-foreground">Vul exacte oppervlakte in</p>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="behang"
-                      checked={formData.behangVerwijderen}
-                      onCheckedChange={(checked) => setFormData({ ...formData, behangVerwijderen: checked as boolean })}
-                      className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                    />
-                    <label htmlFor="behang" className="text-sm text-foreground cursor-pointer">
-                      Behang verwijderen
-                    </label>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="behang"
+                        checked={formData.behangVerwijderen}
+                        onCheckedChange={(checked) => setFormData({ ...formData, behangVerwijderen: checked as boolean, behangM2: checked ? formData.behangM2 : "" })}
+                        className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                      />
+                      <label htmlFor="behang" className="text-sm text-foreground cursor-pointer">
+                        Behang verwijderen (€5/m²)
+                      </label>
+                    </div>
+                    {formData.behangVerwijderen && (
+                      <div className="ml-6 space-y-1">
+                        <Input
+                          type="number"
+                          placeholder="Hoeveel m² wandoppervlak?"
+                          value={formData.behangM2}
+                          onChange={(e) => setFormData({ ...formData, behangM2: e.target.value })}
+                          className="bg-background border-border h-10"
+                          min="1"
+                          required
+                        />
+                        <p className="text-xs text-muted-foreground">Tip: wandoppervlak ≈ 2-3× woonoppervlak</p>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="gaatjes"
-                      checked={formData.gaatjesToppen}
-                      onCheckedChange={(checked) => setFormData({ ...formData, gaatjesToppen: checked as boolean })}
-                      className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                    />
-                    <label htmlFor="gaatjes" className="text-sm text-foreground cursor-pointer">
-                      Gaatjes stoppen
-                    </label>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="gaatjes"
+                        checked={formData.gaatjesToppen}
+                        onCheckedChange={(checked) => setFormData({ ...formData, gaatjesToppen: checked as boolean, gaatjesM2: checked ? formData.gaatjesM2 : "" })}
+                        className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                      />
+                      <label htmlFor="gaatjes" className="text-sm text-foreground cursor-pointer">
+                        Gaatjes stoppen (€1/m²)
+                      </label>
+                    </div>
+                    {formData.gaatjesToppen && (
+                      <div className="ml-6 space-y-1">
+                        <Input
+                          type="number"
+                          placeholder="Hoeveel m² wandoppervlak?"
+                          value={formData.gaatjesM2}
+                          onChange={(e) => setFormData({ ...formData, gaatjesM2: e.target.value })}
+                          className="bg-background border-border h-10"
+                          min="1"
+                          required
+                        />
+                        <p className="text-xs text-muted-foreground">Meestal zelfde als wandoppervlak</p>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="schilderwerk"
-                      checked={formData.schilderwerk}
-                      onCheckedChange={(checked) => setFormData({ ...formData, schilderwerk: checked as boolean })}
-                      className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                    />
-                    <label htmlFor="schilderwerk" className="text-sm text-foreground cursor-pointer">
-                      Schilderwerk
-                    </label>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="schilderwerk"
+                        checked={formData.schilderwerk}
+                        onCheckedChange={(checked) => setFormData({ ...formData, schilderwerk: checked as boolean, schilderwerkM2: checked ? formData.schilderwerkM2 : "" })}
+                        className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                      />
+                      <label htmlFor="schilderwerk" className="text-sm text-foreground cursor-pointer">
+                        Schilderwerk (€8/m²)
+                      </label>
+                    </div>
+                    {formData.schilderwerk && (
+                      <div className="ml-6 space-y-1">
+                        <Input
+                          type="number"
+                          placeholder="Hoeveel m² wandoppervlak?"
+                          value={formData.schilderwerkM2}
+                          onChange={(e) => setFormData({ ...formData, schilderwerkM2: e.target.value })}
+                          className="bg-background border-border h-10"
+                          min="1"
+                          required
+                        />
+                        <p className="text-xs text-muted-foreground">Tip: wandoppervlak ≈ 2-3× woonoppervlak</p>
+                      </div>
+                    )}
                   </div>
 
                   <div className="flex items-center space-x-2">
@@ -322,7 +390,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                     />
                     <label htmlFor="gordijnen" className="text-sm text-foreground cursor-pointer">
-                      Gordijnen verwijderen
+                      Gordijnen verwijderen (€50)
                     </label>
                   </div>
                 </div>
@@ -371,7 +439,13 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                 onClick={handleNext}
                 disabled={
                   (currentStep === 1 && (!formData.postcode || !formData.woningType || !formData.vierkanteMeter || !formData.verdieping)) ||
-                  (currentStep === 2 && photos.length < 3) ||
+                  (currentStep === 2 && (
+                    photos.length < 3 ||
+                    (formData.vloerVerwijderen && !formData.vloerM2) ||
+                    (formData.behangVerwijderen && !formData.behangM2) ||
+                    (formData.gaatjesToppen && !formData.gaatjesM2) ||
+                    (formData.schilderwerk && !formData.schilderwerkM2)
+                  )) ||
                   isAnalyzing
                 }
                 className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 disabled:opacity-50"
@@ -428,28 +502,28 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
           {(formData.vloerVerwijderen || formData.behangVerwijderen || formData.gaatjesToppen || formData.schilderwerk || formData.gordijnenVerwijderen) && (
             <div className="bg-background rounded-lg p-4 space-y-2 text-left border-2 border-primary/20">
               <h4 className="font-semibold text-sm text-foreground mb-2">🔧 Extra Werkzaamheden:</h4>
-              {formData.vloerVerwijderen && (
+              {formData.vloerVerwijderen && formData.vloerM2 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Vloer verwijderen ({parseInt(formData.vierkanteMeter.split('-')[0])}m² × €3)</span>
-                  <span className="font-medium">€{(parseInt(formData.vierkanteMeter.split('-')[0]) * 3).toLocaleString('nl-NL')}</span>
+                  <span className="text-muted-foreground">• Vloer verwijderen ({formData.vloerM2}m² × €3)</span>
+                  <span className="font-medium">€{(parseInt(formData.vloerM2) * 3).toLocaleString('nl-NL')}</span>
                 </div>
               )}
-              {formData.behangVerwijderen && (
+              {formData.behangVerwijderen && formData.behangM2 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Behang verwijderen ({parseInt(formData.vierkanteMeter.split('-')[0])}m² × €5)</span>
-                  <span className="font-medium">€{(parseInt(formData.vierkanteMeter.split('-')[0]) * 5).toLocaleString('nl-NL')}</span>
+                  <span className="text-muted-foreground">• Behang verwijderen ({formData.behangM2}m² × €5)</span>
+                  <span className="font-medium">€{(parseInt(formData.behangM2) * 5).toLocaleString('nl-NL')}</span>
                 </div>
               )}
-              {formData.gaatjesToppen && (
+              {formData.gaatjesToppen && formData.gaatjesM2 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Gaatjes stoppen ({parseInt(formData.vierkanteMeter.split('-')[0])}m² × €1)</span>
-                  <span className="font-medium">€{(parseInt(formData.vierkanteMeter.split('-')[0]) * 1).toLocaleString('nl-NL')}</span>
+                  <span className="text-muted-foreground">• Gaatjes stoppen ({formData.gaatjesM2}m² × €1)</span>
+                  <span className="font-medium">€{(parseInt(formData.gaatjesM2) * 1).toLocaleString('nl-NL')}</span>
                 </div>
               )}
-              {formData.schilderwerk && (
+              {formData.schilderwerk && formData.schilderwerkM2 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Schilderwerk ({parseInt(formData.vierkanteMeter.split('-')[0])}m² × €8)</span>
-                  <span className="font-medium">€{(parseInt(formData.vierkanteMeter.split('-')[0]) * 8).toLocaleString('nl-NL')}</span>
+                  <span className="text-muted-foreground">• Schilderwerk ({formData.schilderwerkM2}m² × €8)</span>
+                  <span className="font-medium">€{(parseInt(formData.schilderwerkM2) * 8).toLocaleString('nl-NL')}</span>
                 </div>
               )}
               {formData.gordijnenVerwijderen && (
@@ -581,9 +655,13 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                 vierkanteMeter: "",
                 verdieping: "",
                 vloerVerwijderen: false,
+                vloerM2: "",
                 behangVerwijderen: false,
+                behangM2: "",
                 gaatjesToppen: false,
+                gaatjesM2: "",
                 schilderwerk: false,
+                schilderwerkM2: "",
                 gordijnenVerwijderen: false,
                 naam: "",
                 email: "",
