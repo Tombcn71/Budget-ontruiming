@@ -22,6 +22,8 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [analysisResults, setAnalysisResults] = useState<any[]>([])
   const [priceResult, setPriceResult] = useState<any>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   const [formData, setFormData] = useState({
     postcode: "",
@@ -164,6 +166,73 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
   const handlePrevious = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1)
+    }
+  }
+
+  const handleSubmit = async (e?: React.MouseEvent) => {
+    if (e) e.preventDefault()
+    
+    console.log('🔘 Button clicked!')
+    console.log('📋 FormData:', formData)
+    
+    // Trim whitespace
+    const naam = formData.naam?.trim() || ''
+    const email = formData.email?.trim() || ''
+    const telefoon = formData.telefoon?.trim() || ''
+
+    if (!naam || !email || !telefoon) {
+      console.error('❌ Validatie gefaald:', { naam, email, telefoon })
+      alert('Vul alle velden in')
+      return
+    }
+
+    console.log('✅ Validatie geslaagd:', { naam, email, telefoon })
+    setIsSubmitting(true)
+
+    try {
+      console.log('📧 Offerte verzenden...')
+
+      // Calculate price breakdown for email
+      const extrasCost = priceResult?.breakdown?.extras || 0
+      const itemsCost = (priceResult?.breakdown?.items || 0) + 
+                       (priceResult?.breakdown?.labor || 0) + 
+                       (priceResult?.breakdown?.transport || 0)
+      const subtotal = itemsCost + extrasCost
+      const btw = subtotal * 0.21
+      const totalPrice = subtotal + btw
+
+      const response = await fetch('/api/send-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formData,
+          analysisResults,
+          totalPrice,
+          itemsCost,
+          extrasCost,
+          btw,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Email kon niet worden verzonden')
+      }
+
+      console.log('✅ Offerte succesvol verzonden!')
+      setSubmitSuccess(true)
+
+      // Show success for 3 seconds, then open Calendly
+      setTimeout(() => {
+        if (typeof window !== 'undefined' && (window as any).Calendly) {
+          (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/tbvanreijn'});
+        }
+      }, 2000)
+
+    } catch (error) {
+      console.error('❌ Submit error:', error)
+      alert('Er ging iets mis. Probeer opnieuw of bel ons direct.')
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -615,63 +684,101 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
           </div>
 
           <div className="space-y-3 text-left pt-4">
-            <Label className="text-foreground text-sm">Uw gegevens voor bevestiging:</Label>
+            <Label className="text-foreground text-sm font-semibold">Uw gegevens voor bevestiging:</Label>
             <Input
-              placeholder="Naam"
+              placeholder="Naam *"
               value={formData.naam}
               onChange={(e) => setFormData({ ...formData, naam: e.target.value })}
-              className="bg-background border-0 h-11"
+              className="bg-background border-2 border-border h-11 focus:border-primary"
+              required
             />
             <Input
               type="email"
-              placeholder="E-mail"
+              placeholder="E-mail *"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="bg-background border-0 h-11"
+              className="bg-background border-2 border-border h-11 focus:border-primary"
+              required
             />
             <Input
               type="tel"
-              placeholder="Telefoon"
+              placeholder="Telefoon *"
               value={formData.telefoon}
               onChange={(e) => setFormData({ ...formData, telefoon: e.target.value })}
-              className="bg-background border-0 h-11"
+              className="bg-background border-2 border-border h-11 focus:border-primary"
+              required
             />
+            <p className="text-xs text-muted-foreground italic">* Alle velden zijn verplicht om door te gaan</p>
           </div>
 
-          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 text-base">
-            Bevestig Offerte & Boek Nu
-          </Button>
+          {submitSuccess ? (
+            <div className="bg-green-100 border-2 border-green-500 rounded-lg p-6 text-center space-y-3">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500 rounded-full mb-2">
+                <Check className="w-8 h-8 text-white" />
+              </div>
+              <h4 className="font-bold text-xl text-green-800">Offerte Verzonden! 🎉</h4>
+              <p className="text-sm text-green-700">
+                We hebben uw aanvraag ontvangen. U wordt doorverwezen naar de agenda om een afspraak te maken...
+              </p>
+            </div>
+          ) : (
+            <>
+              <Button 
+                type="button"
+                onClick={handleSubmit}
+                disabled={!(formData.naam?.trim()) || !(formData.email?.trim()) || !(formData.telefoon?.trim()) || isSubmitting}
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 text-base disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Verzenden...
+                  </>
+                ) : (
+                  'Bevestig Offerte & Boek Nu'
+                )}
+              </Button>
+              {(!(formData.naam?.trim()) || !(formData.email?.trim()) || !(formData.telefoon?.trim())) && (
+                <p className="text-xs text-center text-muted-foreground">
+                  ⬆️ Vul eerst alle velden hierboven in
+                </p>
+              )}
+            </>
+          )}
 
-          <Button
-            variant="ghost"
-            onClick={() => {
-              setCurrentStep(1)
-              setPhotos([])
-              setAnalysisResults([])
-              setPriceResult(null)
-              setFormData({
-                postcode: "",
-                woningType: "",
-                vierkanteMeter: "",
-                verdieping: "",
-                vloerVerwijderen: false,
-                vloerM2: "",
-                behangVerwijderen: false,
-                behangM2: "",
-                gaatjesToppen: false,
-                gaatjesM2: "",
-                schilderwerk: false,
-                schilderwerkM2: "",
-                gordijnenVerwijderen: false,
-                naam: "",
-                email: "",
-                telefoon: "",
-              })
-            }}
-            className="text-foreground hover:text-foreground/80 hover:bg-transparent"
-          >
-            Nieuwe berekening starten
-          </Button>
+          {!submitSuccess && (
+            <Button
+              variant="ghost"
+              onClick={() => {
+                setCurrentStep(1)
+                setPhotos([])
+                setAnalysisResults([])
+                setPriceResult(null)
+                setSubmitSuccess(false)
+                setFormData({
+                  postcode: "",
+                  woningType: "",
+                  vierkanteMeter: "",
+                  verdieping: "",
+                  vloerVerwijderen: false,
+                  vloerM2: "",
+                  behangVerwijderen: false,
+                  behangM2: "",
+                  gaatjesToppen: false,
+                  gaatjesM2: "",
+                  schilderwerk: false,
+                  schilderwerkM2: "",
+                  gordijnenVerwijderen: false,
+                  naam: "",
+                  email: "",
+                  telefoon: "",
+                })
+              }}
+              className="text-foreground hover:text-foreground/80 hover:bg-transparent"
+            >
+              Nieuwe berekening starten
+            </Button>
+          )}
         </div>
       )}
     </Card>
