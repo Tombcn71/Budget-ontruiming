@@ -598,12 +598,6 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               <span className="text-muted-foreground">Transport</span>
               <span className="font-medium">€{priceResult?.breakdown.transport || 150}</span>
             </div>
-            {formData.liftAanwezig && formData.verdieping !== 'begane-grond' && (
-              <div className="flex justify-between text-sm text-green-600">
-                <span>🛗 Lift korting (50% op trapkosten)</span>
-                <span className="font-medium">Korting toegepast!</span>
-              </div>
-            )}
           </div>
 
           {/* Extra werkzaamheden gespecificeerd */}
