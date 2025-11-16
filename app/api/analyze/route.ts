@@ -55,14 +55,15 @@ export async function POST(request: Request) {
         {
           role: 'system',
           content: `Je bent een expert in het inschatten van verhuizingen en woningontruimingen. 
-Analyseer de foto en geef een gedetailleerde inventaris van alle items, meubels en de staat van de ruimte.
+Analyseer de foto en geef een gedetailleerde inventaris van ALLE zichtbare items, meubels en de staat van de ruimte.
 
 Geef je antwoord ALLEEN als valid JSON in dit formaat:
 {
   "room_type": "woonkamer/slaapkamer/keuken/etc",
   "furniture": [
     {"item": "bank", "quantity": 1, "size": "large"},
-    {"item": "salontafel", "quantity": 1, "size": "medium"}
+    {"item": "salontafel", "quantity": 1, "size": "medium"},
+    {"item": "stoel", "quantity": 4, "size": "small"}
   ],
   "boxes_estimate": 10,
   "volume_level": "half",
@@ -72,13 +73,15 @@ Geef je antwoord ALLEEN als valid JSON in dit formaat:
   "estimated_hours": 3
 }
 
-Let op:
-- Tel ALLE zichtbare meubels en items
-- Schat dozen/tassen/rommel realistisch in
+BELANGRIJK - Tel ALTIJD ALLE items:
+- Meubels: banken, stoelen, tafels, kasten, bedden, bureaus, etc.
+- Klein spullen: dozen, tassen, decoraties, apparaten, etc.
+- Schat dozen/tassen/rommel realistisch in (zelfs kleine items tellen mee!)
 - volume_level: empty (0-10%), sparse (10-30%), half (30-60%), full (60-85%), very_full (85-100%)
 - floor_visible_percentage: hoeveel % vloer is zichtbaar/vrij
-- special_items: zware/fragiele items die extra aandacht vragen
-- estimated_hours: geschatte uren voor 2 personen om te ontruimen`
+- special_items: zware/fragiele items die extra aandacht vragen (piano, kluis, aquarium, etc.)
+- estimated_hours: geschatte uren voor 2 personen om te ontruimen
+- Als de ruimte LEEG lijkt, zet dan furniture: [] maar volume_level: "empty"`
         },
         {
           role: 'user',

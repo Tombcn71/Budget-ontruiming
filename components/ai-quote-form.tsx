@@ -496,6 +496,9 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
 
                 <div className="pt-2">
                   <Label className="text-foreground text-sm mb-2 block">Foto's uploaden *</Label>
+                  <p className="text-xs text-muted-foreground mb-2">
+                    💡 Upload foto's van de verschillende kamers. Onze AI analyseert deze om te bepalen of de woning <strong>leeg, half vol of vol</strong> is. Dit helpt ons een accurate prijsindicatie te geven.
+                  </p>
                   <PhotoUpload 
                     onPhotosChange={setPhotos}
                     maxPhotos={10}
@@ -702,10 +705,10 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               <div className="bg-muted/30 rounded-lg p-4 text-left">
                 <h4 className="font-bold text-base text-foreground mb-3">🤖 AI Analyse Resultaten:</h4>
                 
-                {/* Gedetecteerde items */}
-                {furnitureList.length > 0 && (
-                  <div className="bg-background rounded-md p-3 mb-3">
-                    <p className="font-semibold text-sm text-foreground mb-2">🪑 Gedetecteerde items:</p>
+                {/* Gedetecteerde items - ALTIJD TONEN */}
+                <div className="bg-background rounded-md p-3 mb-3">
+                  <p className="font-semibold text-sm text-foreground mb-2">🪑 Gedetecteerde items:</p>
+                  {furnitureList.length > 0 ? (
                     <div className="text-sm text-muted-foreground space-y-1">
                       {furnitureList.map((f, idx) => (
                         <div key={idx} className="flex justify-between">
@@ -714,13 +717,17 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                         </div>
                       ))}
                     </div>
-                  </div>
-                )}
+                  ) : (
+                    <p className="text-sm text-muted-foreground italic">
+                      Geen grote meubels gedetecteerd (mogelijk lege/gestripte ruimte)
+                    </p>
+                  )}
+                </div>
                 
                 {/* Conclusie */}
                 <div className="bg-primary/10 rounded-md p-3 mb-3 border-l-4 border-primary">
                   <p className="text-sm text-foreground font-semibold">
-                    📊 Aan de hand van deze items schatten wij de woning als <span className="text-primary">{volumeText[maxVolumeLevel as keyof typeof volumeText]}</span>.
+                    📊 Op basis van de foto's schatten wij de woning als <span className="text-primary">{volumeText[maxVolumeLevel as keyof typeof volumeText]}</span>.
                   </p>
                 </div>
                 
