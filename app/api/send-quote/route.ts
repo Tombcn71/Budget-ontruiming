@@ -88,7 +88,7 @@ export async function POST(request: Request) {
                 </svg>
                 <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Budget Ontruiming</h1>
               </div>
-              <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0 0; font-size: 16px;">Nieuwe Offerte Aanvraag</p>
+              <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0 0; font-size: 16px;">Uw Persoonlijke Offerte</p>
             </td>
           </tr>
 
@@ -96,9 +96,9 @@ export async function POST(request: Request) {
           <tr>
             <td style="padding: 30px;">
               
-              <!-- Alert -->
+              <!-- Welcome Message -->
               <div style="background-color: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px; margin-bottom: 24px; border-radius: 4px;">
-                <p style="margin: 0; color: #92400e; font-weight: 600; font-size: 14px;">🔔 Nieuwe klant heeft een offerte aangevraagd!</p>
+                <p style="margin: 0; color: #92400e; font-weight: 600; font-size: 14px;">✅ Bedankt voor uw aanvraag! Hieronder vindt u uw offerte op basis van onze AI-analyse.</p>
               </div>
 
               <!-- Klantgegevens -->
@@ -231,12 +231,25 @@ export async function POST(request: Request) {
               </div>
 
               <!-- Disclaimer -->
-              <div style="background-color: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px; border-radius: 4px;">
+              <div style="background-color: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px; border-radius: 4px; margin-bottom: 24px;">
                 <p style="margin: 0; color: #1e40af; font-size: 13px; line-height: 1.5;">
                   ℹ️ <strong>Let op:</strong> Dit is een automatisch gegenereerde prijsindicatie op basis van AI-analyse. 
-                  Neem contact op met de klant voor een definitieve offerte na een gratis adviesgesprek.
+                  Voor een definitieve offerte plannen we graag een gratis adviesgesprek in.
                 </p>
               </div>
+
+              <!-- CTA Button -->
+              <div style="text-align: center; margin: 32px 0;">
+                <a href="https://calendly.com/tbvanreijn" 
+                   style="display: inline-block; background-color: #f97316; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">
+                  📅 Plan Gratis Adviesgesprek
+                </a>
+              </div>
+
+              <p style="color: #6b7280; font-size: 14px; text-align: center; margin-top: 24px;">
+                Vragen? Bel ons op <a href="tel:${formData.telefoon}" style="color: #f97316; text-decoration: none;">${formData.telefoon}</a> 
+                of reply op deze email.
+              </p>
 
             </td>
           </tr>
@@ -261,11 +274,13 @@ export async function POST(request: Request) {
 </html>
     `
 
-    // Send email
+    // Send email to customer with CC to owner
         const { data, error } = await resend.emails.send({
-          from: 'Budget Ontruiming <onboarding@resend.dev>',
-          to: ['tbvanreijn@gmail.com'], // Tijdelijk: Resend test mode, later naar eigen domein
-      subject: `🏠 Nieuwe Offerte: ${formData.naam} - ${formData.woningType} - €${totalPrice.toFixed(2)}`,
+          from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
+          to: [formData.email], // Naar klant
+          cc: ['tbvanreijn@gmail.com'], // CC naar jou
+          replyTo: 'tbvanreijn@gmail.com', // Klant kan direct antwoorden naar jouw email
+      subject: `🏠 Uw Offerte van Budget Ontruiming - €${totalPrice.toFixed(2)}`,
       html: htmlEmail,
     })
 
