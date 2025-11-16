@@ -262,9 +262,9 @@ export async function POST(request: Request) {
     `
 
     // Send email
-    const { data, error } = await resend.emails.send({
-      from: 'Budget Ontruiming <onboarding@resend.dev>',
-      to: ['tvanreijn@icloud.com'],
+        const { data, error } = await resend.emails.send({
+          from: 'Budget Ontruiming <onboarding@resend.dev>',
+          to: ['tbvanreijn@gmail.com'], // Tijdelijk: Resend test mode, later naar eigen domein
       subject: `🏠 Nieuwe Offerte: ${formData.naam} - ${formData.woningType} - €${totalPrice.toFixed(2)}`,
       html: htmlEmail,
     })
