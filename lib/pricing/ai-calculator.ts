@@ -49,20 +49,14 @@ const BASE_RATES = {
     '3e-verdieping': 250,
   },
   
-  // Meubel kosten (voor AI detection fine-tuning)
-  furnitureSize: {
-    small: 10,    // Klein meubelstuk
-    medium: 25,   // Gemiddeld meubelstuk
-    large: 50,    // Groot meubelstuk
-  },
-  
-  // Volume impact multiplier (voor AI analyse)
+  // Volume impact multiplier - HOOFDFACTOR voor prijsbepaling
+  // AI analyseert foto's en bepaalt vulniveau van de woning
   volumeMultiplier: {
-    empty: 0.7,      // Bijna leeg
-    sparse: 0.85,    // Weinig spullen
-    half: 1.0,       // Normaal gevuld
-    full: 1.2,       // Vol
-    very_full: 1.4,  // Zeer vol
+    empty: 0.7,      // Leeg/Minimaal: 30% korting (weinig werk)
+    sparse: 0.85,    // Licht gevuld: 15% korting
+    half: 1.0,       // Half vol: Standaard prijs
+    full: 1.2,       // Vol: 20% duurder (meer werk)
+    very_full: 1.4,  // Zeer vol: 40% duurder (veel werk)
   },
   
   // Extra diensten (per m2 waar van toepassing)
@@ -75,8 +69,7 @@ const BASE_RATES = {
   },
   
   baseTransport: 150,
-  specialItemSurcharge: 50,
-  boxCost: 5,
+  specialItemSurcharge: 50, // Per zwaar/fragiel item (piano, kluis, etc)
   minPrice: 250, // Minimum voor seniorenkamer
 }
 
@@ -98,55 +91,26 @@ export function calculatePriceFromAI(
   const m2Ratio = Math.min(Math.max(m2Value / woningTypeData.avgM2, 0.5), 2.0)
   const basePrice = woningTypeData.min + ((woningTypeData.max - woningTypeData.min) * (m2Ratio - 0.5) / 1.5)
   
-  let itemsCost = basePrice
-  
-  // 2. FINE-TUNING: AI-detected items (meubels, dozen, volume)
-  let totalBoxes = 0
-  let specialItemsSurcharge = 0
-  const allFurniture: Record<string, { quantity: number; size: string }> = {}
+  // 2. VULNIVEAU MULTIPLIER: AI bepaalt of woning leeg/half/vol is
   let highestVolumeMultiplier = 1.0
+  let specialItemsSurcharge = 0
 
   analysisResults.forEach(({ analysis }) => {
-    // Hoogste volume multiplier
+    // Bepaal hoogste volume multiplier van alle foto's
     const volumeMultiplier = BASE_RATES.volumeMultiplier[analysis.volume_level] || 1.0
     if (volumeMultiplier > highestVolumeMultiplier) {
       highestVolumeMultiplier = volumeMultiplier
     }
 
-    // Tel dozen op
-    totalBoxes += analysis.boxes_estimate
-
-    // Combineer meubels (neem hoogste aantal per uniek item)
-    analysis.furniture.forEach((furniture) => {
-      const key = `${furniture.item.toLowerCase()}-${furniture.size}`
-      if (!allFurniture[key] || allFurniture[key].quantity < furniture.quantity) {
-        allFurniture[key] = {
-          quantity: furniture.quantity,
-          size: furniture.size,
-        }
-      }
-    })
-
-    // Speciale items surcharge
+    // Speciale items surcharge (zwaar/fragiel materiaal)
     if (analysis.special_items && analysis.special_items.length > 0) {
       specialItemsSurcharge += analysis.special_items.length * BASE_RATES.specialItemSurcharge
     }
   })
 
-  // Bereken meubelkosten (fine-tuning bovenop base)
-  let furnitureCost = 0
-  Object.values(allFurniture).forEach((furniture) => {
-    const cost = BASE_RATES.furnitureSize[furniture.size as keyof typeof BASE_RATES.furnitureSize] || 25
-    furnitureCost += cost * furniture.quantity
-  })
-
-  // Dozen kosten
-  const boxesCost = totalBoxes * BASE_RATES.boxCost
-
-  // Pas volume multiplier toe op AI-detected items (niet op base price)
-  const aiItemsCost = (furnitureCost + boxesCost) * highestVolumeMultiplier
-  
-  itemsCost += aiItemsCost + specialItemsSurcharge
+  // Pas vulniveau multiplier toe op base price
+  // Leeg (0.7x) = 30% korting, Zeer Vol (1.4x) = 40% duurder
+  let itemsCost = basePrice * highestVolumeMultiplier + specialItemsSurcharge
 
   // 3. VERDIEPING SURCHARGE
   const floorSurcharge = BASE_RATES.floor[formData.verdieping as keyof typeof BASE_RATES.floor] || 0

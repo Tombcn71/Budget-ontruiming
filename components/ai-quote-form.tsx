@@ -220,13 +220,8 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
 
       console.log('✅ Offerte succesvol verzonden!')
       setSubmitSuccess(true)
-
-      // Show success for 3 seconds, then open Calendly
-      setTimeout(() => {
-        if (typeof window !== 'undefined' && (window as any).Calendly) {
-          (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/tbvanreijn'});
-        }
-      }, 2000)
+      
+      // Email bevat Calendly link, popup niet meer nodig
 
     } catch (error) {
       console.error('❌ Submit error:', error)
@@ -608,57 +603,76 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
             </div>
           )}
 
-          {/* Gedetecteerde Items Overzicht */}
+          {/* Vulniveau Analyse */}
           {analysisResults.length > 0 && (() => {
-            // Combineer alle meubels (zelfde logica als calculator)
-            const allFurniture: Record<string, { quantity: number; size: string; item: string }> = {}
+            // Bepaal hoogste vulniveau van alle foto's
+            let maxVolumeLevel = 'empty'
             let totalBoxes = 0
             let maxHours = 0
             const specialItems = new Set<string>()
+            const roomTypes = new Set<string>()
+            
+            const volumeLevels = { empty: 0, sparse: 1, half: 2, full: 3, very_full: 4 }
             
             analysisResults.forEach(({ analysis }) => {
+              const currentLevel = analysis.volume_level || 'half'
+              if (volumeLevels[currentLevel as keyof typeof volumeLevels] > volumeLevels[maxVolumeLevel as keyof typeof volumeLevels]) {
+                maxVolumeLevel = currentLevel
+              }
               totalBoxes += analysis.boxes_estimate
               if (analysis.estimated_hours > maxHours) maxHours = analysis.estimated_hours
-              
-              analysis.furniture.forEach((furniture: any) => {
-                const key = `${furniture.item.toLowerCase()}-${furniture.size}`
-                if (!allFurniture[key] || allFurniture[key].quantity < furniture.quantity) {
-                  allFurniture[key] = {
-                    quantity: furniture.quantity,
-                    size: furniture.size,
-                    item: furniture.item,
-                  }
-                }
-              })
-              
+              if (analysis.room_type) roomTypes.add(analysis.room_type)
               if (analysis.special_items) {
                 analysis.special_items.forEach((item: string) => specialItems.add(item))
               }
             })
             
-            const furnitureList = Object.values(allFurniture)
+            // Bepaal emoji en tekst voor vulniveau
+            const volumeConfig = {
+              empty: { emoji: '📭', text: 'Leeg / Minimaal', color: 'text-green-600', bg: 'bg-green-50', percentage: 10 },
+              sparse: { emoji: '📪', text: 'Licht Gevuld', color: 'text-blue-600', bg: 'bg-blue-50', percentage: 25 },
+              half: { emoji: '📬', text: 'Half Vol', color: 'text-yellow-600', bg: 'bg-yellow-50', percentage: 50 },
+              full: { emoji: '📫', text: 'Vol', color: 'text-orange-600', bg: 'bg-orange-50', percentage: 75 },
+              very_full: { emoji: '🗃️', text: 'Zeer Vol / Maximaal', color: 'text-red-600', bg: 'bg-red-50', percentage: 95 },
+            }
+            
+            const config = volumeConfig[maxVolumeLevel as keyof typeof volumeConfig] || volumeConfig.half
             
             return (
               <div className="bg-muted/30 rounded-lg p-4 text-left">
-                <h4 className="font-bold text-base text-foreground mb-3">🪑 Gedetecteerde Items:</h4>
+                <h4 className="font-bold text-base text-foreground mb-3">🏠 AI Analyse - Vulniveau Woning:</h4>
                 
-                {furnitureList.length > 0 && (
-                  <div className="bg-background rounded-md p-3 mb-3">
-                    <p className="font-semibold text-sm text-foreground mb-2">Meubels & grote items:</p>
-                    <div className="text-sm text-muted-foreground space-y-1">
-                      {furnitureList.map((f, idx) => (
-                        <div key={idx} className="flex justify-between">
-                          <span>• {f.quantity}x {f.item}</span>
-                          <span className="text-xs text-muted-foreground/70">({f.size})</span>
-                        </div>
-                      ))}
+                {/* Vulniveau Indicator */}
+                <div className={`${config.bg} rounded-md p-4 mb-3 border-2 border-${config.color.replace('text-', 'border-')}`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-3xl">{config.emoji}</span>
+                      <div>
+                        <p className={`font-bold text-lg ${config.color}`}>{config.text}</p>
+                        <p className="text-xs text-muted-foreground">Geschat vulniveau: {config.percentage}%</p>
+                      </div>
                     </div>
                   </div>
-                )}
+                  
+                  {/* Progress bar */}
+                  <div className="w-full bg-gray-200 rounded-full h-3 mt-2">
+                    <div 
+                      className={`h-3 rounded-full ${config.color.replace('text-', 'bg-')}`}
+                      style={{ width: `${config.percentage}%` }}
+                    ></div>
+                  </div>
+                </div>
                 
+                {/* Details */}
                 <div className="bg-background rounded-md p-3 space-y-2 text-sm">
+                  {roomTypes.size > 0 && (
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">🚪 Kamers gedetecteerd:</span>
+                      <span className="font-medium text-foreground">{Array.from(roomTypes).join(', ')}</span>
+                    </div>
+                  )}
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">📦 Dozen/tassen (geschat):</span>
+                    <span className="text-muted-foreground">📦 Geschatte dozen/tassen:</span>
                     <span className="font-medium text-foreground">{totalBoxes}</span>
                   </div>
                   <div className="flex justify-between">
