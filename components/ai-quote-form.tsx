@@ -603,74 +603,82 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
             </div>
           )}
 
-          {/* Vulniveau Analyse */}
+          {/* AI Analyse met Items */}
           {analysisResults.length > 0 && (() => {
-            // Bepaal hoogste vulniveau van alle foto's
-            let maxVolumeLevel = 'empty'
+            // Bepaal hoogste vulniveau en combineer alle items
+            let maxVolumeLevel = 'half'
             let totalBoxes = 0
             let maxHours = 0
             const specialItems = new Set<string>()
-            const roomTypes = new Set<string>()
+            const allFurniture: Record<string, { quantity: number; size: string; item: string }> = {}
             
             const volumeLevels = { empty: 0, sparse: 1, half: 2, full: 3, very_full: 4 }
             
             analysisResults.forEach(({ analysis }) => {
+              // Hoogste vulniveau bepalen
               const currentLevel = analysis.volume_level || 'half'
               if (volumeLevels[currentLevel as keyof typeof volumeLevels] > volumeLevels[maxVolumeLevel as keyof typeof volumeLevels]) {
                 maxVolumeLevel = currentLevel
               }
+              
+              // Meubels combineren (hoogste aantal per item)
+              analysis.furniture.forEach((furniture: any) => {
+                const key = `${furniture.item.toLowerCase()}-${furniture.size}`
+                if (!allFurniture[key] || allFurniture[key].quantity < furniture.quantity) {
+                  allFurniture[key] = {
+                    quantity: furniture.quantity,
+                    size: furniture.size,
+                    item: furniture.item,
+                  }
+                }
+              })
+              
               totalBoxes += analysis.boxes_estimate
               if (analysis.estimated_hours > maxHours) maxHours = analysis.estimated_hours
-              if (analysis.room_type) roomTypes.add(analysis.room_type)
               if (analysis.special_items) {
                 analysis.special_items.forEach((item: string) => specialItems.add(item))
               }
             })
             
-            // Bepaal emoji en tekst voor vulniveau
-            const volumeConfig = {
-              empty: { emoji: '📭', text: 'Leeg / Minimaal', color: 'text-green-600', bg: 'bg-green-50', percentage: 10 },
-              sparse: { emoji: '📪', text: 'Licht Gevuld', color: 'text-blue-600', bg: 'bg-blue-50', percentage: 25 },
-              half: { emoji: '📬', text: 'Half Vol', color: 'text-yellow-600', bg: 'bg-yellow-50', percentage: 50 },
-              full: { emoji: '📫', text: 'Vol', color: 'text-orange-600', bg: 'bg-orange-50', percentage: 75 },
-              very_full: { emoji: '🗃️', text: 'Zeer Vol / Maximaal', color: 'text-red-600', bg: 'bg-red-50', percentage: 95 },
-            }
+            const furnitureList = Object.values(allFurniture)
             
-            const config = volumeConfig[maxVolumeLevel as keyof typeof volumeConfig] || volumeConfig.half
+            // Vulniveau teksten
+            const volumeText = {
+              empty: 'nagenoeg leeg',
+              sparse: 'licht gevuld',
+              half: 'half vol',
+              full: 'vol',
+              very_full: 'zeer vol',
+            }
             
             return (
               <div className="bg-muted/30 rounded-lg p-4 text-left">
-                <h4 className="font-bold text-base text-foreground mb-3">🏠 AI Analyse - Vulniveau Woning:</h4>
+                <h4 className="font-bold text-base text-foreground mb-3">🤖 AI Analyse Resultaten:</h4>
                 
-                {/* Vulniveau Indicator */}
-                <div className={`${config.bg} rounded-md p-4 mb-3 border-2 border-${config.color.replace('text-', 'border-')}`}>
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-3xl">{config.emoji}</span>
-                      <div>
-                        <p className={`font-bold text-lg ${config.color}`}>{config.text}</p>
-                        <p className="text-xs text-muted-foreground">Geschat vulniveau: {config.percentage}%</p>
-                      </div>
+                {/* Gedetecteerde items */}
+                {furnitureList.length > 0 && (
+                  <div className="bg-background rounded-md p-3 mb-3">
+                    <p className="font-semibold text-sm text-foreground mb-2">🪑 Gedetecteerde items:</p>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      {furnitureList.map((f, idx) => (
+                        <div key={idx} className="flex justify-between">
+                          <span>• {f.quantity}x {f.item}</span>
+                          <span className="text-xs text-muted-foreground/70">({f.size})</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  
-                  {/* Progress bar */}
-                  <div className="w-full bg-gray-200 rounded-full h-3 mt-2">
-                    <div 
-                      className={`h-3 rounded-full ${config.color.replace('text-', 'bg-')}`}
-                      style={{ width: `${config.percentage}%` }}
-                    ></div>
-                  </div>
+                )}
+                
+                {/* Conclusie */}
+                <div className="bg-primary/10 rounded-md p-3 mb-3 border-l-4 border-primary">
+                  <p className="text-sm text-foreground font-semibold">
+                    📊 Aan de hand van deze items schatten wij de woning als <span className="text-primary">{volumeText[maxVolumeLevel as keyof typeof volumeText]}</span>.
+                  </p>
                 </div>
                 
                 {/* Details */}
                 <div className="bg-background rounded-md p-3 space-y-2 text-sm">
-                  {roomTypes.size > 0 && (
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">🚪 Kamers gedetecteerd:</span>
-                      <span className="font-medium text-foreground">{Array.from(roomTypes).join(', ')}</span>
-                    </div>
-                  )}
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">📦 Geschatte dozen/tassen:</span>
                     <span className="font-medium text-foreground">{totalBoxes}</span>
