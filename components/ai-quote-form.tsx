@@ -30,6 +30,8 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
     woningType: "",
     vierkanteMeter: "",
     verdieping: "",
+    liftAanwezig: false,
+    inpakservice: false,
     vloerVerwijderen: false,
     vloerM2: "",
     behangVerwijderen: false,
@@ -326,6 +328,21 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                     </SelectContent>
                   </Select>
                 </div>
+                
+                {/* Lift aanwezig checkbox - alleen tonen bij verdieping > begane grond */}
+                {formData.verdieping && formData.verdieping !== 'begane-grond' && (
+                  <div className="flex items-center space-x-2 bg-blue-50 p-3 rounded-md">
+                    <Checkbox
+                      id="lift"
+                      checked={formData.liftAanwezig}
+                      onCheckedChange={(checked) => setFormData({ ...formData, liftAanwezig: checked as boolean })}
+                      className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                    />
+                    <label htmlFor="lift" className="text-sm text-foreground cursor-pointer flex-1">
+                      🛗 Lift aanwezig (bespaart tijd en kosten)
+                    </label>
+                  </div>
+                )}
               </div>
             )}
 
@@ -459,12 +476,30 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                   </div>
                 </div>
 
+                {/* Inpakservice */}
+                <div className="space-y-2 bg-amber-50 p-3 rounded-md border border-amber-200">
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id="inpakservice"
+                      checked={formData.inpakservice}
+                      onCheckedChange={(checked) => setFormData({ ...formData, inpakservice: checked as boolean })}
+                      className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                    />
+                    <label htmlFor="inpakservice" className="text-sm text-foreground cursor-pointer font-medium">
+                      📦 Inpakservice - Spullen uit kasten/keukenkasten halen (+€150)
+                    </label>
+                  </div>
+                  <p className="text-xs text-muted-foreground ml-6">
+                    Wij pakken alle spullen uit kasten, keukenkasten, laden, etc. en zorgen voor transport
+                  </p>
+                </div>
+
                 <div className="pt-2">
                   <Label className="text-foreground text-sm mb-2 block">Foto's uploaden *</Label>
                   <PhotoUpload 
                     onPhotosChange={setPhotos}
                     maxPhotos={10}
-                    minPhotos={3}
+                    minPhotos={1}
                   />
                 </div>
                 
@@ -501,10 +536,10 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               <Button
                 type="button"
                 onClick={handleNext}
-                disabled={
-                  (currentStep === 1 && (!formData.postcode || !formData.woningType || !formData.vierkanteMeter || !formData.verdieping)) ||
-                  (currentStep === 2 && (
-                    photos.length < 3 ||
+            disabled={
+              (currentStep === 1 && (!formData.postcode || !formData.woningType || !formData.vierkanteMeter || !formData.verdieping)) ||
+              (currentStep === 2 && (
+                photos.length < 1 ||
                     (formData.vloerVerwijderen && !formData.vloerM2) ||
                     (formData.behangVerwijderen && !formData.behangM2) ||
                     (formData.gaatjesToppen && !formData.gaatjesM2) ||
@@ -560,12 +595,24 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               <span className="text-muted-foreground">Transport</span>
               <span className="font-medium">€{priceResult?.breakdown.transport || 150}</span>
             </div>
+            {formData.liftAanwezig && formData.verdieping !== 'begane-grond' && (
+              <div className="flex justify-between text-sm text-green-600">
+                <span>🛗 Lift korting (50% op trapkosten)</span>
+                <span className="font-medium">Korting toegepast!</span>
+              </div>
+            )}
           </div>
 
           {/* Extra werkzaamheden gespecificeerd */}
-          {(formData.vloerVerwijderen || formData.behangVerwijderen || formData.gaatjesToppen || formData.schilderwerk || formData.gordijnenVerwijderen) && (
+          {(formData.inpakservice || formData.vloerVerwijderen || formData.behangVerwijderen || formData.gaatjesToppen || formData.schilderwerk || formData.gordijnenVerwijderen) && (
             <div className="bg-background rounded-lg p-4 space-y-2 text-left border-2 border-primary/20">
               <h4 className="font-semibold text-sm text-foreground mb-2">🔧 Extra Werkzaamheden:</h4>
+              {formData.inpakservice && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">• Inpakservice (kasten/keuken)</span>
+                  <span className="font-medium">€150</span>
+                </div>
+              )}
               {formData.vloerVerwijderen && formData.vloerM2 && (
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">• Vloer verwijderen ({formData.vloerM2}m² × €3)</span>

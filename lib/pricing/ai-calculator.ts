@@ -5,6 +5,8 @@ interface FormData {
   woningType: string
   vierkanteMeter: string
   verdieping: string
+  liftAanwezig: boolean
+  inpakservice: boolean
   vloerVerwijderen: boolean
   vloerM2: string
   behangVerwijderen: boolean
@@ -66,10 +68,12 @@ const BASE_RATES = {
     gaatjesToppen: 1,         // €1 per m2
     schilderwerk: 8,          // €8 per m2
     gordijnenVerwijderen: 50, // Flat rate (niet per m2)
+    inpakservice: 150,        // Flat rate - spullen uit kasten halen
   },
   
   baseTransport: 150,
   specialItemSurcharge: 50, // Per zwaar/fragiel item (piano, kluis, etc)
+  liftDiscount: 0.5,        // 50% korting op verdieping surcharge als lift aanwezig
   minPrice: 250, // Minimum voor seniorenkamer
 }
 
@@ -112,11 +116,21 @@ export function calculatePriceFromAI(
   // Leeg (0.7x) = 30% korting, Zeer Vol (1.4x) = 40% duurder
   let itemsCost = basePrice * highestVolumeMultiplier + specialItemsSurcharge
 
-  // 3. VERDIEPING SURCHARGE
-  const floorSurcharge = BASE_RATES.floor[formData.verdieping as keyof typeof BASE_RATES.floor] || 0
+  // 3. VERDIEPING SURCHARGE (met lift korting)
+  let floorSurcharge = BASE_RATES.floor[formData.verdieping as keyof typeof BASE_RATES.floor] || 0
+  
+  // Als lift aanwezig: 50% korting op verdieping surcharge
+  if (formData.liftAanwezig && floorSurcharge > 0) {
+    floorSurcharge = Math.round(floorSurcharge * BASE_RATES.liftDiscount)
+  }
 
   // 4. EXTRA DIENSTEN (exacte m² opgegeven door klant)
   let extrasCost = 0
+  
+  // Inpakservice
+  if (formData.inpakservice) {
+    extrasCost += BASE_RATES.extraServices.inpakservice
+  }
   if (formData.vloerVerwijderen && formData.vloerM2) {
     const vloerM2 = parseInt(formData.vloerM2)
     extrasCost += BASE_RATES.extraServices.vloerVerwijderen * vloerM2
