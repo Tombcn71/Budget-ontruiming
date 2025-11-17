@@ -444,7 +444,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                         className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                       />
                       <label htmlFor="schilderwerk" className="text-sm text-foreground cursor-pointer">
-                        Schilderwerk (€8/m²)
+                        Schilderwerk (€17,50/m²)
                       </label>
                     </div>
                     {formData.schilderwerk && (
@@ -630,8 +630,8 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               )}
               {formData.schilderwerk && formData.schilderwerkM2 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Schilderwerk ({formData.schilderwerkM2}m² × €8)</span>
-                  <span className="font-medium">€{(parseInt(formData.schilderwerkM2) * 8).toLocaleString('nl-NL')}</span>
+                  <span className="text-muted-foreground">• Schilderwerk ({formData.schilderwerkM2}m² × €17,50)</span>
+                  <span className="font-medium">€{(parseInt(formData.schilderwerkM2) * 17.5).toLocaleString('nl-NL')}</span>
                 </div>
               )}
               {formData.gordijnenVerwijderen && (

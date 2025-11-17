@@ -66,7 +66,7 @@ const BASE_RATES = {
     vloerVerwijderen: 3,      // €3 per m2
     behangVerwijderen: 5,     // €5 per m2
     gaatjesToppen: 1,         // €1 per m2
-    schilderwerk: 8,          // €8 per m2
+    schilderwerk: 17.5,       // €17,50 per m2
     gordijnenVerwijderen: 50, // Flat rate (niet per m2)
     inpakservice: 150,        // Flat rate - spullen uit kasten halen
   },
@@ -145,7 +145,7 @@ export function calculatePriceFromAI(
   }
   if (formData.schilderwerk && formData.schilderwerkM2) {
     const schilderwerkM2 = parseInt(formData.schilderwerkM2)
-    extrasCost += BASE_RATES.extraServices.schilderwerk * schilderwerkM2
+    extrasCost += BASE_RATES.extraServices.schilderwerk * schilderwerkM2 // 17.5 per m2
   }
   if (formData.gordijnenVerwijderen) {
     extrasCost += BASE_RATES.extraServices.gordijnenVerwijderen // Flat rate
