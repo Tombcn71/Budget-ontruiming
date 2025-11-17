@@ -331,7 +331,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                 
                 {/* Lift aanwezig checkbox - alleen tonen bij verdieping > begane grond */}
                 {formData.verdieping && formData.verdieping !== 'begane-grond' && (
-                  <div className="flex items-center space-x-2 bg-blue-50 p-3 rounded-md">
+                  <div className="flex items-center space-x-2">
                     <Checkbox
                       id="lift"
                       checked={formData.liftAanwezig}
@@ -477,21 +477,16 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                 </div>
 
                 {/* Inpakservice */}
-                <div className="space-y-2 bg-amber-50 p-3 rounded-md border border-amber-200">
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="inpakservice"
-                      checked={formData.inpakservice}
-                      onCheckedChange={(checked) => setFormData({ ...formData, inpakservice: checked as boolean })}
-                      className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                    />
-                    <label htmlFor="inpakservice" className="text-sm text-foreground cursor-pointer font-medium">
-                      📦 Inpakservice - Spullen uit kasten/keukenkasten halen (+€150)
-                    </label>
-                  </div>
-                  <p className="text-xs text-muted-foreground ml-6">
-                    Wij pakken alle spullen uit kasten, keukenkasten, laden, etc. en zorgen voor transport
-                  </p>
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="inpakservice"
+                    checked={formData.inpakservice}
+                    onCheckedChange={(checked) => setFormData({ ...formData, inpakservice: checked as boolean })}
+                    className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                  />
+                  <label htmlFor="inpakservice" className="text-sm text-foreground cursor-pointer">
+                    📦 Inpakservice - Spullen uit kasten/keuken halen (+€150)
+                  </label>
                 </div>
 
                 <div className="pt-2">
