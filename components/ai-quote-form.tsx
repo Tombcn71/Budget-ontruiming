@@ -497,7 +497,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                 <div className="pt-2">
                   <Label className="text-foreground text-sm mb-2 block">Foto's uploaden *</Label>
                   <p className="text-xs text-muted-foreground mb-2">
-                    💡 Upload foto's van de verschillende kamers. Onze AI analyseert deze om te bepalen of de woning <strong>leeg, half vol of vol</strong> is. Dit helpt ons een accurate prijsindicatie te geven.
+                    💡 Upload foto's van de verschillende kamers. Onze AI analyseert deze om te bepalen of de woning <strong>leegstaand, normaal of (over)vol</strong> is. Dit helpt ons een accurate prijsindicatie te geven.
                   </p>
                   <PhotoUpload 
                     onPhotosChange={setPhotos}
@@ -694,11 +694,11 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
             
             // Vulniveau teksten
             const volumeText = {
-              empty: 'nagenoeg leeg',
-              sparse: 'licht gevuld',
-              half: 'half vol',
-              full: 'vol',
-              very_full: 'zeer vol',
+              empty: 'leegstaand',
+              sparse: 'schaars ingericht',
+              half: 'normaal bewoond',
+              full: 'vol ingericht',
+              very_full: 'overvol',
             }
             
             return (

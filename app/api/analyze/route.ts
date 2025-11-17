@@ -77,7 +77,12 @@ BELANGRIJK - Tel ALTIJD ALLE items:
 - Meubels: banken, stoelen, tafels, kasten, bedden, bureaus, etc.
 - Klein spullen: dozen, tassen, decoraties, apparaten, etc.
 - Schat dozen/tassen/rommel realistisch in (zelfs kleine items tellen mee!)
-- volume_level: empty (0-10%), sparse (10-30%), half (30-60%), full (60-85%), very_full (85-100%)
+- volume_level: Gebruik ALTIJD één van deze 5 niveaus:
+  • "empty" = leegstaand (0-10% vol, nagenoeg geen spullen)
+  • "sparse" = schaars ingericht (10-30% vol, weinig meubels/spullen)
+  • "half" = normaal bewoond (30-60% vol, gemiddelde hoeveelheid)
+  • "full" = vol ingericht (60-85% vol, veel spullen/meubels)
+  • "very_full" = overvol (85-100% vol, zeer veel/opeengestapeld)
 - floor_visible_percentage: hoeveel % vloer is zichtbaar/vrij
 - special_items: zware/fragiele items die extra aandacht vragen (piano, kluis, aquarium, etc.)
 - estimated_hours: geschatte uren voor 2 personen om te ontruimen
