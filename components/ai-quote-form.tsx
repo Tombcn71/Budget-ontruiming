@@ -590,19 +590,36 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
             </p>
           </div>
 
-          <div className="bg-background rounded-lg p-4 space-y-2 text-left">
-            <p className="text-xs font-semibold text-foreground mb-2">Ontruiming basiskosten:</p>
-            <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">• Ontruiming & afvoer</span>
-              <span className="font-medium">€{priceResult?.breakdown.items || 450}</span>
+          <div className="bg-background rounded-lg p-4 space-y-3 text-left">
+            <div>
+              <p className="text-xs font-semibold text-foreground mb-2">Basisprijs ontruiming:</p>
+              <div className="flex justify-between text-sm items-baseline">
+                <div className="flex-1">
+                  <span className="text-foreground font-medium">
+                    {formData.woningType === 'seniorenkamer' && 'Seniorenkamer / Zorgkamer'}
+                    {formData.woningType === 'appartement' && 'Appartement (2-3 kamers)'}
+                    {formData.woningType === 'eengezinswoning' && 'Eengezinswoning'}
+                    {formData.woningType === 'bedrijfspand' && 'Bedrijfspand'}
+                  </span>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Richtprijs: {formData.woningType === 'seniorenkamer' && '€250 - €450'}
+                    {formData.woningType === 'appartement' && '€450 - €850'}
+                    {formData.woningType === 'eengezinswoning' && '€750 - €1.500'}
+                    {formData.woningType === 'bedrijfspand' && '€400 - €1.500'}
+                  </p>
+                </div>
+                <span className="font-bold text-base text-primary ml-4">€{priceResult?.breakdown.items || 450}</span>
+              </div>
+              <p className="text-xs text-muted-foreground mt-1 italic">
+                * Prijs o.b.v. {formData.vierkanteMeter} m² en vulniveau
+              </p>
             </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">• Ontruiming arbeid (2 personen)</span>
-              <span className="font-medium">€{priceResult?.breakdown.labor || 250}</span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">• Transport & verwerking</span>
-              <span className="font-medium">€{priceResult?.breakdown.transport || 150}</span>
+            
+            <div className="border-t border-border pt-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-muted-foreground">Transport & verwerking</span>
+                <span className="font-medium">€{priceResult?.breakdown.transport || 150}</span>
+              </div>
             </div>
           </div>
 
