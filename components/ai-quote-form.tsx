@@ -574,28 +574,34 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
             <span className="text-sm font-semibold">AI Analyse Compleet</span>
           </div>
 
-          <h3 className="font-bold text-2xl text-foreground">Uw Instant Offerte:</h3>
+          <div className="space-y-1 mb-4">
+            <h3 className="font-bold text-2xl text-foreground">Uw Offerte:</h3>
+            <p className="text-sm text-muted-foreground">
+              Voor {formData.woningType === 'seniorenkamer' ? 'seniorenkamer' : formData.woningType === 'appartement' ? 'appartement' : formData.woningType === 'eengezinswoning' ? 'eengezinswoning' : formData.woningType === 'bedrijfspand' ? 'bedrijfspand' : 'uw woning'} • {formData.vierkanteMeter} m² • {formData.verdieping === 'begane-grond' ? 'Begane grond' : formData.verdieping === '1e-verdieping' ? '1e verdieping' : formData.verdieping === '2e-verdieping' ? '2e verdieping' : '3e+ verdieping'}
+            </p>
+          </div>
 
           <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-6 border-2 border-primary/20">
             <p className="text-4xl font-bold text-primary mb-2">
               €{priceResult?.total || '850'}
             </p>
             <p className="text-sm text-muted-foreground">
-              Totale offerte voor uw woningontruiming
+              Totale indicatieprijs voor ontruiming
             </p>
           </div>
 
           <div className="bg-background rounded-lg p-4 space-y-2 text-left">
+            <p className="text-xs font-semibold text-foreground mb-2">Ontruiming basiskosten:</p>
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Items & meubels</span>
+              <span className="text-muted-foreground">• Ontruiming & afvoer</span>
               <span className="font-medium">€{priceResult?.breakdown.items || 450}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Arbeid (2 personen)</span>
+              <span className="text-muted-foreground">• Ontruiming arbeid (2 personen)</span>
               <span className="font-medium">€{priceResult?.breakdown.labor || 250}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Transport</span>
+              <span className="text-muted-foreground">• Transport & verwerking</span>
               <span className="font-medium">€{priceResult?.breakdown.transport || 150}</span>
             </div>
           </div>
@@ -754,7 +760,12 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
           </div>
 
           <div className="space-y-3 text-left pt-4">
-            <Label className="text-foreground text-sm font-semibold">Uw gegevens voor bevestiging:</Label>
+            <div className="space-y-1">
+              <Label className="text-foreground text-base font-semibold">Ontvang deze offerte per email:</Label>
+              <p className="text-xs text-muted-foreground">
+                Vul uw gegevens in en ontvang de volledige offerte direct in uw inbox. <strong>U zit nergens aan vast.</strong>
+              </p>
+            </div>
             <Input
               placeholder="Naam *"
               value={formData.naam}
@@ -778,7 +789,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               className="bg-background border-2 border-border h-11 focus:border-primary"
               required
             />
-            <p className="text-xs text-muted-foreground italic">* Alle velden zijn verplicht om door te gaan</p>
+            <p className="text-xs text-muted-foreground italic">* Alle velden zijn verplicht</p>
           </div>
 
           {submitSuccess ? (
@@ -788,7 +799,10 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               </div>
               <h4 className="font-bold text-xl text-green-800">Offerte Verzonden! 🎉</h4>
               <p className="text-sm text-green-700">
-                We hebben uw aanvraag ontvangen. U wordt doorverwezen naar de agenda om een afspraak te maken...
+                Check uw inbox! We hebben de volledige offerte naar <strong>{formData.email}</strong> gestuurd. Neem de tijd om rustig te bekijken - u zit nergens aan vast.
+              </p>
+              <p className="text-xs text-green-600 italic">
+                Wilt u een afspraak maken? Gebruik de link in de email of bel ons direct!
               </p>
             </div>
           ) : (
@@ -805,7 +819,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                     Verzenden...
                   </>
                 ) : (
-                  'Bevestig Offerte & Boek Nu'
+                  '📧 Stuur offerte naar mijn email'
                 )}
               </Button>
               {(!(formData.naam?.trim()) || !(formData.email?.trim()) || !(formData.telefoon?.trim())) && (
