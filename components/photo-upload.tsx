@@ -159,8 +159,9 @@ export function PhotoUpload({
                 📸 Tips voor goede foto's:
               </p>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Fotografeer elke kamer van verschillende hoeken</li>
-                <li>• Zorg dat vloeren en meubels goed zichtbaar zijn</li>
+                <li>• Maak één overzichtsfoto per kamer (niet meerdere hoeken)</li>
+                <li>• Fotografeer bij voorkeur vanaf de deuropening</li>
+                <li>• Zorg dat meubels en vloeren goed zichtbaar zijn</li>
                 <li>• Maak foto's bij goed daglicht</li>
                 <li>• Laat de volheid van de ruimte zien</li>
               </ul>
