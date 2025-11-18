@@ -65,14 +65,9 @@ export function Header() {
             </a>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm lg:text-base" asChild>
               <a 
-                href="" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (typeof window !== 'undefined' && (window as any).Calendly) {
-                    (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/tbvanreijn'});
-                  }
-                  return false;
-                }}
+                href="https://calendly.com/tbvanreijn/30min"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="sm:hidden">Gratis Advies</span>
                 <span className="hidden sm:inline">Gratis Adviesgesprek</span>
