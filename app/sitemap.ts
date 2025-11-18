@@ -12,9 +12,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     
-    // Regio pagina
+    // Regio pagina's
     {
       url: `${baseUrl}/regio/haaglanden`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/regio/rijnmond`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
