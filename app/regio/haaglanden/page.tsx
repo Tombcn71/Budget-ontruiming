@@ -95,7 +95,7 @@ export default function HaaglandenPage() {
         <RegioHero 
           regio="Haaglanden"
           subtitle="Professionele woningontruiming in Den Haag, Delft, Zoetermeer en 6 andere gemeentes. Vindt u het elders goedkoper? Wij duiken onder die prijs!"
-          badgeText="🏆 Laagste Prijs Garantie in Den Haag, Delft, Zoetermeer en omstreken"
+          badgeText="🏆 Laagste Prijs Garantie in Haaglanden"
         />
         <HowItWorks />
         <GemeenteLinks gemeentes={gemeentes} regio="Haaglanden" />
