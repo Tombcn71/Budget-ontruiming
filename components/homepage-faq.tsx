@@ -37,7 +37,7 @@ export function HomepageFaq() {
     },
     {
       question: "Wat gebeurt er met mijn spullen?",
-      answer: "Alle materialen worden milieuvriendelijk verwerkt. Bruikbare spullen gaan naar kringloopwinkels, de rest wordt gescheiden en gerecycled. U kunt er zeker van zijn dat alles verantwoord wordt afgehandeld."
+      answer: "Alle materialen worden milieuvriendelijk verwerkt en gescheiden voor recycling. Alles wordt verantwoord afgevoerd volgens de geldende richtlijnen."
     }
   ]
 
