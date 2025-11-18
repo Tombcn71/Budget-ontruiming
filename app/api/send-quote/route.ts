@@ -21,7 +21,8 @@ export async function POST(request: Request) {
     // Build furniture list from AI analysis
     const allFurniture: Record<string, { quantity: number; size: string; item: string }> = {}
     let totalBoxes = 0
-    let maxHours = 0
+    let highestVolumeLevel = 'empty'
+    const volumeLevels = ['empty', 'sparse', 'half', 'full', 'very_full']
 
     analysisResults.forEach(({ analysis }: any) => {
       if (analysis.furniture) {
@@ -37,12 +38,25 @@ export async function POST(request: Request) {
       if (analysis.estimatedBoxes) {
         totalBoxes += analysis.estimatedBoxes
       }
-      if (analysis.estimatedHours) {
-        maxHours = Math.max(maxHours, analysis.estimatedHours)
+      if (analysis.volume_level) {
+        const currentIndex = volumeLevels.indexOf(analysis.volume_level)
+        const highestIndex = volumeLevels.indexOf(highestVolumeLevel)
+        if (currentIndex > highestIndex) {
+          highestVolumeLevel = analysis.volume_level
+        }
       }
     })
 
     const furnitureList = Object.values(allFurniture)
+
+    // Map volume level to Dutch
+    const volumeLevelText = {
+      'empty': 'Leegstaand',
+      'sparse': 'Schaars ingericht',
+      'half': 'Normaal bewoond',
+      'full': 'Vol ingericht',
+      'very_full': 'Overvol',
+    }[highestVolumeLevel] || 'Normaal bewoond'
 
     // Build extra services list
     const extraServices = []
@@ -60,6 +74,9 @@ export async function POST(request: Request) {
     }
     if (formData.gordijnenVerwijderen) {
       extraServices.push('Gordijnen verwijderen')
+    }
+    if (formData.inpakservice) {
+      extraServices.push('Inpakservice - Spullen uit kasten/keuken halen')
     }
 
     // Create HTML email
@@ -153,7 +170,7 @@ export async function POST(request: Request) {
                     formData.verdieping === '1e-verdieping' ? '1e verdieping' :
                     formData.verdieping === '2e-verdieping' ? '2e verdieping' :
                     formData.verdieping === '3e-of-hoger' ? '3e of hoger' : formData.verdieping
-                  }</td>
+                  }${formData.liftAanwezig ? ' (🛗 Lift aanwezig)' : ''}</td>
                 </tr>
               </table>
 
@@ -176,13 +193,15 @@ export async function POST(request: Request) {
                   <tr>
                     <td colspan="2" style="height: 16px;"></td>
                   </tr>
+                  ${totalBoxes > 0 ? `
                   <tr>
                     <td style="color: #6b7280; font-size: 14px;">📦 Dozen/tassen (geschat):</td>
                     <td style="color: #1f2937; font-weight: 600; font-size: 14px; text-align: right;">${totalBoxes}</td>
                   </tr>
+                  ` : ''}
                   <tr>
-                    <td style="color: #6b7280; font-size: 14px;">⏱️ Geschatte tijd:</td>
-                    <td style="color: #1f2937; font-weight: 600; font-size: 14px; text-align: right;">${maxHours}u (2 personen)</td>
+                    <td style="color: #6b7280; font-size: 14px;">📊 Vulniveau:</td>
+                    <td style="color: #1f2937; font-weight: 600; font-size: 14px; text-align: right;">${volumeLevelText}</td>
                   </tr>
                 </table>
               </div>
