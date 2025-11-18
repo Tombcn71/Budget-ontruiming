@@ -29,7 +29,7 @@ export function GemeenteLinks({ gemeentes, regio }: GemeenteLinksProps) {
                       <p className="text-sm text-muted-foreground mb-3">
                         {gemeente.wijken.length} wijken • {gemeente.postcodes}
                       </p>
-                      <p className="text-primary font-semibold text-sm">Vanaf {gemeente.prijzen.appartement}</p>
+                      <p className="text-primary font-semibold text-sm">Laagste prijs gegarandeerd</p>
                     </div>
                     <ArrowRight className="w-5 h-5 text-primary flex-shrink-0" />
                   </div>
