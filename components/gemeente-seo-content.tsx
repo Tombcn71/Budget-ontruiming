@@ -115,7 +115,7 @@ export function GemeenteSeoContent({ data }: GemeenteSeoContentProps) {
                 href="tel:0612345678"
                 className="inline-flex items-center justify-center px-8 py-3 bg-secondary text-secondary-foreground font-bold rounded-lg hover:bg-secondary/90 transition-colors"
               >
-                Of bel direct: 06 123 456 78
+                📞 Gratis adviesgesprek
               </a>
             </div>
           </div>
