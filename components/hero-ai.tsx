@@ -16,7 +16,7 @@ export function HeroAI() {
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
-              Ontruimingen zonder gedoe voor Haaglanden en Rijnmond
+              Woningontruimingen zonder gedoe voor Haaglanden en Rijnmond
             </h1>
 
             <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
@@ -26,6 +26,19 @@ export function HeroAI() {
             <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
               Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u ervan verzekerd dat u de laagste prijs betaald.
             </p>
+
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-4">
+              <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <p className="text-sm sm:text-md font-semibold text-white">
+                  🏆 Laagste Prijs Garantie in Haaglanden
+                </p>
+              </div>
+              <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <p className="text-sm sm:text-md font-semibold text-white">
+                  🏆 Laagste Prijs Garantie in Rijnmond
+                </p>
+              </div>
+            </div>
 
             <div className="hidden sm:flex flex-wrap gap-4 text-md text-white">
               <span>Woningen</span>
