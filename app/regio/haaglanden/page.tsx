@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { RegioHero } from "@/components/regio-hero"
+import { HowItWorks } from "@/components/how-it-works"
 import { GemeenteLinks } from "@/components/gemeente-links"
 import { RegioFaq } from "@/components/regio-faq"
 import { getGemeentesByRegio } from "@/lib/gemeente-data"
@@ -95,6 +96,7 @@ export default function HaaglandenPage() {
           regio="Haaglanden"
           subtitle="Professionele woningontruiming in Den Haag, Delft, Zoetermeer en 6 andere gemeentes. Vindt u het elders goedkoper? Wij duiken onder die prijs!"
         />
+        <HowItWorks />
         <GemeenteLinks gemeentes={gemeentes} regio="Haaglanden" />
         
         <section className="py-12 lg:py-16">
