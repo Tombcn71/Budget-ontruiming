@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { RegioHero } from "@/components/regio-hero"
+import { AIQuoteForm } from "@/components/ai-quote-form"
 import { GemeenteLinks } from "@/components/gemeente-links"
 import { RegioFaq } from "@/components/regio-faq"
 import { getGemeentesByRegio } from "@/lib/gemeente-data"
@@ -83,6 +84,24 @@ export default function RijnmondPage() {
           regio="Rijnmond"
           subtitle="Professionele woningontruiming in Rotterdam, Schiedam, Vlaardingen en 10 andere gemeentes. 24/7 bereikbaar. Vindt u het elders goedkoper? Wij duiken onder die prijs!"
         />
+        
+        {/* AI Quote Form Section */}
+        <section className="py-12 lg:py-16 bg-background">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-2xl mx-auto text-center mb-8">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Direct een offerte aanvragen?
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Upload foto's van uw woning en krijg binnen 2 minuten een prijsindicatie via onze AI tool.
+              </p>
+            </div>
+            <div className="max-w-3xl mx-auto">
+              <AIQuoteForm />
+            </div>
+          </div>
+        </section>
+
         <GemeenteLinks gemeentes={gemeentes} regio="Rijnmond" />
         
         <section className="py-12 lg:py-16">
