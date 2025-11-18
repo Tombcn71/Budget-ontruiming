@@ -3,9 +3,10 @@ import { AIQuoteForm } from "@/components/ai-quote-form"
 interface RegioHeroProps {
   regio: string
   subtitle: string
+  badgeText: string
 }
 
-export function RegioHero({ regio, subtitle }: RegioHeroProps) {
+export function RegioHero({ regio, subtitle, badgeText }: RegioHeroProps) {
   return (
     <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -34,7 +35,7 @@ export function RegioHero({ regio, subtitle }: RegioHeroProps) {
 
             <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
               <p className="text-md sm:text-lg font-semibold text-white">
-                🏆 Laagste Prijs Garantie in heel {regio}
+                {badgeText}
               </p>
             </div>
           </div>

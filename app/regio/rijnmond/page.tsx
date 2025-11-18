@@ -83,6 +83,7 @@ export default function RijnmondPage() {
         <RegioHero 
           regio="Rijnmond"
           subtitle="Professionele woningontruiming in Rotterdam, Schiedam, Vlaardingen en 10 andere gemeentes. 24/7 bereikbaar. Vindt u het elders goedkoper? Wij duiken onder die prijs!"
+          badgeText="🏆 Laagste Prijs Garantie in Rotterdam, Schiedam, Vlaardingen en omstreken"
         />
         <HowItWorks />
         <GemeenteLinks gemeentes={gemeentes} regio="Rijnmond" />

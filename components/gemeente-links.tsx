@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
-import { ArrowRight } from "lucide-react"
 import { GemeenteData } from "@/lib/gemeente-data"
 
 interface GemeenteLinksProps {
@@ -23,14 +22,11 @@ export function GemeenteLinks({ gemeentes, regio }: GemeenteLinksProps) {
             {gemeentes.map((gemeente) => (
               <Link key={gemeente.slug} href={`/woningontruiming-${gemeente.slug}`}>
                 <Card className="p-6 bg-white border-0 shadow-sm hover:shadow-lg transition-all hover:scale-105 cursor-pointer h-full">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-bold text-xl text-foreground mb-2">{gemeente.naam}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {gemeente.wijken.length} wijken • {gemeente.postcodes}
-                      </p>
-                    </div>
-                    <ArrowRight className="w-5 h-5 text-primary flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-xl text-foreground mb-2">{gemeente.naam}</h3>
+                    <p className="text-sm text-muted-foreground">
+                      {gemeente.wijken.length} wijken • {gemeente.postcodes}
+                    </p>
                   </div>
                 </Card>
               </Link>
