@@ -8,7 +8,7 @@ export interface GemeenteData {
   description: string
   wijken: string[]
   postcodes: string
-  prijzen: {
+  prijzen?: {
     appartement: string
     rijtjeshuis: string
     vrijstaand: string

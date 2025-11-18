@@ -8,6 +8,7 @@ import { GemeenteSeoContent } from "@/components/gemeente-seo-content"
 import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
+import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
   title: "Woningontruiming Nissewaard - Laagste Prijs Garantie | Budget Ontruiming",
@@ -48,6 +49,7 @@ export default function NissewaardPage() {
   const data = getGemeenteData("nissewaard")!
   return (
     <>
+      <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />
       <main>

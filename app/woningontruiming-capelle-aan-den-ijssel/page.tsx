@@ -8,6 +8,7 @@ import { GemeenteSeoContent } from "@/components/gemeente-seo-content"
 import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
+import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
   title: "Woningontruiming Capelle aan den IJssel - Laagste Prijs Garantie | Budget Ontruiming",
@@ -47,6 +48,7 @@ export default function capelleaandenijsselPage() {
   const data = getGemeenteData("capelle-aan-den-ijssel")!
   return (
     <>
+      <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />
       <main>
