@@ -170,7 +170,7 @@ export async function POST(request: Request) {
                     formData.verdieping === '1e-verdieping' ? '1e verdieping' :
                     formData.verdieping === '2e-verdieping' ? '2e verdieping' :
                     formData.verdieping === '3e-of-hoger' ? '3e of hoger' : formData.verdieping
-                  }${formData.liftAanwezig ? ' (🛗 Lift aanwezig)' : ''}</td>
+                  }${formData.liftAanwezig ? ' (Lift aanwezig)' : ''}</td>
                 </tr>
               </table>
 
@@ -200,7 +200,7 @@ export async function POST(request: Request) {
                   </tr>
                   ` : ''}
                   <tr>
-                    <td style="color: #6b7280; font-size: 14px;">📊 Vulniveau:</td>
+                    <td style="color: #6b7280; font-size: 14px;">📊 Status inrichting:</td>
                     <td style="color: #1f2937; font-weight: 600; font-size: 14px; text-align: right;">${volumeLevelText}</td>
                   </tr>
                 </table>

@@ -52,7 +52,7 @@ const BASE_RATES = {
   },
   
   // Volume impact multiplier - HOOFDFACTOR voor prijsbepaling
-  // AI analyseert foto's en bepaalt vulniveau van de woning
+  // AI analyseert foto's en bepaalt inrichtingsniveau van de woning
   volumeMultiplier: {
     empty: 0.7,      // Leeg/Minimaal: 30% korting (weinig werk)
     sparse: 0.85,    // Licht gevuld: 15% korting
@@ -95,7 +95,7 @@ export function calculatePriceFromAI(
   const m2Ratio = Math.min(Math.max(m2Value / woningTypeData.avgM2, 0.5), 2.0)
   const basePrice = woningTypeData.min + ((woningTypeData.max - woningTypeData.min) * (m2Ratio - 0.5) / 1.5)
   
-  // 2. VULNIVEAU MULTIPLIER: AI bepaalt of woning leeg/half/vol is
+  // 2. INRICHTINGSNIVEAU MULTIPLIER: AI bepaalt of woning leeg/half/vol is
   let highestVolumeMultiplier = 1.0
   let specialItemsSurcharge = 0
 
@@ -112,7 +112,7 @@ export function calculatePriceFromAI(
     }
   })
 
-  // Pas vulniveau multiplier toe op base price
+  // Pas inrichtingsniveau multiplier toe op base price
   // Leeg (0.7x) = 30% korting, Zeer Vol (1.4x) = 40% duurder
   let itemsCost = basePrice * highestVolumeMultiplier + specialItemsSurcharge
 

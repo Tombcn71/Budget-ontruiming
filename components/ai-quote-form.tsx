@@ -339,7 +339,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                     />
                     <label htmlFor="lift" className="text-sm text-foreground cursor-pointer flex-1">
-                      🛗 Lift aanwezig (bespaart tijd en kosten)
+                      Lift aanwezig (bespaart 50% trapkosten)
                     </label>
                   </div>
                 )}
@@ -606,7 +606,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                 <span className="font-bold text-base text-primary ml-4">€{priceResult?.breakdown.items || 450}</span>
               </div>
               <p className="text-xs text-muted-foreground mt-1 italic">
-                * Prijs o.b.v. {formData.vierkanteMeter} m² en vulniveau
+                * Prijs o.b.v. {formData.vierkanteMeter} m² en inrichting
               </p>
             </div>
             
@@ -667,7 +667,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
 
           {/* AI Analyse met Items */}
           {analysisResults.length > 0 && (() => {
-            // Bepaal hoogste vulniveau en combineer alle items
+            // Bepaal hoogste inrichtingsniveau en combineer alle items
             let maxVolumeLevel = 'half'
             let totalBoxes = 0
             let maxHours = 0
@@ -677,7 +677,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
             const volumeLevels = { empty: 0, sparse: 1, half: 2, full: 3, very_full: 4 }
             
             analysisResults.forEach(({ analysis }) => {
-              // Hoogste vulniveau bepalen
+              // Hoogste inrichtingsniveau bepalen
               const currentLevel = analysis.volume_level || 'half'
               if (volumeLevels[currentLevel as keyof typeof volumeLevels] > volumeLevels[maxVolumeLevel as keyof typeof volumeLevels]) {
                 maxVolumeLevel = currentLevel
@@ -704,7 +704,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
             
             const furnitureList = Object.values(allFurniture)
             
-            // Vulniveau teksten
+            // Inrichtingsniveau teksten
             const volumeText = {
               empty: 'leegstaand',
               sparse: 'schaars ingericht',
