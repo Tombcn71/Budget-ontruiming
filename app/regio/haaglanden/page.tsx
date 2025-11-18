@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer"
 import { Hero } from "@/components/hero"
 import { GemeenteLinks } from "@/components/gemeente-links"
 import { getGemeentesByRegio } from "@/lib/gemeente-data"
+import { WebPageSchema, BreadcrumbSchema } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Woningontruiming Haaglanden - Laagste Prijs Garantie",
@@ -15,6 +16,32 @@ export const metadata: Metadata = {
     "ontruiming Delft",
     "bezemschoon opleveren Haaglanden",
   ],
+  openGraph: {
+    title: "Woningontruiming Haaglanden - Laagste Prijs Garantie",
+    description: "Professionele woningontruiming in heel Haaglanden. Den Haag, Delft, Rijswijk, Wassenaar en meer.",
+    url: "https://budgetontruiming.nl/regio/haaglanden",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Woningontruiming Haaglanden - Laagste Prijs Garantie",
+    description: "Professionele woningontruiming in heel Haaglanden.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/regio/haaglanden",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function HaaglandenPage() {
@@ -22,6 +49,17 @@ export default function HaaglandenPage() {
 
   return (
     <>
+      {/* SEO Structured Data */}
+      <WebPageSchema 
+        title="Woningontruiming Haaglanden - Laagste Prijs Garantie"
+        description="Professionele woningontruiming in heel Haaglanden. Den Haag, Delft, Rijswijk, Wassenaar en meer."
+        url="https://budgetontruiming.nl/regio/haaglanden"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "https://budgetontruiming.nl" },
+        { name: "Haaglanden", url: "https://budgetontruiming.nl/regio/haaglanden" }
+      ]} />
+      
       <Header />
       <main>
         <Hero />

@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     title: "Budget Ontruiming - Woningontruiming voor de Laagste Prijs",
     description: "Vindt u een goedkopere offerte? Wij betalen u het verschil terug.",
   },
+  alternates: {
+    canonical: "https://budgetontruiming.nl",
+  },
   robots: {
     index: true,
     follow: true,
