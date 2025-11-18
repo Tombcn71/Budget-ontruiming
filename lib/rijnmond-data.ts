@@ -10,11 +10,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
       "Professionele woningontruiming op Goeree-Overflakkee. Vindt u goedkoper? Wij duiken onder die prijs! Alle kernen bereikbaar.",
     wijken: ["Middelharnis", "Oude-Tonge", "Dirksland", "Sommelsdijk", "Stellendam", "Ouddorp"],
     postcodes: "3240-3259",
-    prijzen: {
-      appartement: "€620 - €1.100",
-      rijtjeshuis: "€1.100 - €1.700",
-      vrijstaand: "€1.700 - €2.800",
-    },
     introText:
       "Goeree-Overflakkee is een eiland met vele kernen. Wij bieden professionele woningontruiming in alle dorpen en steden op het eiland tegen de laagste prijs, gegarandeerd.",
     waaromKiezen: [
@@ -68,11 +63,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
       "Professionele woningontruiming in Krimpen aan den IJssel. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken.",
     wijken: ["Krimpen Centrum", "Stormpolder", "Lekkerkerk"],
     postcodes: "2920-2925",
-    prijzen: {
-      appartement: "€600 - €1.050",
-      rijtjeshuis: "€1.050 - €1.650",
-      vrijstaand: "€1.650 - €2.600",
-    },
     introText:
       "Krimpen aan den IJssel is een gemeente aan de rivier met een mix van woningtypes. Wij bieden professionele woningontruiming tegen de laagste prijs, gegarandeerd.",
     waaromKiezen: [
@@ -124,11 +114,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
       "Professionele woningontruiming in Lansingerland. Vindt u goedkoper? Wij duiken onder die prijs! Berkel en Rodenrijs, Bleiswijk en Bergschenhoek.",
     wijken: ["Berkel en Rodenrijs", "Bleiswijk", "Bergschenhoek"],
     postcodes: "2650-2665",
-    prijzen: {
-      appartement: "€600 - €1.050",
-      rijtjeshuis: "€1.050 - €1.650",
-      vrijstaand: "€1.650 - €2.600",
-    },
     introText:
       "Lansingerland bestaat uit drie kernen: Berkel en Rodenrijs, Bleiswijk en Bergschenhoek. Wij bieden professionele woningontruiming in alle kernen tegen de laagste prijs.",
     waaromKiezen: [
@@ -180,11 +165,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
       "Professionele woningontruiming in Maassluis. Vindt u goedkoper? Wij duiken onder die prijs! Haven stad met persoonlijke service.",
     wijken: ["Maassluis Centrum", "Steendijkpolder", "Koningshoek"],
     postcodes: "3140-3149",
-    prijzen: {
-      appartement: "€590 - €1.030",
-      rijtjeshuis: "€1.030 - €1.620",
-      vrijstaand: "€1.620 - €2.550",
-    },
     introText:
       "Maassluis is een havenstad met karakter. Wij bieden professionele woningontruiming in heel Maassluis tegen de laagste prijs, gegarandeerd.",
     waaromKiezen: [
@@ -233,31 +213,26 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Nissewaard - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Nissewaard. Vindt u goedkoper? Wij duiken onder die prijs! Spijkenisse en Bernisse.",
-    wijken: ["Spijkenisse", "Bernisse", "Heenvliet"],
+      "Professionele woningontruiming in Nissewaard. Vindt u goedkoper? Wij duiken onder die prijs! Spijkenisse en alle dorpen.",
+    wijken: ["Spijkenisse", "Abbenbroek", "Geervliet", "Heenvliet", "Hekelingen", "Simonshaven", "Zuidland", "Oudenhoorn"],
     postcodes: "3200-3209",
-    prijzen: {
-      appartement: "€600 - €1.050",
-      rijtjeshuis: "€1.050 - €1.650",
-      vrijstaand: "€1.650 - €2.600",
-    },
     introText:
-      "Nissewaard bestaat uit Spijkenisse en Bernisse. Wij bieden professionele woningontruiming in beide kernen tegen de laagste prijs, gegarandeerd.",
+      "Nissewaard bestaat uit de stad Spijkenisse en zeven dorpen: Abbenbroek, Geervliet, Heenvliet, Hekelingen, Simonshaven, Zuidland en Oudenhoorn. Wij bieden professionele woningontruiming in alle kernen tegen de laagste prijs, gegarandeerd.",
     waaromKiezen: [
-      "Actief in heel Nissewaard",
-      "Kennis van Spijkenisse en Bernisse",
+      "Actief in heel Nissewaard - stad én dorpen",
+      "Kennis van alle 8 kernen",
       "Ervaring met verschillende woningtypes",
       "Laagste prijs garantie",
-      "Flexibele planning",
+      "Flexibele planning voor zowel stad als dorpen",
     ],
     situaties: [
       {
         title: "Woningontruiming Spijkenisse",
-        description: "Professionele ontruiming in Spijkenisse, alle wijken.",
+        description: "Professionele ontruiming in Spijkenisse, alle wijken en hoogbouw.",
       },
       {
-        title: "Ontruiming Bernisse",
-        description: "Ook in Bernisse en Heenvliet zijn wij actief.",
+        title: "Ontruiming dorpen Nissewaard",
+        description: "Ook in Abbenbroek, Geervliet, Heenvliet, Hekelingen, Simonshaven, Zuidland en Oudenhoorn zijn wij actief.",
       },
       {
         title: "Hoogbouw appartement ontruimen",
@@ -265,13 +240,13 @@ export const rijnmondData: Record<string, GemeenteData> = {
       },
       {
         title: "Seniorenverhuizing",
-        description: "Volledige begeleiding bij verhuizing.",
+        description: "Volledige begeleiding bij verhuizing naar zorginstelling.",
       },
     ],
     faq: [
       {
-        question: "Werken jullie in Spijkenisse en Bernisse?",
-        answer: "Ja, wij werken in heel Nissewaard: Spijkenisse, Bernisse en Heenvliet.",
+        question: "Werken jullie in alle kernen van Nissewaard?",
+        answer: "Ja, wij werken in heel Nissewaard: Spijkenisse en alle 7 dorpen (Abbenbroek, Geervliet, Heenvliet, Hekelingen, Simonshaven, Zuidland en Oudenhoorn).",
       },
       {
         question: "Hoe snel kunnen jullie starten?",
@@ -292,11 +267,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
       "Professionele woningontruiming in Ridderkerk. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken bereikbaar.",
     wijken: ["Ridderkerk Centrum", "Bolnes", "Rijsoord", "Slikkerveer"],
     postcodes: "2980-2989",
-    prijzen: {
-      appartement: "€610 - €1.070",
-      rijtjeshuis: "€1.070 - €1.680",
-      vrijstaand: "€1.680 - €2.700",
-    },
     introText:
       "Ridderkerk is een gemeente met diverse wijken en kernen. Wij bieden professionele woningontruiming in heel Ridderkerk tegen de laagste prijs, gegarandeerd.",
     waaromKiezen: [
@@ -359,11 +329,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
       "Prins Alexander",
     ],
     postcodes: "3000-3099",
-    prijzen: {
-      appartement: "€650 - €1.150",
-      rijtjeshuis: "€1.150 - €1.800",
-      vrijstaand: "€1.800 - €3.000",
-    },
     introText:
       "Rotterdam is de tweede stad van Nederland met diverse wijken. Wij bieden professionele woningontruiming in heel Rotterdam tegen de laagste prijs, gegarandeerd.",
     waaromKiezen: [
@@ -418,11 +383,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
       "Professionele woningontruiming in Schiedam. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken, snel bereikbaar.",
     wijken: ["Schiedam Centrum", "Nieuwland", "Groenoord", "Kethel", "Spaland"],
     postcodes: "3110-3125",
-    prijzen: {
-      appartement: "€620 - €1.080",
-      rijtjeshuis: "€1.080 - €1.690",
-      vrijstaand: "€1.690 - €2.750",
-    },
     introText:
       "Schiedam grenst aan Rotterdam en kent diverse wijken. Wij bieden professionele woningontruiming in heel Schiedam tegen de laagste prijs, gegarandeerd.",
     waaromKiezen: [
@@ -474,11 +434,6 @@ export const rijnmondData: Record<string, GemeenteData> = {
       "Professionele woningontruiming in Vlaardingen. Vindt u goedkoper? Wij duiken onder die prijs! Alle wijken bereikbaar.",
     wijken: ["Vlaardingen Centrum", "Westwijk", "Babberspolder", "Holy", "Ambacht"],
     postcodes: "3130-3137",
-    prijzen: {
-      appartement: "€610 - €1.070",
-      rijtjeshuis: "€1.070 - €1.680",
-      vrijstaand: "€1.680 - €2.700",
-    },
     introText:
       "Vlaardingen is een stad aan de Nieuwe Maas met diverse wijken. Wij bieden professionele woningontruiming in heel Vlaardingen tegen de laagste prijs, gegarandeerd.",
     waaromKiezen: [
@@ -527,53 +482,48 @@ export const rijnmondData: Record<string, GemeenteData> = {
     regio: "Rijnmond",
     title: "Woningontruiming Voorne aan Zee - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming op Voorne aan Zee. Vindt u goedkoper? Wij duiken onder die prijs! Rockanje en omgeving.",
-    wijken: ["Rockanje", "Tinte"],
-    postcodes: "3233-3235",
-    prijzen: {
-      appartement: "€630 - €1.100",
-      rijtjeshuis: "€1.100 - €1.700",
-      vrijstaand: "€1.700 - €2.800",
-    },
+      "Professionele woningontruiming op Voorne aan Zee. Vindt u goedkoper? Wij duiken onder die prijs! Brielle, Hellevoetsluis en alle dorpen.",
+    wijken: ["Brielle", "Hellevoetsluis", "Rockanje", "Tinte", "Oostvoorne", "Vierpolders", "Zwartewaal"],
+    postcodes: "3230-3249",
     introText:
-      "Voorne aan Zee is een kustgemeente met Rockanje als hoofdkern. Wij bieden professionele woningontruiming tegen de laagste prijs, gegarandeerd.",
+      "Voorne aan Zee bestaat uit 2 steden (Brielle en Hellevoetsluis) en 5 dorpen (Rockanje, Tinte, Oostvoorne, Vierpolders en Zwartewaal). Wij bieden professionele woningontruiming in alle kernen tegen de laagste prijs, gegarandeerd.",
     waaromKiezen: [
-      "Kennis van kustgebied",
+      "Actief in heel Voorne aan Zee - steden én dorpen",
+      "Kennis van kustgebied en alle 7 kernen",
       "Ervaring met vakantiewoningen en permanente bewoning",
-      "Flexibele planning",
       "Laagste prijs garantie",
-      "Persoonlijke aanpak",
+      "Flexibele planning voor zowel steden als dorpen",
     ],
     situaties: [
       {
-        title: "Vakantiehuis ontruimen",
-        description: "Veel vakantiewoningen in Rockanje. Wij helpen bij ontruiming.",
+        title: "Woningontruiming Brielle en Hellevoetsluis",
+        description: "Professionele ontruiming in beide steden van Voorne aan Zee.",
       },
       {
-        title: "Permanente bewoning",
-        description: "Ook vaste bewoners helpen wij graag.",
+        title: "Ontruiming dorpen",
+        description: "Ook in Rockanje, Tinte, Oostvoorne, Vierpolders en Zwartewaal zijn wij actief.",
+      },
+      {
+        title: "Vakantiehuis ontruimen",
+        description: "Veel vakantiewoningen in de kustkernen. Wij helpen bij ontruiming en bezemschoon opleveren.",
       },
       {
         title: "Ontruiming na overlijden",
-        description: "Met respect en zorg.",
-      },
-      {
-        title: "Strandhuisje ontruimen",
-        description: "Ook kleinere objecten kunnen we ontruimen.",
+        description: "Met respect en zorg helpen wij tijdens moeilijke periode.",
       },
     ],
     faq: [
       {
+        question: "Werken jullie in alle kernen van Voorne aan Zee?",
+        answer: "Ja, wij werken overal in Voorne aan Zee: Brielle, Hellevoetsluis, Rockanje, Tinte, Oostvoorne, Vierpolders en Zwartewaal.",
+      },
+      {
         question: "Ontruimen jullie ook vakantiewoningen?",
-        answer: "Ja, wij hebben ervaring met zowel vakantiewoningen als permanente bewoning.",
+        answer: "Ja, wij hebben ruime ervaring met zowel vakantiewoningen als permanente bewoning in het kustgebied.",
       },
       {
-        question: "Hoe zit het met de bereikbaarheid?",
-        answer: "Wij plannen onze routes efficiënt naar de kust.",
-      },
-      {
-        question: "Kunnen jullie ook strandhuisjes ontruimen?",
-        answer: "Ja, wij doen ook kleinere objecten en strandhuisjes.",
+        question: "Hoe snel kunnen jullie starten?",
+        answer: "Meestal binnen 1-3 werkdagen, bij spoed binnen 24 uur.",
       },
     ],
   },
