@@ -26,10 +26,9 @@ export function GemeenteLinks({ gemeentes, regio }: GemeenteLinksProps) {
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="font-bold text-xl text-foreground mb-2">{gemeente.naam}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">
+                      <p className="text-sm text-muted-foreground">
                         {gemeente.wijken.length} wijken • {gemeente.postcodes}
                       </p>
-                      <p className="text-primary font-semibold text-sm">Laagste prijs gegarandeerd</p>
                     </div>
                     <ArrowRight className="w-5 h-5 text-primary flex-shrink-0" />
                   </div>

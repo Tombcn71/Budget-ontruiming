@@ -61,6 +61,18 @@ export default function HaaglandenPage() {
       question: "Wat is de laagste prijs garantie?",
       answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs! U krijgt altijd de laagste prijs voor woningontruiming in Haaglanden, gegarandeerd."
     },
+    {
+      question: "Kunnen jullie ook bezemschoon opleveren?",
+      answer: "Ja, wij zorgen dat uw woning volledig bezemschoon wordt opgeleverd volgens de eisen van de verhuurder of nieuwe eigenaar."
+    },
+    {
+      question: "Werken jullie ook in villawijken zoals Wassenaar?",
+      answer: "Ja, wij hebben ruime ervaring met grotere woningen en villa's in wijken zoals Wassenaar. Onze teams zijn uitgerust voor woningen van elk formaat."
+    },
+    {
+      question: "Hoe wordt de prijs bepaald?",
+      answer: "De prijs hangt af van de grootte van de woning, de hoeveelheid inboedel, de verdieping en eventuele extra diensten zoals schilderwerk. Upload foto's via onze AI tool voor een directe indicatie."
+    },
   ]
 
   return (

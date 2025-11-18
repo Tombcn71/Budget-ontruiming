@@ -24,12 +24,12 @@ export function RegioFaq({ regio }: RegioFaqProps) {
       answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs! U krijgt altijd de laagste prijs voor woningontruiming in Haaglanden, gegarandeerd."
     },
     {
-      question: "Doen jullie ook studentenwoningen in Delft?",
-      answer: "Ja, wij hebben ruime ervaring met het ontruimen van studentenwoningen en kamers in Delft. We zorgen voor een snelle en betaalbare ontruiming."
-    },
-    {
       question: "Kunnen jullie ook bezemschoon opleveren?",
       answer: "Ja, wij zorgen dat uw woning volledig bezemschoon wordt opgeleverd volgens de eisen van de verhuurder of nieuwe eigenaar."
+    },
+    {
+      question: "Werken jullie ook in villawijken zoals Wassenaar?",
+      answer: "Ja, wij hebben ruime ervaring met grotere woningen en villa's in wijken zoals Wassenaar. Onze teams zijn uitgerust voor woningen van elk formaat."
     },
     {
       question: "Hoe wordt de prijs bepaald?",
