@@ -259,7 +259,7 @@ export async function POST(request: Request) {
 
               <!-- CTA Button -->
               <div style="text-align: center; margin: 32px 0;">
-                <a href="https://calendly.com/tbvanreijn" 
+                <a href="https://calendly.com/tbvanreijn/30min" 
                    style="display: inline-block; background-color: #f97316; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">
                   📅 Plan Gratis Adviesgesprek
                 </a>
