@@ -27,17 +27,10 @@ export function HeroAI() {
               Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u ervan verzekerd dat u de laagste prijs betaald.
             </p>
 
-            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-4">
-              <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <p className="text-sm sm:text-md font-semibold text-white">
-                  🏆 Laagste Prijs Garantie in Haaglanden
-                </p>
-              </div>
-              <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <p className="text-sm sm:text-md font-semibold text-white">
-                  🏆 Laagste Prijs Garantie in Rijnmond
-                </p>
-              </div>
+            <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
+              <p className="text-md sm:text-lg font-semibold text-white">
+                🏆 Laagste Prijs Garantie in Haaglanden en Rijnmond
+              </p>
             </div>
 
             <div className="hidden sm:flex flex-wrap gap-4 text-md text-white">
