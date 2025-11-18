@@ -13,7 +13,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4">Haaglanden</h4>
+            <h4 className="font-bold mb-4">
+              <Link href="/regio/haaglanden" className="hover:text-primary-foreground/80 transition-colors">
+                Haaglanden
+              </Link>
+            </h4>
             <ul className="space-y-2 text-sm lg:text-base text-primary-foreground/80">
               <li>
                 <Link href="/woningontruiming-den-haag" className="hover:text-primary-foreground transition-colors">
@@ -73,7 +77,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4">Rijnmond</h4>
+            <h4 className="font-bold mb-4">
+              <Link href="/regio/rijnmond" className="hover:text-primary-foreground/80 transition-colors">
+                Rijnmond
+              </Link>
+            </h4>
             <ul className="space-y-2 text-sm lg:text-base text-primary-foreground/80">
               <li>
                 <Link href="/woningontruiming-rotterdam" className="hover:text-primary-foreground transition-colors">
