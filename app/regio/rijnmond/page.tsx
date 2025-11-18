@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Hero } from "@/components/hero"
+import { RegioHero } from "@/components/regio-hero"
 import { GemeenteLinks } from "@/components/gemeente-links"
+import { RegioFaq } from "@/components/regio-faq"
 import { getGemeentesByRegio } from "@/lib/gemeente-data"
-import { WebPageSchema, BreadcrumbSchema } from "@/components/structured-data"
+import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Woningontruiming Rijnmond - Laagste Prijs Garantie",
@@ -47,6 +48,21 @@ export const metadata: Metadata = {
 export default function RijnmondPage() {
   const gemeentes = getGemeentesByRegio("Rijnmond")
 
+  const faqs = [
+    {
+      question: "In welke gemeentes van Rijnmond zijn jullie actief?",
+      answer: "Wij zijn actief in alle gemeentes van Rijnmond: Rotterdam, Schiedam, Vlaardingen, Maassluis, Ridderkerk, Capelle aan den IJssel, Krimpen aan den IJssel, Barendrecht, Albrandswaard, Lansingerland, Nissewaard, Voorne aan Zee en Goeree-Overflakkee."
+    },
+    {
+      question: "Hebben jullie ervaring met hoogbouw in Rotterdam?",
+      answer: "Ja, wij hebben uitgebreide ervaring met hoogbouw appartementen in Rotterdam en andere Rijnmond gemeentes. We hebben de juiste apparatuur en expertise voor alle verdiepingen."
+    },
+    {
+      question: "Wat is de laagste prijs garantie?",
+      answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs! U krijgt altijd de laagste prijs voor woningontruiming in Rijnmond, gegarandeerd."
+    },
+  ]
+
   return (
     <>
       {/* SEO Structured Data */}
@@ -59,10 +75,14 @@ export default function RijnmondPage() {
         { name: "Home", url: "https://budgetontruiming.nl" },
         { name: "Rijnmond", url: "https://budgetontruiming.nl/regio/rijnmond" }
       ]} />
+      <FAQSchema faqs={faqs} />
       
       <Header />
       <main>
-        <Hero />
+        <RegioHero 
+          regio="Rijnmond"
+          subtitle="Professionele woningontruiming in Rotterdam, Schiedam, Vlaardingen en 10 andere gemeentes. 24/7 bereikbaar. Vindt u het elders goedkoper? Wij duiken onder die prijs!"
+        />
         <GemeenteLinks gemeentes={gemeentes} regio="Rijnmond" />
         
         <section className="py-12 lg:py-16">
@@ -106,6 +126,8 @@ export default function RijnmondPage() {
             </div>
           </div>
         </section>
+
+        <RegioFaq regio="Rijnmond" />
       </main>
       <Footer />
     </>

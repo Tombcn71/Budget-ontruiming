@@ -16,7 +16,7 @@ export function HeroAI() {
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
-              Ontruimingen zonder gedoe, met laagste prijs garantie.
+              Ontruimingen zonder gedoe voor Haaglanden en Rijnmond
             </h1>
 
             <p className="text-base sm:hidden text-white mb-4 leading-relaxed">

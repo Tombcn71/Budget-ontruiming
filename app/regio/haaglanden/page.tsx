@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Hero } from "@/components/hero"
+import { RegioHero } from "@/components/regio-hero"
 import { GemeenteLinks } from "@/components/gemeente-links"
+import { RegioFaq } from "@/components/regio-faq"
 import { getGemeentesByRegio } from "@/lib/gemeente-data"
-import { WebPageSchema, BreadcrumbSchema } from "@/components/structured-data"
+import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Woningontruiming Haaglanden - Laagste Prijs Garantie",
@@ -47,6 +48,21 @@ export const metadata: Metadata = {
 export default function HaaglandenPage() {
   const gemeentes = getGemeentesByRegio("Haaglanden")
 
+  const faqs = [
+    {
+      question: "In welke gemeentes van Haaglanden zijn jullie actief?",
+      answer: "Wij zijn actief in alle gemeentes van Haaglanden: Den Haag, Delft, Zoetermeer, Wassenaar, Westland, Rijswijk, Pijnacker-Nootdorp, Leidschendam-Voorburg en Midden-Delfland."
+    },
+    {
+      question: "Hoe snel kunnen jullie een woningontruiming in Haaglanden uitvoeren?",
+      answer: "Meestal kunnen we binnen 1-3 werkdagen starten met de ontruiming. Bij spoedgevallen kunnen we vaak binnen 24 uur beginnen."
+    },
+    {
+      question: "Wat is de laagste prijs garantie?",
+      answer: "Vindt u het elders goedkoper? Wij duiken onder die prijs! U krijgt altijd de laagste prijs voor woningontruiming in Haaglanden, gegarandeerd."
+    },
+  ]
+
   return (
     <>
       {/* SEO Structured Data */}
@@ -59,10 +75,14 @@ export default function HaaglandenPage() {
         { name: "Home", url: "https://budgetontruiming.nl" },
         { name: "Haaglanden", url: "https://budgetontruiming.nl/regio/haaglanden" }
       ]} />
+      <FAQSchema faqs={faqs} />
       
       <Header />
       <main>
-        <Hero />
+        <RegioHero 
+          regio="Haaglanden"
+          subtitle="Professionele woningontruiming in Den Haag, Delft, Zoetermeer en 6 andere gemeentes. Vindt u het elders goedkoper? Wij duiken onder die prijs!"
+        />
         <GemeenteLinks gemeentes={gemeentes} regio="Haaglanden" />
         
         <section className="py-12 lg:py-16">
@@ -105,6 +125,8 @@ export default function HaaglandenPage() {
             </div>
           </div>
         </section>
+
+        <RegioFaq regio="Haaglanden" />
       </main>
       <Footer />
     </>
