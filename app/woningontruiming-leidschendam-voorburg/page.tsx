@@ -13,7 +13,7 @@ import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 export const metadata: Metadata = {
   title: "Ontruiming Leidschendam-Voorburg | Laagste Prijs",
   description:
-    "Ontruiming Leidschendam-Voorburg: Centrum, Stompwijk + alle kernen. Vindt u goedkoper? Wij duiken onder die prijs!",
+    "Ontruiming Leidschendam-Voorburg: Centrum, Stompwijk + alle kernen. Vindt u goedkoper? Wij gaan eronder!",
   keywords:
     "woningontruiming leidschendam-voorburg, ontruiming leidschendam, ontruiming voorburg, ontruiming stompwijk, ontruiming het centrum leidschendam, ontruiming korte akkeren, ontruiming hofwijk, bezemschoon leidschendam-voorburg 2260-2275, spoedontruiming leidschendam-voorburg, ontruiming na overlijden leidschendam-voorburg",
   openGraph: {
