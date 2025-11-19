@@ -7,15 +7,15 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Budget Ontruiming - Woningontruiming voor de Laagste Prijs",
+  title: "Woningontruiming Haaglanden & Rijnmond | Laagste Prijs",
   description:
-    "Vindt u een goedkopere offerte? Wij betalen u het verschil terug. Zo is Budget Ontruiming altijd uw voordeligste keuze.",
+    "Woningontruiming in Haaglanden en Rijnmond zonder gedoe met laagste prijs garantie. Prijs indicatie in 1 minuut met AI.",
   generator: "v0.app",
-  keywords: "woningontruiming, ontruiming, huis ontruimen, bezemschoon opleveren, spoedontruiming, inboedel ontruiming, haaglanden, rijnmond",
+  keywords: "woningontruiming, woningontruiming haaglanden, woningontruiming rijnmond, ontruiming haaglanden, ontruiming rijnmond, bezemschoon opleveren, ontruiming na overlijden, spoedontruiming, seniorenverhuizing, inboedel ontruiming, huis ontruimen, woning leeghalen",
   authors: [{ name: "Budget Ontruiming" }],
   openGraph: {
-    title: "Budget Ontruiming - Woningontruiming voor de Laagste Prijs",
-    description: "Vindt u een goedkopere offerte? Wij betalen u het verschil terug.",
+    title: "Woningontruiming Haaglanden & Rijnmond | Laagste Prijs",
+    description: "Woningontruiming in Haaglanden en Rijnmond zonder gedoe met laagste prijs garantie. Prijs indicatie in 1 minuut met AI.",
     url: "https://budgetontruiming.nl",
     siteName: "Budget Ontruiming",
     locale: "nl_NL",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Budget Ontruiming - Woningontruiming voor de Laagste Prijs",
-    description: "Vindt u een goedkopere offerte? Wij betalen u het verschil terug.",
+    title: "Woningontruiming Haaglanden & Rijnmond | Laagste Prijs",
+    description: "Woningontruiming in Haaglanden en Rijnmond zonder gedoe. Prijs indicatie in 1 minuut met AI.",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl",
