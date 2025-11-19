@@ -24,9 +24,9 @@ export function OrganizationSchema() {
     "alternateName": "Budget Ontruiming Nederland",
     "url": "https://budgetontruiming.nl",
     "logo": "https://budgetontruiming.nl/logo.png",
-    "description": "Professionele woningontruiming in Zuid-Holland. Vindt u het elders goedkoper? Wij duiken onder die prijs! Specialist in Haaglanden en Rijnmond.",
+    "description": "Professionele woningontruiming in Haaglanden en Rijnmond. Vindt u het elders goedkoper? Wij duiken onder die prijs! Actief in 22 gemeentes.",
     "priceRange": "€€",
-    "telephone": "+31-6-12345678", // TODO: Echte telefoonnummer toevoegen
+    "telephone": "+31612345678",
     "email": "info@budgetontruiming.nl",
     "address": {
       "@type": "PostalAddress",
@@ -52,7 +52,11 @@ export function OrganizationSchema() {
       },
       {
         "@type": "City",
-        "name": "Leiden"
+        "name": "Schiedam"
+      },
+      {
+        "@type": "City",
+        "name": "Vlaardingen"
       }
     ],
     "serviceArea": {
