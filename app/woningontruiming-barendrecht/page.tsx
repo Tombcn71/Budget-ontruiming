@@ -11,6 +11,39 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Barendrecht | Laagste Prijs",
+  description:
+    "Ontruiming Barendrecht: Centrum, Carnisselande, Smitshoek + alle wijken. Vindt u goedkoper? Wij duiken eronder!",
+  keywords:
+    "woningontruiming barendrecht, ontruiming barendrecht, ontruiming centrum barendrecht, ontruiming carnisselande, ontruiming smitshoek, bezemschoon barendrecht 2990-2995, spoedontruiming barendrecht, ontruiming na overlijden barendrecht",
+  openGraph: {
+    title: "Ontruiming Barendrecht | Laagste Prijs",
+    description: "Ontruiming Barendrecht: Centrum, Carnisselande, Smitshoek + wijken. 2990-2995. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-barendrecht",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Barendrecht",
+    description: "Ontruiming Barendrecht: Centrum, Carnisselande, Smitshoek + wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-barendrecht",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Barendrecht - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Barendrecht. Carnisselande, Oost, West en Centrum. Vindt u goedkoper? Wij duiken onder die prijs!! Direct beschikbaar.",

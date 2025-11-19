@@ -11,6 +11,39 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Maassluis | Laagste Prijs",
+  description:
+    "Ontruiming Maassluis: Centrum, Steendijkpolder, Koningshoek + alle wijken. Vindt u goedkoper? Wij duiken eronder!",
+  keywords:
+    "woningontruiming maassluis, ontruiming maassluis, ontruiming centrum maassluis, ontruiming steendijkpolder, ontruiming koningshoek, bezemschoon maassluis 3140-3144, spoedontruiming maassluis, ontruiming na overlijden maassluis",
+  openGraph: {
+    title: "Ontruiming Maassluis | Laagste Prijs",
+    description: "Ontruiming Maassluis: Centrum, Steendijkpolder, Koningshoek + wijken. 3140-3144. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-maassluis",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Maassluis",
+    description: "Ontruiming Maassluis: Centrum, Steendijkpolder, Koningshoek + wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-maassluis",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Maassluis - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Maassluis. Historische havenstad met karakteristieke panden. Vindt u goedkoper? Wij duiken onder die prijs!!",

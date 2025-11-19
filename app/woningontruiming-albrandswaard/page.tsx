@@ -11,6 +11,39 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Albrandswaard | Laagste Prijs",
+  description:
+    "Ontruiming Albrandswaard: Rhoon, Poortugaal + alle kernen. Vindt u goedkoper? Wij duiken eronder!",
+  keywords:
+    "woningontruiming albrandswaard, ontruiming albrandswaard, ontruiming rhoon, ontruiming poortugaal, bezemschoon albrandswaard 3161-3175, spoedontruiming albrandswaard, ontruiming na overlijden albrandswaard",
+  openGraph: {
+    title: "Ontruiming Albrandswaard | Laagste Prijs",
+    description: "Ontruiming Albrandswaard: Rhoon, Poortugaal, Barendrecht-Zuid. 3161-3175. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-albrandswaard",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Albrandswaard",
+    description: "Ontruiming Albrandswaard: Rhoon, Poortugaal, Barendrecht-Zuid.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-albrandswaard",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Albrandswaard - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Albrandswaard. Poortugaal en Rhoon. Kleinschalig met persoonlijke service. Vindt u goedkoper? Wij duiken onder die prijs!!",

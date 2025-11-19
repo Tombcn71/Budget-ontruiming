@@ -11,6 +11,39 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Capelle aan den IJssel | Laagste Prijs",
+  description:
+    "Ontruiming Capelle: Centrum, Schollevaar, Fascinatio + alle wijken. Vindt u goedkoper? Wij duiken eronder!",
+  keywords:
+    "woningontruiming capelle aan den ijssel, ontruiming capelle, ontruiming centrum capelle, ontruiming schollevaar, ontruiming fascinatio, ontruiming 's-gravenland, bezemschoon capelle 2900-2909, spoedontruiming capelle, ontruiming na overlijden capelle",
+  openGraph: {
+    title: "Ontruiming Capelle aan den IJssel | Laagste Prijs",
+    description: "Ontruiming Capelle: Centrum, Schollevaar, Fascinatio + wijken. 2900-2909. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Capelle aan den IJssel",
+    description: "Ontruiming Capelle: Centrum, Schollevaar, Fascinatio + wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Capelle aan den IJssel - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Capelle aan den IJssel. Schollevaar, Fascinatio, 't Slag. Hoogbouw specialist. Vindt u goedkoper? Wij duiken onder die prijs!!",

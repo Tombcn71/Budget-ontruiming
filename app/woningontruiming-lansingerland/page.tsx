@@ -11,6 +11,39 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Lansingerland | Laagste Prijs",
+  description:
+    "Ontruiming Lansingerland: Bergschenhoek, Berkel, Bleiswijk + alle kernen. Vindt u goedkoper? Wij duiken eronder!",
+  keywords:
+    "woningontruiming lansingerland, ontruiming lansingerland, ontruiming bergschenhoek, ontruiming berkel en rodenrijs, ontruiming bleiswijk, bezemschoon lansingerland 2650-2665, spoedontruiming lansingerland, ontruiming na overlijden lansingerland",
+  openGraph: {
+    title: "Ontruiming Lansingerland | Laagste Prijs",
+    description: "Ontruiming Lansingerland: Bergschenhoek, Berkel, Bleiswijk. 2650-2665. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-lansingerland",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Lansingerland",
+    description: "Ontruiming Lansingerland: Bergschenhoek, Berkel, Bleiswijk.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-lansingerland",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Lansingerland - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Lansingerland. Berkel en Rodenrijs, Bleiswijk en Bergschenhoek. Vindt u goedkoper? Wij duiken onder die prijs!!",

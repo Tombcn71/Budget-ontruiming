@@ -11,6 +11,39 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Krimpen aan den IJssel | Laagste Prijs",
+  description:
+    "Ontruiming Krimpen: Centrum, Stormpolder, Lekkerkerk + alle wijken. Vindt u goedkoper? Wij duiken eronder!",
+  keywords:
+    "woningontruiming krimpen aan den ijssel, ontruiming krimpen, ontruiming centrum krimpen, ontruiming stormpolder, ontruiming lekkerkerk, bezemschoon krimpen 2920-2925, spoedontruiming krimpen, ontruiming na overlijden krimpen",
+  openGraph: {
+    title: "Ontruiming Krimpen aan den IJssel | Laagste Prijs",
+    description: "Ontruiming Krimpen: Centrum, Stormpolder, Lekkerkerk + wijken. 2920-2925. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-krimpen-aan-den-ijssel",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Krimpen aan den IJssel",
+    description: "Ontruiming Krimpen: Centrum, Stormpolder, Lekkerkerk + wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-krimpen-aan-den-ijssel",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Krimpen aan den IJssel - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Krimpen aan den IJssel. Krimpen Centrum, Stormpolder en Lekkerkerk. Vindt u goedkoper? Wij duiken onder die prijs!!",
