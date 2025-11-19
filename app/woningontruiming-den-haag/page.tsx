@@ -11,24 +11,24 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Den Haag - Laagste Prijs Garantie | Budget Ontruiming",
+  title: "Ontruiming Den Haag | Alle Wijken | Laagste Prijs",
   description:
-    "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij duiken onder die prijs!! Bezemschoon opleveren, na overlijden, spoedontruiming. Direct beschikbaar.",
+    "Ontruiming Den Haag: Centrum, Statenkwartier, Schilderswijk + 5 wijken. 2490-2599. Vindt u goedkoper? Eronder!",
   keywords:
-    "woningontruiming den haag, ontruiming den haag, huis ontruimen den haag, bezemschoon opleveren den haag, woning leeghalen den haag, ontruiming na overlijden den haag, spoedontruiming den haag, inboedel ontruiming den haag",
+    "woningontruiming den haag, ontruiming den haag, ontruiming centrum den haag, ontruiming zeeheldenkwartier, ontruiming segbroek, ontruiming schilderswijk, ontruiming transvaal, ontruiming loosduinen, ontruiming kijkduin, ontruiming leidschenveen, ontruiming ypenburg, ontruiming mariahoeve, ontruiming statenkwartier, ontruiming moerwijk, bezemschoon den haag 2490-2599, spoedontruiming den haag, ontruiming na overlijden den haag",
   openGraph: {
-    title: "Woningontruiming Den Haag - Laagste Prijs Garantie",
+    title: "Ontruiming Den Haag | Alle Wijken | Laagste Prijs",
     description:
-      "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij duiken onder die prijs!! Direct beschikbaar.",
+      "Ontruiming Den Haag: Centrum, Statenkwartier, Schilderswijk + 5 wijken. 2490-2599. Vindt u goedkoper? Eronder!",
     url: "https://budgetontruiming.nl/woningontruiming-den-haag",
     type: "website",
     locale: "nl_NL",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Woningontruiming Den Haag - Laagste Prijs Garantie",
+    title: "Ontruiming Den Haag | Alle Wijken",
     description:
-      "Professionele woningontruiming in Den Haag. Vindt u goedkoper? Wij duiken onder die prijs!!",
+      "Ontruiming Den Haag: Centrum, Statenkwartier, Schilderswijk + 5 wijken.",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-den-haag",

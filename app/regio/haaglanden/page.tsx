@@ -9,26 +9,21 @@ import { getGemeentesByRegio } from "@/lib/gemeente-data"
 import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Haaglanden - Laagste Prijs Garantie",
+  title: "Ontruiming Haaglanden | 9 Gemeentes | Laagste Prijs",
   description:
-    "Professionele woningontruiming in heel Haaglanden. Den Haag, Delft, Rijswijk, Wassenaar en meer. Vindt u goedkoper? Wij betalen het verschil.",
-  keywords: [
-    "woningontruiming Haaglanden",
-    "ontruiming Den Haag",
-    "ontruiming Delft",
-    "bezemschoon opleveren Haaglanden",
-  ],
+    "Ontruiming in Haaglanden: Den Haag, Delft, Zoetermeer + 6 gemeentes. Vindt u goedkoper? Wij duiken onder die prijs!",
+  keywords: "woningontruiming haaglanden, ontruiming haaglanden, ontruiming den haag, ontruiming delft, ontruiming zoetermeer, ontruiming rijswijk, ontruiming leidschendam-voorburg, ontruiming wassenaar, bezemschoon haaglanden, spoedontruiming haaglanden",
   openGraph: {
-    title: "Woningontruiming Haaglanden - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in heel Haaglanden. Den Haag, Delft, Rijswijk, Wassenaar en meer.",
+    title: "Ontruiming Haaglanden | 9 Gemeentes | Laagste Prijs",
+    description: "Ontruiming in Haaglanden: Den Haag, Delft, Zoetermeer + 6 gemeentes. Vindt u goedkoper? Wij duiken onder die prijs!",
     url: "https://budgetontruiming.nl/regio/haaglanden",
     type: "website",
     locale: "nl_NL",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Woningontruiming Haaglanden - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in heel Haaglanden.",
+    title: "Ontruiming Haaglanden | 9 Gemeentes",
+    description: "Ontruiming in Haaglanden: Den Haag, Delft, Zoetermeer + 6 gemeentes.",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/regio/haaglanden",

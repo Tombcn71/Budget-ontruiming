@@ -9,26 +9,21 @@ import { getGemeentesByRegio } from "@/lib/gemeente-data"
 import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Rijnmond - Laagste Prijs Garantie",
+  title: "Ontruiming Rijnmond | 13 Gemeentes | Laagste Prijs",
   description:
-    "Professionele woningontruiming in heel Rijnmond. Rotterdam, Schiedam, Vlaardingen, Nissewaard en meer. Vindt u goedkoper? Wij duiken onder die prijs!",
-  keywords: [
-    "woningontruiming Rijnmond",
-    "ontruiming Rotterdam",
-    "ontruiming Schiedam",
-    "bezemschoon opleveren Rijnmond",
-  ],
+    "Ontruiming Rijnmond: Rotterdam, Schiedam, Vlaardingen + 10 gemeentes. Vindt u goedkoper? Wij duiken eronder!",
+  keywords: "woningontruiming rijnmond, ontruiming rijnmond, ontruiming rotterdam, ontruiming schiedam, ontruiming vlaardingen, ontruiming capelle aan den ijssel, ontruiming ridderkerk, ontruiming barendrecht, bezemschoon rijnmond, spoedontruiming rijnmond",
   openGraph: {
-    title: "Woningontruiming Rijnmond - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in heel Rijnmond. Rotterdam, Schiedam, Vlaardingen, Nissewaard en meer.",
+    title: "Ontruiming Rijnmond | 13 Gemeentes | Laagste Prijs",
+    description: "Ontruiming Rijnmond: Rotterdam, Schiedam, Vlaardingen + 10 gemeentes. Vindt u goedkoper? Wij duiken eronder!",
     url: "https://budgetontruiming.nl/regio/rijnmond",
     type: "website",
     locale: "nl_NL",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Woningontruiming Rijnmond - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in heel Rijnmond.",
+    title: "Ontruiming Rijnmond | 13 Gemeentes",
+    description: "Ontruiming Rijnmond: Rotterdam, Schiedam, Vlaardingen + 10 gemeentes.",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/regio/rijnmond",
