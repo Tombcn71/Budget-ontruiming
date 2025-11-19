@@ -42,12 +42,12 @@ export function Header() {
             >
               Werkwijze
             </a>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="text-sm lg:text-base text-foreground hover:text-primary transition-colors font-medium"
             >
               Contact
-            </a>
+            </Link>
           </nav>
 
           <div className="flex items-center gap-4 lg:gap-6">
