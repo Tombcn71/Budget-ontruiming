@@ -9,7 +9,7 @@ import { getGemeentesByRegio } from "@/lib/gemeente-data"
 import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Rijnmond | 13 Gemeentes | Budgetontruiming.nl",
+  title: "Ontruiming Rijnmond | Budgetontruiming.nl",
   description:
     "Ontruiming Rijnmond: Rotterdam, Schiedam, Vlaardingen + 10 gemeentes. Laagste prijs garantie.",
   keywords: "woningontruiming rijnmond, ontruiming rijnmond, ontruiming rotterdam, ontruiming schiedam, ontruiming vlaardingen, ontruiming capelle aan den ijssel, ontruiming ridderkerk, ontruiming barendrecht, bezemschoon rijnmond, spoedontruiming rijnmond",

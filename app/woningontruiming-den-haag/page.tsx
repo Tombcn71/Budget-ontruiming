@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Den Haag | Alle Wijken | Budgetontruiming.nl",
+  title: "Ontruiming Den Haag | Budgetontruiming.nl",
   description:
     "Ontruiming Den Haag: Centrum, Statenkwartier, Schilderswijk + alle wijken. Laagste prijs garantie.",
   keywords:

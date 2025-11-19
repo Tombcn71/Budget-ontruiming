@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Vlaardingen | Alle Wijken | Budgetontruiming.nl",
+  title: "Ontruiming Vlaardingen | Budgetontruiming.nl",
   description:
     "Ontruiming Vlaardingen: Centrum, Westwijk, Oostwijk + alle wijken. Laagste prijs garantie.",
   keywords:
