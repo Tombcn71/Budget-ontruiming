@@ -174,6 +174,33 @@ export async function POST(request: Request) {
                 </tr>
               </table>
 
+              <!-- Geüploade Foto's -->
+              <h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
+                📸 Geüploade Foto's (${analysisResults.length})
+              </h2>
+              <div style="margin-bottom: 24px;">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    ${analysisResults.map((result: any, index: number) => `
+                      ${index % 2 === 0 && index > 0 ? '</tr><tr>' : ''}
+                      <td style="padding: 4px; width: 50%; vertical-align: top;">
+                        <a href="${result.url}" target="_blank" style="display: block; text-decoration: none;">
+                          <img 
+                            src="${result.url}" 
+                            alt="Foto ${index + 1}"
+                            style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 2px solid #e5e7eb; display: block;"
+                          />
+                          <p style="margin: 4px 0 0 0; color: #6b7280; font-size: 12px; text-align: center;">Foto ${index + 1}</p>
+                        </a>
+                      </td>
+                    `).join('')}
+                  </tr>
+                </table>
+                <p style="color: #6b7280; font-size: 12px; font-style: italic; margin: 12px 0 0 0;">
+                  💡 Klik op een foto om deze in volledig formaat te bekijken
+                </p>
+              </div>
+
               ${furnitureList.length > 0 ? `
               <!-- AI Analyse Resultaten -->
               <h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
