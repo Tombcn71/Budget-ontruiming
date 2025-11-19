@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Wassenaar | Villa's & Landhuizen",
+  title: "Ontruiming Wassenaar | Villa's | Budgetontruiming.nl",
   description:
-    "Ontruiming Wassenaar: Centrum, Duinrell, Kievietsduin + alle wijken. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Wassenaar: Centrum, Duinrell, Kievietsduin + alle wijken. Laagste prijs garantie.",
   keywords:
     "woningontruiming wassenaar, ontruiming wassenaar, ontruiming centrum wassenaar, ontruiming duinrell wassenaar, ontruiming kievietsduin wassenaar, ontruiming villa wassenaar, ontruiming landhuis wassenaar, bezemschoon wassenaar 2240-2245, ontruiming na overlijden wassenaar",
   openGraph: {

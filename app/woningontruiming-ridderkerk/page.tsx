@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Ridderkerk | Laagste Prijs",
+  title: "Ontruiming Ridderkerk | Budgetontruiming.nl",
   description:
-    "Ontruiming Ridderkerk: Centrum, Bolnes, Rijsoord + alle kernen. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Ridderkerk: Centrum, Bolnes, Rijsoord + alle kernen. Laagste prijs garantie.",
   keywords:
     "woningontruiming ridderkerk, ontruiming ridderkerk, ontruiming centrum ridderkerk, ontruiming bolnes, ontruiming rijsoord, ontruiming slikkerveer, bezemschoon ridderkerk 2980-2989, spoedontruiming ridderkerk, ontruiming na overlijden ridderkerk",
   openGraph: {

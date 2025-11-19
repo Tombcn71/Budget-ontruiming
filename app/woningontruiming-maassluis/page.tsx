@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Maassluis | Laagste Prijs",
+  title: "Ontruiming Maassluis | Budgetontruiming.nl",
   description:
-    "Ontruiming Maassluis: Centrum, Steendijkpolder, Koningshoek + alle wijken. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Maassluis: Centrum, Steendijkpolder, Koningshoek + alle wijken. Laagste prijs garantie.",
   keywords:
     "woningontruiming maassluis, ontruiming maassluis, ontruiming centrum maassluis, ontruiming steendijkpolder, ontruiming koningshoek, bezemschoon maassluis 3140-3144, spoedontruiming maassluis, ontruiming na overlijden maassluis",
   openGraph: {

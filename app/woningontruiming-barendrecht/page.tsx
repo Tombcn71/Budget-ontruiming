@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Barendrecht | Laagste Prijs",
+  title: "Ontruiming Barendrecht | Budgetontruiming.nl",
   description:
-    "Ontruiming Barendrecht: Centrum, Carnisselande, Smitshoek + alle wijken. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Barendrecht: Centrum, Carnisselande, Smitshoek + alle wijken. Laagste prijs garantie.",
   keywords:
     "woningontruiming barendrecht, ontruiming barendrecht, ontruiming centrum barendrecht, ontruiming carnisselande, ontruiming smitshoek, bezemschoon barendrecht 2990-2995, spoedontruiming barendrecht, ontruiming na overlijden barendrecht",
   openGraph: {

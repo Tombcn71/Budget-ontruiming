@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Zoetermeer | Alle Wijken | Laagste Prijs",
+  title: "Ontruiming Zoetermeer | Alle Wijken | Budgetontruiming.nl",
   description:
-    "Ontruiming Zoetermeer: Centrum, Meerzicht, Palenstein + alle wijken. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Zoetermeer: Centrum, Meerzicht, Palenstein + alle wijken. Laagste prijs garantie.",
   keywords:
     "woningontruiming zoetermeer, ontruiming zoetermeer, ontruiming centrum zoetermeer, ontruiming meerzicht zoetermeer, ontruiming dorp zoetermeer, ontruiming palenstein zoetermeer, ontruiming buytenwegh zoetermeer, ontruiming seghwaert zoetermeer, ontruiming rokkeveen zoetermeer, ontruiming noordhove zoetermeer, bezemschoon zoetermeer 2700-2729, spoedontruiming zoetermeer, ontruiming na overlijden zoetermeer",
   openGraph: {

@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Vlaardingen | Alle Wijken | Laagste Prijs",
+  title: "Ontruiming Vlaardingen | Alle Wijken | Budgetontruiming.nl",
   description:
-    "Ontruiming Vlaardingen: Centrum, Westwijk, Oostwijk + alle wijken. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Vlaardingen: Centrum, Westwijk, Oostwijk + alle wijken. Laagste prijs garantie.",
   keywords:
     "woningontruiming vlaardingen, ontruiming vlaardingen, ontruiming centrum vlaardingen, ontruiming westwijk vlaardingen, ontruiming oostwijk vlaardingen, ontruiming ambacht vlaardingen, ontruiming holy vlaardingen, bezemschoon vlaardingen 3130-3137, spoedontruiming vlaardingen, ontruiming na overlijden vlaardingen",
   openGraph: {

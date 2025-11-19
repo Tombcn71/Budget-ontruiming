@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Schiedam | Alle Wijken | Laagste Prijs",
+  title: "Ontruiming Schiedam | Alle Wijken | Budgetontruiming.nl",
   description:
-    "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + alle wijken. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + alle wijken. Laagste prijs garantie.",
   keywords:
     "woningontruiming schiedam, ontruiming schiedam, ontruiming centrum schiedam, ontruiming nieuwland schiedam, ontruiming groenoord schiedam, ontruiming kethel schiedam, ontruiming spaland schiedam, bezemschoon schiedam 3110-3125, spoedontruiming schiedam, ontruiming na overlijden schiedam",
   openGraph: {

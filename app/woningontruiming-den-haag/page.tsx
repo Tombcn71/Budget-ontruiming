@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Den Haag | Alle Wijken | Laagste Prijs",
+  title: "Ontruiming Den Haag | Alle Wijken | Budgetontruiming.nl",
   description:
-    "Ontruiming Den Haag: Centrum, Statenkwartier, Schilderswijk + alle wijken. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Den Haag: Centrum, Statenkwartier, Schilderswijk + alle wijken. Laagste prijs garantie.",
   keywords:
     "woningontruiming den haag, ontruiming den haag, ontruiming centrum den haag, ontruiming zeeheldenkwartier, ontruiming segbroek, ontruiming schilderswijk, ontruiming transvaal, ontruiming loosduinen, ontruiming kijkduin, ontruiming leidschenveen, ontruiming ypenburg, ontruiming mariahoeve, ontruiming statenkwartier, ontruiming moerwijk, bezemschoon den haag 2490-2599, spoedontruiming den haag, ontruiming na overlijden den haag",
   openGraph: {

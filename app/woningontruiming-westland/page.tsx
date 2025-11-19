@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Westland - Laagste Prijs Garantie | Budget Ontruiming",
+  title: "Ontruiming Westland | Budgetontruiming.nl",
   description:
-    "Ontruiming Westland: Naaldwijk, Wateringen, Monster + alle kernen. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Westland: Naaldwijk, Wateringen, Monster + alle kernen. Laagste prijs garantie.",
   keywords:
     "woningontruiming westland, ontruiming naaldwijk, ontruiming wateringen, ontruiming monster, ontruiming de lier, huis ontruimen westland, bezemschoon opleveren westland, kas ontruimen, spoedontruiming westland",
   openGraph: {

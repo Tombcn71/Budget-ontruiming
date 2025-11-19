@@ -11,9 +11,9 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Rotterdam | 10 Wijken | Laagste Prijs",
+  title: "Ontruiming Rotterdam | 10 Wijken | Budgetontruiming.nl",
   description:
-    "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + alle wijken. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + alle wijken. Laagste prijs garantie.",
   keywords:
     "woningontruiming rotterdam, ontruiming rotterdam, ontruiming centrum rotterdam, ontruiming noord rotterdam, ontruiming zuid rotterdam, ontruiming west rotterdam, ontruiming oost rotterdam, ontruiming kralingen, ontruiming feijenoord, ontruiming charlois, ontruiming ijsselmonde, ontruiming prins alexander, bezemschoon rotterdam 3000-3099, spoedontruiming rotterdam, ontruiming na overlijden rotterdam",
   openGraph: {

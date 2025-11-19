@@ -9,9 +9,9 @@ import { getGemeentesByRegio } from "@/lib/gemeente-data"
 import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Haaglanden | 9 Gemeentes | Laagste Prijs",
+  title: "Ontruiming Haaglanden | 9 Gemeentes | Budgetontruiming.nl",
   description:
-    "Ontruiming Haaglanden: Den Haag, Delft, Zoetermeer + 6 gemeentes. Vindt u goedkoper? Wij gaan eronder!",
+    "Ontruiming Haaglanden: Den Haag, Delft, Zoetermeer + 6 gemeentes. Laagste prijs garantie.",
   keywords: "woningontruiming haaglanden, ontruiming haaglanden, ontruiming den haag, ontruiming delft, ontruiming zoetermeer, ontruiming rijswijk, ontruiming leidschendam-voorburg, ontruiming wassenaar, bezemschoon haaglanden, spoedontruiming haaglanden",
   openGraph: {
     title: "Ontruiming Haaglanden | 9 Gemeentes | Laagste Prijs",
