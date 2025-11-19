@@ -11,7 +11,7 @@ import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structu
 export const metadata: Metadata = {
   title: "Ontruiming Haaglanden | 9 Gemeentes | Laagste Prijs",
   description:
-    "Ontruiming in Haaglanden: Den Haag, Delft, Zoetermeer + 6 gemeentes. Vindt u goedkoper? Wij duiken onder die prijs!",
+    "Ontruiming Haaglanden: Den Haag, Delft, Zoetermeer + 6 gemeentes. Vindt u goedkoper? Wij gaan eronder!",
   keywords: "woningontruiming haaglanden, ontruiming haaglanden, ontruiming den haag, ontruiming delft, ontruiming zoetermeer, ontruiming rijswijk, ontruiming leidschendam-voorburg, ontruiming wassenaar, bezemschoon haaglanden, spoedontruiming haaglanden",
   openGraph: {
     title: "Ontruiming Haaglanden | 9 Gemeentes | Laagste Prijs",

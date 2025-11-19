@@ -11,7 +11,7 @@ import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structu
 export const metadata: Metadata = {
   title: "Ontruiming Rijnmond | 13 Gemeentes | Laagste Prijs",
   description:
-    "Ontruiming Rijnmond: Rotterdam, Schiedam, Vlaardingen + 10 gemeentes. Vindt u goedkoper? Wij duiken eronder!",
+    "Ontruiming Rijnmond: Rotterdam, Schiedam, Vlaardingen + 10 gemeentes. Vindt u goedkoper? Wij gaan eronder!",
   keywords: "woningontruiming rijnmond, ontruiming rijnmond, ontruiming rotterdam, ontruiming schiedam, ontruiming vlaardingen, ontruiming capelle aan den ijssel, ontruiming ridderkerk, ontruiming barendrecht, bezemschoon rijnmond, spoedontruiming rijnmond",
   openGraph: {
     title: "Ontruiming Rijnmond | 13 Gemeentes | Laagste Prijs",
