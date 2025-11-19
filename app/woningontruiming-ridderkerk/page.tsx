@@ -11,6 +11,39 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Ridderkerk | Laagste Prijs",
+  description:
+    "Ontruiming Ridderkerk: Centrum, Bolnes, Rijsoord + alle kernen. Vindt u goedkoper? Wij duiken onder die prijs!",
+  keywords:
+    "woningontruiming ridderkerk, ontruiming ridderkerk, ontruiming centrum ridderkerk, ontruiming bolnes, ontruiming rijsoord, ontruiming slikkerveer, bezemschoon ridderkerk 2980-2989, spoedontruiming ridderkerk, ontruiming na overlijden ridderkerk",
+  openGraph: {
+    title: "Ontruiming Ridderkerk | Laagste Prijs",
+    description: "Ontruiming Ridderkerk: Centrum, Bolnes, Rijsoord + alle kernen. Vindt u goedkoper? Wij duiken eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-ridderkerk",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Ridderkerk",
+    description: "Ontruiming Ridderkerk: Centrum, Bolnes, Rijsoord + alle kernen.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-ridderkerk",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Ridderkerk - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Ridderkerk. Centrum, Bolnes, Rijsoord en Slikkerveer. Vindt u goedkoper? Wij duiken onder die prijs!! Direct beschikbaar.",

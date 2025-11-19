@@ -13,7 +13,7 @@ import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 export const metadata: Metadata = {
   title: "Ontruiming Rijswijk | Alle Wijken | Laagste Prijs",
   description:
-    "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + alle wijken. Vindt u goedkoper? Wij duiken eronder!",
+    "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + alle wijken. Vindt u goedkoper? Wij duiken onder die prijs!",
   keywords:
     "woningontruiming rijswijk, ontruiming rijswijk, ontruiming centrum rijswijk, ontruiming sion rijswijk, ontruiming steenvoorde rijswijk, ontruiming oud-rijswijk, ontruiming plaspoelpolder rijswijk, ontruiming in de bogaard rijswijk, bezemschoon rijswijk 2280-2289, spoedontruiming rijswijk, ontruiming na overlijden rijswijk",
   openGraph: {

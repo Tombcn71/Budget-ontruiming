@@ -13,7 +13,7 @@ import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 export const metadata: Metadata = {
   title: "Ontruiming Capelle aan den IJssel | Laagste Prijs",
   description:
-    "Ontruiming Capelle: Centrum, Schollevaar, Fascinatio + alle wijken. Vindt u goedkoper? Wij duiken eronder!",
+    "Ontruiming Capelle: Centrum, Schollevaar, Fascinatio + alle wijken. Vindt u goedkoper? Wij duiken onder die prijs!",
   keywords:
     "woningontruiming capelle aan den ijssel, ontruiming capelle, ontruiming centrum capelle, ontruiming schollevaar, ontruiming fascinatio, ontruiming 's-gravenland, bezemschoon capelle 2900-2909, spoedontruiming capelle, ontruiming na overlijden capelle",
   openGraph: {

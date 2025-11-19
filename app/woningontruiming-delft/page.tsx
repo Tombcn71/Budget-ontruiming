@@ -13,7 +13,7 @@ import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 export const metadata: Metadata = {
   title: "Ontruiming Delft | Alle Wijken | Laagste Prijs",
   description:
-    "Ontruiming Delft: Centrum, Tanthof, Vrijenban + alle wijken. Vindt u goedkoper? Wij duiken eronder!",
+    "Ontruiming Delft: Centrum, Tanthof, Vrijenban + alle wijken. Vindt u goedkoper? Wij duiken onder die prijs!",
   keywords:
     "woningontruiming delft, ontruiming delft, ontruiming centrum delft, ontruiming tanthof delft, ontruiming vrijenban delft, ontruiming voorhof delft, ontruiming buitenhof delft, ontruiming wippolder delft, ontruiming hof van delft, ontruiming schieweg delft, bezemschoon delft 2600-2629, spoedontruiming delft, ontruiming na overlijden delft",
   openGraph: {

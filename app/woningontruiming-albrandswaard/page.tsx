@@ -13,7 +13,7 @@ import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 export const metadata: Metadata = {
   title: "Ontruiming Albrandswaard | Laagste Prijs",
   description:
-    "Ontruiming Albrandswaard: Rhoon, Poortugaal + alle kernen. Vindt u goedkoper? Wij duiken eronder!",
+    "Ontruiming Albrandswaard: Rhoon, Poortugaal + alle kernen. Vindt u goedkoper? Wij duiken onder die prijs!",
   keywords:
     "woningontruiming albrandswaard, ontruiming albrandswaard, ontruiming rhoon, ontruiming poortugaal, bezemschoon albrandswaard 3161-3175, spoedontruiming albrandswaard, ontruiming na overlijden albrandswaard",
   openGraph: {
