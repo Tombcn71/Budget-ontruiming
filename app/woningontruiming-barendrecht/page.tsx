@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Barendrecht | Budgetontruiming.nl",
+  title: "Woningontruiming Barendrecht | Budgetontruiming.nl",
   description:
     "Ontruiming Barendrecht: Centrum, Carnisselande, Smitshoek + alle wijken. Laagste prijs garantie.",
   keywords:

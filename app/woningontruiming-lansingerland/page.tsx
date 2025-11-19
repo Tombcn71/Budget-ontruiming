@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Lansingerland | Budgetontruiming.nl",
+  title: "Woningontruiming Lansingerland | Budgetontruiming.nl",
   description:
     "Ontruiming Lansingerland: Bergschenhoek, Berkel, Bleiswijk + alle kernen. Laagste prijs garantie.",
   keywords:

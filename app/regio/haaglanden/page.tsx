@@ -9,7 +9,7 @@ import { getGemeentesByRegio } from "@/lib/gemeente-data"
 import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Haaglanden | Budgetontruiming.nl",
+  title: "Woningontruiming Haaglanden | Budgetontruiming.nl",
   description:
     "Ontruiming Haaglanden: Den Haag, Delft, Zoetermeer + 6 gemeentes. Laagste prijs garantie.",
   keywords: "woningontruiming haaglanden, ontruiming haaglanden, ontruiming den haag, ontruiming delft, ontruiming zoetermeer, ontruiming rijswijk, ontruiming leidschendam-voorburg, ontruiming wassenaar, bezemschoon haaglanden, spoedontruiming haaglanden",

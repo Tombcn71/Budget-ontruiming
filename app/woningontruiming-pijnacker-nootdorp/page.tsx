@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Pijnacker-Nootdorp | Budgetontruiming.nl",
+  title: "Woningontruiming Pijnacker-Nootdorp | Budgetontruiming.nl",
   description:
     "Ontruiming Pijnacker-Nootdorp: Centrum, Zuid, Nootdorp + alle kernen. Laagste prijs garantie.",
   keywords:

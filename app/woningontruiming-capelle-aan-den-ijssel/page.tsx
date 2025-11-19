@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Capelle aan den IJssel | Budgetontruiming.nl",
+  title: "Woningontruiming Capelle aan den IJssel | Budgetontruiming.nl",
   description:
     "Ontruiming Capelle: Centrum, Schollevaar, Fascinatio + alle wijken. Laagste prijs garantie.",
   keywords:

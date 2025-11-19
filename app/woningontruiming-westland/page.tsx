@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Westland | Budgetontruiming.nl",
+  title: "Woningontruiming Westland | Budgetontruiming.nl",
   description:
     "Ontruiming Westland: Naaldwijk, Wateringen, Monster + alle kernen. Laagste prijs garantie.",
   keywords:

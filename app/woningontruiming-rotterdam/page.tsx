@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Rotterdam | Budgetontruiming.nl",
+  title: "Woningontruiming Rotterdam | Budgetontruiming.nl",
   description:
     "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + alle wijken. Laagste prijs garantie.",
   keywords:

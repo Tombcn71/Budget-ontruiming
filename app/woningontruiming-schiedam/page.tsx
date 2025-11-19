@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Schiedam | Budgetontruiming.nl",
+  title: "Woningontruiming Schiedam | Budgetontruiming.nl",
   description:
     "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + alle wijken. Laagste prijs garantie.",
   keywords:

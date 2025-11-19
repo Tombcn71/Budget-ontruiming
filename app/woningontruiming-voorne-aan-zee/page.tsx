@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Voorne aan Zee | Budgetontruiming.nl",
+  title: "Woningontruiming Voorne aan Zee | Budgetontruiming.nl",
   description:
     "Ontruiming Voorne aan Zee: Brielle, Hellevoetsluis, Rockanje + alle kernen. Laagste prijs garantie.",
   keywords:

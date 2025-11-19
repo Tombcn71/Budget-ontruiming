@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Wassenaar | Budgetontruiming.nl",
+  title: "Woningontruiming Wassenaar | Budgetontruiming.nl",
   description:
     "Ontruiming Wassenaar: Centrum, Duinrell, Kievietsduin + alle wijken. Laagste prijs garantie.",
   keywords:

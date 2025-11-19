@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Rijswijk | Budgetontruiming.nl",
+  title: "Woningontruiming Rijswijk | Budgetontruiming.nl",
   description:
     "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + alle wijken. Laagste prijs garantie.",
   keywords:

@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Albrandswaard | Budgetontruiming.nl",
+  title: "Woningontruiming Albrandswaard | Budgetontruiming.nl",
   description:
     "Ontruiming Albrandswaard: Rhoon, Poortugaal + alle kernen. Laagste prijs garantie.",
   keywords:

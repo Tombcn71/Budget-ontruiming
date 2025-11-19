@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Delft | Budgetontruiming.nl",
+  title: "Woningontruiming Delft | Budgetontruiming.nl",
   description:
     "Ontruiming Delft: Centrum, Tanthof, Vrijenban + alle wijken. Laagste prijs garantie.",
   keywords:

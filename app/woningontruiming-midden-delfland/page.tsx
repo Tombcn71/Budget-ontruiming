@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Midden-Delfland | Budgetontruiming.nl",
+  title: "Woningontruiming Midden-Delfland | Budgetontruiming.nl",
   description:
     "Ontruiming Midden-Delfland: Schipluiden, Maasland, Den Hoorn + alle kernen. Laagste prijs garantie.",
   keywords:

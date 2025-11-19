@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Goeree-Overflakkee | Budgetontruiming.nl",
+  title: "Woningontruiming Goeree-Overflakkee | Budgetontruiming.nl",
   description:
     "Ontruiming Goeree-Overflakkee: Middelharnis, Ouddorp, Dirksland + alle kernen. Laagste prijs garantie.",
   keywords:

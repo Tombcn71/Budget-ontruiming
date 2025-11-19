@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Ridderkerk | Budgetontruiming.nl",
+  title: "Woningontruiming Ridderkerk | Budgetontruiming.nl",
   description:
     "Ontruiming Ridderkerk: Centrum, Bolnes, Rijsoord + alle kernen. Laagste prijs garantie.",
   keywords:

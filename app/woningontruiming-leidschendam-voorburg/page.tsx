@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Leidschendam-Voorburg | Budgetontruiming.nl",
+  title: "Woningontruiming Leidschendam-Voorburg | Budgetontruiming.nl",
   description:
     "Ontruiming Leidschendam-Voorburg: Centrum, Stompwijk + alle kernen. Laagste prijs garantie.",
   keywords:

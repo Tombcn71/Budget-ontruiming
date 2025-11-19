@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Krimpen aan den IJssel | Budgetontruiming.nl",
+  title: "Woningontruiming Krimpen aan den IJssel | Budgetontruiming.nl",
   description:
     "Ontruiming Krimpen: Centrum, Stormpolder, Lekkerkerk + alle wijken. Laagste prijs garantie.",
   keywords:

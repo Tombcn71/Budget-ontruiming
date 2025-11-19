@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Zoetermeer | Budgetontruiming.nl",
+  title: "Woningontruiming Zoetermeer | Budgetontruiming.nl",
   description:
     "Ontruiming Zoetermeer: Centrum, Meerzicht, Palenstein + alle wijken. Laagste prijs garantie.",
   keywords:

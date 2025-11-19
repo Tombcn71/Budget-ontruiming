@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Maassluis | Budgetontruiming.nl",
+  title: "Woningontruiming Maassluis | Budgetontruiming.nl",
   description:
     "Ontruiming Maassluis: Centrum, Steendijkpolder, Koningshoek + alle wijken. Laagste prijs garantie.",
   keywords:

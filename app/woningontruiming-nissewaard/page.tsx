@@ -11,7 +11,7 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Ontruiming Nissewaard | Budgetontruiming.nl",
+  title: "Woningontruiming Nissewaard | Budgetontruiming.nl",
   description:
     "Ontruiming Nissewaard: Spijkenisse, Abbenbroek, Heenvliet + alle dorpen. Laagste prijs garantie.",
   keywords:
