@@ -11,6 +11,43 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Vlaardingen | Alle Wijken | Laagste Prijs",
+  description:
+    "Ontruiming Vlaardingen: Centrum, Westwijk, Oostwijk + wijken. 3130-3137. Vindt u goedkoper? Eronder!",
+  keywords:
+    "woningontruiming vlaardingen, ontruiming vlaardingen, ontruiming centrum vlaardingen, ontruiming westwijk vlaardingen, ontruiming oostwijk vlaardingen, ontruiming ambacht vlaardingen, ontruiming holy vlaardingen, bezemschoon vlaardingen 3130-3137, spoedontruiming vlaardingen, ontruiming na overlijden vlaardingen",
+  openGraph: {
+    title: "Ontruiming Vlaardingen | Alle Wijken | Laagste Prijs",
+    description:
+      "Ontruiming Vlaardingen: Centrum, Westwijk, Oostwijk + wijken. 3130-3137. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-vlaardingen",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Vlaardingen | Alle Wijken",
+    description:
+      "Ontruiming Vlaardingen: Centrum, Westwijk, Oostwijk + wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-vlaardingen",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+
+// OLD
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Vlaardingen - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Vlaardingen. Centrum, Westwijk, Holy, Ambacht. Haven stad met persoonlijke service. Vindt u goedkoper? Wij duiken onder die prijs!!",

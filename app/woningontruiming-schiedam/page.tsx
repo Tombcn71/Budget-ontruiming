@@ -11,6 +11,43 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Schiedam | Alle Wijken | Laagste Prijs",
+  description:
+    "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + 2 wijken. 3110-3125. Vindt u goedkoper? Eronder!",
+  keywords:
+    "woningontruiming schiedam, ontruiming schiedam, ontruiming centrum schiedam, ontruiming nieuwland schiedam, ontruiming groenoord schiedam, ontruiming kethel schiedam, ontruiming spaland schiedam, bezemschoon schiedam 3110-3125, spoedontruiming schiedam, ontruiming na overlijden schiedam",
+  openGraph: {
+    title: "Ontruiming Schiedam | Alle Wijken | Laagste Prijs",
+    description:
+      "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + 2 wijken. 3110-3125. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-schiedam",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Schiedam | Alle Wijken",
+    description:
+      "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + 2 wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-schiedam",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+
+// OLD
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Schiedam - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Schiedam. Centrum, Nieuwland, Groenoord. Vindt u goedkoper? Wij duiken onder die prijs!!",

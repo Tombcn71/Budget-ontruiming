@@ -11,6 +11,43 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Leidschendam-Voorburg | Laagste Prijs",
+  description:
+    "Ontruiming Leidschendam-Voorburg: Centrum, Stompwijk + 4 kernen. 2260-2275. Vindt u goedkoper? Eronder!",
+  keywords:
+    "woningontruiming leidschendam-voorburg, ontruiming leidschendam, ontruiming voorburg, ontruiming stompwijk, ontruiming het centrum leidschendam, ontruiming korte akkeren, ontruiming hofwijk, bezemschoon leidschendam-voorburg 2260-2275, spoedontruiming leidschendam-voorburg, ontruiming na overlijden leidschendam-voorburg",
+  openGraph: {
+    title: "Ontruiming Leidschendam-Voorburg | Laagste Prijs",
+    description:
+      "Ontruiming Leidschendam-Voorburg: Centrum, Stompwijk + 4 kernen. 2260-2275. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Leidschendam-Voorburg",
+    description:
+      "Ontruiming Leidschendam-Voorburg: Centrum, Stompwijk + 4 kernen.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+
+// OLD
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Leidschendam-Voorburg - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Leidschendam-Voorburg. Alle wijken, alle woningtypes. Vindt u goedkoper? Wij duiken onder die prijs!!",

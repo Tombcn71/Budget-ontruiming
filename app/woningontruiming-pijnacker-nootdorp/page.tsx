@@ -11,6 +11,43 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Pijnacker-Nootdorp | Laagste Prijs",
+  description:
+    "Ontruiming Pijnacker-Nootdorp: Centrum, Zuid, Nootdorp + 2 kernen. 2640-2649. Vindt u goedkoper? Eronder!",
+  keywords:
+    "woningontruiming pijnacker-nootdorp, ontruiming pijnacker, ontruiming nootdorp, ontruiming pijnacker centrum, ontruiming pijnacker-zuid, ontruiming delfgauw, ontruiming keijzershof, bezemschoon pijnacker-nootdorp 2640-2649, spoedontruiming pijnacker-nootdorp, ontruiming na overlijden pijnacker-nootdorp",
+  openGraph: {
+    title: "Ontruiming Pijnacker-Nootdorp | Laagste Prijs",
+    description:
+      "Ontruiming Pijnacker-Nootdorp: Centrum, Zuid, Nootdorp + 2 kernen. 2640-2649. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Pijnacker-Nootdorp",
+    description:
+      "Ontruiming Pijnacker-Nootdorp: Centrum, Zuid, Nootdorp + 2 kernen.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+
+// OLD
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Pijnacker-Nootdorp. Snel, betrouwbaar en betaalbaar. Vindt u goedkoper? Wij duiken onder die prijs!!",

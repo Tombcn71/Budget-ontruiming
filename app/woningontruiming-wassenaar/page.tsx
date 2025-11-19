@@ -11,6 +11,43 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Wassenaar | Villa's & Landhuizen",
+  description:
+    "Ontruiming Wassenaar: Centrum, Duinrell, Kievietsduin + wijken. 2240-2245. Vindt u goedkoper? Eronder!",
+  keywords:
+    "woningontruiming wassenaar, ontruiming wassenaar, ontruiming centrum wassenaar, ontruiming duinrell wassenaar, ontruiming kievietsduin wassenaar, ontruiming villa wassenaar, ontruiming landhuis wassenaar, bezemschoon wassenaar 2240-2245, ontruiming na overlijden wassenaar",
+  openGraph: {
+    title: "Ontruiming Wassenaar | Villa's & Landhuizen",
+    description:
+      "Ontruiming Wassenaar: Centrum, Duinrell, Kievietsduin + wijken. 2240-2245. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-wassenaar",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Wassenaar | Villa's",
+    description:
+      "Ontruiming Wassenaar: Centrum, Duinrell, Kievietsduin + wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-wassenaar",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+
+// OLD
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Wassenaar - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Discrete en professionele woningontruiming in Wassenaar. Specialist in villa's en landhuizen. Vindt u goedkoper? Wij duiken onder die prijs!!",
