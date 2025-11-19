@@ -11,6 +11,43 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Delft | Alle Wijken | Laagste Prijs",
+  description:
+    "Ontruiming Delft: Centrum, Tanthof, Vrijenban + 5 wijken. 2600-2629. Vindt u goedkoper? Eronder!",
+  keywords:
+    "woningontruiming delft, ontruiming delft, ontruiming centrum delft, ontruiming tanthof delft, ontruiming vrijenban delft, ontruiming voorhof delft, ontruiming buitenhof delft, ontruiming wippolder delft, ontruiming hof van delft, ontruiming schieweg delft, bezemschoon delft 2600-2629, spoedontruiming delft, ontruiming na overlijden delft",
+  openGraph: {
+    title: "Ontruiming Delft | Alle Wijken | Laagste Prijs",
+    description:
+      "Ontruiming Delft: Centrum, Tanthof, Vrijenban + 5 wijken. 2600-2629. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-delft",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Delft | Alle Wijken",
+    description:
+      "Ontruiming Delft: Centrum, Tanthof, Vrijenban + 5 wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-delft",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+
+// OLD METADATA - DELETE THIS
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Delft - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Delft. Studentenwoningen, gezinswoningen en seniorenverhuizingen. Vindt u goedkoper? Wij duiken onder die prijs!!",

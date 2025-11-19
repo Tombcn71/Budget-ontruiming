@@ -11,24 +11,24 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Rotterdam - Laagste Prijs Garantie | Budget Ontruiming",
+  title: "Ontruiming Rotterdam | 10 Wijken | Laagste Prijs",
   description:
-    "Professionele woningontruiming in Rotterdam. Alle wijken: Noord, Zuid, West, Oost, Centrum. Vindt u goedkoper? Wij duiken onder die prijs!! 24/7 bereikbaar.",
+    "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + 7 wijken. 3000-3099. Vindt u goedkoper? Eronder!",
   keywords:
-    "woningontruiming rotterdam, ontruiming rotterdam, huis ontruimen rotterdam, bezemschoon opleveren rotterdam, woning leeghalen rotterdam, spoedontruiming rotterdam, appartement ontruimen rotterdam, hoogbouw ontruimen rotterdam",
+    "woningontruiming rotterdam, ontruiming rotterdam, ontruiming centrum rotterdam, ontruiming noord rotterdam, ontruiming zuid rotterdam, ontruiming west rotterdam, ontruiming oost rotterdam, ontruiming kralingen, ontruiming feijenoord, ontruiming charlois, ontruiming ijsselmonde, ontruiming prins alexander, bezemschoon rotterdam 3000-3099, spoedontruiming rotterdam, ontruiming na overlijden rotterdam",
   openGraph: {
-    title: "Woningontruiming Rotterdam - Laagste Prijs Garantie",
+    title: "Ontruiming Rotterdam | 10 Wijken | Laagste Prijs",
     description:
-      "Professionele woningontruiming in Rotterdam. Alle wijken, 24/7 bereikbaar. Vindt u goedkoper? Wij duiken onder die prijs!!",
+      "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + 7 wijken. 3000-3099. Vindt u goedkoper? Eronder!",
     url: "https://budgetontruiming.nl/woningontruiming-rotterdam",
     type: "website",
     locale: "nl_NL",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Woningontruiming Rotterdam - Laagste Prijs Garantie",
+    title: "Ontruiming Rotterdam | 10 Wijken",
     description:
-      "Professionele woningontruiming in Rotterdam. Alle wijken, 24/7 bereikbaar. Vindt u goedkoper? Wij duiken onder die prijs!!",
+      "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + 7 wijken.",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-rotterdam",

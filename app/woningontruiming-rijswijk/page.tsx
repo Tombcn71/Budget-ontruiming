@@ -11,6 +11,43 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Rijswijk | Alle Wijken | Laagste Prijs",
+  description:
+    "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + 3 wijken. 2280-2289. Vindt u goedkoper? Eronder!",
+  keywords:
+    "woningontruiming rijswijk, ontruiming rijswijk, ontruiming centrum rijswijk, ontruiming sion rijswijk, ontruiming steenvoorde rijswijk, ontruiming oud-rijswijk, ontruiming plaspoelpolder rijswijk, ontruiming in de bogaard rijswijk, bezemschoon rijswijk 2280-2289, spoedontruiming rijswijk, ontruiming na overlijden rijswijk",
+  openGraph: {
+    title: "Ontruiming Rijswijk | Alle Wijken | Laagste Prijs",
+    description:
+      "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + 3 wijken. 2280-2289. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-rijswijk",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Rijswijk | Alle Wijken",
+    description:
+      "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + 3 wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-rijswijk",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+
+// OLD METADATA
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Rijswijk - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Rijswijk. Alle wijken, snelle service. Vindt u goedkoper? Wij duiken onder die prijs!! Direct beschikbaar.",

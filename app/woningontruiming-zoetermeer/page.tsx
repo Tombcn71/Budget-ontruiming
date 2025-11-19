@@ -11,6 +11,43 @@ import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
 
 export const metadata: Metadata = {
+  title: "Ontruiming Zoetermeer | Alle Wijken | Laagste Prijs",
+  description:
+    "Ontruiming Zoetermeer: Centrum, Meerzicht, Palenstein + 5 wijken. 2700-2729. Vindt u goedkoper? Eronder!",
+  keywords:
+    "woningontruiming zoetermeer, ontruiming zoetermeer, ontruiming centrum zoetermeer, ontruiming meerzicht zoetermeer, ontruiming dorp zoetermeer, ontruiming palenstein zoetermeer, ontruiming buytenwegh zoetermeer, ontruiming seghwaert zoetermeer, ontruiming rokkeveen zoetermeer, ontruiming noordhove zoetermeer, bezemschoon zoetermeer 2700-2729, spoedontruiming zoetermeer, ontruiming na overlijden zoetermeer",
+  openGraph: {
+    title: "Ontruiming Zoetermeer | Alle Wijken | Laagste Prijs",
+    description:
+      "Ontruiming Zoetermeer: Centrum, Meerzicht, Palenstein + 5 wijken. 2700-2729. Vindt u goedkoper? Eronder!",
+    url: "https://budgetontruiming.nl/woningontruiming-zoetermeer",
+    type: "website",
+    locale: "nl_NL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ontruiming Zoetermeer | Alle Wijken",
+    description:
+      "Ontruiming Zoetermeer: Centrum, Meerzicht, Palenstein + 5 wijken.",
+  },
+  alternates: {
+    canonical: "https://budgetontruiming.nl/woningontruiming-zoetermeer",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
+
+// OLD METADATA
+export const OLD_metadata: Metadata = {
   title: "Woningontruiming Zoetermeer - Laagste Prijs Garantie | Budget Ontruiming",
   description:
     "Professionele woningontruiming in Zoetermeer. Alle wijken: Meerzicht, Rokkeveen, Palenstein. Vindt u goedkoper? Wij duiken onder die prijs!!",
