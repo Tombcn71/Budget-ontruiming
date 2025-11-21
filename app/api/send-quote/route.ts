@@ -115,12 +115,12 @@ export async function POST(request: Request) {
               
               <!-- Welcome Message -->
               <div style="background-color: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px; margin-bottom: 24px; border-radius: 4px;">
-                <p style="margin: 0; color: #92400e; font-weight: 600; font-size: 14px;">✅ Bedankt voor uw aanvraag! Hieronder vindt u uw offerte op basis van onze AI-analyse.</p>
+                <p style="margin: 0; color: #92400e; font-weight: 600; font-size: 14px;">Bedankt voor uw aanvraag! Hieronder vindt u uw offerte op basis van onze AI-analyse.</p>
               </div>
 
               <!-- Klantgegevens -->
               <h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
-                👤 Klantgegevens
+                Klantgegevens
               </h2>
               <table width="100%" cellpadding="8" cellspacing="0" style="margin-bottom: 24px;">
                 <tr>
@@ -143,7 +143,7 @@ export async function POST(request: Request) {
 
               <!-- Woninggegevens -->
               <h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
-                🏠 Woninggegevens
+                Woninggegevens
               </h2>
               <table width="100%" cellpadding="8" cellspacing="0" style="margin-bottom: 24px;">
                 <tr>
@@ -176,7 +176,7 @@ export async function POST(request: Request) {
 
               <!-- Geüploade Foto's -->
               <h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
-                📸 Geüploade Foto's (${analysisResults.length})
+                Geüploade Foto's (${analysisResults.length})
               </h2>
               <div style="margin-bottom: 24px;">
                 <table width="100%" cellpadding="0" cellspacing="0">
@@ -197,14 +197,14 @@ export async function POST(request: Request) {
                   </tr>
                 </table>
                 <p style="color: #6b7280; font-size: 12px; font-style: italic; margin: 12px 0 0 0;">
-                  💡 Klik op een foto om deze in volledig formaat te bekijken
+                  Klik op een foto om deze in volledig formaat te bekijken
                 </p>
               </div>
 
               ${furnitureList.length > 0 ? `
               <!-- AI Analyse Resultaten -->
               <h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
-                🤖 AI Analyse Resultaten
+                AI Analyse Resultaten
               </h2>
               <div style="background-color: #f9fafb; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
                 <table width="100%" cellpadding="6" cellspacing="0">
@@ -222,12 +222,12 @@ export async function POST(request: Request) {
                   </tr>
                   ${totalBoxes > 0 ? `
                   <tr>
-                    <td style="color: #6b7280; font-size: 14px;">📦 Dozen/tassen (geschat):</td>
+                    <td style="color: #6b7280; font-size: 14px;">Dozen/tassen (geschat):</td>
                     <td style="color: #1f2937; font-weight: 600; font-size: 14px; text-align: right;">${totalBoxes}</td>
                   </tr>
                   ` : ''}
                   <tr>
-                    <td style="color: #6b7280; font-size: 14px;">📊 Status inrichting:</td>
+                    <td style="color: #6b7280; font-size: 14px;">Status inrichting:</td>
                     <td style="color: #1f2937; font-weight: 600; font-size: 14px; text-align: right;">${volumeLevelText}</td>
                   </tr>
                 </table>
@@ -237,7 +237,7 @@ export async function POST(request: Request) {
               ${extraServices.length > 0 ? `
               <!-- Extra Werkzaamheden -->
               <h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
-                🛠️ Extra Werkzaamheden
+                Extra Werkzaamheden
               </h2>
               <ul style="margin: 0 0 24px 0; padding-left: 20px;">
                 ${extraServices.map(service => `
@@ -248,30 +248,30 @@ export async function POST(request: Request) {
 
               <!-- Prijsoverzicht -->
               <h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
-                💰 Prijsoverzicht
+                Prijsoverzicht
               </h2>
               <div style="background-color: #fef3c7; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
                 <table width="100%" cellpadding="8" cellspacing="0">
                   <tr>
                     <td style="color: #92400e; font-size: 14px;">Ontruiming:</td>
-                    <td style="color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">€${itemsCost.toFixed(2)}</td>
+                    <td style="color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">EUR ${itemsCost.toFixed(2)}</td>
                   </tr>
                   ${extrasCost > 0 ? `
                   <tr>
                     <td style="color: #92400e; font-size: 14px;">Extra werkzaamheden:</td>
-                    <td style="color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">€${extrasCost.toFixed(2)}</td>
+                    <td style="color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">EUR ${extrasCost.toFixed(2)}</td>
                   </tr>
                   ` : ''}
                   <tr>
                     <td style="color: #92400e; font-size: 14px;">BTW (21%):</td>
-                    <td style="color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">€${btw.toFixed(2)}</td>
+                    <td style="color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">EUR ${btw.toFixed(2)}</td>
                   </tr>
                   <tr>
                     <td colspan="2" style="border-top: 2px solid #f59e0b; padding-top: 12px;"></td>
                   </tr>
                   <tr>
                     <td style="color: #78350f; font-size: 18px; font-weight: bold;">Totaalprijs:</td>
-                    <td style="color: #78350f; font-size: 18px; font-weight: bold; text-align: right;">€${totalPrice.toFixed(2)}</td>
+                    <td style="color: #78350f; font-size: 18px; font-weight: bold; text-align: right;">EUR ${totalPrice.toFixed(2)}</td>
                   </tr>
                 </table>
               </div>
@@ -279,8 +279,8 @@ export async function POST(request: Request) {
               <!-- Disclaimer -->
               <div style="background-color: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px; border-radius: 4px; margin-bottom: 24px;">
                 <p style="margin: 0; color: #1e40af; font-size: 13px; line-height: 1.5;">
-                  ℹ️ <strong>Let op:</strong> Dit is een automatisch gegenereerde prijsindicatie op basis van AI-analyse. 
-                  Voor een definitieve offerte plannen we graag een gratis adviesgesprek in.
+                  <strong>Let op:</strong> Dit is een automatisch gegenereerde prijsindicatie op basis van AI-analyse. 
+                  Voor een definitieve offerte plannen we graag een adviesgesprek in.
                 </p>
               </div>
 
@@ -288,7 +288,7 @@ export async function POST(request: Request) {
               <div style="text-align: center; margin: 32px 0;">
                 <a href="https://calendly.com/tbvanreijn/30min" 
                    style="display: inline-block; background-color: #f97316; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">
-                  📅 Plan Gratis Adviesgesprek
+                  Plan Adviesgesprek
                 </a>
               </div>
 
@@ -320,6 +320,59 @@ export async function POST(request: Request) {
 </html>
     `
 
+    // Create plain text version for better deliverability
+    const textEmail = `
+BUDGET ONTRUIMING - UW PERSOONLIJKE OFFERTE
+
+Bedankt voor uw aanvraag! Hieronder vindt u uw offerte op basis van onze AI-analyse.
+
+KLANTGEGEVENS
+-------------
+Naam: ${formData.naam}
+Email: ${formData.email}
+Telefoon: ${formData.telefoon}
+
+WONINGGEGEVENS
+--------------
+Postcode: ${formData.postcode}
+Woningtype: ${formData.woningType}
+Vierkante Meter: ${formData.vierkanteMeter}m²
+Verdieping: ${formData.verdieping}${formData.liftAanwezig ? ' (Lift aanwezig)' : ''}
+
+${furnitureList.length > 0 ? `
+AI ANALYSE RESULTATEN
+---------------------
+Gedetecteerde meubels:
+${furnitureList.map(f => `- ${f.quantity}x ${f.item} (${f.size})`).join('\n')}
+
+${totalBoxes > 0 ? `Dozen/tassen (geschat): ${totalBoxes}\n` : ''}Status inrichting: ${volumeLevelText}
+` : ''}
+
+${extraServices.length > 0 ? `
+EXTRA WERKZAAMHEDEN
+-------------------
+${extraServices.map(service => `- ${service}`).join('\n')}
+` : ''}
+
+PRIJSOVERZICHT
+--------------
+Ontruiming: EUR ${itemsCost.toFixed(2)}
+${extrasCost > 0 ? `Extra werkzaamheden: EUR ${extrasCost.toFixed(2)}\n` : ''}BTW (21%): EUR ${btw.toFixed(2)}
+------------------------
+Totaalprijs: EUR ${totalPrice.toFixed(2)}
+
+LET OP: Dit is een automatisch gegenereerde prijsindicatie op basis van AI-analyse. 
+Voor een definitieve offerte plannen we graag een gratis adviesgesprek in.
+
+Plan uw gratis adviesgesprek: https://calendly.com/tbvanreijn/30min
+
+Vragen? Bel ons op ${formData.telefoon} of reply op deze email.
+
+---
+Budget Ontruiming
+Woningontruiming met laagste prijs garantie
+    `.trim()
+
     // Send email to customer with CC to business owner (original method)
     console.log('📧 Verzenden naar klant:', formData.email)
     console.log('📧 CC naar bedrijf: tbvanreijn@gmail.com')
@@ -329,8 +382,9 @@ export async function POST(request: Request) {
       to: [formData.email],
       cc: ['tbvanreijn@gmail.com'],
       replyTo: 'tbvanreijn@gmail.com',
-      subject: `🏠 Uw Offerte van Budget Ontruiming - €${totalPrice.toFixed(2)}`,
+      subject: `Uw Offerte van Budget Ontruiming - EUR ${totalPrice.toFixed(2)}`,
       html: htmlEmail,
+      text: textEmail,
     })
 
     if (error) {
