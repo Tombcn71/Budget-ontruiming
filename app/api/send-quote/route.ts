@@ -174,32 +174,7 @@ export async function POST(request: Request) {
                 </tr>
               </table>
 
-              <!-- Geüploade Foto's -->
-              <h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
-                Geüploade Foto's (${analysisResults.length})
-              </h2>
-              <div style="margin-bottom: 24px;">
-                <table width="100%" cellpadding="0" cellspacing="0">
-                  <tr>
-                    ${analysisResults.map((result: any, index: number) => `
-                      ${index % 2 === 0 && index > 0 ? '</tr><tr>' : ''}
-                      <td style="padding: 4px; width: 50%; vertical-align: top;">
-                        <a href="${result.url}" target="_blank" style="display: block; text-decoration: none;">
-                          <img 
-                            src="${result.url}" 
-                            alt="Foto ${index + 1}"
-                            style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 2px solid #e5e7eb; display: block;"
-                          />
-                          <p style="margin: 4px 0 0 0; color: #6b7280; font-size: 12px; text-align: center;">Foto ${index + 1}</p>
-                        </a>
-                      </td>
-                    `).join('')}
-                  </tr>
-                </table>
-                <p style="color: #6b7280; font-size: 12px; font-style: italic; margin: 12px 0 0 0;">
-                  Klik op een foto om deze in volledig formaat te bekijken
-                </p>
-              </div>
+              <!-- PHOTOS_SECTION_PLACEHOLDER -->
 
               ${furnitureList.length > 0 ? `
               <!-- AI Analyse Resultaten -->
@@ -373,33 +348,89 @@ Budget Ontruiming
 Woningontruiming met laagste prijs garantie
     `.trim()
 
-    // Send email to customer with CC to business owner (original method)
+    // Create customer email (without photos)
+    const customerEmail = htmlEmail.replace(
+      '<!-- PHOTOS_SECTION_PLACEHOLDER -->',
+      `<div style="margin-bottom: 24px; background-color: #f9fafb; padding: 16px; border-radius: 8px;">
+        <p style="margin: 0; color: #4b5563; font-size: 14px;">
+          U heeft ${analysisResults.length} foto${analysisResults.length > 1 ? "'s" : ''} geüpload voor de AI-analyse.
+        </p>
+      </div>`
+    )
+
+    // Create business email (with photos)
+    const businessEmail = htmlEmail.replace(
+      '<!-- PHOTOS_SECTION_PLACEHOLDER -->',
+      `<h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
+        Geüploade Foto's (${analysisResults.length})
+      </h2>
+      <div style="margin-bottom: 24px;">
+        <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            ${analysisResults.map((result: any, index: number) => `
+              ${index % 2 === 0 && index > 0 ? '</tr><tr>' : ''}
+              <td style="padding: 4px; width: 50%; vertical-align: top;">
+                <a href="${result.url}" target="_blank" style="display: block; text-decoration: none;">
+                  <img 
+                    src="${result.url}" 
+                    alt="Foto ${index + 1}"
+                    style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 2px solid #e5e7eb; display: block;"
+                  />
+                  <p style="margin: 4px 0 0 0; color: #6b7280; font-size: 12px; text-align: center;">Foto ${index + 1}</p>
+                </a>
+              </td>
+            `).join('')}
+          </tr>
+        </table>
+      </div>`
+    )
+
+    // Send to customer (without photos to avoid spam)
     console.log('📧 Verzenden naar klant:', formData.email)
-    console.log('📧 CC naar bedrijf: tbvanreijn@gmail.com')
-    
-    const { data, error } = await resend.emails.send({
+    const { data: customerData, error: customerError } = await resend.emails.send({
       from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
       to: [formData.email],
-      cc: ['tbvanreijn@gmail.com'],
       replyTo: 'tbvanreijn@gmail.com',
       subject: `Uw Offerte van Budget Ontruiming - EUR ${totalPrice.toFixed(2)}`,
-      html: htmlEmail,
+      html: customerEmail,
       text: textEmail,
     })
 
-    if (error) {
-      console.error('❌ Email error:', error)
+    if (customerError) {
+      console.error('❌ Klant email error:', customerError)
+    } else {
+      console.log('✅ Klant email verzonden!', customerData)
+    }
+
+    // Send to business (with photos for review)
+    console.log('📧 Verzenden naar bedrijf: tbvanreijn@gmail.com')
+    const { data: businessData, error: businessError } = await resend.emails.send({
+      from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
+      to: ['tbvanreijn@gmail.com'],
+      replyTo: formData.email,
+      subject: `Nieuwe Offerte Aanvraag - ${formData.naam} - EUR ${totalPrice.toFixed(2)}`,
+      html: businessEmail,
+      text: textEmail,
+    })
+
+    if (businessError) {
+      console.error('❌ Bedrijf email error:', businessError)
+    } else {
+      console.log('✅ Bedrijf email verzonden!', businessData)
+    }
+
+    // Fail if customer email didn't send
+    if (customerError) {
       return NextResponse.json(
-        { error: 'Email kon niet worden verzonden', details: error },
+        { error: 'Klant email kon niet worden verzonden', details: customerError },
         { status: 500 }
       )
     }
 
-    console.log('✅ Email verzonden naar klant en bedrijf!', data)
-
     return NextResponse.json({
       success: true,
-      messageId: data?.id,
+      customerMessageId: customerData?.id,
+      businessMessageId: businessData?.id,
     })
 
   } catch (error: any) {
