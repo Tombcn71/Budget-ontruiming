@@ -501,7 +501,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       <strong>⚡ Binnen 1 minuut uw prijs!</strong>
                     </p>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Upload foto's → AI analyseert of de woning <strong>leegstaand, normaal of overvol</strong> is → Direct uw prijsindicatie. Geen afspraak, geen wachten.
+                      Upload foto's → AI analyseert of de woning <strong>minimaal, normaal, vol of overvol</strong> is → Direct uw prijsindicatie. Geen afspraak, geen wachten.
                     </p>
                   </div>
                   <PhotoUpload 

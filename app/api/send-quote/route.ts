@@ -21,8 +21,8 @@ export async function POST(request: Request) {
     // Build furniture list from AI analysis
     const allFurniture: Record<string, { quantity: number; size: string; item: string }> = {}
     let totalBoxes = 0
-    let highestVolumeLevel = 'empty'
-    const volumeLevels = ['empty', 'sparse', 'half', 'full', 'very_full']
+    let highestVolumeLevel = 'sparse'
+    const volumeLevels = ['sparse', 'half', 'full', 'very_full']
 
     analysisResults.forEach(({ analysis }: any) => {
       if (analysis.furniture) {
@@ -51,8 +51,7 @@ export async function POST(request: Request) {
 
     // Map volume level to Dutch
     const volumeLevelText = {
-      'empty': 'Leegstaand',
-      'sparse': 'Schaars ingericht',
+      'sparse': 'Minimaal bewoond',
       'half': 'Normaal bewoond',
       'full': 'Vol ingericht',
       'very_full': 'Overvol',
@@ -411,11 +410,15 @@ Woningontruiming met laagste prijs garantie
     <!-- Inventaris -->
     <div style="margin-bottom: 25px;">
       <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Gedetecteerde Inventaris</h2>
-      <div style="background-color: #f9fafb; padding: 15px; border-radius: 6px;">
+      <div style="background-color: #f9fafb; padding: 15px; border-radius: 6px; margin-bottom: 12px;">
         <p style="color: #4b5563; font-size: 14px; line-height: 1.8; margin: 0;">
           ${furnitureList.map(f => `<span style="display: inline-block; margin-right: 8px; margin-bottom: 4px;">${f.quantity}x ${f.item}</span>`).join(' • ')}
         </p>
       </div>
+      <p style="color: #6b7280; font-size: 13px; font-style: italic; margin: 0;">
+        Op basis van deze inventaris hebben we bepaald dat uw woning <strong>${volumeLevelText.toLowerCase()}</strong> is. 
+        Dit bepaalt de benodigde tijd en materialen voor de ontruiming.
+      </p>
     </div>
     ` : ''}
     
@@ -467,7 +470,7 @@ Woningontruiming met laagste prijs garantie
         <strong>Binnen 1 minuut uw prijs - hoe werkt dat?</strong>
       </p>
       <p style="color: #166534; font-size: 13px; line-height: 1.6; margin: 0;">
-        Onze AI heeft uw foto's geanalyseerd en bepaald of de woning leegstaand, normaal of overvol is. 
+        Onze AI heeft uw foto's geanalyseerd en bepaald of de woning minimaal, normaal, vol of overvol is. 
         Op basis van het aantal meubels en de staat van de woning hebben we direct deze prijsindicatie berekend. 
         Geen wachttijd, geen afspraak nodig - wel de scherpe prijs van Budget Ontruiming.
       </p>

@@ -23,7 +23,7 @@ interface AnalysisResult {
     size: 'small' | 'medium' | 'large'
   }>
   boxes_estimate: number
-  volume_level: 'empty' | 'sparse' | 'half' | 'full' | 'very_full'
+  volume_level: 'sparse' | 'half' | 'full' | 'very_full'
   floor_visible_percentage: number
   special_items: string[]
   access_notes: string
@@ -77,16 +77,15 @@ BELANGRIJK - Tel ALTIJD ALLE items:
 - Meubels: banken, stoelen, tafels, kasten, bedden, bureaus, etc.
 - Klein spullen: dozen, tassen, decoraties, apparaten, etc.
 - Schat dozen/tassen/rommel realistisch in (zelfs kleine items tellen mee!)
-- volume_level: Gebruik ALTIJD één van deze 5 niveaus:
-  • "empty" = leegstaand (0-10% vol, nagenoeg geen spullen)
-  • "sparse" = schaars ingericht (10-30% vol, weinig meubels/spullen)
+- volume_level: Gebruik ALTIJD één van deze 4 niveaus (een woning die ontruimd moet worden is NOOIT helemaal leeg):
+  • "sparse" = minimaal bewoond (10-30% vol, weinig meubels/spullen)
   • "half" = normaal bewoond (30-60% vol, gemiddelde hoeveelheid)
   • "full" = vol ingericht (60-85% vol, veel spullen/meubels)
   • "very_full" = overvol (85-100% vol, zeer veel/opeengestapeld)
 - floor_visible_percentage: hoeveel % vloer is zichtbaar/vrij
 - special_items: zware/fragiele items die extra aandacht vragen (piano, kluis, aquarium, etc.)
 - estimated_hours: geschatte uren voor 2 personen om te ontruimen
-- Als de ruimte LEEG lijkt, zet dan furniture: [] maar volume_level: "empty"`
+- Als de ruimte weinig spullen heeft, gebruik "sparse" als minimum (NIET empty)`
         },
         {
           role: 'user',
