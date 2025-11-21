@@ -472,7 +472,10 @@ Woningontruiming met laagste prijs garantie
     <!-- Contact -->
     <div style="text-align: center; margin-bottom: 20px;">
       <p style="color: #4b5563; font-size: 14px; margin: 0 0 8px 0;">Vragen of direct contact?</p>
-      <p style="color: #f97316; font-size: 20px; font-weight: bold; margin: 0;">085 060 8180</p>
+      <p style="color: #f97316; font-size: 20px; font-weight: bold; margin: 0 0 12px 0;">085 060 8180</p>
+      <p style="color: #6b7280; font-size: 14px; margin: 0;">
+        Of <a href="https://calendly.com/tbvanreijn/30min" style="color: #f97316; text-decoration: none;">plan een adviesgesprek in</a>
+      </p>
     </div>
     
     <!-- Footer -->
