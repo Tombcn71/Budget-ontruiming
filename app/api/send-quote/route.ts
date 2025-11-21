@@ -323,7 +323,7 @@ export async function POST(request: Request) {
     // Send email to customer
     console.log('📧 Verzenden naar klant:', formData.email)
     const { data: customerData, error: customerError } = await resend.emails.send({
-      from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
+      from: 'Budget Ontruiming <onboarding@resend.dev>', // Tijdelijk Resend test domein
       to: [formData.email],
       replyTo: 'tbvanreijn@gmail.com',
       subject: `🏠 Uw Offerte van Budget Ontruiming - €${totalPrice.toFixed(2)}`,
@@ -340,7 +340,7 @@ export async function POST(request: Request) {
     // Also send a copy to business owner
     console.log('📧 Verzenden naar bedrijf: tbvanreijn@gmail.com')
     const { data: businessData, error: businessError } = await resend.emails.send({
-      from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
+      from: 'Budget Ontruiming <onboarding@resend.dev>', // Tijdelijk Resend test domein
       to: ['tbvanreijn@gmail.com'],
       replyTo: formData.email, // You can reply directly to customer
       subject: `🔔 Nieuwe Offerte Aanvraag - ${formData.naam} - €${totalPrice.toFixed(2)}`,
