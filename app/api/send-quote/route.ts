@@ -1,9 +1,8 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { sql } from '@/lib/db/client'
-import { customAlphabet } from 'nanoid'
-
-const nanoid = customAlphabet('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 21)
+// import { sql } from '@/lib/db/client'
+// import { customAlphabet } from 'nanoid'
+// const nanoid = customAlphabet('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 21)
 
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -741,7 +740,9 @@ Woningontruiming met laagste prijs garantie
       )
     }
 
-    // Save to database
+    // Save to database - TEMPORARILY DISABLED
+    // TODO: Re-enable after installing @neondatabase/serverless locally
+    /*
     try {
       const quoteId = nanoid()
       await sql`
@@ -764,6 +765,7 @@ Woningontruiming met laagste prijs garantie
       console.error('⚠️ Database save failed:', dbError)
       // Don't fail the request if DB save fails
     }
+    */
 
     return NextResponse.json({
       success: true,
