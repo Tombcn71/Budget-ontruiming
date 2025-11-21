@@ -356,59 +356,130 @@ Woningontruiming met laagste prijs garantie
   <meta charset="utf-8">
   <title>Uw Offerte - Budget Ontruiming</title>
 </head>
-<body style="margin: 0; padding: 20px; font-family: Arial, sans-serif; background-color: #ffffff;">
-  <div style="max-width: 600px; margin: 0 auto;">
+<body style="margin: 0; padding: 20px; font-family: Arial, sans-serif; background-color: #f9fafb;">
+  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid #e5e7eb;">
     
-    <h1 style="color: #333; font-size: 24px;">Budget Ontruiming</h1>
-    <p style="color: #666; font-size: 16px;">Bedankt voor uw offerte aanvraag.</p>
+    <!-- Header -->
+    <div style="border-bottom: 3px solid #f97316; padding-bottom: 20px; margin-bottom: 25px;">
+      <h1 style="color: #f97316; font-size: 26px; margin: 0 0 8px 0;">Budget Ontruiming</h1>
+      <p style="color: #6b7280; font-size: 15px; margin: 0;">Bedankt voor uw offerte aanvraag</p>
+    </div>
     
-    <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+    <!-- Uw Gegevens -->
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Uw Gegevens</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 6px 0; color: #6b7280; font-size: 14px; width: 40%;">Naam</td>
+          <td style="padding: 6px 0; color: #1f2937; font-size: 14px; font-weight: 600;">${formData.naam}</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 0; color: #6b7280; font-size: 14px;">Email</td>
+          <td style="padding: 6px 0; color: #1f2937; font-size: 14px;">${formData.email}</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 0; color: #6b7280; font-size: 14px;">Telefoon</td>
+          <td style="padding: 6px 0; color: #1f2937; font-size: 14px;">${formData.telefoon}</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 0; color: #6b7280; font-size: 14px;">Postcode</td>
+          <td style="padding: 6px 0; color: #1f2937; font-size: 14px;">${formData.postcode}</td>
+        </tr>
+      </table>
+    </div>
     
-    <h2 style="color: #333; font-size: 18px;">Uw Gegevens</h2>
-    <p style="color: #666; font-size: 14px; line-height: 1.6;">
-      Naam: ${formData.naam}<br>
-      Email: ${formData.email}<br>
-      Telefoon: ${formData.telefoon}<br>
-      Postcode: ${formData.postcode}
-    </p>
-    
-    <h2 style="color: #333; font-size: 18px;">Woning Details</h2>
-    <p style="color: #666; font-size: 14px; line-height: 1.6;">
-      Type: ${formData.woningType}<br>
-      Vierkante meter: ${formData.vierkanteMeter}m²<br>
-      Verdieping: ${formData.verdieping}
-    </p>
+    <!-- Woning Details -->
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Woning Details</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 6px 0; color: #6b7280; font-size: 14px; width: 40%;">Type</td>
+          <td style="padding: 6px 0; color: #1f2937; font-size: 14px;">${formData.woningType}</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 0; color: #6b7280; font-size: 14px;">Vierkante meter</td>
+          <td style="padding: 6px 0; color: #1f2937; font-size: 14px;">${formData.vierkanteMeter}m²</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 0; color: #6b7280; font-size: 14px;">Verdieping</td>
+          <td style="padding: 6px 0; color: #1f2937; font-size: 14px;">${formData.verdieping}</td>
+        </tr>
+      </table>
+    </div>
     
     ${furnitureList.length > 0 ? `
-    <h2 style="color: #333; font-size: 18px;">Inventaris</h2>
-    <p style="color: #666; font-size: 14px; line-height: 1.6;">
-      ${furnitureList.map(f => `${f.quantity}x ${f.item}`).join(', ')}
-    </p>
+    <!-- Inventaris -->
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Gedetecteerde Inventaris</h2>
+      <div style="background-color: #f9fafb; padding: 15px; border-radius: 6px;">
+        <p style="color: #4b5563; font-size: 14px; line-height: 1.8; margin: 0;">
+          ${furnitureList.map(f => `<span style="display: inline-block; margin-right: 8px; margin-bottom: 4px;">${f.quantity}x ${f.item}</span>`).join(' • ')}
+        </p>
+      </div>
+    </div>
     ` : ''}
     
-    <h2 style="color: #333; font-size: 18px;">Prijs Indicatie</h2>
-    <p style="color: #666; font-size: 14px; line-height: 1.6;">
-      Ontruiming: EUR ${itemsCost.toFixed(2)}<br>
-      ${extrasCost > 0 ? `Extra werkzaamheden: EUR ${extrasCost.toFixed(2)}<br>` : ''}
-      BTW (21%): EUR ${btw.toFixed(2)}<br>
-      <strong style="color: #333;">Totaal: EUR ${totalPrice.toFixed(2)}</strong>
-    </p>
+    ${extraServices.length > 0 ? `
+    <!-- Extra Werkzaamheden -->
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Extra Werkzaamheden</h2>
+      <div style="background-color: #f9fafb; padding: 15px; border-radius: 6px;">
+        <p style="color: #4b5563; font-size: 14px; line-height: 1.6; margin: 0;">
+          ${extraServices.map(service => `• ${service}`).join('<br>')}
+        </p>
+      </div>
+    </div>
+    ` : ''}
     
-    <p style="color: #666; font-size: 13px; line-height: 1.6; background-color: #f5f5f5; padding: 15px; border-radius: 4px;">
-      Dit is een indicatie op basis van uw gegevens. Voor een definitieve offerte nemen we graag contact met u op.
-    </p>
+    <!-- Prijs Indicatie -->
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Prijs Indicatie</h2>
+      <div style="background-color: #fef3c7; padding: 20px; border-radius: 6px; border: 1px solid #fde68a;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px;">Ontruiming</td>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">EUR ${itemsCost.toFixed(2)}</td>
+          </tr>
+          ${extrasCost > 0 ? `
+          <tr>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px;">Extra werkzaamheden</td>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">EUR ${extrasCost.toFixed(2)}</td>
+          </tr>
+          ` : ''}
+          <tr>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px;">BTW (21%)</td>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">EUR ${btw.toFixed(2)}</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="padding: 8px 0; border-top: 2px solid #f59e0b;"></td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0; color: #78350f; font-size: 17px; font-weight: bold;">Totaalprijs</td>
+            <td style="padding: 6px 0; color: #78350f; font-size: 17px; text-align: right; font-weight: bold;">EUR ${totalPrice.toFixed(2)}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
     
-    <p style="color: #666; font-size: 14px; line-height: 1.6;">
-      We nemen binnen 24 uur contact met u op.<br>
-      Vragen? Bel ons op <strong>085 060 8180</strong>
-    </p>
+    <!-- Disclaimer -->
+    <div style="background-color: #eff6ff; padding: 16px; border-radius: 6px; border-left: 4px solid #3b82f6; margin-bottom: 25px;">
+      <p style="color: #1e40af; font-size: 13px; line-height: 1.6; margin: 0;">
+        <strong>Let op:</strong> Dit is een automatische prijsindicatie op basis van uw gegevens. 
+        Voor een definitieve offerte nemen we binnen 24 uur contact met u op.
+      </p>
+    </div>
     
-    <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+    <!-- Contact -->
+    <div style="text-align: center; margin-bottom: 20px;">
+      <p style="color: #4b5563; font-size: 14px; margin: 0 0 8px 0;">Vragen of direct contact?</p>
+      <p style="color: #f97316; font-size: 20px; font-weight: bold; margin: 0;">085 060 8180</p>
+    </div>
     
-    <p style="color: #999; font-size: 12px;">
-      Budget Ontruiming<br>
-      Woningontruiming Zuid-Holland
-    </p>
+    <!-- Footer -->
+    <div style="border-top: 1px solid #e5e7eb; padding-top: 20px; text-align: center;">
+      <p style="color: #6b7280; font-size: 13px; margin: 0 0 4px 0; font-weight: 600;">Budget Ontruiming</p>
+      <p style="color: #9ca3af; font-size: 12px; margin: 0;">Woningontruiming Zuid-Holland</p>
+    </div>
     
   </div>
 </body>
