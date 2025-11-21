@@ -469,12 +469,23 @@ Woningontruiming met laagste prijs garantie
       </p>
     </div>
     
-    <!-- Contact -->
+    <!-- Call to Action -->
+    <div style="background-color: #fef3c7; padding: 24px; border-radius: 8px; text-align: center; margin-bottom: 20px; border: 2px solid #fde68a;">
+      <p style="color: #92400e; font-size: 16px; font-weight: 600; margin: 0 0 16px 0;">Volgende stap: Plan uw gratis adviesgesprek</p>
+      <div style="margin-bottom: 16px;">
+        <a href="https://calendly.com/tbvanreijn/30min" style="display: inline-block; background-color: #f97316; color: #ffffff; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">
+          Plan Adviesgesprek
+        </a>
+      </div>
+      <p style="color: #78350f; font-size: 13px; margin: 0;">
+        Kies een tijdstip dat u uitkomt voor een persoonlijk gesprek
+      </p>
+    </div>
+    
+    <!-- Contact info klein -->
     <div style="text-align: center; margin-bottom: 20px;">
-      <p style="color: #4b5563; font-size: 14px; margin: 0 0 8px 0;">Vragen of direct contact?</p>
-      <p style="color: #f97316; font-size: 20px; font-weight: bold; margin: 0 0 12px 0;">085 060 8180</p>
-      <p style="color: #6b7280; font-size: 14px; margin: 0;">
-        Of <a href="https://calendly.com/tbvanreijn/30min" style="color: #f97316; text-decoration: none;">plan een adviesgesprek in</a>
+      <p style="color: #9ca3af; font-size: 12px; margin: 0;">
+        Liever contact via email of telefoon? Stuur een reply of bel 085 060 8180
       </p>
     </div>
     
