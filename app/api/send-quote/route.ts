@@ -527,22 +527,22 @@ Woningontruiming met laagste prijs garantie
   <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb;">
     
     <!-- Alert Header -->
-    <div style="background-color: #dc2626; padding: 20px; text-align: center;">
+    <div style="background-color: #f97316; padding: 20px; text-align: center;">
       <h1 style="color: #ffffff; font-size: 24px; margin: 0 0 8px 0;">🔔 NIEUWE OFFERTE AANVRAAG</h1>
       <p style="color: #ffffff; font-size: 18px; margin: 0; font-weight: 600;">${formData.naam} • EUR ${totalPrice.toFixed(2)}</p>
     </div>
     
     <div style="padding: 30px;">
       
-      <!-- Quick Actions -->
+      <!-- Status -->
       <div style="background-color: #fef3c7; padding: 16px; border-radius: 6px; margin-bottom: 25px; border-left: 4px solid #f59e0b;">
         <p style="margin: 0; color: #92400e; font-size: 14px; font-weight: 600;">
-          📧 Reply op deze email om direct contact op te nemen met ${formData.naam}
+          ⏳ Wacht op Calendly boeking van ${formData.naam}
         </p>
       </div>
       
       <!-- Klantgegevens -->
-      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Klantgegevens</h2>
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Klantgegevens</h2>
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
         <tr>
           <td style="padding: 8px 0; color: #6b7280; font-size: 14px; width: 40%;">Naam</td>
@@ -550,11 +550,11 @@ Woningontruiming met laagste prijs garantie
         </tr>
         <tr>
           <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Email</td>
-          <td style="padding: 8px 0;"><a href="mailto:${formData.email}" style="color: #dc2626; text-decoration: none; font-weight: 600;">${formData.email}</a></td>
+          <td style="padding: 8px 0;"><a href="mailto:${formData.email}" style="color: #f97316; text-decoration: none; font-weight: 600;">${formData.email}</a></td>
         </tr>
         <tr>
           <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Telefoon</td>
-          <td style="padding: 8px 0;"><a href="tel:${formData.telefoon}" style="color: #dc2626; text-decoration: none; font-weight: 600;">${formData.telefoon}</a></td>
+          <td style="padding: 8px 0;"><a href="tel:${formData.telefoon}" style="color: #f97316; text-decoration: none; font-weight: 600;">${formData.telefoon}</a></td>
         </tr>
         <tr>
           <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Postcode</td>
@@ -563,7 +563,7 @@ Woningontruiming met laagste prijs garantie
       </table>
       
       <!-- Woning Details -->
-      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Woning Details</h2>
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Woning Details</h2>
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
         <tr>
           <td style="padding: 8px 0; color: #6b7280; font-size: 14px; width: 40%;">Type</td>
@@ -581,7 +581,7 @@ Woningontruiming met laagste prijs garantie
       
       <!-- AI Analyse -->
       ${furnitureList.length > 0 ? `
-      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">AI Analyse</h2>
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">AI Analyse</h2>
       <div style="background-color: #f9fafb; padding: 15px; border-radius: 6px; margin-bottom: 12px;">
         <p style="color: #6b7280; font-size: 13px; margin: 0 0 8px 0; font-weight: 600;">Gedetecteerde meubels:</p>
         <p style="color: #4b5563; font-size: 14px; margin: 0;">
@@ -596,14 +596,14 @@ Woningontruiming met laagste prijs garantie
       
       <!-- Extra's -->
       ${extraServices.length > 0 ? `
-      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Extra Werkzaamheden</h2>
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Extra Werkzaamheden</h2>
       <ul style="margin: 0 0 25px 0; padding-left: 20px;">
         ${extraServices.map(service => `<li style="color: #4b5563; font-size: 14px; margin-bottom: 6px;">${service}</li>`).join('')}
       </ul>
       ` : ''}
       
       <!-- Foto's -->
-      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Foto's (${analysisResults.length})</h2>
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Foto's (${analysisResults.length})</h2>
       <div style="margin-bottom: 25px;">
         <table width="100%" cellpadding="0" cellspacing="0">
           <tr>
@@ -625,7 +625,7 @@ Woningontruiming met laagste prijs garantie
       </div>
       
       <!-- Prijs -->
-      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Prijsindicatie (naar klant gestuurd)</h2>
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #f97316; padding-left: 12px;">Prijsindicatie (naar klant gestuurd)</h2>
       <div style="background-color: #fef3c7; padding: 20px; border-radius: 6px; border: 1px solid #fde68a;">
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
