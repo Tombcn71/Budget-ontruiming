@@ -320,60 +320,32 @@ export async function POST(request: Request) {
 </html>
     `
 
-    // Send email to customer
+    // Send email to customer with CC to business owner (original method)
     console.log('📧 Verzenden naar klant:', formData.email)
-    const { data: customerData, error: customerError } = await resend.emails.send({
-      from: 'Budget Ontruiming <onboarding@resend.dev>', // Tijdelijk Resend test domein
+    console.log('📧 CC naar bedrijf: tbvanreijn@gmail.com')
+    
+    const { data, error } = await resend.emails.send({
+      from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
       to: [formData.email],
+      cc: ['tbvanreijn@gmail.com'],
       replyTo: 'tbvanreijn@gmail.com',
       subject: `🏠 Uw Offerte van Budget Ontruiming - €${totalPrice.toFixed(2)}`,
       html: htmlEmail,
     })
 
-    if (customerError) {
-      console.error('❌ Klant email error:', customerError)
-      // Don't return yet, try to send to business anyway
-    } else {
-      console.log('✅ Klant email verzonden!', customerData)
-    }
-
-    // Also send a copy to business owner
-    console.log('📧 Verzenden naar bedrijf: tbvanreijn@gmail.com')
-    const { data: businessData, error: businessError } = await resend.emails.send({
-      from: 'Budget Ontruiming <onboarding@resend.dev>', // Tijdelijk Resend test domein
-      to: ['tbvanreijn@gmail.com'],
-      replyTo: formData.email, // You can reply directly to customer
-      subject: `🔔 Nieuwe Offerte Aanvraag - ${formData.naam} - €${totalPrice.toFixed(2)}`,
-      html: htmlEmail,
-    })
-
-    if (businessError) {
-      console.error('❌ Bedrijf email error:', businessError)
-    } else {
-      console.log('✅ Bedrijf email verzonden!', businessData)
-    }
-
-    // Customer email is most important - fail if it didn't send
-    if (customerError) {
-      console.error('⚠️ KRITIEK: Klant email niet verzonden!')
+    if (error) {
+      console.error('❌ Email error:', error)
       return NextResponse.json(
-        { 
-          error: 'Klant email kon niet worden verzonden', 
-          details: { customerError, businessError },
-          customerEmailSent: false,
-          businessEmailSent: !businessError,
-        },
+        { error: 'Email kon niet worden verzonden', details: error },
         { status: 500 }
       )
     }
 
-    // Success if at least customer email was sent
+    console.log('✅ Email verzonden naar klant en bedrijf!', data)
+
     return NextResponse.json({
       success: true,
-      customerEmailSent: true,
-      businessEmailSent: !businessError,
-      customerMessageId: customerData?.id,
-      businessMessageId: businessData?.id,
+      messageId: data?.id,
     })
 
   } catch (error: any) {
