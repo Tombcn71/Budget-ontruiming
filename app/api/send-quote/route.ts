@@ -515,11 +515,96 @@ Woningontruiming met laagste prijs garantie
 </html>
     `.trim()
 
-    // Create business email (with photos and alert styling)
-    const businessEmailPhotos = `<h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
-        Geüploade Foto's (${analysisResults.length})
-      </h2>
-      <div style="margin-bottom: 24px;">
+    // Create business email (internal notification)
+    const businessEmail = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Nieuwe Aanvraag - Budget Ontruiming</title>
+</head>
+<body style="margin: 0; padding: 20px; font-family: Arial, sans-serif; background-color: #f9fafb;">
+  <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb;">
+    
+    <!-- Alert Header -->
+    <div style="background-color: #dc2626; padding: 20px; text-align: center;">
+      <h1 style="color: #ffffff; font-size: 24px; margin: 0 0 8px 0;">🔔 NIEUWE OFFERTE AANVRAAG</h1>
+      <p style="color: #ffffff; font-size: 18px; margin: 0; font-weight: 600;">${formData.naam} • EUR ${totalPrice.toFixed(2)}</p>
+    </div>
+    
+    <div style="padding: 30px;">
+      
+      <!-- Quick Actions -->
+      <div style="background-color: #fef3c7; padding: 16px; border-radius: 6px; margin-bottom: 25px; border-left: 4px solid #f59e0b;">
+        <p style="margin: 0; color: #92400e; font-size: 14px; font-weight: 600;">
+          📧 Reply op deze email om direct contact op te nemen met ${formData.naam}
+        </p>
+      </div>
+      
+      <!-- Klantgegevens -->
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Klantgegevens</h2>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
+        <tr>
+          <td style="padding: 8px 0; color: #6b7280; font-size: 14px; width: 40%;">Naam</td>
+          <td style="padding: 8px 0; color: #1f2937; font-size: 14px; font-weight: 600;">${formData.naam}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Email</td>
+          <td style="padding: 8px 0;"><a href="mailto:${formData.email}" style="color: #dc2626; text-decoration: none; font-weight: 600;">${formData.email}</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Telefoon</td>
+          <td style="padding: 8px 0;"><a href="tel:${formData.telefoon}" style="color: #dc2626; text-decoration: none; font-weight: 600;">${formData.telefoon}</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Postcode</td>
+          <td style="padding: 8px 0; color: #1f2937; font-size: 14px;">${formData.postcode}</td>
+        </tr>
+      </table>
+      
+      <!-- Woning Details -->
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Woning Details</h2>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
+        <tr>
+          <td style="padding: 8px 0; color: #6b7280; font-size: 14px; width: 40%;">Type</td>
+          <td style="padding: 8px 0; color: #1f2937; font-size: 14px;">${formData.woningType}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Vierkante meter</td>
+          <td style="padding: 8px 0; color: #1f2937; font-size: 14px;">${formData.vierkanteMeter}m²</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Verdieping</td>
+          <td style="padding: 8px 0; color: #1f2937; font-size: 14px;">${formData.verdieping}${formData.liftAanwezig ? ' (Lift ✅)' : ''}</td>
+        </tr>
+      </table>
+      
+      <!-- AI Analyse -->
+      ${furnitureList.length > 0 ? `
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">AI Analyse</h2>
+      <div style="background-color: #f9fafb; padding: 15px; border-radius: 6px; margin-bottom: 12px;">
+        <p style="color: #6b7280; font-size: 13px; margin: 0 0 8px 0; font-weight: 600;">Gedetecteerde meubels:</p>
+        <p style="color: #4b5563; font-size: 14px; margin: 0;">
+          ${furnitureList.map(f => `${f.quantity}x ${f.item}`).join(' • ')}
+        </p>
+      </div>
+      <p style="color: #1f2937; font-size: 14px; margin: 0 0 25px 0;">
+        <strong>Status:</strong> ${volumeLevelText} 
+        ${totalBoxes > 0 ? `| <strong>Dozen:</strong> ~${totalBoxes}` : ''}
+      </p>
+      ` : ''}
+      
+      <!-- Extra's -->
+      ${extraServices.length > 0 ? `
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Extra Werkzaamheden</h2>
+      <ul style="margin: 0 0 25px 0; padding-left: 20px;">
+        ${extraServices.map(service => `<li style="color: #4b5563; font-size: 14px; margin-bottom: 6px;">${service}</li>`).join('')}
+      </ul>
+      ` : ''}
+      
+      <!-- Foto's -->
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Foto's (${analysisResults.length})</h2>
+      <div style="margin-bottom: 25px;">
         <table width="100%" cellpadding="0" cellspacing="0">
           <tr>
             ${analysisResults.map((result: any, index: number) => `
@@ -529,7 +614,7 @@ Woningontruiming met laagste prijs garantie
                   <img 
                     src="${result.url}" 
                     alt="Foto ${index + 1}"
-                    style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 2px solid #e5e7eb; display: block;"
+                    style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 2px solid #e5e7eb; display: block;"
                   />
                   <p style="margin: 4px 0 0 0; color: #6b7280; font-size: 12px; text-align: center;">Foto ${index + 1}</p>
                 </a>
@@ -537,16 +622,49 @@ Woningontruiming met laagste prijs garantie
             `).join('')}
           </tr>
         </table>
-      </div>`
+      </div>
+      
+      <!-- Prijs -->
+      <h2 style="color: #1f2937; font-size: 18px; margin: 0 0 12px 0; border-left: 4px solid #dc2626; padding-left: 12px;">Prijsindicatie (naar klant gestuurd)</h2>
+      <div style="background-color: #fef3c7; padding: 20px; border-radius: 6px; border: 1px solid #fde68a;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px;">Ontruiming</td>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">EUR ${itemsCost.toFixed(2)}</td>
+          </tr>
+          ${extrasCost > 0 ? `
+          <tr>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px;">Extra werkzaamheden</td>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">EUR ${extrasCost.toFixed(2)}</td>
+          </tr>
+          ` : ''}
+          <tr>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px;">BTW (21%)</td>
+            <td style="padding: 6px 0; color: #92400e; font-size: 14px; text-align: right; font-weight: 600;">EUR ${btw.toFixed(2)}</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="padding: 8px 0; border-top: 2px solid #f59e0b;"></td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0; color: #78350f; font-size: 18px; font-weight: bold;">Totaalprijs</td>
+            <td style="padding: 6px 0; color: #78350f; font-size: 18px; text-align: right; font-weight: bold;">EUR ${totalPrice.toFixed(2)}</td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
     
-    const businessEmail = htmlEmail
-      .replace('<!-- PHOTOS_SECTION_PLACEHOLDER -->', businessEmailPhotos)
-      .replace('<div style="border-bottom: 3px solid #f97316; padding-bottom: 20px; margin-bottom: 25px;">', 
-               '<div style="background-color: #dc2626; padding: 20px; margin: -30px -30px 25px -30px; border-radius: 8px 8px 0 0;">')
-      .replace('<h1 style="color: #f97316; font-size: 26px; margin: 0 0 8px 0;">Budget Ontruiming</h1>', 
-               '<h1 style="color: #ffffff; font-size: 24px; margin: 0 0 8px 0;">🔔 NIEUWE OFFERTE AANVRAAG</h1>')
-      .replace('<p style="color: #6b7280; font-size: 15px; margin: 0;">Bedankt voor uw offerte aanvraag</p>', 
-               '<p style="color: #ffffff; font-size: 16px; margin: 0; font-weight: 600;">Klant: ${formData.naam} • EUR ${totalPrice.toFixed(2)}</p>')
+    <!-- Footer -->
+    <div style="background-color: #f9fafb; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb;">
+      <p style="color: #6b7280; font-size: 13px; margin: 0;">
+        Budget Ontruiming - Interne notificatie
+      </p>
+    </div>
+    
+  </div>
+</body>
+</html>
+    `.trim()
 
     // Send to customer (simple version to avoid spam)
     console.log('📧 Verzenden naar klant:', formData.email)
