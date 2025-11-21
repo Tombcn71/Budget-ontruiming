@@ -348,15 +348,72 @@ Budget Ontruiming
 Woningontruiming met laagste prijs garantie
     `.trim()
 
-    // Create customer email (without photos)
-    const customerEmail = htmlEmail.replace(
-      '<!-- PHOTOS_SECTION_PLACEHOLDER -->',
-      `<div style="margin-bottom: 24px; background-color: #f9fafb; padding: 16px; border-radius: 8px;">
-        <p style="margin: 0; color: #4b5563; font-size: 14px;">
-          U heeft ${analysisResults.length} foto${analysisResults.length > 1 ? "'s" : ''} geüpload voor de AI-analyse.
-        </p>
-      </div>`
-    )
+    // Create simple customer email (without photos, minimal styling)
+    const simpleCustomerEmail = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Uw Offerte - Budget Ontruiming</title>
+</head>
+<body style="margin: 0; padding: 20px; font-family: Arial, sans-serif; background-color: #ffffff;">
+  <div style="max-width: 600px; margin: 0 auto;">
+    
+    <h1 style="color: #333; font-size: 24px;">Budget Ontruiming</h1>
+    <p style="color: #666; font-size: 16px;">Bedankt voor uw offerte aanvraag.</p>
+    
+    <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+    
+    <h2 style="color: #333; font-size: 18px;">Uw Gegevens</h2>
+    <p style="color: #666; font-size: 14px; line-height: 1.6;">
+      Naam: ${formData.naam}<br>
+      Email: ${formData.email}<br>
+      Telefoon: ${formData.telefoon}<br>
+      Postcode: ${formData.postcode}
+    </p>
+    
+    <h2 style="color: #333; font-size: 18px;">Woning Details</h2>
+    <p style="color: #666; font-size: 14px; line-height: 1.6;">
+      Type: ${formData.woningType}<br>
+      Vierkante meter: ${formData.vierkanteMeter}m²<br>
+      Verdieping: ${formData.verdieping}
+    </p>
+    
+    ${furnitureList.length > 0 ? `
+    <h2 style="color: #333; font-size: 18px;">Inventaris</h2>
+    <p style="color: #666; font-size: 14px; line-height: 1.6;">
+      ${furnitureList.map(f => `${f.quantity}x ${f.item}`).join(', ')}
+    </p>
+    ` : ''}
+    
+    <h2 style="color: #333; font-size: 18px;">Prijs Indicatie</h2>
+    <p style="color: #666; font-size: 14px; line-height: 1.6;">
+      Ontruiming: EUR ${itemsCost.toFixed(2)}<br>
+      ${extrasCost > 0 ? `Extra werkzaamheden: EUR ${extrasCost.toFixed(2)}<br>` : ''}
+      BTW (21%): EUR ${btw.toFixed(2)}<br>
+      <strong style="color: #333;">Totaal: EUR ${totalPrice.toFixed(2)}</strong>
+    </p>
+    
+    <p style="color: #666; font-size: 13px; line-height: 1.6; background-color: #f5f5f5; padding: 15px; border-radius: 4px;">
+      Dit is een indicatie op basis van uw gegevens. Voor een definitieve offerte nemen we graag contact met u op.
+    </p>
+    
+    <p style="color: #666; font-size: 14px; line-height: 1.6;">
+      We nemen binnen 24 uur contact met u op.<br>
+      Vragen? Bel ons op <strong>085 060 8180</strong>
+    </p>
+    
+    <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+    
+    <p style="color: #999; font-size: 12px;">
+      Budget Ontruiming<br>
+      Woningontruiming Zuid-Holland
+    </p>
+    
+  </div>
+</body>
+</html>
+    `.trim()
 
     // Create business email (with photos)
     const businessEmail = htmlEmail.replace(
@@ -385,14 +442,14 @@ Woningontruiming met laagste prijs garantie
       </div>`
     )
 
-    // Send to customer (without photos to avoid spam)
+    // Send to customer (simple version to avoid spam)
     console.log('📧 Verzenden naar klant:', formData.email)
     const { data: customerData, error: customerError } = await resend.emails.send({
       from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
       to: [formData.email],
       replyTo: 'tbvanreijn@gmail.com',
-      subject: `Uw Offerte van Budget Ontruiming - EUR ${totalPrice.toFixed(2)}`,
-      html: customerEmail,
+      subject: `Uw offerte - Budget Ontruiming`,
+      html: simpleCustomerEmail,
       text: textEmail,
     })
 
