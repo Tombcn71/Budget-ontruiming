@@ -216,11 +216,29 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
         }),
       })
 
+      const result = await response.json()
+      
+      console.log('📧 Email verzend resultaat:', result)
+
       if (!response.ok) {
+        console.error('❌ Email verzending gefaald:', result)
         throw new Error('Email kon niet worden verzonden')
       }
 
-      console.log('✅ Offerte succesvol verzonden!')
+      // Check welke emails zijn verzonden
+      if (result.customerEmailSent) {
+        console.log('✅ Klant email verzonden naar:', formData.email)
+      } else {
+        console.warn('⚠️ Klant email NIET verzonden naar:', formData.email)
+      }
+      
+      if (result.businessEmailSent) {
+        console.log('✅ Bedrijf email verzonden')
+      } else {
+        console.warn('⚠️ Bedrijf email NIET verzonden')
+      }
+
+      console.log('✅ Offerte verzend proces voltooid!')
       setSubmitSuccess(true)
       
       // Email bevat Calendly link, popup niet meer nodig
