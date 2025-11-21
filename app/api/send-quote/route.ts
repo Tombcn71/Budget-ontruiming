@@ -464,11 +464,12 @@ Woningontruiming met laagste prijs garantie
     <!-- Hoe werkt het -->
     <div style="background-color: #f0fdf4; padding: 16px; border-radius: 6px; border-left: 4px solid #22c55e; margin-bottom: 25px;">
       <p style="color: #166534; font-size: 13px; line-height: 1.6; margin: 0 0 8px 0;">
-        <strong>Hoe hebben we deze prijs berekend?</strong>
+        <strong>Binnen 1 minuut uw prijs - hoe werkt dat?</strong>
       </p>
       <p style="color: #166534; font-size: 13px; line-height: 1.6; margin: 0;">
         Onze AI heeft uw foto's geanalyseerd en bepaald of de woning leegstaand, normaal of overvol is. 
-        Op basis van het aantal meubels en de staat van de woning hebben we deze prijsindicatie berekend.
+        Op basis van het aantal meubels en de staat van de woning hebben we direct deze prijsindicatie berekend. 
+        Geen wachttijd, geen afspraak nodig - wel de scherpe prijs van Budget Ontruiming.
       </p>
     </div>
     
