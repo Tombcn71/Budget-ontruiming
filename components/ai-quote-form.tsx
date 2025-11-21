@@ -341,7 +341,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       id="lift"
                       checked={formData.liftAanwezig}
                       onCheckedChange={(checked) => setFormData({ ...formData, liftAanwezig: checked as boolean })}
-                      className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                      className="border-gray-900 border-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                     />
                     <label htmlFor="lift" className="text-sm text-foreground cursor-pointer flex-1">
                       Lift aanwezig (bespaart 50% trapkosten)
@@ -362,7 +362,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                         id="vloer"
                         checked={formData.vloerVerwijderen}
                         onCheckedChange={(checked) => setFormData({ ...formData, vloerVerwijderen: checked as boolean, vloerM2: checked ? formData.vloerM2 : "" })}
-                        className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                        className="border-gray-900 border-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                       />
                       <label htmlFor="vloer" className="text-sm text-foreground cursor-pointer">
                         Vloer verwijderen (€3/m²)
@@ -390,7 +390,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                         id="behang"
                         checked={formData.behangVerwijderen}
                         onCheckedChange={(checked) => setFormData({ ...formData, behangVerwijderen: checked as boolean, behangM2: checked ? formData.behangM2 : "" })}
-                        className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                        className="border-gray-900 border-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                       />
                       <label htmlFor="behang" className="text-sm text-foreground cursor-pointer">
                         Behang verwijderen (€5/m²)
@@ -418,7 +418,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                         id="gaatjes"
                         checked={formData.gaatjesToppen}
                         onCheckedChange={(checked) => setFormData({ ...formData, gaatjesToppen: checked as boolean, gaatjesM2: checked ? formData.gaatjesM2 : "" })}
-                        className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                        className="border-gray-900 border-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                       />
                       <label htmlFor="gaatjes" className="text-sm text-foreground cursor-pointer">
                         Gaatjes stoppen (€1/m²)
@@ -446,7 +446,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                         id="schilderwerk"
                         checked={formData.schilderwerk}
                         onCheckedChange={(checked) => setFormData({ ...formData, schilderwerk: checked as boolean, schilderwerkM2: checked ? formData.schilderwerkM2 : "" })}
-                        className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                        className="border-gray-900 border-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                       />
                       <label htmlFor="schilderwerk" className="text-sm text-foreground cursor-pointer">
                         Schilderwerk (€17,50/m²)
@@ -473,7 +473,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       id="gordijnen"
                       checked={formData.gordijnenVerwijderen}
                       onCheckedChange={(checked) => setFormData({ ...formData, gordijnenVerwijderen: checked as boolean })}
-                      className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                      className="border-gray-900 border-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                     />
                     <label htmlFor="gordijnen" className="text-sm text-foreground cursor-pointer">
                       Gordijnen verwijderen (€50)
