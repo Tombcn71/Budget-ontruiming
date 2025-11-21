@@ -338,14 +338,6 @@ Totaalprijs: EUR ${totalPrice.toFixed(2)}
 LET OP: Dit is een automatisch gegenereerde prijsindicatie op basis van AI-analyse. 
 Voor een definitieve offerte plannen we graag een gratis adviesgesprek in.
 
-💰 LAAGSTE PRIJS GARANTIE
---------------------------
-Heeft u elders een lagere offerte ontvangen? 
-Stuur deze naar ons en wij gaan er direct onder!
-
-Reply op deze email met de concurrent offerte (PDF of foto).
-Wij bellen u binnen 24 uur terug met een lagere prijs. Gegarandeerd.
-
 Plan uw gratis adviesgesprek: https://calendly.com/tbvanreijn/30min
 
 Vragen? Bel ons op ${formData.telefoon} of reply op deze email.
@@ -489,27 +481,6 @@ Woningontruiming met laagste prijs garantie
       <p style="color: #1e40af; font-size: 13px; line-height: 1.6; margin: 0;">
         <strong>Let op:</strong> Dit is een automatische prijsindicatie. 
         Voor een definitieve offerte plannen we graag een adviesgesprek in.
-      </p>
-    </div>
-
-    <!-- Laagste Prijs Garantie -->
-    <div style="background-color: #dcfce7; padding: 20px; border-radius: 8px; border: 2px solid #22c55e; margin-bottom: 25px;">
-      <div style="text-align: center; margin-bottom: 12px;">
-        <p style="color: #166534; font-size: 18px; font-weight: bold; margin: 0;">
-          💰 Laagste Prijs Garantie
-        </p>
-      </div>
-      <p style="color: #166534; font-size: 14px; line-height: 1.6; margin: 0 0 16px 0; text-align: center;">
-        Heeft u elders een lagere offerte ontvangen? Stuur deze naar ons en wij gaan er direct onder!
-      </p>
-      <div style="text-align: center; margin-bottom: 12px;">
-        <a href="https://budgetontruiming.nl/laagste-prijs" style="display: inline-block; background-color: #22c55e; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
-          Dien Offerte In
-        </a>
-      </div>
-      <p style="color: #15803d; font-size: 13px; line-height: 1.6; margin: 0; text-align: center;">
-        Of <strong>reply op deze email</strong> met de concurrent offerte (PDF of foto). 
-        Wij bellen u binnen 24 uur terug met een lagere prijs. Gegarandeerd.
       </p>
     </div>
     
