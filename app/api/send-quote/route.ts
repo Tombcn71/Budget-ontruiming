@@ -461,11 +461,22 @@ Woningontruiming met laagste prijs garantie
       </div>
     </div>
     
+    <!-- Hoe werkt het -->
+    <div style="background-color: #f0fdf4; padding: 16px; border-radius: 6px; border-left: 4px solid #22c55e; margin-bottom: 25px;">
+      <p style="color: #166534; font-size: 13px; line-height: 1.6; margin: 0 0 8px 0;">
+        <strong>Hoe hebben we deze prijs berekend?</strong>
+      </p>
+      <p style="color: #166534; font-size: 13px; line-height: 1.6; margin: 0;">
+        Onze AI heeft uw foto's geanalyseerd en bepaald of de woning leegstaand, normaal of overvol is. 
+        Op basis van het aantal meubels en de staat van de woning hebben we deze prijsindicatie berekend.
+      </p>
+    </div>
+    
     <!-- Disclaimer -->
     <div style="background-color: #eff6ff; padding: 16px; border-radius: 6px; border-left: 4px solid #3b82f6; margin-bottom: 25px;">
       <p style="color: #1e40af; font-size: 13px; line-height: 1.6; margin: 0;">
-        <strong>Let op:</strong> Dit is een automatische prijsindicatie op basis van uw gegevens. 
-        Voor een definitieve offerte nemen we binnen 24 uur contact met u op.
+        <strong>Let op:</strong> Dit is een automatische prijsindicatie. 
+        Voor een definitieve offerte plannen we graag een adviesgesprek in.
       </p>
     </div>
     
@@ -500,10 +511,8 @@ Woningontruiming met laagste prijs garantie
 </html>
     `.trim()
 
-    // Create business email (with photos)
-    const businessEmail = htmlEmail.replace(
-      '<!-- PHOTOS_SECTION_PLACEHOLDER -->',
-      `<h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
+    // Create business email (with photos and alert styling)
+    const businessEmailPhotos = `<h2 style="color: #1f2937; font-size: 20px; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 2px solid #f97316;">
         Geüploade Foto's (${analysisResults.length})
       </h2>
       <div style="margin-bottom: 24px;">
@@ -525,7 +534,15 @@ Woningontruiming met laagste prijs garantie
           </tr>
         </table>
       </div>`
-    )
+    
+    const businessEmail = htmlEmail
+      .replace('<!-- PHOTOS_SECTION_PLACEHOLDER -->', businessEmailPhotos)
+      .replace('<div style="border-bottom: 3px solid #f97316; padding-bottom: 20px; margin-bottom: 25px;">', 
+               '<div style="background-color: #dc2626; padding: 20px; margin: -30px -30px 25px -30px; border-radius: 8px 8px 0 0;">')
+      .replace('<h1 style="color: #f97316; font-size: 26px; margin: 0 0 8px 0;">Budget Ontruiming</h1>', 
+               '<h1 style="color: #ffffff; font-size: 24px; margin: 0 0 8px 0;">🔔 NIEUWE OFFERTE AANVRAAG</h1>')
+      .replace('<p style="color: #6b7280; font-size: 15px; margin: 0;">Bedankt voor uw offerte aanvraag</p>', 
+               '<p style="color: #ffffff; font-size: 16px; margin: 0; font-weight: 600;">Klant: ${formData.naam} • EUR ${totalPrice.toFixed(2)}</p>')
 
     // Send to customer (simple version to avoid spam)
     console.log('📧 Verzenden naar klant:', formData.email)

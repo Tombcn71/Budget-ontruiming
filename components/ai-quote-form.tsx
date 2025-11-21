@@ -496,7 +496,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
 
                 <div className="pt-2">
                   <Label className="text-foreground text-sm mb-2 block">Foto's uploaden *</Label>
-                  <p className="text-xs text-muted-foreground mb-2">
+                  <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
                     💡 Upload foto's van de verschillende kamers. Onze AI analyseert deze om te bepalen of de woning <strong>leegstaand, normaal of (over)vol</strong> is. Dit helpt ons een accurate prijsindicatie te geven.
                   </p>
                   <PhotoUpload 
@@ -753,10 +753,6 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">📦 Geschatte dozen/tassen:</span>
                     <span className="font-medium text-foreground">{totalBoxes}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">⏱️ Geschatte tijd:</span>
-                    <span className="font-medium text-foreground">{maxHours}u (2 personen)</span>
                   </div>
                   {specialItems.size > 0 && (
                     <div className="border-t border-border pt-2">
