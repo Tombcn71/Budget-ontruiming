@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { sql } from '@/lib/db/client'
-import { nanoid } from 'nanoid'
+import { customAlphabet } from 'nanoid'
+
+const nanoid = customAlphabet('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 21)
 
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY)
