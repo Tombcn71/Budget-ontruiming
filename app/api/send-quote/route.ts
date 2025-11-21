@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { sql } from '@/lib/db/client'
+import { nanoid } from 'nanoid'
 
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -715,7 +717,7 @@ Woningontruiming met laagste prijs garantie
     // Send to business (with photos for review)
     console.log('📧 Verzenden naar bedrijf: tbvanreijn@gmail.com')
     const { data: businessData, error: businessError } = await resend.emails.send({
-      from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
+          from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
       to: ['tbvanreijn@gmail.com'],
       replyTo: formData.email,
       subject: `Nieuwe Offerte Aanvraag - ${formData.naam} - EUR ${totalPrice.toFixed(2)}`,
@@ -735,6 +737,30 @@ Woningontruiming met laagste prijs garantie
         { error: 'Klant email kon niet worden verzonden', details: customerError },
         { status: 500 }
       )
+    }
+
+    // Save to database
+    try {
+      const quoteId = nanoid()
+      await sql`
+        INSERT INTO quote_requests (
+          id, naam, email, telefoon, postcode,
+          woning_type, vierkante_meter, verdieping, lift_aanwezig,
+          ai_analysis, volume_level, total_boxes,
+          extra_services, items_cost, extras_cost, btw, total_price,
+          status
+        ) VALUES (
+          ${quoteId}, ${formData.naam}, ${formData.email}, ${formData.telefoon}, ${formData.postcode},
+          ${formData.woningType}, ${formData.vierkanteMeter}, ${formData.verdieping}, ${formData.liftAanwezig},
+          ${JSON.stringify(analysisResults)}, ${volumeLevelText}, ${totalBoxes},
+          ${extraServices}, ${itemsCost}, ${extrasCost}, ${btw}, ${totalPrice},
+          'pending'
+        )
+      `
+      console.log('✅ Quote opgeslagen in database:', quoteId)
+    } catch (dbError) {
+      console.error('⚠️ Database save failed:', dbError)
+      // Don't fail the request if DB save fails
     }
 
     return NextResponse.json({
