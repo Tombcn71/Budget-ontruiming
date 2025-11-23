@@ -621,12 +621,6 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                     {formData.woningType === 'eengezinswoning' && 'Eengezinswoning'}
                     {formData.woningType === 'bedrijfspand' && 'Bedrijfspand'}
                   </span>
-                  <p className="text-xs text-muted-foreground mt-0.5">
-                    Richtprijs: {formData.woningType === 'seniorenkamer' && '€250 - €450'}
-                    {formData.woningType === 'appartement' && '€450 - €850'}
-                    {formData.woningType === 'eengezinswoning' && '€750 - €1.500'}
-                    {formData.woningType === 'bedrijfspand' && '€400 - €1.500'}
-                  </p>
                 </div>
                 <span className="font-bold text-base text-primary ml-4">€{priceResult?.breakdown.items || 450}</span>
               </div>
