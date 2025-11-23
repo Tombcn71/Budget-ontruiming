@@ -31,7 +31,6 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
     vierkanteMeter: "",
     verdieping: "",
     liftAanwezig: false,
-    inpakservice: false,
     vloerVerwijderen: false,
     vloerM2: "",
     vloerType: "normaal", // 'normaal' of 'vastgelijmd'
@@ -478,7 +477,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                         className="border-gray-900 border-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                       />
                       <label htmlFor="schilderwerk" className="text-sm text-foreground cursor-pointer">
-                        Schilderwerk (€17,50/m²)
+                        Schilderwerk (€12,50/m²)
                       </label>
                     </div>
                     {formData.schilderwerk && (
@@ -508,19 +507,6 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       Gordijnen verwijderen (€50)
                     </label>
                   </div>
-                </div>
-
-                {/* Inpakservice */}
-                <div className="flex items-center space-x-2">
-                  <Checkbox
-                    id="inpakservice"
-                    checked={formData.inpakservice}
-                    onCheckedChange={(checked) => setFormData({ ...formData, inpakservice: checked as boolean })}
-                    className="border-input data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                  />
-                  <label htmlFor="inpakservice" className="text-sm text-foreground cursor-pointer">
-                    📦 Inpakservice - Spullen uit kasten/keuken halen (+€150)
-                  </label>
                 </div>
 
                 <div className="pt-2">
@@ -658,15 +644,9 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
           </div>
 
           {/* Extra werkzaamheden gespecificeerd */}
-          {(formData.inpakservice || formData.vloerVerwijderen || formData.behangVerwijderen || formData.gaatjesToppen || formData.schilderwerk || formData.gordijnenVerwijderen) && (
+          {(formData.vloerVerwijderen || formData.behangVerwijderen || formData.gaatjesToppen || formData.schilderwerk || formData.gordijnenVerwijderen) && (
             <div className="bg-background rounded-lg p-4 space-y-2 text-left border-2 border-primary/20">
               <h4 className="font-semibold text-sm text-foreground mb-2">🔧 Extra Werkzaamheden:</h4>
-              {formData.inpakservice && (
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Inpakservice (kasten/keuken)</span>
-                  <span className="font-medium">€150</span>
-                </div>
-              )}
               {formData.vloerVerwijderen && formData.vloerM2 && (
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">• Vloer verwijderen {formData.vloerType === 'vastgelijmd' ? 'vastgelijmd' : 'normaal'} ({formData.vloerM2}m² × €{formData.vloerType === 'vastgelijmd' ? '3,50' : '2'})</span>
@@ -687,8 +667,8 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               )}
               {formData.schilderwerk && formData.schilderwerkM2 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Schilderwerk ({formData.schilderwerkM2}m² × €17,50)</span>
-                  <span className="font-medium">€{(parseInt(formData.schilderwerkM2) * 17.5).toLocaleString('nl-NL')}</span>
+                  <span className="text-muted-foreground">• Schilderwerk ({formData.schilderwerkM2}m² × €12,50)</span>
+                  <span className="font-medium">€{(parseInt(formData.schilderwerkM2) * 12.5).toLocaleString('nl-NL')}</span>
                 </div>
               )}
               {formData.gordijnenVerwijderen && (
@@ -892,7 +872,6 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                   vierkanteMeter: "",
                   verdieping: "",
                   liftAanwezig: false,
-                  inpakservice: false,
                   vloerVerwijderen: false,
                   vloerM2: "",
                   vloerType: "normaal",

@@ -106,22 +106,17 @@ export default function PricingOverzicht() {
               </div>
 
               <div className="space-y-3">
-                <div className="bg-gray-50 p-4 rounded">
+                <div className="bg-gray-50 p-4 rounded border-l-4 border-green-500">
                   <h4 className="font-bold mb-1">Schilderwerk</h4>
-                  <p className="text-2xl font-bold text-blue-600">€17,50 / m²</p>
+                  <p className="text-2xl font-bold text-green-600">€12,50 / m²</p>
                   <p className="text-xs text-gray-500">Witte muren opleveren</p>
+                  <p className="text-xs text-green-600 font-semibold mt-1">✅ Nieuw: €5 goedkoper!</p>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded">
                   <h4 className="font-bold mb-1">Gordijnen verwijderen</h4>
                   <p className="text-2xl font-bold text-blue-600">€50 vast</p>
                   <p className="text-xs text-gray-500">Inclusief rails en gordijnen</p>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded">
-                  <h4 className="font-bold mb-1">Inpakservice</h4>
-                  <p className="text-2xl font-bold text-blue-600">€150 vast</p>
-                  <p className="text-xs text-gray-500">Kasten/keuken uitpakken</p>
                 </div>
               </div>
             </div>
@@ -232,6 +227,7 @@ export default function PricingOverzicht() {
                   // 4. Extra werkzaamheden<br/>
                   vloerCost = m² × (€2 normaal OF €3,50 vastgelijmd);<br/>
                   behangCost = m² × €3,50;<br/>
+                  schilderwerkCost = m² × €12,50;<br/>
                   extrasCost = som van alle extras;<br/>
                   <br/>
                   // 5. Bereken totaal<br/>
@@ -250,7 +246,7 @@ export default function PricingOverzicht() {
                   <li>• <strong>Transport</strong> = altijd €150 (vast tarief)</li>
                   <li>• <strong>Vloer</strong> = €2/m² normaal OF €3,50/m² vastgelijmd</li>
                   <li>• <strong>Behang</strong> = €3,50/m² (was €5 - nu goedkoper!)</li>
-                  <li>• <strong>Schilderwerk</strong> is duurste extra (€17,50/m²)</li>
+                  <li>• <strong>Schilderwerk</strong> = €12,50/m² (sociale huur tarief)</li>
                   <li>• <strong>BTW</strong> wordt altijd als laatste berekend (21% over subtotaal)</li>
                   <li>• <strong>Minimum prijs</strong> = €250 (kleine opdrachten)</li>
                   <li>• Prijs is indicatie - definitief na adviesgesprek</li>

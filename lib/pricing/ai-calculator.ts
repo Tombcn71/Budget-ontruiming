@@ -6,7 +6,6 @@ interface FormData {
   vierkanteMeter: string
   verdieping: string
   liftAanwezig: boolean
-  inpakservice: boolean
   vloerVerwijderen: boolean
   vloerM2: string
   vloerType?: string  // 'normaal' of 'vastgelijmd'
@@ -63,9 +62,8 @@ const BASE_RATES = {
     vloerVerwijderenVastgelijmd: 3.5, // €3,50 per m2 (vastgelijmde vloer - meer werk)
     behangVerwijderen: 3.5,           // €3,50 per m2 (was €5)
     gaatjesToppen: 1,                 // €1 per m2
-    schilderwerk: 17.5,               // €17,50 per m2
+    schilderwerk: 12.5,               // €12,50 per m2 (sociale huur tarief)
     gordijnenVerwijderen: 50,         // Flat rate (niet per m2)
-    inpakservice: 150,                // Flat rate - spullen uit kasten halen
   },
   
   baseTransport: 150,
@@ -116,11 +114,6 @@ export function calculatePriceFromAI(
 
   // 4. EXTRA DIENSTEN (exacte m² opgegeven door klant)
   let extrasCost = 0
-  
-  // Inpakservice
-  if (formData.inpakservice) {
-    extrasCost += BASE_RATES.extraServices.inpakservice
-  }
   
   // Vloer verwijderen - NIEUW: 2 types (normaal vs vastgelijmd)
   if (formData.vloerVerwijderen && formData.vloerM2) {
