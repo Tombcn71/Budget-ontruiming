@@ -34,6 +34,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
     inpakservice: false,
     vloerVerwijderen: false,
     vloerM2: "",
+    vloerType: "normaal", // 'normaal' of 'vastgelijmd'
     behangVerwijderen: false,
     behangM2: "",
     gaatjesToppen: false,
@@ -365,11 +366,44 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                         className="border-gray-900 border-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                       />
                       <label htmlFor="vloer" className="text-sm text-foreground cursor-pointer">
-                        Vloer verwijderen (€3/m²)
+                        Vloer verwijderen
                       </label>
                     </div>
                     {formData.vloerVerwijderen && (
-                      <div className="ml-6 space-y-1">
+                      <div className="ml-6 space-y-3">
+                        <div className="space-y-2">
+                          <label className="text-xs text-muted-foreground">Type vloer:</label>
+                          <div className="flex gap-4">
+                            <div className="flex items-center space-x-2">
+                              <input
+                                type="radio"
+                                id="vloer-normaal"
+                                name="vloerType"
+                                value="normaal"
+                                checked={formData.vloerType === "normaal"}
+                                onChange={(e) => setFormData({ ...formData, vloerType: e.target.value })}
+                                className="w-4 h-4 text-primary border-gray-900 focus:ring-primary"
+                              />
+                              <label htmlFor="vloer-normaal" className="text-sm text-foreground cursor-pointer">
+                                Normaal (€2/m²)
+                              </label>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <input
+                                type="radio"
+                                id="vloer-vastgelijmd"
+                                name="vloerType"
+                                value="vastgelijmd"
+                                checked={formData.vloerType === "vastgelijmd"}
+                                onChange={(e) => setFormData({ ...formData, vloerType: e.target.value })}
+                                className="w-4 h-4 text-primary border-gray-900 focus:ring-primary"
+                              />
+                              <label htmlFor="vloer-vastgelijmd" className="text-sm text-foreground cursor-pointer">
+                                Vastgelijmd (€3,50/m²)
+                              </label>
+                            </div>
+                          </div>
+                        </div>
                         <Input
                           type="number"
                           placeholder="Hoeveel m² vloer?"
@@ -393,7 +427,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                         className="border-gray-900 border-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                       />
                       <label htmlFor="behang" className="text-sm text-foreground cursor-pointer">
-                        Behang verwijderen (€5/m²)
+                        Behang verwijderen (€3,50/m²)
                       </label>
                     </div>
                     {formData.behangVerwijderen && (
@@ -640,14 +674,14 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               )}
               {formData.vloerVerwijderen && formData.vloerM2 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Vloer verwijderen ({formData.vloerM2}m² × €3)</span>
-                  <span className="font-medium">€{(parseInt(formData.vloerM2) * 3).toLocaleString('nl-NL')}</span>
+                  <span className="text-muted-foreground">• Vloer verwijderen {formData.vloerType === 'vastgelijmd' ? 'vastgelijmd' : 'normaal'} ({formData.vloerM2}m² × €{formData.vloerType === 'vastgelijmd' ? '3,50' : '2'})</span>
+                  <span className="font-medium">€{(parseInt(formData.vloerM2) * (formData.vloerType === 'vastgelijmd' ? 3.5 : 2)).toLocaleString('nl-NL')}</span>
                 </div>
               )}
               {formData.behangVerwijderen && formData.behangM2 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">• Behang verwijderen ({formData.behangM2}m² × €5)</span>
-                  <span className="font-medium">€{(parseInt(formData.behangM2) * 5).toLocaleString('nl-NL')}</span>
+                  <span className="text-muted-foreground">• Behang verwijderen ({formData.behangM2}m² × €3,50)</span>
+                  <span className="font-medium">€{(parseInt(formData.behangM2) * 3.5).toLocaleString('nl-NL')}</span>
                 </div>
               )}
               {formData.gaatjesToppen && formData.gaatjesM2 && (
@@ -862,8 +896,11 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                   woningType: "",
                   vierkanteMeter: "",
                   verdieping: "",
+                  liftAanwezig: false,
+                  inpakservice: false,
                   vloerVerwijderen: false,
                   vloerM2: "",
+                  vloerType: "normaal",
                   behangVerwijderen: false,
                   behangM2: "",
                   gaatjesToppen: false,

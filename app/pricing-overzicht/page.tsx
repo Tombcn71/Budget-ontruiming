@@ -14,21 +14,27 @@ export default function PricingOverzicht() {
         {/* Basis Ontruiming */}
         <Card>
           <CardHeader className="bg-orange-500 text-white">
-            <CardTitle>Basis Ontruiming Tarieven</CardTitle>
+            <CardTitle>Basis Ontruiming Tarieven - NIEUWE STRUCTUUR</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="border-l-4 border-orange-500 pl-4">
-                  <h3 className="font-bold text-lg mb-2">Woningtype (dynamische range)</h3>
-                  <ul className="space-y-2 text-sm">
-                    <li>• <strong>Seniorenkamer:</strong> €250 - €450 (gem. 25m²)</li>
-                    <li>• <strong>Appartement:</strong> €450 - €850 (gem. 60m²)</li>
-                    <li>• <strong>Eengezinswoning:</strong> €750 - €1.500 (gem. 120m²)</li>
-                    <li>• <strong>Bedrijfspand:</strong> €400 - €1.500 (gem. 100m²)</li>
-                  </ul>
-                  <p className="text-xs text-gray-500 mt-2">
-                    * Prijs wordt geïnterpoleerd op basis van m²
+                  <h3 className="font-bold text-lg mb-2">Basis Prijs per m²</h3>
+                  <div className="bg-orange-50 p-4 rounded-lg mb-3">
+                    <p className="text-3xl font-bold text-orange-600">€10 / m²</p>
+                    <p className="text-xs text-gray-600 mt-1">Simpel en transparant - geen verborgen kosten</p>
+                  </div>
+                  <div className="text-sm space-y-2">
+                    <p><strong>Voorbeelden:</strong></p>
+                    <ul className="space-y-1 ml-4">
+                      <li>• Seniorenkamer 25m² = €250</li>
+                      <li>• Appartement 60m² = €600</li>
+                      <li>• Eengezinswoning 120m² = €1.200</li>
+                    </ul>
+                  </div>
+                  <p className="text-xs text-green-600 mt-3 font-semibold">
+                    ✅ Veel goedkoper voor sociale huur!
                   </p>
                 </div>
 
@@ -57,7 +63,7 @@ export default function PricingOverzicht() {
                 </ul>
                 <p className="text-xs text-gray-500 mt-2">
                   * AI analyseert foto's en bepaalt inrichtingsniveau<br/>
-                  * Dit is de HOOFDFACTOR voor prijsbepaling (kan tot 40% verschil maken!)
+                  * Dit is de HOOFDFACTOR voor prijsverschil (kan tot 65% verschil maken!)
                 </p>
               </div>
             </div>
@@ -72,16 +78,24 @@ export default function PricingOverzicht() {
           <CardContent className="pt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-3">
-                <div className="bg-gray-50 p-4 rounded">
-                  <h4 className="font-bold mb-1">Vloer verwijderen</h4>
-                  <p className="text-2xl font-bold text-blue-600">€3 / m²</p>
-                  <p className="text-xs text-gray-500">Laminaat, vinyl, tapijt etc.</p>
+                <div className="bg-gray-50 p-4 rounded border-l-4 border-green-500">
+                  <h4 className="font-bold mb-1">Vloer verwijderen (normaal)</h4>
+                  <p className="text-2xl font-bold text-green-600">€2 / m²</p>
+                  <p className="text-xs text-gray-500">Laminaat, vinyl, tapijt (niet vastgelijmd)</p>
+                  <p className="text-xs text-green-600 font-semibold mt-1">✅ Nieuw: €1 goedkoper!</p>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded">
+                  <h4 className="font-bold mb-1">Vloer verwijderen (vastgelijmd)</h4>
+                  <p className="text-2xl font-bold text-blue-600">€3,50 / m²</p>
+                  <p className="text-xs text-gray-500">Vastgelijmde vloer (meer werk)</p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded border-l-4 border-green-500">
                   <h4 className="font-bold mb-1">Behang verwijderen</h4>
-                  <p className="text-2xl font-bold text-blue-600">€5 / m²</p>
+                  <p className="text-2xl font-bold text-green-600">€3,50 / m²</p>
                   <p className="text-xs text-gray-500">Inclusief afvoer</p>
+                  <p className="text-xs text-green-600 font-semibold mt-1">✅ Nieuw: €1,50 goedkoper!</p>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded">
@@ -94,7 +108,7 @@ export default function PricingOverzicht() {
               <div className="space-y-3">
                 <div className="bg-gray-50 p-4 rounded">
                   <h4 className="font-bold mb-1">Schilderwerk</h4>
-                  <p className="text-2xl font-bold text-blue-600">€17.50 / m²</p>
+                  <p className="text-2xl font-bold text-blue-600">€17,50 / m²</p>
                   <p className="text-xs text-gray-500">Witte muren opleveren</p>
                 </div>
 
@@ -121,16 +135,16 @@ export default function PricingOverzicht() {
           </CardHeader>
           <CardContent className="pt-6">
             <div className="bg-green-50 p-6 rounded-lg space-y-3">
-              <h3 className="font-bold text-lg">Scenario: Appartement, 2e verdieping, geen lift</h3>
+              <h3 className="font-bold text-lg">Scenario: Appartement 60m², 2e verdieping, geen lift</h3>
               
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between border-b pb-2">
-                  <span>Basis appartement (90m²)</span>
-                  <span className="font-mono">€650.00</span>
+                  <span>Basis: 60m² × €10/m²</span>
+                  <span className="font-mono">€600.00</span>
                 </div>
                 <div className="flex justify-between border-b pb-2">
                   <span>AI Volume: Normaal bewoond (1.0x)</span>
-                  <span className="font-mono">€650.00</span>
+                  <span className="font-mono">€600.00</span>
                 </div>
                 <div className="flex justify-between border-b pb-2">
                   <span>2e verdieping surcharge</span>
@@ -142,7 +156,7 @@ export default function PricingOverzicht() {
                 </div>
                 <div className="flex justify-between text-green-700 font-bold text-base pt-2">
                   <span>Basis ontruiming (excl. BTW)</span>
-                  <span className="font-mono">€950.00</span>
+                  <span className="font-mono">€900.00</span>
                 </div>
               </div>
 
@@ -150,12 +164,12 @@ export default function PricingOverzicht() {
                 <h4 className="font-bold mb-2">Extra werkzaamheden:</h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span>Vloer verwijderen (60m² × €3)</span>
-                    <span className="font-mono">€180.00</span>
+                    <span>Vloer verwijderen normaal (60m² × €2)</span>
+                    <span className="font-mono">€120.00</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Schilderwerk (50m² × €17.50)</span>
-                    <span className="font-mono">€875.00</span>
+                    <span>Behang verwijderen (120m² × €3,50)</span>
+                    <span className="font-mono">€420.00</span>
                   </div>
                   <div className="flex justify-between border-b pb-2">
                     <span>Gordijnen verwijderen</span>
@@ -163,7 +177,7 @@ export default function PricingOverzicht() {
                   </div>
                   <div className="flex justify-between text-blue-700 font-bold">
                     <span>Totaal extra's (excl. BTW)</span>
-                    <span className="font-mono">€1,105.00</span>
+                    <span className="font-mono">€590.00</span>
                   </div>
                 </div>
               </div>
@@ -172,17 +186,23 @@ export default function PricingOverzicht() {
                 <div className="space-y-2 text-base">
                   <div className="flex justify-between">
                     <span>Totaal excl. BTW</span>
-                    <span className="font-mono">€2,055.00</span>
+                    <span className="font-mono">€1.490,00</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>BTW (21%)</span>
-                    <span className="font-mono">€431.55</span>
+                    <span className="font-mono">€312,90</span>
                   </div>
                   <div className="flex justify-between text-green-800 font-bold text-xl pt-2 border-t-2">
                     <span>TOTAALPRIJS</span>
-                    <span className="font-mono">€2,486.55</span>
+                    <span className="font-mono">€1.802,90</span>
                   </div>
                 </div>
+              </div>
+              
+              <div className="bg-green-100 p-4 rounded mt-4 border-l-4 border-green-600">
+                <p className="text-sm font-semibold text-green-800">
+                  💰 Met nieuwe prijzen: €683,65 goedkoper dan oud systeem!
+                </p>
               </div>
             </div>
           </CardContent>
@@ -196,10 +216,10 @@ export default function PricingOverzicht() {
           <CardContent className="pt-6">
             <div className="space-y-4">
               <div className="bg-purple-50 p-4 rounded">
-                <h4 className="font-bold mb-2">Berekening Formula:</h4>
+                <h4 className="font-bold mb-2">Berekening Formula (NIEUW):</h4>
                 <code className="text-sm bg-white p-3 block rounded border">
-                  // 1. Bepaal basis prijs (interpolatie binnen min-max range)<br/>
-                  basisPrijs = woningType[min-max] gebaseerd op m²;<br/>
+                  // 1. Basis prijs: SIMPEL €10/m²<br/>
+                  basisPrijs = vierkanteMeter * 10;<br/>
                   <br/>
                   // 2. Pas AI volume multiplier toe<br/>
                   volumeMultiplier = AI analyseert foto's (0.85x - 1.4x);<br/>
@@ -208,9 +228,13 @@ export default function PricingOverzicht() {
                   // 3. Voeg vaste kosten toe<br/>
                   verdiepingSurcharge = floor cost (met lift discount);<br/>
                   transportCost = €150;<br/>
-                  extrasCost = som van alle extra werkzaamheden;<br/>
                   <br/>
-                  // 4. Bereken totaal<br/>
+                  // 4. Extra werkzaamheden<br/>
+                  vloerCost = m² × (€2 normaal OF €3,50 vastgelijmd);<br/>
+                  behangCost = m² × €3,50;<br/>
+                  extrasCost = som van alle extras;<br/>
+                  <br/>
+                  // 5. Bereken totaal<br/>
                   subtotal = itemsCost + verdiepingSurcharge + transportCost + extrasCost;<br/>
                   btw = subtotal * 0.21;<br/>
                   <strong>totaal = subtotal + btw;</strong>
@@ -220,13 +244,15 @@ export default function PricingOverzicht() {
               <div className="bg-yellow-50 p-4 rounded border-l-4 border-yellow-500">
                 <h4 className="font-bold mb-2">⚠️ Belangrijke notities:</h4>
                 <ul className="text-sm space-y-1">
+                  <li>• <strong>Basis: €10/m²</strong> - Transparant en concurrerend voor sociale huur</li>
                   <li>• <strong>AI volume level</strong> heeft GROTE impact (0.85x - 1.4x = 65% verschil mogelijk!)</li>
                   <li>• <strong>Lift aanwezig</strong> = 50% korting op verdieping surcharge</li>
                   <li>• <strong>Transport</strong> = altijd €150 (vast tarief)</li>
-                  <li>• <strong>Extra werkzaamheden</strong> zijn vaste tarieven per m² (geen AI)</li>
-                  <li>• <strong>Schilderwerk</strong> is duurste extra (€17.50/m²)</li>
+                  <li>• <strong>Vloer</strong> = €2/m² normaal OF €3,50/m² vastgelijmd</li>
+                  <li>• <strong>Behang</strong> = €3,50/m² (was €5 - nu goedkoper!)</li>
+                  <li>• <strong>Schilderwerk</strong> is duurste extra (€17,50/m²)</li>
                   <li>• <strong>BTW</strong> wordt altijd als laatste berekend (21% over subtotaal)</li>
-                  <li>• <strong>Minimum prijs</strong> = €250 (seniorenkamer minimum)</li>
+                  <li>• <strong>Minimum prijs</strong> = €250 (kleine opdrachten)</li>
                   <li>• Prijs is indicatie - definitief na adviesgesprek</li>
                 </ul>
               </div>

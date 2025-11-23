@@ -9,6 +9,7 @@ interface FormData {
   inpakservice: boolean
   vloerVerwijderen: boolean
   vloerM2: string
+  vloerType?: string  // 'normaal' of 'vastgelijmd'
   behangVerwijderen: boolean
   behangM2: string
   gaatjesToppen: boolean
@@ -33,15 +34,10 @@ interface AIAnalysis {
   estimated_hours: number
 }
 
-// Basis tarieven - gebaseerd op BTI Ontruimingen tariefstructuur
+// Basis tarieven - NIEUWE STRUCTUUR: €10/m² base
 const BASE_RATES = {
-  // Base prijzen per woningtype (gebruikt als startpunt)
-  woningType: {
-    'seniorenkamer': { min: 250, max: 450, avgM2: 25 },
-    'appartement': { min: 450, max: 850, avgM2: 60 },
-    'eengezinswoning': { min: 750, max: 1500, avgM2: 120 },
-    'bedrijfspand': { min: 400, max: 1500, avgM2: 100 },
-  },
+  // BASE: €10 per vierkante meter (simpel en transparant)
+  pricePerM2: 10,
   
   // Verdieping surcharge
   floor: {
@@ -61,20 +57,21 @@ const BASE_RATES = {
     very_full: 1.4,  // Zeer vol: 40% duurder (veel werk)
   },
   
-  // Extra diensten (per m2 waar van toepassing)
+  // Extra diensten (NIEUWE PRIJZEN - concurrerend voor sociale huur)
   extraServices: {
-    vloerVerwijderen: 3,      // €3 per m2
-    behangVerwijderen: 5,     // €5 per m2
-    gaatjesToppen: 1,         // €1 per m2
-    schilderwerk: 17.5,       // €17,50 per m2
-    gordijnenVerwijderen: 50, // Flat rate (niet per m2)
-    inpakservice: 150,        // Flat rate - spullen uit kasten halen
+    vloerVerwijderenNormaal: 2,      // €2 per m2 (normale vloer)
+    vloerVerwijderenVastgelijmd: 3.5, // €3,50 per m2 (vastgelijmde vloer - meer werk)
+    behangVerwijderen: 3.5,           // €3,50 per m2 (was €5)
+    gaatjesToppen: 1,                 // €1 per m2
+    schilderwerk: 17.5,               // €17,50 per m2
+    gordijnenVerwijderen: 50,         // Flat rate (niet per m2)
+    inpakservice: 150,                // Flat rate - spullen uit kasten halen
   },
   
   baseTransport: 150,
   specialItemSurcharge: 50, // Per zwaar/fragiel item (piano, kluis, etc)
   liftDiscount: 0.5,        // 50% korting op verdieping surcharge als lift aanwezig
-  minPrice: 250, // Minimum voor seniorenkamer
+  minPrice: 250, // Minimum voor kleine opdrachten
 }
 
 export function calculatePriceFromAI(
@@ -86,14 +83,8 @@ export function calculatePriceFromAI(
   const m2String = formData.vierkanteMeter || '50-75'
   const m2Value = parseInt(m2String.split('-')[0]) || 60
   
-  // 1. START: Base prijs op basis van woningtype
-  const woningTypeKey = formData.woningType as keyof typeof BASE_RATES.woningType
-  const woningTypeData = BASE_RATES.woningType[woningTypeKey] || BASE_RATES.woningType.appartement
-  
-  // Interpoleer prijs binnen min-max range op basis van m2
-  // Hoe groter de woning t.o.v. gemiddelde, hoe hoger binnen de range
-  const m2Ratio = Math.min(Math.max(m2Value / woningTypeData.avgM2, 0.5), 2.0)
-  const basePrice = woningTypeData.min + ((woningTypeData.max - woningTypeData.min) * (m2Ratio - 0.5) / 1.5)
+  // 1. BASE PRIJS: Simpel €10 per m² (concurrerend en transparant)
+  const basePrice = m2Value * BASE_RATES.pricePerM2
   
   // 2. INRICHTINGSNIVEAU MULTIPLIER: AI bepaalt of woning leeg/half/vol is
   let highestVolumeMultiplier = 1.0
@@ -113,7 +104,7 @@ export function calculatePriceFromAI(
   })
 
   // Pas inrichtingsniveau multiplier toe op base price
-  // Leeg (0.7x) = 30% korting, Zeer Vol (1.4x) = 40% duurder
+  // Minimaal (0.85x) = 15% korting, Zeer Vol (1.4x) = 40% duurder
   let itemsCost = basePrice * highestVolumeMultiplier + specialItemsSurcharge
 
   // 3. VERDIEPING SURCHARGE (met lift korting)
@@ -131,24 +122,33 @@ export function calculatePriceFromAI(
   if (formData.inpakservice) {
     extrasCost += BASE_RATES.extraServices.inpakservice
   }
+  
+  // Vloer verwijderen - NIEUW: 2 types (normaal vs vastgelijmd)
   if (formData.vloerVerwijderen && formData.vloerM2) {
     const vloerM2 = parseInt(formData.vloerM2)
-    extrasCost += BASE_RATES.extraServices.vloerVerwijderen * vloerM2
+    const isVastgelijmd = formData.vloerType === 'vastgelijmd'
+    const vloerPrijs = isVastgelijmd 
+      ? BASE_RATES.extraServices.vloerVerwijderenVastgelijmd 
+      : BASE_RATES.extraServices.vloerVerwijderenNormaal
+    extrasCost += vloerPrijs * vloerM2
   }
+  
+  // Behang verwijderen - NIEUWE PRIJS: €3,50/m² (was €5)
   if (formData.behangVerwijderen && formData.behangM2) {
     const behangM2 = parseInt(formData.behangM2)
     extrasCost += BASE_RATES.extraServices.behangVerwijderen * behangM2
   }
+  
   if (formData.gaatjesToppen && formData.gaatjesM2) {
     const gaatjesM2 = parseInt(formData.gaatjesM2)
     extrasCost += BASE_RATES.extraServices.gaatjesToppen * gaatjesM2
   }
   if (formData.schilderwerk && formData.schilderwerkM2) {
     const schilderwerkM2 = parseInt(formData.schilderwerkM2)
-    extrasCost += BASE_RATES.extraServices.schilderwerk * schilderwerkM2 // 17.5 per m2
+    extrasCost += BASE_RATES.extraServices.schilderwerk * schilderwerkM2
   }
   if (formData.gordijnenVerwijderen) {
-    extrasCost += BASE_RATES.extraServices.gordijnenVerwijderen // Flat rate
+    extrasCost += BASE_RATES.extraServices.gordijnenVerwijderen
   }
 
   // 5. TRANSPORT (altijd)
@@ -162,7 +162,7 @@ export function calculatePriceFromAI(
     total: Math.round(total),
     breakdown: {
       items: Math.round(itemsCost + floorSurcharge + specialItemsSurcharge),
-      labor: 0, // Nu opgenomen in base price per woningtype
+      labor: 0, // Nu opgenomen in €10/m² base
       transport: transportCost,
       extras: Math.round(extrasCost),
     },
