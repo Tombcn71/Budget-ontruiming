@@ -80,8 +80,7 @@ export function calculatePriceFromAI(
 ): { total: number; breakdown: { items: number; labor: number; transport: number; extras: number } } {
   
   // Parse vierkante meters
-  const m2String = formData.vierkanteMeter || '50-75'
-  const m2Value = parseInt(m2String.split('-')[0]) || 60
+  const m2Value = parseInt(formData.vierkanteMeter || '60') || 60
   
   // 1. BASE PRIJS: Simpel €10 per m² (concurrerend en transparant)
   const basePrice = m2Value * BASE_RATES.pricePerM2

@@ -86,7 +86,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
             console.warn('⚠️ Gebruik fallback schatting - voeg OpenAI credits toe voor echte AI analyse')
             
             // Slimmere fallback op basis van vierkante meters
-            const sqm = parseInt(formData.vierkanteMeter?.split('-')[0] || '75')
+            const sqm = parseInt(formData.vierkanteMeter || '60')
             const estimatedItems = Math.max(3, Math.floor(sqm / 15))
             const estimatedBoxes = Math.max(5, Math.floor(sqm / 10))
             const estimatedHours = Math.max(2, Math.floor(sqm / 25))
@@ -299,22 +299,17 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
 
                 <div>
                   <Label className="text-foreground text-sm mb-2 block">Vierkante Meter *</Label>
-                  <Select
+                  <Input
+                    type="number"
+                    placeholder="Bijv. 60"
                     value={formData.vierkanteMeter}
-                    onValueChange={(value) => setFormData({ ...formData, vierkanteMeter: value })}
-                  >
-                    <SelectTrigger className="bg-background border-0 h-11">
-                      <SelectValue placeholder="Selecteer oppervlakte" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="0-50">0-50 m²</SelectItem>
-                      <SelectItem value="50-75">50-75 m²</SelectItem>
-                      <SelectItem value="75-100">75-100 m²</SelectItem>
-                      <SelectItem value="100-150">100-150 m²</SelectItem>
-                      <SelectItem value="150-200">150-200 m²</SelectItem>
-                      <SelectItem value="200+">200+ m²</SelectItem>
-                    </SelectContent>
-                  </Select>
+                    onChange={(e) => setFormData({ ...formData, vierkanteMeter: e.target.value })}
+                    className="bg-background border-0 h-11"
+                    min="10"
+                    max="500"
+                    required
+                  />
+                  <p className="text-xs text-muted-foreground mt-1">Vul het exacte aantal vierkante meters in (€10/m²)</p>
                 </div>
 
                 <div>
