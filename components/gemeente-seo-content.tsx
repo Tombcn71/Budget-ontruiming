@@ -112,7 +112,7 @@ export function GemeenteSeoContent({ data }: GemeenteSeoContentProps) {
                 Bereken nu uw prijs
               </a>
               <a
-                href="https://calendly.com/tbvanreijn/30min"
+                href="https://calendly.com/budgetgroep/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 bg-secondary text-secondary-foreground font-bold rounded-lg hover:bg-secondary/90 transition-colors"

@@ -125,7 +125,7 @@ export default function ContactPage() {
                 {/* CTA Button */}
                 <div className="pt-6">
                   <a
-                    href="https://calendly.com/tbvanreijn/30min"
+                    href="https://calendly.com/budgetgroep/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary/90 transition-colors"

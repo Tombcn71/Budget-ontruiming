@@ -514,7 +514,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                   <div className="bg-primary/10 border-l-4 border-primary p-3 rounded mb-3">
                     <p className="text-sm text-foreground leading-relaxed mb-2">
                       <strong>⚡ Binnen 1 minuut uw prijs!</strong>
-                    </p>
+                  </p>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Upload foto's → AI analyseert of de woning <strong>minimaal, normaal, vol of overvol</strong> is → Direct uw prijsindicatie. Geen afspraak, geen wachten.
                     </p>

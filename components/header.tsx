@@ -53,7 +53,7 @@ export function Header() {
           <div className="flex items-center gap-4 lg:gap-6">
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm lg:text-base" asChild>
               <a 
-                href="https://calendly.com/tbvanreijn/30min"
+                href="https://calendly.com/budgetgroep/30min"
                 target="_blank"
                 rel="noopener noreferrer"
               >
