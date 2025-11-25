@@ -671,7 +671,7 @@ Woningontruiming met laagste prijs garantie
     const { data: customerData, error: customerError } = await resend.emails.send({
       from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
       to: [formData.email],
-      replyTo: 'tbvanreijn@gmail.com',
+      replyTo: 'budgetgroep.nl@gmail.com',
       subject: `Uw offerte - Budget Ontruiming`,
       html: simpleCustomerEmail,
       text: textEmail,
@@ -684,10 +684,10 @@ Woningontruiming met laagste prijs garantie
     }
 
     // Send to business (with photos for review)
-    console.log('📧 Verzenden naar bedrijf: tbvanreijn@gmail.com')
+    console.log('📧 Verzenden naar bedrijf: budgetgroep.nl@gmail.com')
     const { data: businessData, error: businessError } = await resend.emails.send({
           from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
-      to: ['tbvanreijn@gmail.com'],
+      to: ['budgetgroep.nl@gmail.com'],
       replyTo: formData.email,
       subject: `Nieuwe Offerte Aanvraag - ${formData.naam} - EUR ${totalPrice.toFixed(2)}`,
       html: businessEmail,

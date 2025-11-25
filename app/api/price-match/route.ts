@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     // Email naar bedrijf
     const { data: businessData, error: businessError } = await resend.emails.send({
       from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
-      to: ['tbvanreijn@gmail.com'],
+      to: ['budgetgroep.nl@gmail.com'],
       replyTo: email,
       subject: `🔥 PRICE MATCH AANVRAAG - ${naam}`,
       html: `
@@ -93,7 +93,7 @@ export async function POST(request: Request) {
     const { data: customerData, error: customerError } = await resend.emails.send({
       from: 'Budget Ontruiming <offerte@budgetontruiming.nl>',
       to: [email],
-      replyTo: 'tbvanreijn@gmail.com',
+      replyTo: 'budgetgroep.nl@gmail.com',
       subject: 'Laagste Prijs Garantie Aanvraag Ontvangen',
       html: `
 <!DOCTYPE html>
