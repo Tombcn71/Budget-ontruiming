@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import KrimpenSchema from "@/components/KrimpenSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Krimpen aan den IJssel | Budgetontruiming.nl",
+  title: "Woningontruiming Krimpen aan den IJssel | Ook Lekkerkerk | Laagste Prijs",
   description:
-    "Ontruiming Krimpen: Centrum, Stormpolder, Lekkerkerk + alle wijken. Laagste prijs garantie.",
+    "Woningontruiming in Krimpen aan den IJssel en Lekkerkerk. Specialist in bezemschone oplevering & ontruiming na overlijden. Laagste prijs garantie. 24/7 bereikbaar.",
   keywords:
     "woningontruiming krimpen aan den ijssel, ontruiming krimpen, ontruiming centrum krimpen, ontruiming stormpolder, ontruiming lekkerkerk, bezemschoon krimpen 2920-2925, spoedontruiming krimpen, ontruiming na overlijden krimpen",
   openGraph: {
@@ -82,6 +83,7 @@ export default function KrimpenAanDenIJsselPage() {
   const data = getGemeenteData("krimpen-aan-den-ijssel")!
   return (
     <>
+      <KrimpenSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

@@ -12,7 +12,7 @@ const RotterdamSchema = () => {
           "@type": "MovingCompany",
           "name": "Budget Ontruiming",
           "url": "https://www.budgetontruiming.nl/",
-          "telephone": "+31629759181"
+                  "telephone": "+31629759181"
         },
         "areaServed": {
           "@type": "City",
@@ -59,7 +59,7 @@ const RotterdamSchema = () => {
       {
         "@type": "LocalBusiness",
         "name": "Budget Ontruiming Rotterdam",
-        "telephone": "+31629759181",
+                "telephone": "+31629759181",
         "priceRange": "€",
         "address": {
           "@type": "PostalAddress",

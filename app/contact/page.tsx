@@ -68,10 +68,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Telefoon</h3>
                       <a
-                        href="tel:+31629759181"
+                        href="tel:0629759181"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        06 29 75 91 81
+                        0629 759 181
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">Bel ons direct voor spoedgevallen</p>
                     </div>

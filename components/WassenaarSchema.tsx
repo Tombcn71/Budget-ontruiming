@@ -12,7 +12,7 @@ const WassenaarSchema = () => {
           "@type": "MovingCompany",
           "name": "Budget Ontruiming",
           "url": "https://www.budgetontruiming.nl/",
-          "telephone": "+31629759181"
+                  "telephone": "+31629759181"
         },
         "areaServed": {
           "@type": "City",
@@ -59,7 +59,7 @@ const WassenaarSchema = () => {
       {
         "@type": "LocalBusiness",
         "name": "Budget Ontruiming Wassenaar",
-        "telephone": "+31629759181",
+                "telephone": "+31629759181",
         "priceRange": "€€",
         "address": {
           "@type": "PostalAddress",

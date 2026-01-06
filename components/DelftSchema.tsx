@@ -12,7 +12,7 @@ const DelftSchema = () => {
           "@type": "MovingCompany",
           "name": "Budget Ontruiming",
           "url": "https://www.budgetontruiming.nl/",
-          "telephone": "+31629759181"
+                  "telephone": "+31629759181"
         },
         "areaServed": {
           "@type": "City",
@@ -59,7 +59,7 @@ const DelftSchema = () => {
       {
         "@type": "LocalBusiness",
         "name": "Budget Ontruiming Delft",
-        "telephone": "+31629759181",
+                "telephone": "+31629759181",
         "priceRange": "€",
         "address": {
           "@type": "PostalAddress",

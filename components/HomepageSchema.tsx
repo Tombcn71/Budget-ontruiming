@@ -9,7 +9,7 @@ const HomepageSchema = () => {
         "@id": "https://www.budgetontruiming.nl/#organization",
         "name": "Budget Ontruiming",
         "url": "https://www.budgetontruiming.nl/",
-        "telephone": "+31629759181",
+                "telephone": "+31629759181",
         "email": "info@budgetontruiming.nl",
         "priceRange": "€",
         "description": "Gespecialiseerd in woningontruiming in Zuid-Holland met een unieke laagste prijs garantie en AI-prijscalculator.",

@@ -154,7 +154,7 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm lg:text-base text-primary-foreground/80">
-              <li>06 29 75 91 81</li>
+              <li>0629 759 181</li>
               <li>info@budgetontruiming.nl</li>
               <li>Ma-Za: 07:00 - 22:00</li>
             </ul>

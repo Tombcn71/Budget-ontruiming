@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import AlbrandswaardSchema from "@/components/AlbrandswaardSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Albrandswaard | Budgetontruiming.nl",
+  title: "Woningontruiming Albrandswaard | Rhoon & Poortugaal | Laagste Prijs",
   description:
-    "Ontruiming Albrandswaard: Rhoon, Poortugaal + alle kernen. Laagste prijs garantie.",
+    "Specialist in woningontruiming in Albrandswaard (Rhoon en Poortugaal). Discreet ontruimen na overlijden & bezemschone oplevering. Laagste prijs garantie.",
   keywords:
     "woningontruiming albrandswaard, ontruiming albrandswaard, ontruiming rhoon, ontruiming poortugaal, bezemschoon albrandswaard 3161-3175, spoedontruiming albrandswaard, ontruiming na overlijden albrandswaard",
   openGraph: {
@@ -82,6 +83,7 @@ export default function AlbrandswaardPage() {
   const data = getGemeenteData("albrandswaard")!
   return (
     <>
+      <AlbrandswaardSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

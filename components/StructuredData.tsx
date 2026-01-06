@@ -9,7 +9,7 @@ const StructuredData = () => {
         "@id": "https://www.budgetontruiming.nl/#organization",
         "name": "Budget Ontruiming",
         "url": "https://www.budgetontruiming.nl/",
-        "telephone": "+31629759181",
+                "telephone": "+31629759181",
         "email": "info@budgetontruiming.nl",
         "priceRange": "€",
         "description": "Dé specialist in woningontruiming in Haaglanden en Rijnmond. Wij bieden een laagste prijs garantie en een directe AI-prijsindicatie.",
