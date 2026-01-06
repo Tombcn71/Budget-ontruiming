@@ -115,7 +115,7 @@ export function ContactForm() {
           id="phone"
           name="phone"
           type="tel"
-          placeholder="06 12 34 56 78"
+          placeholder="06 29 75 91 81"
           value={formData.phone}
           onChange={handleChange}
           disabled={isSubmitting}

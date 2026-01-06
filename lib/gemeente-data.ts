@@ -137,7 +137,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
       "Kennis van lokale parkeerregels en toegankelijkheid in smalle straten",
       "Flexibel beschikbaar, ook in drukke studenten-verhuisperiodes",
       "Laagste prijs garantie voor alle ontruimingen",
-      "Samenwerking met lokale kringlooporganisaties",
     ],
     situaties: [
       {
@@ -331,7 +330,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
       "Snel beschikbaar voor spoedontruimingen",
       "Laagste prijs garantie - nooit te veel betalen",
       "Ervaring met gezinswoningen en appartementen",
-      "Lokale samenwerking met kringlooporganisaties",
     ],
     situaties: [
       {
@@ -593,7 +591,6 @@ export const gemeenteData: Record<string, GemeenteData> = {
       "Ervaring met zowel portiekflats als eengezinswoningen",
       "Snelle beschikbaarheid, ook voor spoedklussen",
       "Laagste prijs garantie",
-      "Samenwerking met lokale kringlooporganisaties",
     ],
     situaties: [
       {
@@ -613,7 +610,7 @@ export const gemeenteData: Record<string, GemeenteData> = {
       },
       {
         title: "Bezemschoon opleveren huurwoning",
-        address:
+        description:
           "Woningcorporaties in Zoetermeer stellen hoge eisen. Wij zorgen dat uw huurwoning volledig aan de oplevervoorwaarden voldoet.",
       },
     ],

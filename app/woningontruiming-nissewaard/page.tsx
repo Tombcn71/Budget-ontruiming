@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import NissewaardSchema from "@/components/NissewaardSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Nissewaard | Budgetontruiming.nl",
+  title: "Woningontruiming Nissewaard | Spijkenisse & Bernisse | Laagste Prijs",
   description:
-    "Ontruiming Nissewaard: Spijkenisse, Abbenbroek, Heenvliet + alle dorpen. Laagste prijs garantie.",
+    "Woningontruiming in heel Nissewaard: Spijkenisse en alle 7 dorpen (o.a. Zuidland, Heenvliet). Specialist in hoogbouw en bezemschone oplevering. Laagste prijs garantie.",
   keywords:
     "woningontruiming nissewaard, ontruiming spijkenisse, ontruiming bernisse, huis ontruimen nissewaard, hoogbouw ontruimen spijkenisse, bezemschoon opleveren nissewaard, spoedontruiming spijkenisse",
   openGraph: {
@@ -49,6 +50,7 @@ export default function NissewaardPage() {
   const data = getGemeenteData("nissewaard")!
   return (
     <>
+      <NissewaardSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

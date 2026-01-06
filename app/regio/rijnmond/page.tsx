@@ -7,11 +7,12 @@ import { GemeenteLinks } from "@/components/gemeente-links"
 import { RegioFaq } from "@/components/regio-faq"
 import { getGemeentesByRegio } from "@/lib/gemeente-data"
 import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structured-data"
+import RijnmondHubSchema from "@/components/RijnmondHubSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Rijnmond | Budgetontruiming.nl",
+  title: "Woningontruiming Rijnmond | Rotterdam & Omstreken | Laagste Prijs",
   description:
-    "Ontruiming Rijnmond: Rotterdam, Schiedam, Vlaardingen + 10 gemeentes. Laagste prijs garantie.",
+    "Professionele woningontruiming in regio Rijnmond. Actief in 13 gemeentes o.a. Rotterdam, Schiedam en Vlaardingen. Hoogbouw specialist & Laagste prijs garantie.",
   keywords: "woningontruiming rijnmond, ontruiming rijnmond, ontruiming rotterdam, ontruiming schiedam, ontruiming vlaardingen, ontruiming capelle aan den ijssel, ontruiming ridderkerk, ontruiming barendrecht, bezemschoon rijnmond, spoedontruiming rijnmond",
   openGraph: {
     title: "Ontruiming Rijnmond | 13 Gemeentes | Laagste Prijs",
@@ -62,6 +63,7 @@ export default function RijnmondPage() {
   return (
     <>
       {/* SEO Structured Data */}
+      <RijnmondHubSchema />
       <WebPageSchema 
         title="Woningontruiming Rijnmond - Laagste Prijs Garantie"
         description="Professionele woningontruiming in heel Rijnmond. Rotterdam, Schiedam, Vlaardingen, Nissewaard en meer."
@@ -100,7 +102,7 @@ export default function RijnmondPage() {
                   gezinswoning in Nissewaard of een vakantiehuis op Voorne aan Zee – wij bieden professionele 
                   woningontruiming met onze unieke laagste prijs garantie.
                 </p>
-                <h3 className="text-2xl font-bold text-foreground mt-8 mb-4">Onze diensten in Rijnmond</h3>
+                <h3 id="rijnmond-expertise" className="text-2xl font-bold text-foreground mt-8 mb-4">Onze diensten in Rijnmond</h3>
                 <ul className="space-y-2 mb-6">
                   <li>✓ Complete woningontruiming van klein tot groot</li>
                   <li>✓ Hoogbouw specialisten (ervaring met alle verdiepingen)</li>

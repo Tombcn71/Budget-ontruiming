@@ -9,7 +9,7 @@ interface GemeenteLinksProps {
 
 export function GemeenteLinks({ gemeentes, regio }: GemeenteLinksProps) {
   return (
-    <section className="py-12 lg:py-16 bg-muted/30">
+    <section id={regio === "Haaglanden" ? "gemeente-overzicht" : regio === "Rijnmond" ? "rijnmond-gemeentes" : undefined} className="py-12 lg:py-16 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 text-center">

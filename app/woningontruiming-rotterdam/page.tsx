@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import RotterdamSchema from "@/components/RotterdamSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Rotterdam | Budgetontruiming.nl",
+  title: "Woningontruiming Rotterdam | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + alle wijken. Laagste prijs garantie.",
+    "Professionele woningontruiming in heel Rotterdam. Van hoogbouw in Noord tot villa's in Hillegersberg. 24/7 bereikbaar voor spoedontruiming.",
   keywords:
     "woningontruiming rotterdam, ontruiming rotterdam, ontruiming centrum rotterdam, ontruiming noord rotterdam, ontruiming zuid rotterdam, ontruiming west rotterdam, ontruiming oost rotterdam, ontruiming kralingen, ontruiming feijenoord, ontruiming charlois, ontruiming ijsselmonde, ontruiming prins alexander, bezemschoon rotterdam 3000-3099, spoedontruiming rotterdam, ontruiming na overlijden rotterdam",
   openGraph: {
@@ -51,6 +52,7 @@ export default function RotterdamPage() {
 
   return (
     <>
+      <RotterdamSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

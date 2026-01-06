@@ -154,11 +154,18 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm lg:text-base text-primary-foreground/80">
-              <li>06 12 34 56 78</li>
+              <li>06 29 75 91 81</li>
               <li>info@budgetontruiming.nl</li>
               <li>Ma-Za: 07:00 - 22:00</li>
             </ul>
           </div>
+        </div>
+
+        {/* Gemeentes als tekst voor AI-indexering */}
+        <div className="sr-only">
+          <p>
+            Budget Ontruiming is actief in de volgende gemeentes: Den Haag, Rotterdam, Delft, Zoetermeer, Schiedam, Vlaardingen, Rijswijk, Wassenaar, Westland, Leidschendam-Voorburg, Midden-Delfland, Pijnacker-Nootdorp, Capelle aan den IJssel, Barendrecht, Ridderkerk, Albrandswaard, Lansingerland, Krimpen aan den IJssel, Nissewaard, Maassluis, Goeree-Overflakkee, Voorne aan Zee.
+          </p>
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">

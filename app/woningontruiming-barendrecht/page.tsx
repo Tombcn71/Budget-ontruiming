@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import BarendrechtSchema from "@/components/BarendrechtSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Barendrecht | Budgetontruiming.nl",
+  title: "Woningontruiming Barendrecht | Carnisselande | Laagste Prijs Garantie",
   description:
-    "Ontruiming Barendrecht: Centrum, Carnisselande, Smitshoek + alle wijken. Laagste prijs garantie.",
+    "Woningontruiming in heel Barendrecht & Carnisselande. Specialist in gezinswoningen en bezemschone oplevering. Laagste prijs garantie en binnen 24u beschikbaar.",
   keywords:
     "woningontruiming barendrecht, ontruiming barendrecht, ontruiming centrum barendrecht, ontruiming carnisselande, ontruiming smitshoek, bezemschoon barendrecht 2990-2995, spoedontruiming barendrecht, ontruiming na overlijden barendrecht",
   openGraph: {
@@ -81,6 +82,7 @@ export default function uarendrechtPage() {
   const data = getGemeenteData("barendrecht")!
   return (
     <>
+      <BarendrechtSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

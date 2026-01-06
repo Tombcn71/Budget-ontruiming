@@ -330,7 +330,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
     ],
     postcodes: "3000-3099",
     introText:
-      "Rotterdam is de tweede stad van Nederland met diverse wijken. Wij bieden professionele woningontruiming in heel Rotterdam tegen de laagste prijs, gegarandeerd.",
+      "Rotterdam is de tweede stad van Nederland met diverse wijken zoals Centrum, Zuid, Noord, Kralingen-Crooswijk, Delfshaven, Overschie, Prins Alexander en IJsselmonde. Wij bieden professionele woningontruiming in heel Rotterdam tegen de laagste prijs, gegarandeerd. Wij voldoen aan de eisen van Woonstad Rotterdam, Havensteder en Vestia voor bezemschone oplevering.",
     waaromKiezen: [
       "Uitgebreide kennis van alle Rotterdamse wijken",
       "24/7 bereikbaar voor spoedgevallen",
@@ -346,7 +346,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
       },
       {
         title: "Ontruiming Rotterdamse wijken",
-        description: "Van Noord tot Zuid, van Centrum tot Prins Alexander - wij werken overal.",
+        description: "Van Noord tot Zuid, van Centrum tot Prins Alexander - wij werken overal in Rotterdam. Wij kennen de specifieke eisen van Woonstad Rotterdam, Havensteder en Vestia en leveren bezemschoon op volgens hun normen.",
       },
       {
         title: "Spoedontruiming Rotterdam",
@@ -361,7 +361,7 @@ export const rijnmondData: Record<string, GemeenteData> = {
       {
         question: "Werken jullie in alle Rotterdamse wijken?",
         answer:
-          "Ja, wij werken in heel Rotterdam: Centrum, Noord, Zuid, West, Oost, Kralingen, Feijenoord, Charlois, IJsselmonde en Prins Alexander.",
+          "Ja, wij werken in heel Rotterdam: Centrum, Zuid, Noord, Kralingen-Crooswijk, Delfshaven, Overschie, Prins Alexander en IJsselmonde. Wij voldoen aan de eisen van Woonstad Rotterdam, Havensteder en Vestia voor bezemschone oplevering.",
       },
       {
         question: "Zijn jullie 24/7 bereikbaar?",

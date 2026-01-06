@@ -7,11 +7,12 @@ import { GemeenteLinks } from "@/components/gemeente-links"
 import { RegioFaq } from "@/components/regio-faq"
 import { getGemeentesByRegio } from "@/lib/gemeente-data"
 import { WebPageSchema, BreadcrumbSchema, FAQSchema } from "@/components/structured-data"
+import HaaglandenHubSchema from "@/components/HaaglandenHubSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Haaglanden | Budgetontruiming.nl",
+  title: "Woningontruiming Haaglanden | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Ontruiming Haaglanden: Den Haag, Delft, Zoetermeer + 6 gemeentes. Laagste prijs garantie.",
+    "Professionele woningontruiming in regio Haaglanden. Actief in 9 gemeentes o.a. Den Haag, Delft en Zoetermeer. Laagste prijs garantie & binnen 24u beschikbaar.",
   keywords: "woningontruiming haaglanden, ontruiming haaglanden, ontruiming den haag, ontruiming delft, ontruiming zoetermeer, ontruiming rijswijk, ontruiming leidschendam-voorburg, ontruiming wassenaar, bezemschoon haaglanden, spoedontruiming haaglanden",
   openGraph: {
     title: "Ontruiming Haaglanden | 9 Gemeentes | Laagste Prijs",
@@ -74,6 +75,7 @@ export default function HaaglandenPage() {
   return (
     <>
       {/* SEO Structured Data */}
+      <HaaglandenHubSchema />
       <WebPageSchema 
         title="Woningontruiming Haaglanden - Laagste Prijs Garantie"
         description="Professionele woningontruiming in heel Haaglanden. Den Haag, Delft, Rijswijk, Wassenaar en meer."
@@ -113,7 +115,7 @@ export default function HaaglandenPage() {
                   woningontruiming met onze unieke laagste prijs garantie.
                 </p>
                 <h3 className="text-2xl font-bold text-foreground mt-8 mb-4">Onze diensten in Haaglanden</h3>
-                <ul className="space-y-2 mb-6">
+                <ul id="haaglanden-diensten" className="space-y-2 mb-6">
                   <li>✓ Complete woningontruiming van klein tot groot</li>
                   <li>✓ Bezemschoon opleveren voor verhuurders</li>
                   <li>✓ Ontruiming na overlijden met respect en zorg</li>

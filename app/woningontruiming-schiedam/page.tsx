@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import SchiedamSchema from "@/components/SchiedamSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Schiedam | Budgetontruiming.nl",
+  title: "Woningontruiming Schiedam | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + alle wijken. Laagste prijs garantie.",
+    "Woningontruiming in Schiedam tegen de laagste prijs. Specialist in het historisch centrum en hoogbouw in Nieuwland. Laagste prijs garantie en bezemschone oplevering.",
   keywords:
     "woningontruiming schiedam, ontruiming schiedam, ontruiming centrum schiedam, ontruiming nieuwland schiedam, ontruiming groenoord schiedam, ontruiming kethel schiedam, ontruiming spaland schiedam, bezemschoon schiedam 3110-3125, spoedontruiming schiedam, ontruiming na overlijden schiedam",
   openGraph: {
@@ -85,6 +86,7 @@ export default function SchiedamPage() {
   const data = getGemeenteData("schiedam")!
   return (
     <>
+      <SchiedamSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

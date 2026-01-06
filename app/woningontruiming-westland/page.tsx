@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import WestlandSchema from "@/components/WestlandSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Westland | Budgetontruiming.nl",
+  title: "Woningontruiming Westland | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Ontruiming Westland: Naaldwijk, Wateringen, Monster + alle kernen. Laagste prijs garantie.",
+    "Woningontruiming in heel Westland (Naaldwijk, Wateringen, Monster, De Lier). Specialist in woningen met kassen of bedrijfsruimtes. Laagste prijs garantie.",
   keywords:
     "woningontruiming westland, ontruiming naaldwijk, ontruiming wateringen, ontruiming monster, ontruiming de lier, huis ontruimen westland, bezemschoon opleveren westland, kas ontruimen, spoedontruiming westland",
   openGraph: {
@@ -51,6 +52,7 @@ export default function WestlandPage() {
 
   return (
     <>
+      <WestlandSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

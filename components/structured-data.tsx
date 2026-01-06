@@ -26,7 +26,7 @@ export function OrganizationSchema() {
     "logo": "https://budgetontruiming.nl/logo.png",
     "description": "Professionele woningontruiming in Haaglanden en Rijnmond. Vindt u het elders goedkoper? Wij duiken onder die prijs! Actief in 22 gemeentes.",
     "priceRange": "€€",
-    "telephone": "+31612345678",
+    "telephone": "+31629759181",
     "email": "info@budgetontruiming.nl",
     "address": {
       "@type": "PostalAddress",

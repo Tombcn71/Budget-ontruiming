@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import PijnackerSchema from "@/components/PijnackerSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Pijnacker-Nootdorp | Budgetontruiming.nl",
+  title: "Woningontruiming Pijnacker-Nootdorp | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Ontruiming Pijnacker-Nootdorp: Centrum, Zuid, Nootdorp + alle kernen. Laagste prijs garantie.",
+    "Professionele woningontruiming in Pijnacker, Nootdorp en Delfgauw. Specialist in gezinswoningen en appartementen. Laagste prijs garantie en binnen 24u beschikbaar bij spoed.",
   keywords:
     "woningontruiming pijnacker-nootdorp, ontruiming pijnacker, ontruiming nootdorp, ontruiming pijnacker centrum, ontruiming pijnacker-zuid, ontruiming delfgauw, ontruiming keijzershof, bezemschoon pijnacker-nootdorp 2640-2649, spoedontruiming pijnacker-nootdorp, ontruiming na overlijden pijnacker-nootdorp",
   openGraph: {
@@ -88,6 +89,7 @@ export default function PijnackerNootdorpPage() {
 
   return (
     <>
+      <PijnackerSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

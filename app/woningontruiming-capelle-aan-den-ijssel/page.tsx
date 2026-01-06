@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import CapelleSchema from "@/components/CapelleSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Capelle aan den IJssel | Budgetontruiming.nl",
+  title: "Woningontruiming Capelle aan den IJssel | Laagste Prijs Garantie",
   description:
-    "Ontruiming Capelle: Centrum, Schollevaar, Fascinatio + alle wijken. Laagste prijs garantie.",
+    "Specialist in hoogbouw woningontruiming in Capelle aan den IJssel (o.a. Schollevaar, Fascinatio). Bezemschone oplevering & laagste prijs garantie. Start binnen 24-48u.",
   keywords:
     "woningontruiming capelle aan den ijssel, ontruiming capelle, ontruiming centrum capelle, ontruiming schollevaar, ontruiming fascinatio, ontruiming 's-gravenland, bezemschoon capelle 2900-2909, spoedontruiming capelle, ontruiming na overlijden capelle",
   openGraph: {
@@ -81,6 +82,7 @@ export default function capelleaandenijsselPage() {
   const data = getGemeenteData("capelle-aan-den-ijssel")!
   return (
     <>
+      <CapelleSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

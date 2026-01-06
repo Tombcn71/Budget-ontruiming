@@ -18,6 +18,7 @@ export function HeroAI() {
             <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
               Woningontruimingen zonder gedoe voor Haaglanden en Rijnmond
             </h1>
+            <h2 id="prijs-berekenen" className="sr-only">Prijs berekenen met AI</h2>
 
             <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
               Vindt u het elders goedkoper? Wij duiken onder die prijs!

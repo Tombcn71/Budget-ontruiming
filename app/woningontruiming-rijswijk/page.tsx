@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import RijswijkSchema from "@/components/RijswijkSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Rijswijk | Budgetontruiming.nl",
+  title: "Woningontruiming Rijswijk | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + alle wijken. Laagste prijs garantie.",
+    "Professionele woningontruiming in Rijswijk. Specialist in hoogbouw, sociale huur en bedrijfsruimtes. Laagste prijs garantie. Start binnen 24u mogelijk.",
   keywords:
     "woningontruiming rijswijk, ontruiming rijswijk, ontruiming centrum rijswijk, ontruiming sion rijswijk, ontruiming steenvoorde rijswijk, ontruiming oud-rijswijk, ontruiming plaspoelpolder rijswijk, ontruiming in de bogaard rijswijk, bezemschoon rijswijk 2280-2289, spoedontruiming rijswijk, ontruiming na overlijden rijswijk",
   openGraph: {
@@ -87,6 +88,7 @@ export default function RijswijkPage() {
 
   return (
     <>
+      <RijswijkSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

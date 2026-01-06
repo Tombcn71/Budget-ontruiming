@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import VoorneAanZeeSchema from "@/components/VoorneAanZeeSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Voorne aan Zee | Budgetontruiming.nl",
+  title: "Woningontruiming Voorne aan Zee | Brielle & Hellevoetsluis | Laagste Prijs",
   description:
-    "Ontruiming Voorne aan Zee: Brielle, Hellevoetsluis, Rockanje + alle kernen. Laagste prijs garantie.",
+    "Woningontruiming in heel Voorne aan Zee (Brielle, Hellevoetsluis, Rockanje). Specialist in vakantiewoningen en permanente bewoning. Laagste prijs garantie.",
   keywords:
     "woningontruiming voorne aan zee, ontruiming rockanje, vakantiehuis ontruimen rockanje, huis ontruimen voorne aan zee, bezemschoon opleveren rockanje, strandhuisje ontruimen, kustgebied ontruiming",
   openGraph: {
@@ -49,6 +50,7 @@ export default function VoorneAanZeePage() {
   const data = getGemeenteData("voorne-aan-zee")!
   return (
     <>
+      <VoorneAanZeeSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

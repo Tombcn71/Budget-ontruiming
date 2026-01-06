@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import ZoetermeerSchema from "@/components/ZoetermeerSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Zoetermeer | Budgetontruiming.nl",
+  title: "Woningontruiming Zoetermeer | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Ontruiming Zoetermeer: Centrum, Meerzicht, Palenstein + alle wijken. Laagste prijs garantie.",
+    "Woningontruiming in heel Zoetermeer (van Meerzicht tot Rokkeveen). Specialist in portiekflats en eengezinswoningen. Laagste prijs garantie en binnen 24u beschikbaar bij spoed.",
   keywords:
     "woningontruiming zoetermeer, ontruiming zoetermeer, ontruiming centrum zoetermeer, ontruiming meerzicht zoetermeer, ontruiming dorp zoetermeer, ontruiming palenstein zoetermeer, ontruiming buytenwegh zoetermeer, ontruiming seghwaert zoetermeer, ontruiming rokkeveen zoetermeer, ontruiming noordhove zoetermeer, bezemschoon zoetermeer 2700-2729, spoedontruiming zoetermeer, ontruiming na overlijden zoetermeer",
   openGraph: {
@@ -87,6 +88,7 @@ export default function ZoetermeerPage() {
 
   return (
     <>
+      <ZoetermeerSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

@@ -6,6 +6,14 @@ import { HomepageSeoContent } from "@/components/homepage-seo-content"
 import { HomepageFaq } from "@/components/homepage-faq"
 import { Footer } from "@/components/footer"
 import { OrganizationSchema, WebPageSchema, FAQSchema } from "@/components/structured-data"
+import StructuredData from "@/components/StructuredData"
+import HomepageSchema from "@/components/HomepageSchema"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Woningontruiming Haaglanden & Rijnmond | Laagste Prijs Garantie | Budget Ontruiming",
+  description: "Professionele woningontruiming met de laagste prijs garantie en directe AI-prijsindicatie. Actief in 22+ gemeentes waaronder Den Haag en Rotterdam.",
+}
 
 export default function Home() {
   const faqs = [
@@ -46,6 +54,8 @@ export default function Home() {
   return (
     <>
       {/* SEO Structured Data */}
+      <HomepageSchema />
+      <StructuredData />
       <OrganizationSchema />
       <WebPageSchema 
         title="Budget Ontruiming - Woningontruiming voor de Laagste Prijs"
@@ -57,7 +67,9 @@ export default function Home() {
       <main className="min-h-screen">
         <TopBanner />
         <Header />
-        <HeroAI />
+        <section id="prijscalculator">
+          <HeroAI />
+        </section>
         <HowItWorks />
         <HomepageSeoContent />
         <HomepageFaq />

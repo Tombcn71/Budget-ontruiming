@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import DelftSchema from "@/components/DelftSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Delft | Budgetontruiming.nl",
+  title: "Woningontruiming Delft | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Ontruiming Delft: Centrum, Tanthof, Vrijenban + alle wijken. Laagste prijs garantie.",
+    "Woningontruiming in Delft tegen de laagste prijs. Van studentenkamer bij de TU tot villa in de binnenstad. Wij regelen parkeervergunningen en leveren bezemschoon op.",
   keywords:
     "woningontruiming delft, ontruiming delft, ontruiming centrum delft, ontruiming tanthof delft, ontruiming vrijenban delft, ontruiming voorhof delft, ontruiming buitenhof delft, ontruiming wippolder delft, ontruiming hof van delft, ontruiming schieweg delft, bezemschoon delft 2600-2629, spoedontruiming delft, ontruiming na overlijden delft",
   openGraph: {
@@ -88,6 +89,7 @@ export default function DelftPage() {
 
   return (
     <>
+      <DelftSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

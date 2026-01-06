@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import DenHaagSchema from "@/components/DenHaagSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Den Haag | Budgetontruiming.nl",
+  title: "Woningontruiming Den Haag | Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Ontruiming Den Haag: Centrum, Statenkwartier, Schilderswijk + alle wijken. Laagste prijs garantie.",
+    "Professionele woningontruiming in alle wijken van Den Haag. Wij voldoen aan de eisen van Staedion, Haag Wonen en Vestia. Start binnen 24 uur mogelijk.",
   keywords:
     "woningontruiming den haag, ontruiming den haag, ontruiming centrum den haag, ontruiming zeeheldenkwartier, ontruiming segbroek, ontruiming schilderswijk, ontruiming transvaal, ontruiming loosduinen, ontruiming kijkduin, ontruiming leidschenveen, ontruiming ypenburg, ontruiming mariahoeve, ontruiming statenkwartier, ontruiming moerwijk, bezemschoon den haag 2490-2599, spoedontruiming den haag, ontruiming na overlijden den haag",
   openGraph: {
@@ -51,6 +52,7 @@ export default function DenHaagPage() {
 
   return (
     <>
+      <DenHaagSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import VlaardingenSchema from "@/components/VlaardingenSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Vlaardingen | Budgetontruiming.nl",
+  title: "Woningontruiming Vlaardingen | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Ontruiming Vlaardingen: Centrum, Westwijk, Oostwijk + alle wijken. Laagste prijs garantie.",
+    "Woningontruiming in heel Vlaardingen (Centrum, Holy, Westwijk). Specialist in bezemschone oplevering en seniorenverhuizingen. Laagste prijs garantie.",
   keywords:
     "woningontruiming vlaardingen, ontruiming vlaardingen, ontruiming centrum vlaardingen, ontruiming westwijk vlaardingen, ontruiming oostwijk vlaardingen, ontruiming ambacht vlaardingen, ontruiming holy vlaardingen, bezemschoon vlaardingen 3130-3137, spoedontruiming vlaardingen, ontruiming na overlijden vlaardingen",
   openGraph: {
@@ -85,6 +86,7 @@ export default function vlaardingenPage() {
   const data = getGemeenteData("vlaardingen")!
   return (
     <>
+      <VlaardingenSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />

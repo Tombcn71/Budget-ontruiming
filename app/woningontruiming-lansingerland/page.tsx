@@ -9,11 +9,12 @@ import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
 import { getGemeenteData } from "@/lib/gemeente-data"
 import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
+import LansingerlandSchema from "@/components/LansingerlandSchema"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Lansingerland | Budgetontruiming.nl",
+  title: "Woningontruiming Lansingerland | Berkel, Bleiswijk & Bergschenhoek",
   description:
-    "Ontruiming Lansingerland: Bergschenhoek, Berkel, Bleiswijk + alle kernen. Laagste prijs garantie.",
+    "Woningontruiming in heel Lansingerland (Berkel en Rodenrijs, Bleiswijk, Bergschenhoek). Specialist in bezemschone oplevering & bedrijfsontruiming. Laagste prijs garantie.",
   keywords:
     "woningontruiming lansingerland, ontruiming lansingerland, ontruiming bergschenhoek, ontruiming berkel en rodenrijs, ontruiming bleiswijk, bezemschoon lansingerland 2650-2665, spoedontruiming lansingerland, ontruiming na overlijden lansingerland",
   openGraph: {
@@ -82,6 +83,7 @@ export default function LansingerlandPage() {
   const data = getGemeenteData("lansingerland")!
   return (
     <>
+      <LansingerlandSchema />
       <GemeenteStructuredData data={data} />
       <TopBanner />
       <Header />
