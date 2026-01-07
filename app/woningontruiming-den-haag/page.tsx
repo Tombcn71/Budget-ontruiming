@@ -2,14 +2,8 @@ import type { Metadata } from "next"
 import { TopBanner } from "@/components/top-banner"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { GemeenteHero } from "@/components/gemeente-hero"
-import { HowItWorks } from "@/components/how-it-works"
-import { GemeenteSeoContent } from "@/components/gemeente-seo-content"
 import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
-import { getGemeenteData } from "@/lib/gemeente-data"
-import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
-import DenHaagSchema from "@/components/DenHaagSchema"
 
 export const metadata: Metadata = {
   title: "Woningontruiming Den Haag | Laagste Prijs Garantie | Budget Ontruiming",
@@ -48,21 +42,466 @@ export const metadata: Metadata = {
 }
 
 export default function DenHaagPage() {
-  const data = getGemeenteData("den-haag")!
+  // FAQs
+  const faqs = [
+    {
+      question: "Hoe snel kunnen jullie een woning in Den Haag ontruimen?",
+      answer:
+        "In de meeste gevallen kunnen we binnen 1-2 werkdagen starten. Bij spoedeisende situaties is ontruiming binnen 24 uur mogelijk. De duur van de ontruiming hangt af van de grootte en toegankelijkheid van de woning.",
+    },
+    {
+      question: "Werken jullie in alle wijken van Den Haag?",
+      answer:
+        "Ja, wij ontruimen woningen in heel Den Haag: van het Centrum tot Loosduinen, van Scheveningen tot Leidschenveen. We kennen de lokale situatie en parkeermogelijkheden in elke wijk.",
+    },
+    {
+      question: "Wat gebeurt er met mijn inboedel?",
+      answer:
+        "Bruikbare spullen gaan naar lokale kringloopwinkels of goede doelen. Waardevolle items kunnen verkocht worden (de opbrengst gaat naar u). De rest wordt milieuvriendelijk afgevoerd volgens Haagse afvalregels.",
+    },
+    {
+      question: "Leveren jullie ook bezemschoon op voor verhuurders?",
+      answer:
+        "Absoluut. Wij kennen de oplevervoorwaarden van alle grote Haagse woningcorporaties (Vestia, Haag Wonen, Staedion) en zorgen dat uw woning exact volgens deze eisen wordt opgeleverd.",
+    },
+    {
+      question: "Wat is jullie laagste prijs garantie?",
+      answer:
+        "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u altijd verzekerd van de beste prijs voor uw woningontruiming in Den Haag.",
+    },
+  ]
+
+  // Wijken
+  const wijken = [
+    "Centrum & Zeeheldenkwartier",
+    "Segbroek & Valkenboskwartier",
+    "Schilderswijk & Transvaal",
+    "Loosduinen & Kijkduin",
+    "Leidschenveen & Ypenburg",
+    "Mariahoeve",
+    "Statenkwartier",
+    "Moerwijk",
+  ]
+
+  // Waarom kiezen
+  const waaromKiezen = [
+    "Lokale kennis van alle Haagse wijken en hun specifieke toegankelijkheid",
+    "Ervaring met zowel monumentale panden als moderne nieuwbouw",
+    "Snel beschikbaar, vaak binnen 24-48 uur",
+    "Laagste prijs garantie - vindt u goedkoper? Wij duiken onder die prijs!",
+    "Specialisatie in bezemschoon opleveren volgens Haagse huurvoorwaarden",
+  ]
+
+  // Situaties
+  const situaties = [
+    {
+      title: "Ontruiming na overlijden in Den Haag",
+      description:
+        "Het verlies van een dierbare is een emotionele periode. Wij helpen u met respect en discretie bij het ontruimen van de woning. Van het sorteren van waardevolle bezittingen tot het bezemschoon opleveren – wij nemen u alles uit handen.",
+    },
+    {
+      title: "Huurwoning opleveren in Den Haag",
+      description:
+        "De meeste Haagse woningcorporaties (Vestia, Haag Wonen, Staedion) stellen strenge eisen bij oplevering. Wij kennen deze voorwaarden en zorgen dat uw woning volledig aan de eisen voldoet: geen gordijnrails, geen pluggen, alle gaten gedicht en bezemschoon.",
+    },
+    {
+      title: "Seniorenverhuizing Den Haag",
+      description:
+        "Een verhuizing naar een verzorgingstehuis of kleiner appartement vraagt om zorgvuldige begeleiding. Wij helpen bij het uitzoeken, inpakken en verhuizen, en ontruimen de oude woning compleet.",
+    },
+    {
+      title: "Spoedontruiming Den Haag",
+      description:
+        "Soms moet het snel. Bij verkoop, een nieuwe huurder of andere spoedeisende situaties kunnen wij vaak binnen 24 uur starten met de ontruiming van uw woning in Den Haag.",
+    },
+  ]
+
+  // Schema's
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.budgetontruiming.nl/den-haag/#service",
+    "name": "Woningontruiming Den Haag",
+    "provider": {
+      "@type": "MovingCompany",
+      "name": "Budget Ontruiming",
+      "url": "https://www.budgetontruiming.nl/",
+      "telephone": "+31629759181"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Den Haag",
+      "sameAs": "https://www.wikidata.org/wiki/Q36500"
+    },
+    "description": "Gespecialiseerde woningontruiming in Den Haag. Wij leveren bezemschoon op conform de eisen van Staedion, Haag Wonen en Vestia.",
+    "knowsAbout": [
+      "Woningontruiming Den Haag",
+      "Bezemschoon opleveren Staedion",
+      "Seniorenverhuizing Den Haag",
+      "Haagse woningcorporaties"
+    ]
+  }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Budget Ontruiming Den Haag",
+    "telephone": "+31629759181",
+    "priceRange": "€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Den Haag",
+      "addressRegion": "Zuid-Holland",
+      "postalCode": "2490-2599",
+      "addressCountry": "NL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.0705,
+      "longitude": 4.3007
+    }
+  }
 
   return (
     <>
-      <DenHaagSchema />
-      <GemeenteStructuredData data={data} />
+      {/* Schema's direct in page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+
       <TopBanner />
       <Header />
-      <main>
-        <GemeenteHero
-          gemeenteNaam="Den Haag"
-          subtitle="Vindt u het elders goedkoper voor woningontruiming in Den Haag? Wij duiken onder die prijs! Zo bent u ervan verzekerd dat u de laagste prijs betaalt."
-        />
-        <HowItWorks />
-        <GemeenteSeoContent data={data} />
+      
+      <main className="min-h-screen">
+        {/* Hero Section */}
+        <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/professional-movers-carrying-boxes-in-modern-home.jpg"
+              alt="Professionele woningontruiming Den Haag"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
+          </div>
+
+          <div className="container mx-auto px-4 lg:px-8 relative z-10 py-8 lg:py-16">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+              <div className="text-center lg:text-left">
+                <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
+                  Woningontruiming Den Haag, met laagste prijs garantie.
+                </h1>
+
+                <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
+                  Vindt u het elders goedkoper? Wij duiken onder die prijs!
+                </p>
+
+                <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
+                  Vindt u het elders goedkoper voor woningontruiming in Den Haag? Wij duiken onder die prijs! Zo bent u ervan verzekerd dat u de laagste prijs betaalt.
+                </p>
+
+                <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
+                  <p className="text-md sm:text-lg font-semibold text-white">
+                    🏆 Laagste Prijs Garantie in Den Haag
+                  </p>
+                </div>
+
+                <div className="hidden sm:flex flex-wrap gap-4 text-md text-white">
+                  <span>Bezemschoon opleveren</span>
+                  <span>|</span>
+                  <span>Na overlijden</span>
+                  <span>|</span>
+                  <span>Spoedontruiming</span>
+                </div>
+              </div>
+
+              <div>
+                <AIQuoteForm />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Hoe Het Werkt - Direct in page voor SEO */}
+        <section className="py-12 lg:py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-center text-foreground mb-4">
+              Hoe Het Werkt
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="text-center">
+                <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  01
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Prijs berekenen
+                </h3>
+                <p className="text-muted-foreground">
+                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
+                  Goedkoper gevonden? Wij betalen het verschil.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  02
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Datum kiezen
+                </h3>
+                <p className="text-muted-foreground">
+                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
+                  beschikbaar, bij spoed binnen 24 uur.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  03
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Ontruiming
+                </h3>
+                <p className="text-muted-foreground">
+                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
+                  moment. Bezemschoon opgeleverd.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEO Content - Direct in page */}
+        <article className="container mx-auto px-4 py-12 lg:py-16">
+          <section className="prose prose-lg max-w-none mb-12">
+            <h2 id="den-haag-info" className="text-3xl font-bold text-foreground mb-6">
+              Woningontruiming in Den Haag
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              Een woningontruiming in Den Haag vraagt om lokale kennis en ervaring. Of het nu gaat om een appartement in het Zeeheldenkwartier, een herenhuis in het Statenkwartier of een sociale huurwoning in de Schilderswijk – wij zorgen voor een professionele en respectvolle ontruiming tegen de laagste prijs.
+            </p>
+
+            {/* Wijken */}
+            <div id="den-haag-wijken" className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle wijken van Den Haag:</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {wijken.map((wijk, index) => (
+                  <div key={index} className="flex items-center gap-2 text-foreground">
+                    <span className="text-primary">✓</span>
+                    <span className="text-sm">{wijk}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Waarom Kiezen */}
+          <section className="py-12 lg:py-16 bg-muted/30 mb-12">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
+                Waarom kiezen voor Budget Ontruiming in Den Haag?
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {waaromKiezen.map((reden, index) => (
+                  <div key={index} className="border rounded-lg p-6 bg-card">
+                    <div className="flex gap-3">
+                      <span className="text-primary text-xl">✓</span>
+                      <p className="text-foreground leading-relaxed">{reden}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Situaties */}
+          <section className="mb-12">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
+                Wanneer heeft u een woningontruiming nodig?
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {situaties.map((situatie, index) => (
+                  <div key={index} className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Diensten */}
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
+              Onze Diensten in Den Haag
+            </h2>
+            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Volledige Woningontruiming
+                </h3>
+                <p className="text-muted-foreground">
+                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Bezemschoon Opleveren
+                </h3>
+                <p className="text-muted-foreground">
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties zoals Vestia, Staedion en Haag Wonen.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Ontruiming na Overlijden
+                </h3>
+                <p className="text-muted-foreground">
+                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Spoedontruiming 24 uur
+                </h3>
+                <p className="text-muted-foreground">
+                  Bij spoed vaak binnen 24 uur starten. In Den Haag 24/7 bereikbaar voor urgente situaties.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Extra Diensten
+                </h3>
+                <p className="text-muted-foreground">
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Bedrijfsontruimingen
+                </h3>
+                <p className="text-muted-foreground">
+                  Ook voor kantoren, winkels en horeca. Ervaring met grote volumes en tijdskritische projecten.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* USPs */}
+          <section className="mb-12 bg-muted/30 rounded-lg p-8">
+            <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
+              Waarom kiezen voor Budget Ontruiming?
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="flex gap-4">
+                <div className="text-4xl">🏆</div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Laagste Prijs Garantie
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="text-4xl">🚀</div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Snel & Flexibel
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="text-4xl">♻️</div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Milieuvriendelijk
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="text-4xl">✅</div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    All-in Ontzorging
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van woningcorporaties.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        {/* FAQ Section */}
+        <section id="haagse-faq" className="bg-muted/50 py-12 lg:py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+              Veelgestelde vragen over woningontruiming in Den Haag
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Den Haag
+            </p>
+            
+            <div className="max-w-3xl mx-auto space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-card border rounded-lg p-6">
+                  <h3 className="text-xl font-bold text-foreground mb-3">
+                    {faq.question}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         
         {/* AI Quote Form Section */}
         <section className="py-12 lg:py-16 bg-background">
@@ -81,10 +520,11 @@ export default function DenHaagPage() {
           </div>
         </section>
 
-        <GemeenteMap gemeenteNaam={data.naam} postcodes={data.postcodes} />
+        {/* GemeenteMap */}
+        <GemeenteMap gemeenteNaam="Den Haag" postcodes="2490-2599" />
+
+        <Footer />
       </main>
-      <Footer />
     </>
   )
 }
-

@@ -2,14 +2,8 @@ import type { Metadata } from "next"
 import { TopBanner } from "@/components/top-banner"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { GemeenteHero } from "@/components/gemeente-hero"
-import { HowItWorks } from "@/components/how-it-works"
-import { GemeenteSeoContent } from "@/components/gemeente-seo-content"
 import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
-import { getGemeenteData } from "@/lib/gemeente-data"
-import { GemeenteStructuredData } from "@/components/gemeente-structured-data"
-import PijnackerSchema from "@/components/PijnackerSchema"
 
 export const metadata: Metadata = {
   title: "Woningontruiming Pijnacker-Nootdorp | Laagste Prijs Garantie | Budgetontruiming.nl",
@@ -47,59 +41,462 @@ export const metadata: Metadata = {
   },
 }
 
-// OLD
-export const OLD_metadata: Metadata = {
-  title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie | Budget Ontruiming",
-  description:
-    "Professionele woningontruiming in Pijnacker-Nootdorp. Snel, betrouwbaar en betaalbaar. Vindt u goedkoper? Wij duiken onder die prijs!!",
-  keywords:
-    "woningontruiming pijnacker-nootdorp, ontruiming pijnacker, ontruiming nootdorp, huis ontruimen pijnacker, bezemschoon opleveren nootdorp, woning leeghalen delfgauw, spoedontruiming pijnacker, inboedel ontruiming nootdorp",
-  openGraph: {
-    title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie",
-    description:
-      "Professionele woningontruiming in Pijnacker-Nootdorp. Snel, betrouwbaar en betaalbaar. Direct beschikbaar!",
-    url: "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",
-    type: "website",
-    locale: "nl_NL",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Woningontruiming Pijnacker-Nootdorp - Laagste Prijs Garantie",
-    description:
-      "Professionele woningontruiming in Pijnacker-Nootdorp. Vindt u goedkoper? Wij duiken onder die prijs!!",
-  },
-  alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-}
-
 export default function PijnackerNootdorpPage() {
-  const data = getGemeenteData("pijnacker-nootdorp")!
+  // FAQs
+  const faqs = [
+    {
+      question: "Werken jullie ook in Delfgauw?",
+      answer:
+        "Ja, wij werken in heel Pijnacker-Nootdorp inclusief Delfgauw, alle wijken in Pijnacker en Nootdorp.",
+    },
+    {
+      question: "Kunnen jullie ook de tuin en schuur ontruimen?",
+      answer:
+        "Zeker, wij ontruimen de gehele woning inclusief alle bijgebouwen, tuin en berging. Alles wordt netjes afgevoerd.",
+    },
+    {
+      question: "Wat gebeurt er met bruikbare spullen?",
+      answer:
+        "Bruikbare spullen doneren we aan lokale kringloopwinkels. Waardevolle items kunnen verkocht worden, de opbrengst komt naar u toe.",
+    },
+    {
+      question: "Wat is de laagste prijs garantie?",
+      answer:
+        "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u in Pijnacker-Nootdorp altijd verzekerd van de voordeligste prijs voor uw woningontruiming.",
+    },
+  ]
+
+  // Wijken
+  const wijken = [
+    "Pijnacker Centrum",
+    "Pijnacker-Zuid",
+    "Nootdorp",
+    "Delfgauw",
+    "Keijzershof",
+  ]
+
+  // Waarom kiezen
+  const waaromKiezen = [
+    "Kennis van zowel oude dorpskernen als nieuwe woonwijken",
+    "Snel beschikbaar voor spoedontruimingen",
+    "Laagste prijs garantie - nooit te veel betalen",
+    "Ervaring met gezinswoningen en appartementen",
+  ]
+
+  // Situaties
+  const situaties = [
+    {
+      title: "Gezinswoning ontruimen",
+      description:
+        "Pijnacker-Nootdorp kent veel gezinswoningen. Bij verhuizing zorgen wij voor complete ontruiming van woning, garage, schuur en tuin.",
+    },
+    {
+      title: "Appartement bezemschoon opleveren",
+      description:
+        "Vooral in de nieuwere wijken zijn veel appartementen. Wij leveren deze professioneel en bezemschoon op volgens de verhuurderseisen.",
+    },
+    {
+      title: "Seniorenverhuizing",
+      description:
+        "Bij verhuizing naar een kleinere woning of zorginstelling begeleiden wij het hele proces en ontruimen we de oude woning compleet.",
+    },
+    {
+      title: "Spoedontruiming",
+      description:
+        "Moet het snel? Wij kunnen vaak binnen 24-48 uur starten met de ontruiming van uw woning in Pijnacker-Nootdorp.",
+    },
+  ]
+
+  // Schema's
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.budgetontruiming.nl/pijnacker-nootdorp/#service",
+    "name": "Woningontruiming Pijnacker-Nootdorp",
+    "provider": {
+      "@type": "MovingCompany",
+      "name": "Budget Ontruiming",
+      "url": "https://www.budgetontruiming.nl/",
+      "telephone": "+31629759181"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Pijnacker-Nootdorp",
+      "sameAs": "https://www.wikidata.org/wiki/Q162058"
+    },
+    "description": "Professionele woningontruiming in Pijnacker, Nootdorp en Delfgauw. Expertise in moderne gezinswoningen, appartementen en seniorenverhuizingen. Laagste prijs garantie.",
+    "knowsAbout": [
+      "Gezinswoning ontruimen Pijnacker",
+      "Appartement bezemschoon opleveren Nootdorp",
+      "Woningontruiming Delfgauw",
+      "Ontruiming Keijzershof"
+    ]
+  }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Budget Ontruiming Pijnacker-Nootdorp",
+    "telephone": "+31629759181",
+    "priceRange": "€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pijnacker-Nootdorp",
+      "addressRegion": "Zuid-Holland",
+      "postalCode": "2640-2649",
+      "addressCountry": "NL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.0186,
+      "longitude": 4.4303
+    }
+  }
 
   return (
     <>
-      <PijnackerSchema />
-      <GemeenteStructuredData data={data} />
+      {/* Schema's direct in page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+
       <TopBanner />
       <Header />
-      <main>
-        <GemeenteHero
-          gemeenteNaam="Pijnacker-Nootdorp"
-          subtitle="Snelle en betaalbare woningontruiming in Pijnacker-Nootdorp. Vindt u het elders goedkoper? Wij duiken onder die prijs! Vraag nu uw offerte aan!"
-        />
-        <HowItWorks />
-        <GemeenteSeoContent data={data} />
+      
+      <main className="min-h-screen">
+        {/* Hero Section */}
+        <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/professional-movers-carrying-boxes-in-modern-home.jpg"
+              alt="Professionele woningontruiming Pijnacker-Nootdorp"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
+          </div>
+
+          <div className="container mx-auto px-4 lg:px-8 relative z-10 py-8 lg:py-16">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+              <div className="text-center lg:text-left">
+                <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
+                  Woningontruiming Pijnacker-Nootdorp, met laagste prijs garantie.
+                </h1>
+
+                <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
+                  Vindt u het elders goedkoper? Wij duiken onder die prijs!
+                </p>
+
+                <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
+                  Snelle en betaalbare woningontruiming in Pijnacker-Nootdorp. Vindt u het elders goedkoper? Wij duiken onder die prijs! Vraag nu uw offerte aan!
+                </p>
+
+                <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
+                  <p className="text-md sm:text-lg font-semibold text-white">
+                    🏆 Laagste Prijs Garantie in Pijnacker-Nootdorp
+                  </p>
+                </div>
+
+                <div className="hidden sm:flex flex-wrap gap-4 text-md text-white">
+                  <span>Gezinswoningen</span>
+                  <span>|</span>
+                  <span>Appartementen</span>
+                  <span>|</span>
+                  <span>Bezemschoon</span>
+                </div>
+              </div>
+
+              <div>
+                <AIQuoteForm />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Hoe Het Werkt - Direct in page voor SEO */}
+        <section className="py-12 lg:py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-center text-foreground mb-4">
+              Hoe Het Werkt
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="text-center">
+                <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  01
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Prijs berekenen
+                </h3>
+                <p className="text-muted-foreground">
+                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
+                  Goedkoper gevonden? Wij betalen het verschil.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  02
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Datum kiezen
+                </h3>
+                <p className="text-muted-foreground">
+                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
+                  beschikbaar, bij spoed binnen 24 uur.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  03
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Ontruiming
+                </h3>
+                <p className="text-muted-foreground">
+                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
+                  moment. Bezemschoon opgeleverd.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEO Content - Direct in page */}
+        <article className="container mx-auto px-4 py-12 lg:py-16">
+          <section className="prose prose-lg max-w-none mb-12">
+            <h2 id="pijnacker-nootdorp-info" className="text-3xl font-bold text-foreground mb-6">
+              Woningontruiming in Pijnacker-Nootdorp
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              Pijnacker-Nootdorp is een groeiende gemeente met moderne woonwijken en karakteristieke dorpskernen. Wij bieden professionele woningontruiming in alle delen van de gemeente tegen de laagste prijs, gegarandeerd.
+            </p>
+
+            {/* Wijken */}
+            <div id="pijnacker-nootdorp-wijken" className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle kernen van Pijnacker-Nootdorp:</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {wijken.map((wijk, index) => (
+                  <div key={index} className="flex items-center gap-2 text-foreground">
+                    <span className="text-primary">✓</span>
+                    <span className="text-sm">{wijk}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Waarom Kiezen */}
+          <section className="py-12 lg:py-16 bg-muted/30 mb-12">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
+                Waarom kiezen voor Budget Ontruiming in Pijnacker-Nootdorp?
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {waaromKiezen.map((reden, index) => (
+                  <div key={index} className="border rounded-lg p-6 bg-card">
+                    <div className="flex gap-3">
+                      <span className="text-primary text-xl">✓</span>
+                      <p className="text-foreground leading-relaxed">{reden}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Situaties */}
+          <section className="mb-12">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
+                Wanneer heeft u een woningontruiming nodig?
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {situaties.map((situatie, index) => (
+                  <div
+                    key={index}
+                    id={index === 0 ? "gezinswoning-specialist" : undefined}
+                    className="border rounded-lg p-6 bg-card"
+                  >
+                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Diensten */}
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
+              Onze Diensten in Pijnacker-Nootdorp
+            </h2>
+            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Volledige Woningontruiming
+                </h3>
+                <p className="text-muted-foreground">
+                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Bezemschoon Opleveren
+                </h3>
+                <p className="text-muted-foreground">
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties. Perfect voor appartementen en huurwoningen.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Ontruiming na Overlijden
+                </h3>
+                <p className="text-muted-foreground">
+                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Spoedontruiming 24 uur
+                </h3>
+                <p className="text-muted-foreground">
+                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Gezinswoningen
+                </h3>
+                <p className="text-muted-foreground">
+                  Specialisatie in het ontruimen van gezinswoningen inclusief garage, schuur en tuin. Alles wordt compleet ontruimd.
+                </p>
+              </div>
+
+              <div className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Extra Diensten
+                </h3>
+                <p className="text-muted-foreground">
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* USPs */}
+          <section className="mb-12 bg-muted/30 rounded-lg p-8">
+            <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
+              Waarom kiezen voor Budget Ontruiming?
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="flex gap-4">
+                <div className="text-4xl">🏆</div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Laagste Prijs Garantie
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="text-4xl">🚀</div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Snel & Flexibel
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="text-4xl">♻️</div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Milieuvriendelijk
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="text-4xl">✅</div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    All-in Ontzorging
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van verhuurders en woningcorporaties.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        {/* FAQ Section */}
+        <section id="pijnacker-faq" className="bg-muted/50 py-12 lg:py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+              Veelgestelde vragen over woningontruiming in Pijnacker-Nootdorp
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Pijnacker-Nootdorp
+            </p>
+            
+            <div className="max-w-3xl mx-auto space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-card border rounded-lg p-6">
+                  <h3 className="text-xl font-bold text-foreground mb-3">
+                    {faq.question}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* AI Quote Form Section */}
         <section className="py-12 lg:py-16 bg-background">
@@ -118,10 +515,11 @@ export default function PijnackerNootdorpPage() {
           </div>
         </section>
 
-        <GemeenteMap gemeenteNaam={data.naam} postcodes={data.postcodes} />
+        {/* GemeenteMap */}
+        <GemeenteMap gemeenteNaam="Pijnacker-Nootdorp" postcodes="2640-2649" />
+
+        <Footer />
       </main>
-      <Footer />
     </>
   )
 }
-
