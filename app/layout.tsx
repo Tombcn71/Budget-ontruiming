@@ -51,8 +51,7 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <head>
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" media="print" onLoad="this.media='all'" />
-        <noscript><link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" /></noscript>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>

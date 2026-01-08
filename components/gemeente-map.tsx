@@ -1,11 +1,35 @@
 "use client"
 
+import { useState, useEffect } from "react"
+
 interface GemeenteMapProps {
   gemeenteNaam: string
   postcodes: string
 }
 
 export function GemeenteMap({ gemeenteNaam, postcodes }: GemeenteMapProps) {
+  const [shouldLoadMap, setShouldLoadMap] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!shouldLoadMap) {
+        setShouldLoadMap(true)
+      }
+    }
+
+    // Load map after first scroll or after 2 seconds
+    const timer = setTimeout(() => {
+      setShouldLoadMap(true)
+    }, 2000)
+
+    window.addEventListener('scroll', handleScroll, { once: true })
+    
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [shouldLoadMap])
+
   // Speciale mapping voor gemeentes die Google Maps niet goed vindt
   const locationMap: Record<string, string> = {
     "Albrandswaard": "Poortugaal, Nederland",
@@ -52,16 +76,22 @@ export function GemeenteMap({ gemeenteNaam, postcodes }: GemeenteMapProps) {
           </div>
 
           <div className="rounded-lg overflow-hidden shadow-lg border border-border bg-white" style={{ minHeight: '450px' }}>
-            <iframe
-              width="100%"
-              height="450"
-              style={{ border: 0, minHeight: '450px' }}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Locatiekaart Budget Ontruiming"
-              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodedGemeente}&zoom=12`}
-            />
+            {shouldLoadMap ? (
+              <iframe
+                width="100%"
+                height="450"
+                style={{ border: 0, minHeight: '450px' }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Locatiekaart Budget Ontruiming"
+                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodedGemeente}&zoom=12`}
+              />
+            ) : (
+              <div className="w-full h-[450px] bg-muted flex items-center justify-center">
+                <p className="text-muted-foreground">Kaart wordt geladen...</p>
+              </div>
+            )}
           </div>
 
           <div className="mt-6 text-center">
