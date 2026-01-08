@@ -27,8 +27,9 @@ export function TopBanner() {
           
           <button
             onClick={() => setIsVisible(false)}
-            className="text-white hover:text-white/80 transition-colors"
+            className="text-white hover:text-white transition-colors"
             aria-label="Sluit banner"
+            style={{ minHeight: '32px' }}
           >
             <X className="w-4 h-4" />
           </button>

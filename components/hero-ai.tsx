@@ -9,10 +9,12 @@ export function HeroAI() {
           src="/professional-movers-carrying-boxes-in-modern-home.jpg"
           alt="Professionele verhuizers"
           fill
-          priority
+          priority={true}
           fetchPriority="high"
+          loading="eager"
           sizes="100vw"
           className="object-cover"
+          quality={90}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
       </div>

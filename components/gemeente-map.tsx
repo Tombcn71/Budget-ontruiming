@@ -51,11 +51,11 @@ export function GemeenteMap({ gemeenteNaam, postcodes }: GemeenteMapProps) {
             </p>
           </div>
 
-          <div className="rounded-lg overflow-hidden shadow-lg border border-border bg-white">
+          <div className="rounded-lg overflow-hidden shadow-lg border border-border bg-white" style={{ minHeight: '450px' }}>
             <iframe
               width="100%"
               height="450"
-              style={{ border: 0 }}
+              style={{ border: 0, minHeight: '450px' }}
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"

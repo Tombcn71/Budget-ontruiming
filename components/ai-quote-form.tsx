@@ -738,7 +738,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       {furnitureList.map((f, idx) => (
                         <div key={idx} className="flex justify-between">
                           <span>• {f.quantity}x {f.item}</span>
-                          <span className="text-xs text-muted-foreground/70">({f.size})</span>
+                          <span className="text-xs text-muted-foreground">({f.size})</span>
                         </div>
                       ))}
                     </div>
