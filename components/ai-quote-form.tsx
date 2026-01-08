@@ -261,9 +261,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               <span className={currentStep >= 2 ? "font-bold" : ""}>Foto's</span>
               <span className={currentStep >= 3 ? "font-bold" : ""}>Resultaat</span>
             </div>
-            <div aria-label="Voortgang prijsberekening">
-              <Progress value={progressPercentage} className="h-2 bg-muted" />
-            </div>
+            <Progress value={progressPercentage} className="h-2 bg-muted" aria-label="Voortgang prijsberekening" />
           </div>
 
           <form className="space-y-4">
@@ -319,7 +317,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                     value={formData.verdieping}
                     onValueChange={(value) => setFormData({ ...formData, verdieping: value })}
                   >
-                    <SelectTrigger className="bg-background border-0 h-11">
+                    <SelectTrigger className="bg-background border-0 h-11" aria-label="Selecteer verdieping">
                       <SelectValue placeholder="Selecteer verdieping" />
                     </SelectTrigger>
                     <SelectContent>
