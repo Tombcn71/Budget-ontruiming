@@ -4,17 +4,18 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
+import { Breadcrumb } from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Zoetermeer | Laagste Prijs Garantie | Budgetontruiming.nl",
+  title: "Woningontruiming Zoetermeer | Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Woningontruiming in heel Zoetermeer (van Meerzicht tot Rokkeveen). Specialist in portiekflats en eengezinswoningen. Laagste prijs garantie en binnen 24u beschikbaar bij spoed.",
+    "Professionele woningontruiming in alle wijken van Zoetermeer. Specialist in hoogbouw en bezemschone oplevering. Laagste prijs garantie.",
   keywords:
-    "woningontruiming zoetermeer, ontruiming zoetermeer, ontruiming centrum zoetermeer, ontruiming meerzicht zoetermeer, ontruiming dorp zoetermeer, ontruiming palenstein zoetermeer, ontruiming buytenwegh zoetermeer, ontruiming seghwaert zoetermeer, ontruiming rokkeveen zoetermeer, ontruiming noordhove zoetermeer, bezemschoon zoetermeer 2700-2729, spoedontruiming zoetermeer, ontruiming na overlijden zoetermeer",
+    "woningontruiming zoetermeer, ontruiming zoetermeer, ontruiming palenstein, ontruiming buytenwegh, ontruiming seghwaert, bezemschoon zoetermeer 2700-2729, spoedontruiming zoetermeer",
   openGraph: {
     title: "Ontruiming Zoetermeer | Alle Wijken | Laagste Prijs",
     description:
-      "Ontruiming Zoetermeer: Centrum, Meerzicht, Palenstein + 5 wijken. 2700-2729. Vindt u goedkoper? Eronder!",
+      "Ontruiming Zoetermeer: Palenstein, Buytenwegh, Seghwaert + 6 wijken. 2700-2729. Vindt u goedkoper? Eronder!",
     url: "https://budgetontruiming.nl/woningontruiming-zoetermeer",
     type: "website",
     locale: "nl_NL",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ontruiming Zoetermeer | Alle Wijken",
     description:
-      "Ontruiming Zoetermeer: Centrum, Meerzicht, Palenstein + 5 wijken.",
+      "Ontruiming Zoetermeer: Palenstein, Buytenwegh, Seghwaert + 6 wijken.",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-zoetermeer",
@@ -45,69 +46,65 @@ export default function ZoetermeerPage() {
   // FAQs
   const faqs = [
     {
-      question: "Werken jullie in alle wijken van Zoetermeer?",
-      answer:
-        "Ja, van Dorp tot Oosterheem, van Meerzicht tot Seghwaert – wij werken in heel Zoetermeer.",
-    },
-    {
       question: "Hoe snel kunnen jullie een woning in Zoetermeer ontruimen?",
       answer:
-        "Een gemiddelde woning ontruimen we in 1-2 werkdagen. Starten kunnen we meestal binnen 1-3 werkdagen, bij spoed zelfs binnen 24 uur.",
+        "In de meeste gevallen kunnen we binnen 1-2 werkdagen starten. Bij spoedeisende situaties is ontruiming binnen 24 uur mogelijk.",
     },
     {
-      question: "Wat gebeurt er met mijn spullen?",
+      question: "Werken jullie in alle wijken van Zoetermeer?",
       answer:
-        "Bruikbare spullen gaan naar kringloopwinkels, waardevolle items kunnen verkocht worden, en de rest wordt milieuvriendelijk afgevoerd volgens de regels van de gemeente Zoetermeer.",
+        "Ja, wij ontruimen woningen in heel Zoetermeer: van Palenstein tot Buytenwegh, van Seghwaert tot Rokkeveen. We kennen de lokale situatie in elke wijk.",
     },
     {
-      question: "Wat houdt de laagste prijs garantie in?",
+      question: "Hebben jullie ervaring met hoogbouw in Zoetermeer?",
       answer:
-        "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo weet u zeker dat u bij ons altijd de beste prijs krijgt.",
+        "Ja, wij hebben veel ervaring met de hoogbouw in Zoetermeer. Wij maken efficiënt gebruik van liften en trappenhuizen conform de geldende huisregels.",
+    },
+    {
+      question: "Wat is jullie laagste prijs garantie?",
+      answer:
+        "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u altijd verzekerd van de beste prijs voor uw woningontruiming in Zoetermeer.",
     },
   ]
 
   // Wijken
   const wijken = [
-    "Zoetermeer Centrum",
-    "Meerzicht",
-    "Dorp",
     "Palenstein",
     "Buytenwegh",
-    "Rokkeveen",
-    "Noordhove",
-    "Oosterheem",
     "Seghwaert",
+    "Rokkeveen",
+    "Driemanspolder",
+    "Stadscentrum",
+    "Oosterheem",
+    "Meerzicht",
+    "Noordhove",
   ]
 
   // Waarom kiezen
   const waaromKiezen = [
-    "Kennis van alle Zoetermeerse wijken",
-    "Ervaring met zowel portiekflats als eengezinswoningen",
-    "Snelle beschikbaarheid, ook voor spoedklussen",
-    "Laagste prijs garantie",
+    "Lokale kennis van alle Zoetermeerse wijken en hun specifieke toegankelijkheid",
+    "Ervaring met zowel hoogbouw als laagbouw",
+    "Snel beschikbaar, vaak binnen 24-48 uur",
+    "Laagste prijs garantie - vindt u goedkoper? Wij duiken onder die prijs!",
+    "Specialisatie in bezemschoon opleveren volgens Zoetermeerse huurvoorwaarden",
   ]
 
   // Situaties
   const situaties = [
     {
-      title: "Portiekflat ontruimen Zoetermeer",
+      title: "Hoogbouw ontruiming Zoetermeer",
       description:
-        "Zoetermeer kent veel portiekflats en galerijwoningen. Wij hebben ervaring met het ontruimen van appartementen in deze woningtypes, rekening houdend met buren en gemeenschappelijke ruimtes.",
+        "Zoetermeer heeft veel hoogbouw. Wij hebben ruime ervaring met het efficiënt ontruimen van appartementen op hogere verdiepingen, inclusief liftgebruik en trappenhuizen.",
     },
     {
-      title: "Eengezinswoning ontruimen",
+      title: "Ontruiming na overlijden in Zoetermeer",
       description:
-        "Van Meerzicht tot Rokkeveen, van Palenstein tot Noordhove – wij ontruimen eengezinswoningen compleet inclusief garage, schuur en tuin.",
+        "Het verlies van een dierbare is een emotionele periode. Wij helpen u met respect en discretie bij het ontruimen van de woning.",
     },
     {
-      title: "Seniorenverhuizing Zoetermeer",
+      title: "Bezemschoon opleveren Zoetermeer",
       description:
-        "Bij verhuizing naar een zorginstelling of kleiner appartement begeleiden wij u volledig en ontruimen we de oude woning professioneel.",
-    },
-    {
-      title: "Bezemschoon opleveren huurwoning",
-      description:
-        "Woningcorporaties in Zoetermeer stellen hoge eisen. Wij zorgen dat uw huurwoning volledig aan de oplevervoorwaarden voldoet.",
+        "Wij kennen de oplevervoorwaarden van alle grote Zoetermeerse woningcorporaties en zorgen dat uw woning exact volgens deze eisen wordt opgeleverd.",
     },
   ]
 
@@ -126,14 +123,14 @@ export default function ZoetermeerPage() {
     "areaServed": {
       "@type": "City",
       "name": "Zoetermeer",
-      "sameAs": "https://www.wikidata.org/wiki/Q71696"
+      "sameAs": "https://www.wikidata.org/wiki/Q1100"
     },
-    "description": "Professionele woningontruiming in alle wijken van Zoetermeer. Expert in portiekflats, galerijwoningen en eengezinswoningen. Laagste prijs garantie.",
+    "description": "Professionele woningontruiming in Zoetermeer. Expertise in hoogbouw en bezemschone oplevering in alle wijken.",
     "knowsAbout": [
-      "Portiekflat ontruimen Zoetermeer",
-      "Seniorenverhuizing Zoetermeer",
-      "Bezemschoon opleveren huurwoning Zoetermeer",
-      "Woningontruiming Oosterheem en Rokkeveen"
+      "Hoogbouw ontruimen Zoetermeer",
+      "Bezemschoon opleveren Zoetermeer",
+      "Spoedontruiming Zoetermeer",
+      "Ontruiming na overlijden Zoetermeer"
     ]
   }
 
@@ -170,9 +167,33 @@ export default function ZoetermeerPage() {
     }
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://budgetontruiming.nl"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Haaglanden",
+        "item": "https://budgetontruiming.nl/regio/haaglanden"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Zoetermeer",
+        "item": "https://budgetontruiming.nl/woningontruiming-zoetermeer"
+      }
+    ]
+  }
+
   return (
     <>
-      {/* Schema's direct in page */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -185,9 +206,18 @@ export default function ZoetermeerPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
       <TopBanner />
       <Header />
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "Haaglanden", href: "/regio/haaglanden" },
+        { label: "Zoetermeer" }
+      ]} />
       
       <main className="min-h-screen">
         {/* Hero Section */}
@@ -205,7 +235,7 @@ export default function ZoetermeerPage() {
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
-                  Woningontruiming Zoetermeer, met laagste prijs garantie.
+                  Woningontruiming Zoetermeer
                 </h1>
 
                 <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
@@ -213,7 +243,7 @@ export default function ZoetermeerPage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Woningontruiming in heel Zoetermeer met laagste prijs garantie. Van Meerzicht tot Rokkeveen, wij ontruimen snel en professioneel tegen de beste prijs.
+                  Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u ervan verzekerd dat u de laagste prijs betaalt voor uw woningontruiming in Zoetermeer.
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -223,11 +253,11 @@ export default function ZoetermeerPage() {
                 </div>
 
                 <div className="hidden sm:flex flex-wrap gap-4 text-md text-white">
-                  <span>Portiekflats</span>
-                  <span>|</span>
-                  <span>Eengezinswoningen</span>
-                  <span>|</span>
                   <span>Bezemschoon</span>
+                  <span>|</span>
+                  <span>Alle wijken</span>
+                  <span>|</span>
+                  <span>Spoedontruiming</span>
                 </div>
               </div>
 
@@ -238,7 +268,7 @@ export default function ZoetermeerPage() {
           </div>
         </section>
 
-        {/* Hoe Het Werkt - Direct in page voor SEO */}
+        {/* Hoe Het Werkt */}
         <section className="py-12 lg:py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl lg:text-4xl font-bold text-center text-foreground mb-4">
@@ -283,138 +313,85 @@ export default function ZoetermeerPage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SEO Content - Direct in page */}
+        {/* SEO Content */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="zoetermeer-info" className="text-3xl font-bold text-foreground mb-6">
-              Woningontruiming in Zoetermeer
+            <h2 className="text-3xl font-bold text-foreground mb-6">
+              Professionele Woningontruiming in Zoetermeer
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Zoetermeer is een grote stad met diverse wijken van vroege nieuwbouw tot modern. Wij bieden professionele woningontruiming in alle wijken van Zoetermeer tegen de laagste prijs, gegarandeerd.
+            <p className="text-lg text-muted-foreground mb-4">
+              Budget Ontruiming is uw specialist voor woningontruiming in <strong>Zoetermeer</strong>. Wij zijn actief in alle wijken van Zoetermeer, van <strong>Palenstein</strong> tot <strong>Buytenwegh</strong>, van <strong>Seghwaert</strong> tot <strong>Rokkeveen</strong>.
             </p>
+            <p className="text-lg text-muted-foreground mb-4">
+              <strong>Vindt u het elders goedkoper? Wij duiken onder die prijs!</strong> Dit is onze concrete garantie. Krijgt u een lagere offerte van een andere ontruimingsbedrijf? Stuur deze naar ons op en wij gaan eronder zitten. Zo weet u zeker dat u altijd de beste prijs betaalt voor uw woningontruiming in Zoetermeer, zonder concessies te doen aan kwaliteit.
+            </p>
+          </section>
 
-            {/* Wijken */}
-            <div id="zoetermeer-wijken" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle wijken van Zoetermeer:</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
-                    <span className="text-primary">✓</span>
-                    <span className="text-sm">{wijk}</span>
-                  </div>
-                ))}
-              </div>
+          {/* Wijken */}
+          <section id="zoetermeer-wijken" className="mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Wijken in Zoetermeer</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {wijken.map((wijk, index) => (
+                <div key={index} className="border rounded-lg p-4 bg-card">
+                  <h3 className="font-semibold text-foreground">{wijk}</h3>
+                </div>
+              ))}
             </div>
           </section>
 
           {/* Waarom Kiezen */}
-          <section className="py-12 lg:py-16 bg-muted/30 mb-12">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
-                Waarom kiezen voor Budget Ontruiming in Zoetermeer?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                {waaromKiezen.map((reden, index) => (
-                  <div key={index} className="border rounded-lg p-6 bg-card">
-                    <div className="flex gap-3">
-                      <span className="text-primary text-xl">✓</span>
-                      <p className="text-foreground leading-relaxed">{reden}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Waarom kiezen voor Budget Ontruiming in Zoetermeer?</h2>
+            <ul className="space-y-3">
+              {waaromKiezen.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="text-primary font-bold">✓</span>
+                  <span className="text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
           </section>
 
           {/* Situaties */}
           <section className="mb-12">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
-                Wanneer heeft u een woningontruiming nodig?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                {situaties.map((situatie, index) => (
-                  <div
-                    key={index}
-                    id={index === 0 ? "portiekflat-specialist" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
-                  </div>
-                ))}
-              </div>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Specifieke Situaties in Zoetermeer</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {situaties.map((situatie, index) => (
+                <div key={index} className="border rounded-lg p-6 bg-card">
+                  <h3 className="text-xl font-bold text-foreground mb-3">{situatie.title}</h3>
+                  <p className="text-muted-foreground">{situatie.description}</p>
+                </div>
+              ))}
             </div>
           </section>
 
           {/* Diensten */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
-              Onze Diensten in Zoetermeer
-            </h2>
-            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
-            </p>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Onze Diensten in Zoetermeer</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  Volledige Woningontruiming
-                </h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">Volledige Woningontruiming</h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen en appartementen in Zoetermeer. Alle inboedel wordt zorgvuldig verwijderd en milieuvriendelijk verwerkt.
                 </p>
               </div>
-
               <div className="border rounded-lg p-6 bg-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  Bezemschoon Opleveren
-                </h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">Bezemschoon Opleveren</h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties. Perfect voor portiekflats en huurwoningen.
+                  Na de ontruiming leveren wij uw woning bezemschoon op volgens de eisen van verhuurders en woningcorporaties.
                 </p>
               </div>
-
               <div className="border rounded-lg p-6 bg-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  Ontruiming na Overlijden
-                </h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">Ontruiming na Overlijden</h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
-                </p>
-              </div>
-
-              <div className="border rounded-lg p-6 bg-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  Spoedontruiming 24 uur
-                </h3>
-                <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
-                </p>
-              </div>
-
-              <div className="border rounded-lg p-6 bg-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  Extra Diensten
-                </h3>
-                <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
-                </p>
-              </div>
-
-              <div className="border rounded-lg p-6 bg-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  Portiekflats & Galerijwoningen
-                </h3>
-                <p className="text-muted-foreground">
-                  Specialisatie in het ontruimen van portiekflats en galerijwoningen. Rekening houdend met buren en gemeenschappelijke ruimtes.
+                  Bij overlijden van een dierbare helpen wij met respect en zorg bij het ontruimen van de woning.
                 </p>
               </div>
             </div>
@@ -422,54 +399,23 @@ export default function ZoetermeerPage() {
 
           {/* USPs */}
           <section className="mb-12 bg-muted/30 rounded-lg p-8">
-            <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
-              Waarom kiezen voor Budget Ontruiming?
-            </h2>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Waarom Budget Ontruiming in Zoetermeer?</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="flex gap-4">
                 <div className="text-4xl">🏆</div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    Laagste Prijs Garantie
-                  </h3>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Laagste Prijs Garantie</h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Onze unieke garantie: vindt u het elders goedkoper voor een vergelijkbare dienst? Stuur ons de offerte en wij gaan eronder zitten.
                   </p>
                 </div>
               </div>
-
               <div className="flex gap-4">
                 <div className="text-4xl">🚀</div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    Snel & Flexibel
-                  </h3>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Snel & Flexibel</h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="text-4xl">♻️</div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    Milieuvriendelijk
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="text-4xl">✅</div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    All-in Ontzorging
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van verhuurders en woningcorporaties.
+                    Normaal gesproken kunnen we binnen 1-3 werkdagen starten. Heeft u meer haast? Bij spoedgevallen starten we vaak al binnen 24 uur.
                   </p>
                 </div>
               </div>
@@ -478,44 +424,17 @@ export default function ZoetermeerPage() {
         </article>
 
         {/* FAQ Section */}
-        <section id="zoetermeer-faq" className="bg-muted/50 py-12 lg:py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              Veelgestelde vragen over woningontruiming in Zoetermeer
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Zoetermeer
-            </p>
-            
-            <div className="max-w-3xl mx-auto space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-card border rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* AI Quote Form Section */}
-        <section className="py-12 lg:py-16 bg-background">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Direct een offerte aanvragen?
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Upload foto's van uw woning en krijg binnen 2 minuten een prijsindicatie via onze AI tool.
-              </p>
-            </div>
-            <div className="max-w-3xl mx-auto">
-              <AIQuoteForm />
-            </div>
+        <section id="zoetermeer-faq" className="container mx-auto px-4 py-12 lg:py-16 bg-muted/30">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-8">
+            Veelgestelde Vragen over Woningontruiming in Zoetermeer
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border rounded-lg p-6 bg-card">
+                <h3 className="text-xl font-bold text-foreground mb-3">{faq.question}</h3>
+                <p className="text-muted-foreground">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </section>
 

@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
+import { Breadcrumb } from "@/components/breadcrumb"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -207,6 +208,10 @@ export default function RijnmondPage() {
 
       <TopBanner />
       <Header />
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "Rijnmond" }
+      ]} />
       
       <main className="min-h-screen">
         {/* Hero Section */}
@@ -526,23 +531,10 @@ export default function RijnmondPage() {
         {/* GemeenteMap */}
         <GemeenteMap gemeenteNaam="Rijnmond" postcodes="2900-3259" />
 
-        {/* AI Quote Form Section */}
-        <section className="py-12 lg:py-16 bg-background">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Direct een offerte aanvragen?
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Upload foto's van uw woning en krijg binnen 2 minuten een prijsindicatie via onze AI tool.
-              </p>
-            </div>
-            <div className="max-w-3xl mx-auto">
-              <AIQuoteForm />
-            </div>
-          </div>
-        </section>
-
+        <Breadcrumb items={[
+          { label: "Home", href: "/" },
+          { label: "Rijnmond" }
+        ]} />
         <Footer />
       </main>
     </>

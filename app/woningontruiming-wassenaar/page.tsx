@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { GemeenteMap } from "@/components/gemeente-map"
 import { AIQuoteForm } from "@/components/ai-quote-form"
+import { Breadcrumb } from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
   title: "Woningontruiming Wassenaar | Laagste Prijs Garantie | Budgetontruiming.nl",
@@ -167,6 +168,31 @@ export default function WassenaarPage() {
     }
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://budgetontruiming.nl"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Haaglanden",
+        "item": "https://budgetontruiming.nl/regio/haaglanden"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Wassenaar",
+        "item": "https://budgetontruiming.nl/woningontruiming-wassenaar"
+      }
+    ]
+  }
+
   return (
     <>
       {/* Schema's direct in page */}
@@ -182,9 +208,18 @@ export default function WassenaarPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
       <TopBanner />
       <Header />
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "Haaglanden", href: "/regio/haaglanden" },
+        { label: "Wassenaar" }
+      ]} />
       
       <main className="min-h-screen">
         {/* Hero Section */}
@@ -491,23 +526,6 @@ export default function WassenaarPage() {
                   </p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* AI Quote Form Section */}
-        <section className="py-12 lg:py-16 bg-background">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Direct een offerte aanvragen?
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Upload foto's van uw woning en krijg binnen 2 minuten een prijsindicatie via onze AI tool.
-              </p>
-            </div>
-            <div className="max-w-3xl mx-auto">
-              <AIQuoteForm />
             </div>
           </div>
         </section>
