@@ -14,7 +14,7 @@ export function HeroAI() {
           loading="eager"
           sizes="100vw"
           className="object-cover"
-          quality={75}
+          quality={70}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
       </div>
