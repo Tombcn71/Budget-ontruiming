@@ -7,18 +7,18 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 mb-8">
           <div className="md:col-span-2 lg:col-span-2">
             <h3 className="text-xl lg:text-2xl font-bold mb-4">Budget Ontruiming</h3>
-            <p className="text-sm lg:text-base text-primary-foreground/80 leading-relaxed max-w-md">
+            <p className="text-sm lg:text-base text-primary-foreground leading-relaxed max-w-md">
               Uw betrouwbare partner voor professionele woningontruimingen tegen de laagste prijs. Gegarandeerd.
             </p>
           </div>
 
           <div>
             <h4 className="font-bold mb-4">
-              <Link href="/regio/haaglanden" className="hover:text-primary-foreground/80 transition-colors">
+              <Link href="/regio/haaglanden" className="hover:text-primary-foreground transition-colors">
                 Haaglanden
               </Link>
             </h4>
-            <ul className="space-y-2 text-sm lg:text-base text-primary-foreground/80">
+            <ul className="space-y-2 text-sm lg:text-base text-primary-foreground">
               <li>
                 <Link href="/woningontruiming-den-haag" className="hover:text-primary-foreground transition-colors">
                   Den Haag
@@ -78,11 +78,11 @@ export function Footer() {
 
           <div>
             <h4 className="font-bold mb-4">
-              <Link href="/regio/rijnmond" className="hover:text-primary-foreground/80 transition-colors">
+              <Link href="/regio/rijnmond" className="hover:text-primary-foreground transition-colors">
                 Rijnmond
               </Link>
             </h4>
-            <ul className="space-y-2 text-sm lg:text-base text-primary-foreground/80">
+            <ul className="space-y-2 text-sm lg:text-base text-primary-foreground">
               <li>
                 <Link href="/woningontruiming-rotterdam" className="hover:text-primary-foreground transition-colors">
                   Rotterdam
@@ -153,7 +153,7 @@ export function Footer() {
 
           <div>
             <h4 className="font-bold mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm lg:text-base text-primary-foreground/80">
+            <ul className="space-y-2 text-sm lg:text-base text-primary-foreground">
               <li>0629 759 181</li>
               <li>info@budgetontruiming.nl</li>
               <li>Ma-Za: 07:00 - 22:00</li>
@@ -168,7 +168,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
+        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground">
           <p>&copy; {new Date().getFullYear()} Budget Ontruiming. Alle rechten voorbehouden.</p>
         </div>
       </div>

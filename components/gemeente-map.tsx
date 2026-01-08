@@ -59,6 +59,7 @@ export function GemeenteMap({ gemeenteNaam, postcodes }: GemeenteMapProps) {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
+              title="Locatiekaart Budget Ontruiming"
               src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodedGemeente}&zoom=12`}
             />
           </div>
