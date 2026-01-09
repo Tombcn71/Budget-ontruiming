@@ -8,9 +8,9 @@ import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
   title:
-    "Woningontruiming Rotterdam | Laagste Prijs Garantie | Budgetontruiming.nl",
+    "Goedkope Woningontruiming Rotterdam | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Professionele woningontruiming in heel Rotterdam. Van hoogbouw in Noord tot villa's in Hillegersberg. 24/7 bereikbaar voor spoedontruiming.",
+    "Woningontruiming in Rotterdam nodig? Wij duiken onder elke offerte! Bezemschoon opleveren voor Woonstad & Havensteder. Bereken direct uw prijs.",
   keywords:
     "woningontruiming rotterdam, ontruiming rotterdam, ontruiming centrum rotterdam, ontruiming noord rotterdam, ontruiming zuid rotterdam, ontruiming west rotterdam, ontruiming oost rotterdam, ontruiming kralingen, ontruiming feijenoord, ontruiming charlois, ontruiming ijsselmonde, ontruiming prins alexander, bezemschoon rotterdam 3000-3099, spoedontruiming rotterdam, ontruiming na overlijden rotterdam",
   openGraph: {

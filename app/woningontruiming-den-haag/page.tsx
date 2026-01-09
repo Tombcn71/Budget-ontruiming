@@ -8,9 +8,9 @@ import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
   title:
-    "Woningontruiming Den Haag | Laagste Prijs Garantie | Budget Ontruiming",
+    "Goedkope Woningontruiming Den Haag | Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming in alle wijken van Den Haag. Wij voldoen aan de eisen van Staedion, Haag Wonen en Vestia. Start binnen 24 uur mogelijk.",
+    "Woningontruiming in Den Haag nodig? Wij duiken onder elke offerte! Bezemschoon opleveren conform de eisen van Staedion, Haag Wonen en Hof Wonen. Bereken direct uw prijs.",
   keywords:
     "woningontruiming den haag, ontruiming den haag, ontruiming centrum den haag, ontruiming zeeheldenkwartier, ontruiming segbroek, ontruiming schilderswijk, ontruiming transvaal, ontruiming loosduinen, ontruiming kijkduin, ontruiming leidschenveen, ontruiming ypenburg, ontruiming mariahoeve, ontruiming statenkwartier, ontruiming moerwijk, bezemschoon den haag 2490-2599, spoedontruiming den haag, ontruiming na overlijden den haag",
   openGraph: {
