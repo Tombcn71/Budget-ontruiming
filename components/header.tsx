@@ -49,7 +49,7 @@ export function Header() {
                   href="https://calendly.com/budgetgroep/30min"
                   target="_blank"
                   rel="noopener noreferrer">
-                  <span className="sm:hidden">Gratis Advies</span>
+                  <span className="sm:hidden">Gratis Adviesgesprek</span>
                   <span className="hidden sm:inline">Gratis Adviesgesprek</span>
                 </a>
               </Button>
