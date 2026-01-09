@@ -1,13 +1,14 @@
-import type { Metadata } from "next"
-import { TopBanner } from "@/components/top-banner"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { GemeenteMap } from "@/components/gemeente-map"
-import { AIQuoteForm } from "@/components/ai-quote-form"
-import { Breadcrumb } from "@/components/breadcrumb"
+import type { Metadata } from "next";
+import { TopBanner } from "@/components/top-banner";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { GemeenteMap } from "@/components/gemeente-map";
+import { AIQuoteForm } from "@/components/ai-quote-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Rotterdam | Laagste Prijs Garantie | Budgetontruiming.nl",
+  title:
+    "Woningontruiming Rotterdam | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
     "Professionele woningontruiming in heel Rotterdam. Van hoogbouw in Noord tot villa's in Hillegersberg. 24/7 bereikbaar voor spoedontruiming.",
   keywords:
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-}
+};
 
 export default function RotterdamPage() {
   // FAQs
@@ -69,7 +70,7 @@ export default function RotterdamPage() {
       answer:
         "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u altijd verzekerd van de beste prijs voor uw woningontruiming in Rotterdam.",
     },
-  ]
+  ];
 
   // Wijken
   const wijken = [
@@ -83,7 +84,7 @@ export default function RotterdamPage() {
     "Charlois",
     "IJsselmonde",
     "Prins Alexander",
-  ]
+  ];
 
   // Waarom kiezen
   const waaromKiezen = [
@@ -92,7 +93,7 @@ export default function RotterdamPage() {
     "Ervaring met hoogbouw en monumentale panden",
     "Laagste prijs garantie",
     "Groot team voor grote projecten",
-  ]
+  ];
 
   // Situaties
   const situaties = [
@@ -115,91 +116,92 @@ export default function RotterdamPage() {
       title: "Bedrijfsontruiming Rotterdam",
       description: "Ook voor kantoren en bedrijfspanden in Rotterdam.",
     },
-  ]
+  ];
 
   // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://www.budgetontruiming.nl/rotterdam/#service",
-    "name": "Woningontruiming Rotterdam",
-    "provider": {
+    name: "Woningontruiming Rotterdam",
+    provider: {
       "@type": "MovingCompany",
-      "name": "Budget Ontruiming",
-      "url": "https://www.budgetontruiming.nl/",
-      "telephone": "+31629759181"
+      name: "Budget Ontruiming",
+      url: "https://www.budgetontruiming.nl/woningontruiming-rotterdam",
+      telephone: "+31629759181",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "City",
-      "name": "Rotterdam",
-      "sameAs": "https://www.wikidata.org/wiki/Q34370"
+      name: "Rotterdam",
+      sameAs: "https://www.wikidata.org/wiki/Q34370",
     },
-    "description": "Professionele woningontruiming in heel Rotterdam. Specialisatie in hoogbouw, appartementen en spoedontruimingen. Laagste prijs garantie.",
-    "knowsAbout": [
+    description:
+      "Professionele woningontruiming in heel Rotterdam. Specialisatie in hoogbouw, appartementen en spoedontruimingen. Laagste prijs garantie.",
+    knowsAbout: [
       "Hoogbouw appartementen Rotterdam",
       "Spoedontruiming Rotterdam",
       "Bedrijfsontruiming Rotterdam",
-      "Woningontruiming Hillegersberg"
-    ]
-  }
+      "Woningontruiming Hillegersberg",
+    ],
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+        text: faq.answer,
+      },
+    })),
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Budget Ontruiming Rotterdam",
-    "telephone": "+31629759181",
-    "priceRange": "€",
-    "address": {
+    name: "Budget Ontruiming Rotterdam",
+    telephone: "+31629759181",
+    priceRange: "€",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Rotterdam",
-      "addressRegion": "Zuid-Holland",
-      "postalCode": "3000-3099",
-      "addressCountry": "NL"
+      addressLocality: "Rotterdam",
+      addressRegion: "Zuid-Holland",
+      postalCode: "3000-3099",
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 51.9244,
-      "longitude": 4.4777
-    }
-  }
+      latitude: 51.9244,
+      longitude: 4.4777,
+    },
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://budgetontruiming.nl"
+        position: 1,
+        name: "Home",
+        item: "https://budgetontruiming.nl",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Rijnmond",
-        "item": "https://budgetontruiming.nl/regio/rijnmond"
+        position: 2,
+        name: "Rijnmond",
+        item: "https://budgetontruiming.nl/regio/rijnmond",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Rotterdam",
-        "item": "https://budgetontruiming.nl/woningontruiming-rotterdam"
-      }
-    ]
-  }
+        position: 3,
+        name: "Rotterdam",
+        item: "https://budgetontruiming.nl/woningontruiming-rotterdam",
+      },
+    ],
+  };
 
   return (
     <>
@@ -214,7 +216,9 @@ export default function RotterdamPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -223,12 +227,14 @@ export default function RotterdamPage() {
 
       <TopBanner />
       <Header />
-      <Breadcrumb items={[
-        { label: "Home", href: "/" },
-        { label: "Rijnmond", href: "/regio/rijnmond" },
-        { label: "Rotterdam" }
-      ]} />
-      
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Rijnmond", href: "/regio/rijnmond" },
+          { label: "Rotterdam" },
+        ]}
+      />
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -245,7 +251,8 @@ export default function RotterdamPage() {
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
-                  Woningontruiming Rotterdam, met laagste prijs garantie.
+                  Goedkope Woningontruiming Rotterdam, met laagste prijs
+                  garantie.
                 </h1>
 
                 <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
@@ -253,7 +260,9 @@ export default function RotterdamPage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Professionele woningontruiming in heel Rotterdam met laagste prijs garantie. Van hoogbouw in Noord tot villa's in Hillegersberg – wij zijn 24/7 bereikbaar.
+                  Professionele woningontruiming in heel Rotterdam met laagste
+                  prijs garantie. Van hoogbouw in Noord tot villa's in
+                  Hillegersberg – wij zijn 24/7 bereikbaar.
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -287,7 +296,7 @@ export default function RotterdamPage() {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
@@ -297,8 +306,9 @@ export default function RotterdamPage() {
                   Prijs berekenen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
-                  Goedkoper gevonden? Wij betalen het verschil.
+                  Ons slimme AI formulier berekent direct jouw prijs. Een
+                  woningbezoek is niet nodig. Goedkoper gevonden? Wij betalen
+                  het verschil.
                 </p>
               </div>
 
@@ -310,8 +320,9 @@ export default function RotterdamPage() {
                   Datum kiezen
                 </h3>
                 <p className="text-muted-foreground">
-                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
-                  beschikbaar, bij spoed binnen 24 uur.
+                  Kies de datum wanneer jij de woning ontruimd wil hebben.
+                  Meestal binnen 1-3 werkdagen beschikbaar, bij spoed binnen 24
+                  uur.
                 </p>
               </div>
 
@@ -323,8 +334,8 @@ export default function RotterdamPage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig
+                  uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
@@ -334,19 +345,32 @@ export default function RotterdamPage() {
         {/* SEO Content - Direct in page */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="rotterdam-info" className="text-3xl font-bold text-foreground mb-6">
+            <h2
+              id="rotterdam-info"
+              className="text-3xl font-bold text-foreground mb-6">
               Woningontruiming in Rotterdam
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Rotterdam is de tweede stad van Nederland met diverse wijken zoals Centrum, Zuid, Noord, Kralingen-Crooswijk, Delfshaven, Overschie, Prins Alexander en IJsselmonde. Wij bieden professionele woningontruiming in heel Rotterdam tegen de laagste prijs, gegarandeerd. Wij voldoen aan de eisen van Woonstad Rotterdam, Havensteder en Vestia voor bezemschone oplevering.
+              Rotterdam is de tweede stad van Nederland met diverse wijken zoals
+              Centrum, Zuid, Noord, Kralingen-Crooswijk, Delfshaven, Overschie,
+              Prins Alexander en IJsselmonde. Wij bieden professionele
+              woningontruiming in heel Rotterdam tegen de laagste prijs,
+              gegarandeerd. Wij voldoen aan de eisen van Woonstad Rotterdam,
+              Havensteder en Vestia voor bezemschone oplevering.
             </p>
 
             {/* Wijken */}
-            <div id="rotterdam-wijken" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle wijken van Rotterdam:</h3>
+            <div
+              id="rotterdam-wijken"
+              className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">
+                Actief in alle wijken van Rotterdam:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-foreground">
                     <span className="text-primary">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
@@ -385,10 +409,13 @@ export default function RotterdamPage() {
                   <div
                     key={index}
                     id={index === 0 ? "hoogbouw-specialist" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                    className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">
+                      {situatie.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {situatie.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -401,7 +428,8 @@ export default function RotterdamPage() {
               Onze Diensten in Rotterdam
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit
+              één hand.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -409,7 +437,9 @@ export default function RotterdamPage() {
                   Volledige Woningontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen, appartementen en
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens
+                  gemeentelijke richtlijnen.
                 </p>
               </div>
 
@@ -418,7 +448,9 @@ export default function RotterdamPage() {
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties zoals Woonstad Rotterdam, Havensteder en Vestia.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en
+                  woningcorporaties zoals Woonstad Rotterdam, Havensteder en
+                  Vestia.
                 </p>
               </div>
 
@@ -427,7 +459,8 @@ export default function RotterdamPage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                  Met respect en zorg helpen bij het ontruimen na overlijden.
+                  Discreet en zorgvuldig.
                 </p>
               </div>
 
@@ -436,7 +469,8 @@ export default function RotterdamPage() {
                   Spoedontruiming 24/7
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. In Rotterdam 24/7 bereikbaar voor urgente situaties.
+                  Bij spoed vaak binnen 24 uur starten. In Rotterdam 24/7
+                  bereikbaar voor urgente situaties.
                 </p>
               </div>
 
@@ -445,7 +479,8 @@ export default function RotterdamPage() {
                   Extra Diensten
                 </h3>
                 <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
+                  schilderwerk en inpakservice.
                 </p>
               </div>
 
@@ -454,7 +489,8 @@ export default function RotterdamPage() {
                   Bedrijfsontruimingen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ook voor kantoren, winkels en horeca. Ervaring met grote volumes en tijdskritische projecten.
+                  Ook voor kantoren, winkels en horeca. Ervaring met grote
+                  volumes en tijdskritische projecten.
                 </p>
               </div>
             </div>
@@ -473,7 +509,8 @@ export default function RotterdamPage() {
                     Laagste Prijs Garantie
                   </h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij
+                    gaan eronder. Geen verborgen kosten.
                   </p>
                 </div>
               </div>
@@ -485,7 +522,8 @@ export default function RotterdamPage() {
                     Snel & Flexibel
                   </h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur.
+                    Ook avond- en weekendwerk mogelijk.
                   </p>
                 </div>
               </div>
@@ -497,7 +535,8 @@ export default function RotterdamPage() {
                     Milieuvriendelijk
                   </h3>
                   <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar
+                    kringloop. WEEE-richtlijnen voor elektronica.
                   </p>
                 </div>
               </div>
@@ -509,7 +548,8 @@ export default function RotterdamPage() {
                     All-in Ontzorging
                   </h3>
                   <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van woningcorporaties.
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen
+                    alle eisen van woningcorporaties.
                   </p>
                 </div>
               </div>
@@ -524,18 +564,17 @@ export default function RotterdamPage() {
               Veelgestelde vragen over woningontruiming in Rotterdam
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Rotterdam
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming
+              in Rotterdam
             </p>
-            
+
             <div className="max-w-3xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-card border rounded-lg p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -548,5 +587,5 @@ export default function RotterdamPage() {
         <Footer />
       </main>
     </>
-  )
+  );
 }
