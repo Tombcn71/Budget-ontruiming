@@ -127,7 +127,7 @@ export default function RotterdamPage() {
     provider: {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
-      url: "https://www.budgetontruiming.nl/woningontruiming-rotterdam",
+      url: "https://www.budgetontruiming.nl/",
       telephone: "+31629759181",
     },
     areaServed: {

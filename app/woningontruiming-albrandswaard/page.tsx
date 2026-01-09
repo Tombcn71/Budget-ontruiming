@@ -78,18 +78,23 @@ export default function AlbrandswaardPage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id":
+      "https://budgetontruiming.nl/woningontruiming-albrandswaard/#service", // Unieke ID voor deze service
     name: "Woningontruiming Albrandswaard",
     provider: {
-      "@type": "MovingCompany",
+      "@type": "LocalBusiness", // LocalBusiness is breder en sterker voor SEO dan MovingCompany
       name: "Budget Ontruiming",
+      url: "https://budgetontruiming.nl", // Altijd naar de homepage
       telephone: "+31629759181",
+      priceRange: "€",
     },
     areaServed: {
-      "@type": "AdministrativeArea",
+      "@type": "City", // Of AdministrativeArea, City werkt vaak beter voor Google Maps koppelingen
       name: "Albrandswaard",
+      sameAs: "https://www.wikidata.org/wiki/Q36500", // Optioneel: helpt Google exact te weten welke regio je bedoelt
     },
     description:
-      "Professionele woningontruiming in Rhoon en Poortugaal. Laagste prijs garantie en bezemschone oplevering.",
+      "Professionele woningontruiming in Rhoon en Poortugaal. Laagste prijs garantie en bezemschone oplevering in de gehele gemeente Albrandswaard.",
   };
 
   return (
