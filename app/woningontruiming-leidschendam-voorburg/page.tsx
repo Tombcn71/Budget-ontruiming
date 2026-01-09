@@ -17,30 +17,17 @@ export const metadata: Metadata = {
     title: "Ontruiming Leidschendam-Voorburg | Laagste Prijs",
     description:
       "Ontruiming Leidschendam-Voorburg: Centrum, Stompwijk + 4 kernen. 2260-2275. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
+    url: "https://www.budgetontruiming.nl/woningontruiming-leidschendam-voorburg", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Leidschendam-Voorburg",
-    description:
-      "Ontruiming Leidschendam-Voorburg: Centrum, Stompwijk + 4 kernen.",
-  },
   alternates: {
     canonical:
-      "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
+      "https://www.budgetontruiming.nl/woningontruiming-leidschendam-voorburg", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -152,12 +139,41 @@ export default function LeidschendamVoorburgPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Leidschendam-Voorburg",
+        item: "https://www.budgetontruiming.nl/woningontruiming-leidschendam-voorburg", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-leidschendam-voorburg/#localbusiness",
     name: "Budget Ontruiming Leidschendam-Voorburg",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leidschendam-Voorburg",
@@ -171,32 +187,6 @@ export default function LeidschendamVoorburgPage() {
       longitude: 4.3667,
     },
   };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Leidschendam-Voorburg",
-        item: "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
-      },
-    ],
-  };
-
   return (
     <>
       {/* Schema's direct in page */}

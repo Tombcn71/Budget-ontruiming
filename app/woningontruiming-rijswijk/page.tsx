@@ -10,35 +10,23 @@ export const metadata: Metadata = {
   title:
     "Woningontruiming Rijswijk | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Woningontruiming Rijswijk? Wij duiken onder elke offerte! Snel & bezemschoon. Bereken direct uw prijs.",
+    "Woningontruiming Rijswijk? Wij duiken onder elke offerte! Snel & bezemschoon. Specialist in hoogbouw en Plaspoelpolder.",
   keywords:
-    "woningontruiming rijswijk, ontruiming rijswijk, ontruiming centrum rijswijk, ontruiming sion rijswijk, ontruiming steenvoorde rijswijk, ontruiming oud-rijswijk, ontruiming plaspoelpolder rijswijk, ontruiming in de bogaard rijswijk, bezemschoon rijswijk 2280-2289, spoedontruiming rijswijk, ontruiming na overlijden rijswijk",
+    "woningontruiming rijswijk, ontruiming rijswijk, ontruiming sion rijswijk, ontruiming steenvoorde, ontruiming oud-rijswijk, ontruiming plaspoelpolder, bezemschoon rijswijk, spoedontruiming rijswijk, ontruiming na overlijden rijswijk, bedrijfsontruiming rijswijk",
   openGraph: {
     title: "Ontruiming Rijswijk | Alle Wijken | Laagste Prijs",
     description:
-      "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + 3 wijken. 2280-2289. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-rijswijk",
+      "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + alle wijken. 2280-2289. Vindt u goedkoper? Wij duiken eronder!",
+    url: "https://www.budgetontruiming.nl/woningontruiming-rijswijk", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Rijswijk | Alle Wijken",
-    description: "Ontruiming Rijswijk: Centrum, Sion, Steenvoorde + 3 wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-rijswijk",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-rijswijk", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -151,12 +139,41 @@ export default function RijswijkPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Rijswijk",
+        item: "https://www.budgetontruiming.nl/woningontruiming-rijswijk", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-rijswijk/#localbusiness",
     name: "Budget Ontruiming Rijswijk",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Rijswijk",
@@ -169,31 +186,6 @@ export default function RijswijkPage() {
       latitude: 52.0363,
       longitude: 4.325,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Rijswijk",
-        item: "https://budgetontruiming.nl/woningontruiming-rijswijk",
-      },
-    ],
   };
 
   return (

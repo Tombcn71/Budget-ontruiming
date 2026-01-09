@@ -12,38 +12,24 @@ export const metadata: Metadata = {
   description:
     "Woningontruiming Pijnacker-Nootdorp? Wij duiken onder elke offerte! Snel & bezemschoon. Bereken direct uw prijs.",
   keywords:
-    "woningontruiming pijnacker-nootdorp, ontruiming pijnacker, ontruiming nootdorp, ontruiming pijnacker centrum, ontruiming pijnacker-zuid, ontruiming delfgauw, ontruiming keijzershof, bezemschoon pijnacker-nootdorp 2640-2649, spoedontruiming pijnacker-nootdorp, ontruiming na overlijden pijnacker-nootdorp",
+    "woningontruiming pijnacker-nootdorp, ontruiming pijnacker, ontruiming nootdorp, ontruiming delfgauw, ontruiming keijzershof, bezemschoon pijnacker-nootdorp, spoedontruiming pijnacker-nootdorp, ontruiming na overlijden pijnacker-nootdorp",
   openGraph: {
     title: "Ontruiming Pijnacker-Nootdorp | Laagste Prijs",
     description:
-      "Ontruiming Pijnacker-Nootdorp: Centrum, Zuid, Nootdorp + 2 kernen. 2640-2649. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",
+      "Ontruiming Pijnacker-Nootdorp: Centrum, Zuid, Nootdorp + Delfgauw. 2640-2649. Vindt u goedkoper? Eronder!",
+    url: "https://www.budgetontruiming.nl/woningontruiming-pijnacker-nootdorp", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Pijnacker-Nootdorp",
-    description:
-      "Ontruiming Pijnacker-Nootdorp: Centrum, Zuid, Nootdorp + 2 kernen.",
-  },
   alternates: {
     canonical:
-      "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",
+      "https://www.budgetontruiming.nl/woningontruiming-pijnacker-nootdorp", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
-
 export default function PijnackerNootdorpPage() {
   // FAQs
   const faqs = [
@@ -150,12 +136,41 @@ export default function PijnackerNootdorpPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Pijnacker-Nootdorp",
+        item: "https://www.budgetontruiming.nl/woningontruiming-pijnacker-nootdorp", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-pijnacker-nootdorp/#localbusiness",
     name: "Budget Ontruiming Pijnacker-Nootdorp",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Pijnacker-Nootdorp",
@@ -168,31 +183,6 @@ export default function PijnackerNootdorpPage() {
       latitude: 52.0186,
       longitude: 4.4303,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Pijnacker-Nootdorp",
-        item: "https://budgetontruiming.nl/woningontruiming-pijnacker-nootdorp",
-      },
-    ],
   };
 
   return (

@@ -12,34 +12,21 @@ export const metadata: Metadata = {
   description:
     "Woningontruiming Ridderkerk? Wij duiken onder elke offerte! Uw lokale specialist in ontruimen. Bereken direct uw prijs.",
   keywords:
-    "woningontruiming ridderkerk, ontruiming ridderkerk, ontruiming centrum ridderkerk, ontruiming bolnes, ontruiming rijsoord, ontruiming slikkerveer, bezemschoon ridderkerk 2980-2989, spoedontruiming ridderkerk, ontruiming na overlijden ridderkerk",
+    "woningontruiming ridderkerk, ontruiming ridderkerk, ontruiming bolnes, ontruiming rijsoord, ontruiming slikkerveer, bezemschoon ridderkerk, bedrijfsontruiming ridderkerk, spoedontruiming ridderkerk, ontruiming na overlijden ridderkerk",
   openGraph: {
     title: "Ontruiming Ridderkerk | Laagste Prijs",
     description:
       "Ontruiming Ridderkerk: Centrum, Bolnes, Rijsoord + alle kernen. Vindt u goedkoper? Wij duiken eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-ridderkerk",
+    url: "https://www.budgetontruiming.nl/woningontruiming-ridderkerk", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Ridderkerk",
-    description:
-      "Ontruiming Ridderkerk: Centrum, Bolnes, Rijsoord + alle kernen.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-ridderkerk",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-ridderkerk", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -144,12 +131,41 @@ export default function RidderkerkPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Ridderkerk",
+        item: "https://www.budgetontruiming.nl/woningontruiming-ridderkerk", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-ridderkerk/#localbusiness",
     name: "Budget Ontruiming Ridderkerk",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Ridderkerk",
@@ -163,32 +179,6 @@ export default function RidderkerkPage() {
       longitude: 4.6028,
     },
   };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Ridderkerk",
-        item: "https://budgetontruiming.nl/woningontruiming-ridderkerk",
-      },
-    ],
-  };
-
   return (
     <>
       {/* Schema's direct in page */}

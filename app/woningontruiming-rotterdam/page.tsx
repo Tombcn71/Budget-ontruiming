@@ -8,41 +8,27 @@ import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
   title:
-    "Goedkope Woningontruiming Rotterdam | Laagste Prijs Garantie | Budgetontruiming.nl",
+    "Woningontruiming Rotterdam | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
     "Woningontruiming in Rotterdam nodig? Wij duiken onder elke offerte! Bezemschoon opleveren voor Woonstad & Havensteder. Bereken direct uw prijs.",
   keywords:
-    "woningontruiming rotterdam, ontruiming rotterdam, ontruiming centrum rotterdam, ontruiming noord rotterdam, ontruiming zuid rotterdam, ontruiming west rotterdam, ontruiming oost rotterdam, ontruiming kralingen, ontruiming feijenoord, ontruiming charlois, ontruiming ijsselmonde, ontruiming prins alexander, bezemschoon rotterdam 3000-3099, spoedontruiming rotterdam, ontruiming na overlijden rotterdam",
+    "woningontruiming rotterdam, ontruiming rotterdam, ontruiming kralingen, ontruiming feijenoord, ontruiming hillegersberg, bezemschoon rotterdam, spoedontruiming rotterdam, ontruiming na overlijden rotterdam, bedrijfsontruiming rotterdam",
   openGraph: {
-    title: "Ontruiming Rotterdam | 10 Wijken | Laagste Prijs",
+    title: "Ontruiming Rotterdam | Alle Wijken | Laagste Prijs",
     description:
-      "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + 7 wijken. 3000-3099. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-rotterdam",
+      "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + alle wijken. 3000-3099. Vindt u goedkoper? Wij duiken eronder!",
+    url: "https://www.budgetontruiming.nl/woningontruiming-rotterdam", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Rotterdam | 10 Wijken",
-    description:
-      "Ontruiming Rotterdam: Centrum, Kralingen, Feijenoord + 7 wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-rotterdam",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-rotterdam", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
-
 export default function RotterdamPage() {
   // FAQs
   const faqs = [
@@ -157,13 +143,41 @@ export default function RotterdamPage() {
       },
     })),
   };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Rotterdam",
+        item: "https://www.budgetontruiming.nl/woningontruiming-rotterdam", // MET WWW
+      },
+    ],
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-rotterdam/#localbusiness",
     name: "Budget Ontruiming Rotterdam",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Rotterdam",
@@ -176,31 +190,6 @@ export default function RotterdamPage() {
       latitude: 51.9244,
       longitude: 4.4777,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Rotterdam",
-        item: "https://budgetontruiming.nl/woningontruiming-rotterdam",
-      },
-    ],
   };
 
   return (

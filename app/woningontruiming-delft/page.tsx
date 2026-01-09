@@ -17,28 +17,16 @@ export const metadata: Metadata = {
     title: "Ontruiming Delft | Alle Wijken | Laagste Prijs",
     description:
       "Ontruiming Delft: Centrum, Tanthof, Vrijenban + 5 wijken. 2600-2629. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-delft",
+    url: "https://www.budgetontruiming.nl/woningontruiming-delft", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Delft | Alle Wijken",
-    description: "Ontruiming Delft: Centrum, Tanthof, Vrijenban + 5 wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-delft",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-delft", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -150,12 +138,41 @@ export default function DelftPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Delft",
+        item: "https://www.budgetontruiming.nl/woningontruiming-delft", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-delft/#localbusiness",
     name: "Budget Ontruiming Delft",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Delft",
@@ -168,31 +185,6 @@ export default function DelftPage() {
       latitude: 52.0116,
       longitude: 4.3571,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Delft",
-        item: "https://budgetontruiming.nl/woningontruiming-delft",
-      },
-    ],
   };
 
   return (

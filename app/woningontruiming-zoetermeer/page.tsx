@@ -10,36 +10,23 @@ export const metadata: Metadata = {
   title:
     "Woningontruiming Zoetermeer | Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Woningontruiming Zoetermeer? Wij duiken onder elke offerte! Snel, vakkundig en bezemschoon. Bereken direct uw prijs.",
+    "Woningontruiming Zoetermeer? Wij duiken onder elke offerte! Specialist in hoogbouw & bezemschoon opleveren in alle wijken van Zoetermeer. Bereken uw prijs.",
   keywords:
-    "woningontruiming zoetermeer, ontruiming zoetermeer, ontruiming palenstein, ontruiming buytenwegh, ontruiming seghwaert, bezemschoon zoetermeer 2700-2729, spoedontruiming zoetermeer",
+    "woningontruiming zoetermeer, ontruiming zoetermeer, ontruiming palenstein, ontruiming buytenwegh, ontruiming seghwaert, bezemschoon zoetermeer, spoedontruiming zoetermeer, ontruiming rokkeveen, woning leegruimen zoetermeer",
   openGraph: {
-    title: "Ontruiming Zoetermeer | Alle Wijken | Laagste Prijs",
+    title: "Woningontruiming Zoetermeer - Laagste Prijs Garantie",
     description:
-      "Ontruiming Zoetermeer: Palenstein, Buytenwegh, Seghwaert + 6 wijken. 2700-2729. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-zoetermeer",
+      "Professionele woningontruiming in Zoetermeer. Rokkeveen, Oosterheem, Seghwaert. Vindt u het goedkoper? Wij duiken eronder!",
+    url: "https://www.budgetontruiming.nl/woningontruiming-zoetermeer", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Zoetermeer | Alle Wijken",
-    description:
-      "Ontruiming Zoetermeer: Palenstein, Buytenwegh, Seghwaert + 6 wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-zoetermeer",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-zoetermeer", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -149,12 +136,41 @@ export default function ZoetermeerPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Zoetermeer",
+        item: "https://www.budgetontruiming.nl/woningontruiming-zoetermeer", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-zoetermeer/#localbusiness",
     name: "Budget Ontruiming Zoetermeer",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Zoetermeer",
@@ -167,31 +183,6 @@ export default function ZoetermeerPage() {
       latitude: 52.0607,
       longitude: 4.494,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Zoetermeer",
-        item: "https://budgetontruiming.nl/woningontruiming-zoetermeer",
-      },
-    ],
   };
 
   return (

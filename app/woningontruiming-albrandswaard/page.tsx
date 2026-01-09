@@ -17,15 +17,18 @@ export const metadata: Metadata = {
     title: "Ontruiming Albrandswaard | Rhoon & Poortugaal | Laagste Prijs",
     description:
       "Ontruiming Albrandswaard: Rhoon en Poortugaal. Postcodes 3160-3176. Vindt u het goedkoper? Wij gaan eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-albrandswaard",
+    url: "https://www.budgetontruiming.nl/woningontruiming-albrandswaard", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-albrandswaard",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-albrandswaard", // MET WWW
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
-
 export default function AlbrandswaardPage() {
   // FAQs specifiek voor Albrandswaard
   const faqs = [
@@ -75,23 +78,26 @@ export default function AlbrandswaardPage() {
   ];
 
   // Schema's
+  // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id":
-      "https://budgetontruiming.nl/woningontruiming-albrandswaard/#service", // Unieke ID voor deze service
+      "https://www.budgetontruiming.nl/woningontruiming-albrandswaard/#service", // MET WWW
     name: "Woningontruiming Albrandswaard",
     provider: {
-      "@type": "LocalBusiness", // LocalBusiness is breder en sterker voor SEO dan MovingCompany
+      "@type": "LocalBusiness",
       name: "Budget Ontruiming",
-      url: "https://budgetontruiming.nl", // Altijd naar de homepage
+      url: "https://www.budgetontruiming.nl/", // MET WWW en slash
       telephone: "+31629759181",
       priceRange: "€",
+      image:
+        "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     },
     areaServed: {
-      "@type": "City", // Of AdministrativeArea, City werkt vaak beter voor Google Maps koppelingen
+      "@type": "City",
       name: "Albrandswaard",
-      sameAs: "https://www.wikidata.org/wiki/Q36500", // Optioneel: helpt Google exact te weten welke regio je bedoelt
+      sameAs: "https://www.wikidata.org/wiki/Q36500",
     },
     description:
       "Professionele woningontruiming in Rhoon en Poortugaal. Laagste prijs garantie en bezemschone oplevering in de gehele gemeente Albrandswaard.",

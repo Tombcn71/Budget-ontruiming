@@ -16,29 +16,16 @@ export const metadata: Metadata = {
     title: "Ontruiming Maassluis | Laagste Prijs",
     description:
       "Ontruiming Maassluis: Centrum, Steendijkpolder, Koningshoek + wijken. 3140-3144. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-maassluis",
+    url: "https://www.budgetontruiming.nl/woningontruiming-maassluis", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Maassluis",
-    description:
-      "Ontruiming Maassluis: Centrum, Steendijkpolder, Koningshoek + wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-maassluis",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-maassluis", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -143,12 +130,41 @@ export default function MaassluisPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Maassluis",
+        item: "https://www.budgetontruiming.nl/woningontruiming-maassluis", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-maassluis/#localbusiness",
     name: "Budget Ontruiming Maassluis",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Maassluis",
@@ -161,31 +177,6 @@ export default function MaassluisPage() {
       latitude: 51.9233,
       longitude: 4.25,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Maassluis",
-        item: "https://budgetontruiming.nl/woningontruiming-maassluis",
-      },
-    ],
   };
 
   return (

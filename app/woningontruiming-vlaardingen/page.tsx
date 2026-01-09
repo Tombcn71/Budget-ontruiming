@@ -10,39 +10,25 @@ export const metadata: Metadata = {
   title:
     "Woningontruiming Vlaardingen | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Woningontruiming Vlaardingen? Wij duiken onder elke offerte! Uw lokale expert in ontruimen. Bereken nu uw prijs.",
+    "Woningontruiming Vlaardingen? Wij duiken onder elke offerte! Specialist in seniorenverhuizingen en bezemschoon opleveren in Holy & Westwijk.",
   keywords:
-    "woningontruiming vlaardingen, ontruiming vlaardingen, ontruiming centrum vlaardingen, ontruiming westwijk vlaardingen, ontruiming oostwijk vlaardingen, ontruiming ambacht vlaardingen, ontruiming holy vlaardingen, bezemschoon vlaardingen 3130-3137, spoedontruiming vlaardingen, ontruiming na overlijden vlaardingen",
+    "woningontruiming vlaardingen, ontruiming vlaardingen, seniorenverhuizing vlaardingen, ontruiming holy vlaardingen, ontruiming westwijk, bezemschoon vlaardingen, spoedontruiming vlaardingen, ontruiming na overlijden vlaardingen, woningontruiming ambacht vlaardingen",
   openGraph: {
     title: "Ontruiming Vlaardingen | Alle Wijken | Laagste Prijs",
     description:
-      "Ontruiming Vlaardingen: Centrum, Westwijk, Oostwijk + wijken. 3130-3137. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-vlaardingen",
+      "Ontruiming Vlaardingen: Centrum, Holy, Ambacht + alle wijken. 3130-3137. Vindt u goedkoper? Wij duiken eronder!",
+    url: "https://www.budgetontruiming.nl/woningontruiming-vlaardingen", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Vlaardingen | Alle Wijken",
-    description:
-      "Ontruiming Vlaardingen: Centrum, Westwijk, Oostwijk + wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-vlaardingen",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-vlaardingen", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
-
 export default function VlaardingenPage() {
   // FAQs
   const faqs = [
@@ -144,12 +130,41 @@ export default function VlaardingenPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Vlaardingen",
+        item: "https://www.budgetontruiming.nl/woningontruiming-vlaardingen", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-vlaardingen/#localbusiness",
     name: "Budget Ontruiming Vlaardingen",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Vlaardingen",
@@ -162,31 +177,6 @@ export default function VlaardingenPage() {
       latitude: 51.9094,
       longitude: 4.3417,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Vlaardingen",
-        item: "https://budgetontruiming.nl/woningontruiming-vlaardingen",
-      },
-    ],
   };
 
   return (

@@ -16,30 +16,17 @@ export const metadata: Metadata = {
     title: "Woningontruiming Haaglanden & Rijnmond - Laagste Prijs Garantie",
     description:
       "Professionele woningontruiming in Den Haag, Rotterdam en 20+ gemeentes. Vindt u het elders goedkoper? Wij duiken onder die prijs!",
-    url: "https://budgetontruiming.nl",
+    url: "https://www.budgetontruiming.nl", // WWW FIX
     type: "website",
     locale: "nl_NL",
     siteName: "Budget Ontruiming",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Woningontruiming Haaglanden & Rijnmond - Laagste Prijs Garantie",
-    description:
-      "Ontruiming in heel Zuid-Holland met AI-prijscalculator. Wij duiken onder elke offerte!",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl",
+    canonical: "https://www.budgetontruiming.nl", // WWW FIX
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -119,9 +106,9 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Budget Ontruiming",
-    image: "https://budgetontruiming.nl/logo.png",
-    "@id": "https://budgetontruiming.nl",
-    url: "https://budgetontruiming.nl",
+    image: "https://www.budgetontruiming.nl/logo.png", // WWW FIX
+    "@id": "https://www.budgetontruiming.nl", // WWW FIX
+    url: "https://www.budgetontruiming.nl", // WWW FIX
     telephone: "+31629759181",
     email: "info@budgetontruiming.nl",
     priceRange: "€€",
@@ -135,27 +122,11 @@ export default function Home() {
       latitude: 52.0705,
       longitude: 4.3007,
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ],
-        opens: "07:00",
-        closes: "22:00",
-      },
-    ],
     areaServed: gemeentes.map((gemeente) => ({
       "@type": "City",
       name: gemeente,
     })),
   };
-
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",

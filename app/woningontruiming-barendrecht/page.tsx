@@ -17,29 +17,16 @@ export const metadata: Metadata = {
     title: "Ontruiming Barendrecht | Laagste Prijs",
     description:
       "Ontruiming Barendrecht: Centrum, Carnisselande, Smitshoek + wijken. 2990-2995. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-barendrecht",
+    url: "https://www.budgetontruiming.nl/woningontruiming-barendrecht", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Barendrecht",
-    description:
-      "Ontruiming Barendrecht: Centrum, Carnisselande, Smitshoek + wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-barendrecht",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-barendrecht", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -149,12 +136,41 @@ export default function BarendrechtPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Barendrecht",
+        item: "https://www.budgetontruiming.nl/woningontruiming-barendrecht", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-barendrecht/#localbusiness",
     name: "Budget Ontruiming Barendrecht",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Barendrecht",
@@ -167,31 +183,6 @@ export default function BarendrechtPage() {
       latitude: 51.85,
       longitude: 4.5333,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Barendrecht",
-        item: "https://budgetontruiming.nl/woningontruiming-barendrecht",
-      },
-    ],
   };
 
   return (

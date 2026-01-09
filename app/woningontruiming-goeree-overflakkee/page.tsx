@@ -9,37 +9,24 @@ import { Breadcrumb } from "@/components/breadcrumb";
 export const metadata: Metadata = {
   title: "Woningontruiming Goeree-Overflakkee | Middelharnis & Ouddorp",
   description:
-    "Woningontruiming Goeree-Overflakkee? Wij duiken onder elke offerte! Uw lokale expert. Bereken direct uw prijs.",
+    "Woningontruiming Goeree-Overflakkee? Wij duiken onder elke offerte! Uw lokale expert voor huis en vakantiepark. Bereken direct uw prijs.",
   keywords:
-    "woningontruiming goeree-overflakkee, ontruiming middelharnis, ontruiming ouddorp, ontruiming dirksland, vakantiehuis ontruimen goeree, huis ontruimen goeree-overflakkee, bezemschoon opleveren eiland",
+    "woningontruiming goeree-overflakkee, ontruiming middelharnis, ontruiming ouddorp, ontruiming dirksland, vakantiehuis ontruimen goeree, huis ontruimen goeree-overflakkee, bezemschoon opleveren eiland, ontruiming oude-tonge, ontruiming sommelsdijk",
   openGraph: {
     title: "Woningontruiming Goeree-Overflakkee - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming op Goeree-Overflakkee. Alle kernen bereikbaar.",
-    url: "https://budgetontruiming.nl/woningontruiming-goeree-overflakkee",
+      "Professionele woningontruiming op Goeree-Overflakkee. Alle kernen van Ouddorp tot Oude-Tonge.",
+    url: "https://www.budgetontruiming.nl/woningontruiming-goeree-overflakkee", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Woningontruiming Goeree-Overflakkee - Laagste Prijs Garantie",
-    description:
-      "Professionele woningontruiming op het eiland Goeree-Overflakkee.",
-  },
   alternates: {
     canonical:
-      "https://budgetontruiming.nl/woningontruiming-goeree-overflakkee",
+      "https://www.budgetontruiming.nl/woningontruiming-goeree-overflakkee", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -151,12 +138,41 @@ export default function GoereeOverflakkeePage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Goeree-Overflakkee",
+        item: "https://www.budgetontruiming.nl/woningontruiming-goeree-overflakkee", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-goeree-overflakkee/#localbusiness",
     name: "Budget Ontruiming Goeree-Overflakkee",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Middelharnis",
@@ -169,31 +185,6 @@ export default function GoereeOverflakkeePage() {
       latitude: 51.75,
       longitude: 4.1667,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Goeree-Overflakkee",
-        item: "https://budgetontruiming.nl/woningontruiming-goeree-overflakkee",
-      },
-    ],
   };
 
   return (

@@ -16,30 +16,17 @@ export const metadata: Metadata = {
     title: "Ontruiming Capelle aan den IJssel | Laagste Prijs",
     description:
       "Ontruiming Capelle: Centrum, Schollevaar, Fascinatio + wijken. 2900-2909. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel",
+    url: "https://www.budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Capelle aan den IJssel",
-    description:
-      "Ontruiming Capelle: Centrum, Schollevaar, Fascinatio + wijken.",
-  },
   alternates: {
     canonical:
-      "https://budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel",
+      "https://www.budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -150,12 +137,41 @@ export default function CapelleAanDenIJsselPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Capelle aan den IJssel",
+        item: "https://www.budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel/#localbusiness",
     name: "Budget Ontruiming Capelle aan den IJssel",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Capelle aan den IJssel",
@@ -168,31 +184,6 @@ export default function CapelleAanDenIJsselPage() {
       latitude: 51.9292,
       longitude: 4.5778,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Capelle aan den IJssel",
-        item: "https://budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel",
-      },
-    ],
   };
 
   return (

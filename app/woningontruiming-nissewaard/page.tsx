@@ -11,33 +11,21 @@ export const metadata: Metadata = {
   description:
     "Woningontruiming Nissewaard? Wij duiken onder elke offerte! Snel en vakkundig bezemschoon. Bereken direct uw prijs.",
   keywords:
-    "woningontruiming nissewaard, ontruiming spijkenisse, ontruiming bernisse, huis ontruimen nissewaard, hoogbouw ontruimen spijkenisse, bezemschoon opleveren nissewaard, spoedontruiming spijkenisse",
+    "woningontruiming nissewaard, ontruiming spijkenisse, ontruiming bernisse, huis ontruimen nissewaard, hoogbouw ontruimen spijkenisse, bezemschoon opleveren nissewaard, spoedontruiming spijkenisse, ontruiming zuidland, ontruiming heenvliet",
   openGraph: {
     title: "Woningontruiming Nissewaard - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Nissewaard. Spijkenisse, Bernisse en Heenvliet.",
-    url: "https://budgetontruiming.nl/woningontruiming-nissewaard",
+      "Professionele woningontruiming in Nissewaard. Spijkenisse, Bernisse en alle dorpskernen.",
+    url: "https://www.budgetontruiming.nl/woningontruiming-nissewaard", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Woningontruiming Nissewaard - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Spijkenisse en Bernisse.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-nissewaard",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-nissewaard", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -151,12 +139,41 @@ export default function NissewaardPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Nissewaard",
+        item: "https://www.budgetontruiming.nl/woningontruiming-nissewaard", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-nissewaard/#localbusiness",
     name: "Budget Ontruiming Nissewaard",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Nissewaard",
@@ -169,31 +186,6 @@ export default function NissewaardPage() {
       latitude: 51.8447,
       longitude: 4.325,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Nissewaard",
-        item: "https://budgetontruiming.nl/woningontruiming-nissewaard",
-      },
-    ],
   };
 
   return (

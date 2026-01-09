@@ -15,22 +15,12 @@ export const metadata: Metadata = {
   keywords:
     "woningontruiming rijnmond, ontruiming rijnmond, ontruiming rotterdam, ontruiming schiedam, ontruiming vlaardingen, ontruiming capelle aan den ijssel, ontruiming ridderkerk, ontruiming barendrecht, bezemschoon rijnmond, spoedontruiming rijnmond",
   openGraph: {
-    title: "Woningontruiming Rijnmond - Laagste Prijs Garantie",
-    description:
-      "Professionele woningontruiming in heel Rijnmond (Rotterdam, Schiedam, Vlaardingen e.o.). Vindt u het elders goedkoper? Wij duiken onder die prijs!",
-    url: "https://budgetontruiming.nl/regio/rijnmond",
-    type: "website",
-    locale: "nl_NL",
-    siteName: "Budget Ontruiming",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Woningontruiming Rijnmond - Laagste Prijs Garantie",
-    description:
-      "Ontruiming in Rijnmond: Rotterdam, Schiedam, Vlaardingen en meer. Wij duiken onder elke offerte!",
+    // ... rest
+    url: "https://www.budgetontruiming.nl/regio/rijnmond", // Voeg www toe
+    // ... rest
   },
   alternates: {
-    canonical: "https://budgetontruiming.nl/regio/rijnmond",
+    canonical: "https://www.budgetontruiming.nl/regio/rijnmond", // Voeg www toe
   },
   robots: {
     index: true,
@@ -215,10 +205,10 @@ export default function RijnmondPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": "https://www.budgetontruiming.nl/regio/rijnmond/#webpage", // Voeg @id en www toe
     name: "Woningontruiming Rijnmond - Laagste Prijs Garantie",
-    description:
-      "Professionele woningontruiming in heel Rijnmond. Rotterdam, Schiedam, Vlaardingen, Nissewaard en meer.",
-    url: "https://budgetontruiming.nl/regio/rijnmond",
+    description: "Professionele woningontruiming in heel Rijnmond...",
+    url: "https://www.budgetontruiming.nl/regio/rijnmond", // Voeg www toe
   };
 
   const localBusinessSchema = {
@@ -249,13 +239,13 @@ export default function RijnmondPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://budgetontruiming.nl",
+        item: "https://www.budgetontruiming.nl", // Voeg www toe
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // Voeg www toe
       },
     ],
   };

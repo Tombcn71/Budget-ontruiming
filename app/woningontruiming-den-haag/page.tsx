@@ -17,29 +17,16 @@ export const metadata: Metadata = {
     title: "Ontruiming Den Haag | Alle Wijken | Laagste Prijs",
     description:
       "Ontruiming Den Haag: Centrum, Statenkwartier, Schilderswijk + 5 wijken. 2490-2599. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-den-haag",
+    url: "https://www.budgetontruiming.nl/woningontruiming-den-haag", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Den Haag | Alle Wijken",
-    description:
-      "Ontruiming Den Haag: Centrum, Statenkwartier, Schilderswijk + 5 wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-den-haag",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-den-haag", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -158,12 +145,41 @@ export default function DenHaagPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Den Haag",
+        item: "https://www.budgetontruiming.nl/woningontruiming-den-haag", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-den-haag/#localbusiness",
     name: "Budget Ontruiming Den Haag",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Den Haag",
@@ -176,31 +192,6 @@ export default function DenHaagPage() {
       latitude: 52.0705,
       longitude: 4.3007,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Den Haag",
-        item: "https://budgetontruiming.nl/woningontruiming-den-haag",
-      },
-    ],
   };
 
   return (

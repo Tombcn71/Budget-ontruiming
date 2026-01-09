@@ -10,36 +10,23 @@ export const metadata: Metadata = {
   title:
     "Woningontruiming Schiedam | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Woningontruiming Schiedam? Wij duiken onder elke offerte! Snel, vakkundig en bezemschoon. Bereken direct uw prijs.",
+    "Woningontruiming Schiedam? Wij duiken onder elke offerte! Snel, vakkundig en bezemschoon. Specialist in monumentale panden en hoogbouw.",
   keywords:
-    "woningontruiming schiedam, ontruiming schiedam, ontruiming centrum schiedam, ontruiming nieuwland schiedam, ontruiming groenoord schiedam, ontruiming kethel schiedam, ontruiming spaland schiedam, bezemschoon schiedam 3110-3125, spoedontruiming schiedam, ontruiming na overlijden schiedam",
+    "woningontruiming schiedam, ontruiming schiedam, ontruiming centrum schiedam, ontruiming nieuwland, ontruiming groenoord, bezemschoon schiedam, spoedontruiming schiedam, ontruiming na overlijden schiedam, bedrijfsontruiming schiedam",
   openGraph: {
     title: "Ontruiming Schiedam | Alle Wijken | Laagste Prijs",
     description:
-      "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + 2 wijken. 3110-3125. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-schiedam",
+      "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + alle wijken. 3110-3125. Vindt u goedkoper? Wij duiken eronder!",
+    url: "https://www.budgetontruiming.nl/woningontruiming-schiedam", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Schiedam | Alle Wijken",
-    description:
-      "Ontruiming Schiedam: Centrum, Nieuwland, Groenoord + 2 wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-schiedam",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-schiedam", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -144,12 +131,41 @@ export default function SchiedamPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Schiedam",
+        item: "https://www.budgetontruiming.nl/woningontruiming-schiedam", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-schiedam/#localbusiness",
     name: "Budget Ontruiming Schiedam",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Schiedam",
@@ -163,32 +179,6 @@ export default function SchiedamPage() {
       longitude: 4.3881,
     },
   };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Schiedam",
-        item: "https://budgetontruiming.nl/woningontruiming-schiedam",
-      },
-    ],
-  };
-
   return (
     <>
       {/* Schema's direct in page */}

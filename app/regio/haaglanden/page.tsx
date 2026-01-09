@@ -14,15 +14,26 @@ export const metadata: Metadata = {
     "Woningontruiming in regio Haaglanden? Wij duiken onder elke offerte! Snel, vakkundig en bezemschoon opgeleverd. Bereken direct uw prijs online.",
   keywords:
     "woningontruiming haaglanden, ontruiming haaglanden, ontruiming den haag, ontruiming delft, ontruiming zoetermeer, ontruiming rijswijk, ontruiming leidschendam-voorburg, ontruiming wassenaar, bezemschoon haaglanden, spoedontruiming haaglanden",
+  alternates: {
+    // DIT IS DE BELANGRIJKSTE REGEL:
+    canonical: "https://www.budgetontruiming.nl/regio/haaglanden",
+  },
   openGraph: {
     title: "Woningontruiming Haaglanden - Laagste Prijs Garantie",
     description:
       "Professionele woningontruiming in heel Haaglanden (Den Haag, Delft, Zoetermeer e.o.). Vindt u het elders goedkoper? Wij duiken onder die prijs!",
-    url: "https://budgetontruiming.nl/regio/haaglanden",
+    url: "https://www.budgetontruiming.nl/regio/haaglanden", // Ook hier met www
     type: "website",
     locale: "nl_NL",
   },
-  // ... rest van de robots en twitter tags blijven hetzelfde
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function HaaglandenPage() {
@@ -160,12 +171,10 @@ export default function HaaglandenPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": "https://www.budgetontruiming.nl/regio/haaglanden/#webpage",
+    url: "https://www.budgetontruiming.nl/regio/haaglanden", // Met www
     name: "Woningontruiming Haaglanden - Laagste Prijs Garantie",
-    description:
-      "Professionele woningontruiming in heel Haaglanden. Den Haag, Delft, Rijswijk, Wassenaar en meer.",
-    url: "https://budgetontruiming.nl/regio/haaglanden",
   };
-
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -194,13 +203,13 @@ export default function HaaglandenPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://budgetontruiming.nl",
+        item: "https://www.budgetontruiming.nl", // Met www
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // Met www
       },
     ],
   };

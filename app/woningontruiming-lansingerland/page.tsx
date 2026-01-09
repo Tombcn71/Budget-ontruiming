@@ -5,7 +5,6 @@ import { Footer } from "@/components/footer";
 import { GemeenteMap } from "@/components/gemeente-map";
 import { AIQuoteForm } from "@/components/ai-quote-form";
 import { Breadcrumb } from "@/components/breadcrumb";
-
 export const metadata: Metadata = {
   title: "Woningontruiming Lansingerland | Berkel, Bleiswijk & Bergschenhoek",
   description:
@@ -16,28 +15,16 @@ export const metadata: Metadata = {
     title: "Ontruiming Lansingerland | Laagste Prijs",
     description:
       "Ontruiming Lansingerland: Bergschenhoek, Berkel, Bleiswijk. 2650-2665. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-lansingerland",
+    url: "https://www.budgetontruiming.nl/woningontruiming-lansingerland", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Lansingerland",
-    description: "Ontruiming Lansingerland: Bergschenhoek, Berkel, Bleiswijk.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-lansingerland",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-lansingerland", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -142,12 +129,41 @@ export default function LansingerlandPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Lansingerland",
+        item: "https://www.budgetontruiming.nl/woningontruiming-lansingerland", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-lansingerland/#localbusiness",
     name: "Budget Ontruiming Lansingerland",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Lansingerland",
@@ -160,31 +176,6 @@ export default function LansingerlandPage() {
       latitude: 52.0167,
       longitude: 4.5167,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Lansingerland",
-        item: "https://budgetontruiming.nl/woningontruiming-lansingerland",
-      },
-    ],
   };
 
   return (

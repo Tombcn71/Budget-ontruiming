@@ -12,34 +12,22 @@ export const metadata: Metadata = {
   description:
     "Woningontruiming Midden-Delfland? Wij duiken onder elke offerte! Lokale experts in ontruimen. Bereken direct uw prijs.",
   keywords:
-    "woningontruiming midden-delfland, ontruiming maassluis, ontruiming schipluiden, ontruiming maasland, huis ontruimen midden-delfland, bezemschoon opleveren maassluis, boerderij ontruimen, spoedontruiming midden-delfland",
+    "woningontruiming midden-delfland, ontruiming schipluiden, ontruiming maasland, ontruiming den hoorn, huis ontruimen midden-delfland, bezemschoon opleveren midden-delfland, boerderij ontruimen, spoedontruiming midden-delfland",
   openGraph: {
     title: "Woningontruiming Midden-Delfland - Laagste Prijs Garantie",
     description:
-      "Professionele woningontruiming in Midden-Delfland. Maassluis, Schipluiden, Maasland en Den Hoorn.",
-    url: "https://budgetontruiming.nl/woningontruiming-midden-delfland",
+      "Professionele woningontruiming in Midden-Delfland. Schipluiden, Maasland en Den Hoorn.",
+    url: "https://www.budgetontruiming.nl/woningontruiming-midden-delfland", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Woningontruiming Midden-Delfland - Laagste Prijs Garantie",
-    description:
-      "Professionele woningontruiming in Midden-Delfland. Vindt u goedkoper? Wij duiken onder die prijs!!",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-midden-delfland",
+    canonical:
+      "https://www.budgetontruiming.nl/woningontruiming-midden-delfland", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -146,12 +134,41 @@ export default function MiddenDelflandPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Midden-Delfland",
+        item: "https://www.budgetontruiming.nl/woningontruiming-midden-delfland", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-midden-delfland/#localbusiness",
     name: "Budget Ontruiming Midden-Delfland",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Midden-Delfland",
@@ -164,31 +181,6 @@ export default function MiddenDelflandPage() {
       latitude: 51.975,
       longitude: 4.3167,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Midden-Delfland",
-        item: "https://budgetontruiming.nl/woningontruiming-midden-delfland",
-      },
-    ],
   };
 
   return (

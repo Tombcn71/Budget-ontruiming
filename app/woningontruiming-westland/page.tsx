@@ -10,36 +10,23 @@ export const metadata: Metadata = {
   title:
     "Woningontruiming Westland | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Woningontruiming Westland? Wij duiken onder elke offerte! Snel en vakkundig bezemschoon. Bereken direct uw prijs online.",
+    "Woningontruiming Westland? Wij duiken onder elke offerte! Specialist in woningen met kassen & bezemschoon opleveren in Naaldwijk, Wateringen en Monster.",
   keywords:
-    "woningontruiming westland, ontruiming naaldwijk, ontruiming wateringen, ontruiming monster, ontruiming de lier, huis ontruimen westland, bezemschoon opleveren westland, kas ontruimen, spoedontruiming westland",
+    "woningontruiming westland, ontruiming naaldwijk, ontruiming wateringen, ontruiming monster, kas ontruimen westland, bezemschoon westland, spoedontruiming westland, ontruiming de lier, woningontruiming s-gravenzande",
   openGraph: {
-    title: "Woningontruiming Westland - Laagste Prijs Garantie",
+    title: "Woningontruiming Westland | Alle Kernen | Laagste Prijs",
     description:
-      "Professionele woningontruiming in Westland. Naaldwijk, Wateringen, Monster en De Lier. Direct beschikbaar!",
-    url: "https://budgetontruiming.nl/woningontruiming-westland",
+      "Professionele woningontruiming in Westland. Naaldwijk, Monster, Wateringen + alle kernen. Vindt u goedkoper? Wij duiken eronder!",
+    url: "https://www.budgetontruiming.nl/woningontruiming-westland", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Woningontruiming Westland - Laagste Prijs Garantie",
-    description:
-      "Professionele woningontruiming in Westland. Vindt u goedkoper? Wij duiken onder die prijs!!",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-westland",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-westland", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -152,12 +139,41 @@ export default function WestlandPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Westland",
+        item: "https://www.budgetontruiming.nl/woningontruiming-westland", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-westland/#localbusiness",
     name: "Budget Ontruiming Westland",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Westland",
@@ -170,31 +186,6 @@ export default function WestlandPage() {
       latitude: 51.9992,
       longitude: 4.2208,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Westland",
-        item: "https://budgetontruiming.nl/woningontruiming-westland",
-      },
-    ],
   };
 
   return (

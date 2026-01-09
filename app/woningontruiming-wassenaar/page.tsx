@@ -10,36 +10,23 @@ export const metadata: Metadata = {
   title:
     "Woningontruiming Wassenaar | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Woningontruiming Wassenaar? Discrete & zorgvuldige ontruiming. Wij matchen elke offerte. Bereken direct uw prijs",
+    "Woningontruiming Wassenaar? Discrete & zorgvuldige ontruiming van villa's en landhuizen. Wij duiken onder elke offerte! Bereken direct uw prijs.",
   keywords:
-    "woningontruiming wassenaar, ontruiming wassenaar, ontruiming centrum wassenaar, ontruiming duinrell wassenaar, ontruiming kievietsduin wassenaar, ontruiming villa wassenaar, ontruiming landhuis wassenaar, bezemschoon wassenaar 2240-2245, ontruiming na overlijden wassenaar",
+    "woningontruiming wassenaar, ontruiming wassenaar, villa ontruimen wassenaar, landhuis ontruiming wassenaar, discrete ontruiming wassenaar, inboedel taxatie wassenaar, bezemschoon wassenaar, ontruiming na overlijden wassenaar",
   openGraph: {
-    title: "Ontruiming Wassenaar | Villa's & Landhuizen",
+    title: "Ontruiming Wassenaar | Villa's & Landhuizen | Laagste Prijs",
     description:
-      "Ontruiming Wassenaar: Centrum, Duinrell, Kievietsduin + wijken. 2240-2245. Vindt u goedkoper? Eronder!",
-    url: "https://budgetontruiming.nl/woningontruiming-wassenaar",
+      "Ontruiming Wassenaar: Discrete service voor grote woningen. 2240-2245. Vindt u het goedkoper? Wij duiken eronder!",
+    url: "https://www.budgetontruiming.nl/woningontruiming-wassenaar", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ontruiming Wassenaar | Villa's",
-    description:
-      "Ontruiming Wassenaar: Centrum, Duinrell, Kievietsduin + wijken.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-wassenaar",
+    canonical: "https://www.budgetontruiming.nl/woningontruiming-wassenaar", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -150,12 +137,41 @@ export default function WassenaarPage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Haaglanden",
+        item: "https://www.budgetontruiming.nl/regio/haaglanden", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Wassenaar",
+        item: "https://www.budgetontruiming.nl/woningontruiming-wassenaar", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-wassenaar/#localbusiness",
     name: "Budget Ontruiming Wassenaar",
     telephone: "+31629759181",
-    priceRange: "€€",
+    priceRange: "€€", // Aangepast naar segment
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Wassenaar",
@@ -169,32 +185,6 @@ export default function WassenaarPage() {
       longitude: 4.4014,
     },
   };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Haaglanden",
-        item: "https://budgetontruiming.nl/regio/haaglanden",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Wassenaar",
-        item: "https://budgetontruiming.nl/woningontruiming-wassenaar",
-      },
-    ],
-  };
-
   return (
     <>
       {/* Schema's direct in page */}

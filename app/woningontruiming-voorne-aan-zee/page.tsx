@@ -10,36 +10,24 @@ export const metadata: Metadata = {
   title:
     "Woningontruiming Voorne aan Zee | Brielle & Hellevoetsluis | Laagste Prijs",
   description:
-    "Woningontruiming Voorne aan Zee? Wij duiken onder elke offerte! Snel & bezemschoon opgeleverd. Bereken uw prijs.",
+    "Woningontruiming Voorne aan Zee? Wij duiken onder elke offerte! Specialist in vakantiehuizen in Rockanje & bezemschoon opleveren in Brielle en Hellevoetsluis.",
   keywords:
-    "woningontruiming voorne aan zee, ontruiming rockanje, vakantiehuis ontruimen rockanje, huis ontruimen voorne aan zee, bezemschoon opleveren rockanje, strandhuisje ontruimen, kustgebied ontruiming",
+    "woningontruiming voorne aan zee, ontruiming rockanje, vakantiehuis ontruimen rockanje, ontruiming brielle, ontruiming hellevoetsluis, bezemschoon oostvoorne, spoedontruiming voorne aan zee, ontruiming na overlijden",
   openGraph: {
-    title: "Woningontruiming Voorne aan Zee - Laagste Prijs Garantie",
+    title: "Woningontruiming Voorne aan Zee | Brielle & Hellevoetsluis",
     description:
-      "Professionele woningontruiming in Voorne aan Zee. Rockanje en kustgebied.",
-    url: "https://budgetontruiming.nl/woningontruiming-voorne-aan-zee",
+      "Professionele woningontruiming in Voorne aan Zee. Rockanje kustspecialist. Vindt u het goedkoper? Wij duiken eronder!",
+    url: "https://www.budgetontruiming.nl/woningontruiming-voorne-aan-zee", // MET WWW
     type: "website",
     locale: "nl_NL",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Woningontruiming Voorne aan Zee - Laagste Prijs Garantie",
-    description:
-      "Professionele woningontruiming in Voorne aan Zee. Rockanje specialist.",
-  },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-voorne-aan-zee",
+    canonical:
+      "https://www.budgetontruiming.nl/woningontruiming-voorne-aan-zee", // MET WWW
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -153,12 +141,41 @@ export default function VoorneAanZeePage() {
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.budgetontruiming.nl", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Rijnmond",
+        item: "https://www.budgetontruiming.nl/regio/rijnmond", // MET WWW
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Voorne aan Zee",
+        item: "https://www.budgetontruiming.nl/woningontruiming-voorne-aan-zee", // MET WWW
+      },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id":
+      "https://www.budgetontruiming.nl/woningontruiming-voorne-aan-zee/#localbusiness",
     name: "Budget Ontruiming Voorne aan Zee",
     telephone: "+31629759181",
     priceRange: "€",
+    image:
+      "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Voorne aan Zee",
@@ -171,31 +188,6 @@ export default function VoorneAanZeePage() {
       latitude: 51.9,
       longitude: 4.1667,
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://budgetontruiming.nl",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Rijnmond",
-        item: "https://budgetontruiming.nl/regio/rijnmond",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Voorne aan Zee",
-        item: "https://budgetontruiming.nl/woningontruiming-voorne-aan-zee",
-      },
-    ],
   };
 
   return (
