@@ -261,8 +261,7 @@ export default function DenHaagPage() {
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
                   Vindt u het elders goedkoper voor woningontruiming in Den
-                  Haag? Wij duiken onder die prijs! Zo bent u ervan verzekerd
-                  dat u de laagste prijs betaalt.
+                  Haag? Wij duiken onder die prijs!
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">

@@ -1,20 +1,22 @@
-import type { Metadata } from "next"
-import { TopBanner } from "@/components/top-banner"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { GemeenteMap } from "@/components/gemeente-map"
-import { AIQuoteForm } from "@/components/ai-quote-form"
-import { Breadcrumb } from "@/components/breadcrumb"
+import type { Metadata } from "next";
+import { TopBanner } from "@/components/top-banner";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { GemeenteMap } from "@/components/gemeente-map";
+import { AIQuoteForm } from "@/components/ai-quote-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Krimpen aan den IJssel | Ook Lekkerkerk | Laagste Prijs",
+  title:
+    "Woningontruiming Krimpen aan den IJssel | Ook Lekkerkerk | Laagste Prijs",
   description:
-    "Woningontruiming in Krimpen aan den IJssel en Lekkerkerk. Specialist in bezemschone oplevering & ontruiming na overlijden. Laagste prijs garantie. 24/7 bereikbaar.",
+    "Woningontruiming Krimpen? Wij duiken onder elke offerte! Snel en vakkundig bezemschoon. Bereken direct uw prijs.",
   keywords:
     "woningontruiming krimpen aan den ijssel, ontruiming krimpen, ontruiming centrum krimpen, ontruiming stormpolder, ontruiming lekkerkerk, bezemschoon krimpen 2920-2925, spoedontruiming krimpen, ontruiming na overlijden krimpen",
   openGraph: {
     title: "Ontruiming Krimpen aan den IJssel | Laagste Prijs",
-    description: "Ontruiming Krimpen: Centrum, Stormpolder, Lekkerkerk + wijken. 2920-2925. Vindt u goedkoper? Eronder!",
+    description:
+      "Ontruiming Krimpen: Centrum, Stormpolder, Lekkerkerk + wijken. 2920-2925. Vindt u goedkoper? Eronder!",
     url: "https://budgetontruiming.nl/woningontruiming-krimpen-aan-den-ijssel",
     type: "website",
     locale: "nl_NL",
@@ -22,10 +24,12 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ontruiming Krimpen aan den IJssel",
-    description: "Ontruiming Krimpen: Centrum, Stormpolder, Lekkerkerk + wijken.",
+    description:
+      "Ontruiming Krimpen: Centrum, Stormpolder, Lekkerkerk + wijken.",
   },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-krimpen-aan-den-ijssel",
+    canonical:
+      "https://budgetontruiming.nl/woningontruiming-krimpen-aan-den-ijssel",
   },
   robots: {
     index: true,
@@ -38,7 +42,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-}
+};
 
 export default function KrimpenAanDenIJsselPage() {
   // FAQs
@@ -63,14 +67,10 @@ export default function KrimpenAanDenIJsselPage() {
       answer:
         "Zeker! Vindt u in de regio Krimpen aan den IJssel een goedkopere offerte? Wij duiken onder die prijs!",
     },
-  ]
+  ];
 
   // Wijken
-  const wijken = [
-    "Krimpen Centrum",
-    "Stormpolder",
-    "Lekkerkerk",
-  ]
+  const wijken = ["Krimpen Centrum", "Stormpolder", "Lekkerkerk"];
 
   // Waarom kiezen
   const waaromKiezen = [
@@ -79,18 +79,18 @@ export default function KrimpenAanDenIJsselPage() {
     "Bezemschone oplevering conform de eisen van lokale woningcorporaties",
     "Laagste prijs garantie: Wij bieden de scherpste prijs in de Krimpenerwaard",
     "Lokale kennis van Krimpen en Lekkerkerk en snelle service",
-  ]
+  ];
 
   // Situaties
   const situaties = [
     {
       title: "Bedrijfsontruiming Stormpolder",
-  description:
+      description:
         "Stormpolder kent veel bedrijfsruimtes. Wij hebben ervaring met zowel woningontruiming als zakelijke ontruimingen in Stormpolder. Van kantoren tot magazijnen, wij regelen het.",
     },
     {
       title: "Huurwoning bezemschoon opleveren",
-    description:
+      description:
         "Voor woningcorporaties in Krimpen aan den IJssel leveren wij bezemschoon op volgens de strikte oplevervoorwaarden. Geen discussie bij de eindoplevering.",
     },
     {
@@ -103,98 +103,99 @@ export default function KrimpenAanDenIJsselPage() {
       description:
         "Moet het snel? In Krimpen aan den IJssel kunnen we vaak binnen 24-48 uur starten met de ontruiming van uw woning.",
     },
-  ]
+  ];
 
   // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://www.budgetontruiming.nl/krimpen-aan-den-ijssel/#service",
-    "name": "Woningontruiming Krimpen aan den IJssel",
-    "provider": {
+    name: "Woningontruiming Krimpen aan den IJssel",
+    provider: {
       "@type": "MovingCompany",
-      "name": "Budget Ontruiming",
-      "url": "https://www.budgetontruiming.nl/",
-      "telephone": "+31629759181"
+      name: "Budget Ontruiming",
+      url: "https://www.budgetontruiming.nl/",
+      telephone: "+31629759181",
     },
-    "areaServed": [
+    areaServed: [
       {
         "@type": "City",
-        "name": "Krimpen aan den IJssel",
-        "sameAs": "https://www.wikidata.org/wiki/Q935500"
+        name: "Krimpen aan den IJssel",
+        sameAs: "https://www.wikidata.org/wiki/Q935500",
       },
       {
         "@type": "City",
-        "name": "Lekkerkerk",
-        "sameAs": "https://www.wikidata.org/wiki/Q1816568"
-      }
+        name: "Lekkerkerk",
+        sameAs: "https://www.wikidata.org/wiki/Q1816568",
+      },
     ],
-    "description": "Professionele woningontruiming in Krimpen aan den IJssel en Lekkerkerk. Specialist in bezemschoon opleveren en ontruiming bij overlijden aan de rivier de Lek.",
-    "knowsAbout": [
+    description:
+      "Professionele woningontruiming in Krimpen aan den IJssel en Lekkerkerk. Specialist in bezemschoon opleveren en ontruiming bij overlijden aan de rivier de Lek.",
+    knowsAbout: [
       "Woningontruiming Krimpen Centrum",
       "Ontruiming Lekkerkerk",
       "Bedrijfsontruiming Stormpolder",
-      "Huurwoning opleveren Krimpen aan den IJssel"
-    ]
-  }
+      "Huurwoning opleveren Krimpen aan den IJssel",
+    ],
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+        text: faq.answer,
+      },
+    })),
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Budget Ontruiming Krimpen aan den IJssel",
-    "telephone": "+31629759181",
-    "priceRange": "€",
-    "address": {
+    name: "Budget Ontruiming Krimpen aan den IJssel",
+    telephone: "+31629759181",
+    priceRange: "€",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Krimpen aan den IJssel",
-      "addressRegion": "Zuid-Holland",
-      "postalCode": "2920-2925",
-      "addressCountry": "NL"
+      addressLocality: "Krimpen aan den IJssel",
+      addressRegion: "Zuid-Holland",
+      postalCode: "2920-2925",
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 51.9167,
-      "longitude": 4.6000
-    }
-  }
+      latitude: 51.9167,
+      longitude: 4.6,
+    },
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://budgetontruiming.nl"
+        position: 1,
+        name: "Home",
+        item: "https://budgetontruiming.nl",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Rijnmond",
-        "item": "https://budgetontruiming.nl/regio/rijnmond"
+        position: 2,
+        name: "Rijnmond",
+        item: "https://budgetontruiming.nl/regio/rijnmond",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Krimpen aan den IJssel",
-        "item": "https://budgetontruiming.nl/woningontruiming-krimpen-aan-den-ijssel"
-      }
-    ]
-  }
+        position: 3,
+        name: "Krimpen aan den IJssel",
+        item: "https://budgetontruiming.nl/woningontruiming-krimpen-aan-den-ijssel",
+      },
+    ],
+  };
 
   return (
     <>
@@ -209,7 +210,9 @@ export default function KrimpenAanDenIJsselPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -218,12 +221,14 @@ export default function KrimpenAanDenIJsselPage() {
 
       <TopBanner />
       <Header />
-      <Breadcrumb items={[
-        { label: "Home", href: "/" },
-        { label: "Rijnmond", href: "/regio/rijnmond" },
-        { label: "Krimpen aan den IJssel" }
-      ]} />
-      
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Rijnmond", href: "/regio/rijnmond" },
+          { label: "Krimpen aan den IJssel" },
+        ]}
+      />
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -240,7 +245,8 @@ export default function KrimpenAanDenIJsselPage() {
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
-                  Woningontruiming Krimpen aan den IJssel, met laagste prijs garantie.
+                  Woningontruiming Krimpen aan den IJssel, met laagste prijs
+                  garantie.
                 </h1>
 
                 <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
@@ -248,7 +254,9 @@ export default function KrimpenAanDenIJsselPage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Woningontruiming aan de rivier: Krimpen centrum en Lekkerkerk. Snel bereikbaar vanuit Rotterdam met persoonlijke service en de laagste prijs garantie.
+                  Woningontruiming aan de rivier: Krimpen centrum en Lekkerkerk.
+                  Snel bereikbaar vanuit Rotterdam met persoonlijke service en
+                  de laagste prijs garantie.
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -282,7 +290,7 @@ export default function KrimpenAanDenIJsselPage() {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
@@ -292,8 +300,9 @@ export default function KrimpenAanDenIJsselPage() {
                   Prijs berekenen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
-                  Goedkoper gevonden? Wij betalen het verschil.
+                  Ons slimme AI formulier berekent direct jouw prijs. Een
+                  woningbezoek is niet nodig. Goedkoper gevonden? Wij betalen
+                  het verschil.
                 </p>
               </div>
 
@@ -305,8 +314,9 @@ export default function KrimpenAanDenIJsselPage() {
                   Datum kiezen
                 </h3>
                 <p className="text-muted-foreground">
-                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
-                  beschikbaar, bij spoed binnen 24 uur.
+                  Kies de datum wanneer jij de woning ontruimd wil hebben.
+                  Meestal binnen 1-3 werkdagen beschikbaar, bij spoed binnen 24
+                  uur.
                 </p>
               </div>
 
@@ -318,8 +328,8 @@ export default function KrimpenAanDenIJsselPage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig
+                  uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
@@ -329,19 +339,30 @@ export default function KrimpenAanDenIJsselPage() {
         {/* SEO Content - Direct in page */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="krimpen-info" className="text-3xl font-bold text-foreground mb-6">
+            <h2
+              id="krimpen-info"
+              className="text-3xl font-bold text-foreground mb-6">
               Woningontruiming in Krimpen aan den IJssel
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Krimpen aan den IJssel ligt aan de rivier de Lek en kent diverse wijken. Van het centrum tot Stormpolder, en ook in Lekkerkerk – wij bieden professionele woningontruiming en bedrijfsontruiming tegen de laagste prijs, gegarandeerd.
+              Krimpen aan den IJssel ligt aan de rivier de Lek en kent diverse
+              wijken. Van het centrum tot Stormpolder, en ook in Lekkerkerk –
+              wij bieden professionele woningontruiming en bedrijfsontruiming
+              tegen de laagste prijs, gegarandeerd.
             </p>
 
             {/* Wijken */}
-            <div id="krimpen-lekkerkerk-wijken" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in Krimpen aan den IJssel en Lekkerkerk:</h3>
+            <div
+              id="krimpen-lekkerkerk-wijken"
+              className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">
+                Actief in Krimpen aan den IJssel en Lekkerkerk:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-foreground">
                     <span className="text-primary">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
@@ -379,11 +400,16 @@ export default function KrimpenAanDenIJsselPage() {
                 {situaties.map((situatie, index) => (
                   <div
                     key={index}
-                    id={index === 0 ? "bedrijfsontruiming-stormpolder" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                    id={
+                      index === 0 ? "bedrijfsontruiming-stormpolder" : undefined
+                    }
+                    className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">
+                      {situatie.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {situatie.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -396,7 +422,8 @@ export default function KrimpenAanDenIJsselPage() {
               Onze Diensten in Krimpen aan den IJssel
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit
+              één hand.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -404,7 +431,9 @@ export default function KrimpenAanDenIJsselPage() {
                   Volledige Woningontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen, appartementen en
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens
+                  gemeentelijke richtlijnen.
                 </p>
               </div>
 
@@ -413,7 +442,10 @@ export default function KrimpenAanDenIJsselPage() {
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties. Perfect voor huurwoningen.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en
+                  woningcorporaties. Perfect voor huurwoningen. Wij hebben ruime
+                  ervaring met de opleverprotocollen van QuaWonen, zodat u zeker
+                  weet dat de eindinspectie vlekkeloos verloopt.
                 </p>
               </div>
 
@@ -422,7 +454,8 @@ export default function KrimpenAanDenIJsselPage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                  Met respect en zorg helpen bij het ontruimen na overlijden.
+                  Discreet en zorgvuldig.
                 </p>
               </div>
 
@@ -431,7 +464,8 @@ export default function KrimpenAanDenIJsselPage() {
                   Spoedontruiming 24 uur
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
+                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden
+                  beschikbaar voor spoedgevallen.
                 </p>
               </div>
 
@@ -440,7 +474,9 @@ export default function KrimpenAanDenIJsselPage() {
                   Bedrijfsontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ook bedrijfsruimtes en kantoren in Krimpen aan den IJssel en Lekkerkerk ontruimen we professioneel. Van inventaris tot inrichting, wij regelen het.
+                  Ook bedrijfsruimtes en kantoren in Krimpen aan den IJssel en
+                  Lekkerkerk ontruimen we professioneel. Van inventaris tot
+                  inrichting, wij regelen het.
                 </p>
               </div>
 
@@ -449,7 +485,8 @@ export default function KrimpenAanDenIJsselPage() {
                   Extra Diensten
                 </h3>
                 <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
+                  schilderwerk en inpakservice.
                 </p>
               </div>
             </div>
@@ -468,7 +505,8 @@ export default function KrimpenAanDenIJsselPage() {
                     Laagste Prijs Garantie
                   </h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij
+                    gaan eronder. Geen verborgen kosten.
                   </p>
                 </div>
               </div>
@@ -480,7 +518,8 @@ export default function KrimpenAanDenIJsselPage() {
                     Snel & Flexibel
                   </h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur.
+                    Ook avond- en weekendwerk mogelijk.
                   </p>
                 </div>
               </div>
@@ -492,7 +531,8 @@ export default function KrimpenAanDenIJsselPage() {
                     Milieuvriendelijk
                   </h3>
                   <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar
+                    kringloop. WEEE-richtlijnen voor elektronica.
                   </p>
                 </div>
               </div>
@@ -504,7 +544,8 @@ export default function KrimpenAanDenIJsselPage() {
                     All-in Ontzorging
                   </h3>
                   <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van verhuurders en woningcorporaties.
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen
+                    alle eisen van verhuurders en woningcorporaties.
                   </p>
                 </div>
               </div>
@@ -516,21 +557,21 @@ export default function KrimpenAanDenIJsselPage() {
         <section id="krimpen-faq" className="bg-muted/50 py-12 lg:py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              Veelgestelde vragen over woningontruiming in Krimpen aan den IJssel
+              Veelgestelde vragen over woningontruiming in Krimpen aan den
+              IJssel
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Krimpen
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming
+              in Krimpen
             </p>
-            
+
             <div className="max-w-3xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-card border rounded-lg p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -538,10 +579,13 @@ export default function KrimpenAanDenIJsselPage() {
         </section>
 
         {/* GemeenteMap */}
-        <GemeenteMap gemeenteNaam="Krimpen aan den IJssel" postcodes="2920-2925" />
+        <GemeenteMap
+          gemeenteNaam="Krimpen aan den IJssel"
+          postcodes="2920-2925"
+        />
 
         <Footer />
       </main>
     </>
-  )
+  );
 }

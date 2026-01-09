@@ -1,15 +1,16 @@
-import type { Metadata } from "next"
-import { TopBanner } from "@/components/top-banner"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { GemeenteMap } from "@/components/gemeente-map"
-import { AIQuoteForm } from "@/components/ai-quote-form"
-import { Breadcrumb } from "@/components/breadcrumb"
+import type { Metadata } from "next";
+import { TopBanner } from "@/components/top-banner";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { GemeenteMap } from "@/components/gemeente-map";
+import { AIQuoteForm } from "@/components/ai-quote-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Leidschendam-Voorburg | Laagste Prijs Garantie | Budgetontruiming.nl",
+  title:
+    "Woningontruiming Leidschendam-Voorburg | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Professionele woningontruiming in Leidschendam, Voorburg en Stompwijk. Specialist in bezemschone oplevering (incl. gaten dichten). Laagste prijs garantie en binnen 24u beschikbaar.",
+    "Woningontruiming Leidschendam-Voorburg? Wij duiken onder elke offerte! Snel en bezemschoon. Bereken direct uw prijs.",
   keywords:
     "woningontruiming leidschendam-voorburg, ontruiming leidschendam, ontruiming voorburg, ontruiming stompwijk, ontruiming het centrum leidschendam, ontruiming korte akkeren, ontruiming hofwijk, bezemschoon leidschendam-voorburg 2260-2275, spoedontruiming leidschendam-voorburg, ontruiming na overlijden leidschendam-voorburg",
   openGraph: {
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
       "Ontruiming Leidschendam-Voorburg: Centrum, Stompwijk + 4 kernen.",
   },
   alternates: {
-    canonical: "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
+    canonical:
+      "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
   },
   robots: {
     index: true,
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-}
+};
 
 export default function LeidschendamVoorburgPage() {
   // FAQs
@@ -65,7 +67,7 @@ export default function LeidschendamVoorburgPage() {
       answer:
         "Ja, wij zorgen dat uw huurwoning voldoet aan alle oplevervoorwaarden: volledig leeg, zonder pluggen en spijkergaten, schoon en gereed voor de nieuwe bewoner.",
     },
-  ]
+  ];
 
   // Wijken
   const wijken = [
@@ -75,7 +77,7 @@ export default function LeidschendamVoorburgPage() {
     "Het Centrum",
     "De Korte Akkeren",
     "Hofwijk",
-  ]
+  ];
 
   // Waarom kiezen
   const waaromKiezen = [
@@ -84,7 +86,7 @@ export default function LeidschendamVoorburgPage() {
     "Snel beschikbaar, ook voor spoedklussen",
     "Laagste prijs garantie",
     "Bezemschoon oplevering volgens verhuurderseisen",
-  ]
+  ];
 
   // Situaties
   const situaties = [
@@ -108,91 +110,92 @@ export default function LeidschendamVoorburgPage() {
       description:
         "Van grote meubels tot kleine spullen op zolder – wij halen alles weg en zorgen voor milieuvriendelijke verwerking of donatie aan goede doelen.",
     },
-  ]
+  ];
 
   // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://www.budgetontruiming.nl/leidschendam-voorburg/#service",
-    "name": "Woningontruiming Leidschendam-Voorburg",
-    "provider": {
+    name: "Woningontruiming Leidschendam-Voorburg",
+    provider: {
       "@type": "MovingCompany",
-      "name": "Budget Ontruiming",
-      "url": "https://www.budgetontruiming.nl/",
-      "telephone": "+31629759181"
+      name: "Budget Ontruiming",
+      url: "https://www.budgetontruiming.nl/",
+      telephone: "+31629759181",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "AdministrativeArea",
-      "name": "Leidschendam-Voorburg",
-      "sameAs": "https://www.wikidata.org/wiki/Q651163"
+      name: "Leidschendam-Voorburg",
+      sameAs: "https://www.wikidata.org/wiki/Q651163",
     },
-    "description": "Professionele woningontruiming in Leidschendam-Voorburg. Expertise in bezemschoon opleveren conform verhuurderseisen, inclusief Stompwijk en de Korte Akkeren. Laagste prijs garantie.",
-    "knowsAbout": [
+    description:
+      "Professionele woningontruiming in Leidschendam-Voorburg. Expertise in bezemschoon opleveren conform verhuurderseisen, inclusief Stompwijk en de Korte Akkeren. Laagste prijs garantie.",
+    knowsAbout: [
       "Seniorenverhuizing Leidschendam-Voorburg",
       "Huurwoning opleveren zonder pluggen en spijkergaten",
       "Woningontruiming Stompwijk",
-      "Complete inboedelontruiming Voorburg"
-    ]
-  }
+      "Complete inboedelontruiming Voorburg",
+    ],
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+        text: faq.answer,
+      },
+    })),
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Budget Ontruiming Leidschendam-Voorburg",
-    "telephone": "+31629759181",
-    "priceRange": "€",
-    "address": {
+    name: "Budget Ontruiming Leidschendam-Voorburg",
+    telephone: "+31629759181",
+    priceRange: "€",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Leidschendam-Voorburg",
-      "addressRegion": "Zuid-Holland",
-      "postalCode": "2260-2275",
-      "addressCountry": "NL"
+      addressLocality: "Leidschendam-Voorburg",
+      addressRegion: "Zuid-Holland",
+      postalCode: "2260-2275",
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 52.0833,
-      "longitude": 4.3667
-    }
-  }
+      latitude: 52.0833,
+      longitude: 4.3667,
+    },
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://budgetontruiming.nl"
+        position: 1,
+        name: "Home",
+        item: "https://budgetontruiming.nl",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Haaglanden",
-        "item": "https://budgetontruiming.nl/regio/haaglanden"
+        position: 2,
+        name: "Haaglanden",
+        item: "https://budgetontruiming.nl/regio/haaglanden",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Leidschendam-Voorburg",
-        "item": "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg"
-      }
-    ]
-  }
+        position: 3,
+        name: "Leidschendam-Voorburg",
+        item: "https://budgetontruiming.nl/woningontruiming-leidschendam-voorburg",
+      },
+    ],
+  };
 
   return (
     <>
@@ -207,7 +210,9 @@ export default function LeidschendamVoorburgPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -216,12 +221,14 @@ export default function LeidschendamVoorburgPage() {
 
       <TopBanner />
       <Header />
-      <Breadcrumb items={[
-        { label: "Home", href: "/" },
-        { label: "Haaglanden", href: "/regio/haaglanden" },
-        { label: "Leidschendam-Voorburg" }
-      ]} />
-      
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Haaglanden", href: "/regio/haaglanden" },
+          { label: "Leidschendam-Voorburg" },
+        ]}
+      />
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -238,7 +245,8 @@ export default function LeidschendamVoorburgPage() {
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-3 lg:mb-6 leading-tight text-balance">
-                  Woningontruiming Leidschendam-Voorburg, met laagste prijs garantie.
+                  Woningontruiming Leidschendam-Voorburg, met laagste prijs
+                  garantie.
                 </h1>
 
                 <p className="text-base sm:hidden text-white mb-4 leading-relaxed">
@@ -246,7 +254,9 @@ export default function LeidschendamVoorburgPage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Professionele woningontruiming in Leidschendam-Voorburg tegen de laagste prijs. Vindt u het elders goedkoper? Wij duiken onder die prijs!
+                  Professionele woningontruiming in Leidschendam-Voorburg tegen
+                  de laagste prijs. Vindt u het elders goedkoper? Wij duiken
+                  onder die prijs!
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -280,7 +290,7 @@ export default function LeidschendamVoorburgPage() {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
@@ -290,8 +300,9 @@ export default function LeidschendamVoorburgPage() {
                   Prijs berekenen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
-                  Goedkoper gevonden? Wij betalen het verschil.
+                  Ons slimme AI formulier berekent direct jouw prijs. Een
+                  woningbezoek is niet nodig. Goedkoper gevonden? Wij betalen
+                  het verschil.
                 </p>
               </div>
 
@@ -303,8 +314,9 @@ export default function LeidschendamVoorburgPage() {
                   Datum kiezen
                 </h3>
                 <p className="text-muted-foreground">
-                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
-                  beschikbaar, bij spoed binnen 24 uur.
+                  Kies de datum wanneer jij de woning ontruimd wil hebben.
+                  Meestal binnen 1-3 werkdagen beschikbaar, bij spoed binnen 24
+                  uur.
                 </p>
               </div>
 
@@ -316,8 +328,8 @@ export default function LeidschendamVoorburgPage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig
+                  uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
@@ -327,19 +339,31 @@ export default function LeidschendamVoorburgPage() {
         {/* SEO Content - Direct in page */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="leidschendam-voorburg-info" className="text-3xl font-bold text-foreground mb-6">
+            <h2
+              id="leidschendam-voorburg-info"
+              className="text-3xl font-bold text-foreground mb-6">
               Woningontruiming in Leidschendam-Voorburg
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              In Leidschendam-Voorburg combineren we snelheid met zorgvuldigheid. Of u nu een appartement in het centrum, een rijtjeshuis in de Korte Akkeren of een villa in Voorburg heeft – wij ontruimen professioneel en tegen de scherpste prijs dankzij onze laagste prijs garantie.
+              In Leidschendam-Voorburg combineren we snelheid met
+              zorgvuldigheid. Of u nu een appartement in het centrum, een
+              rijtjeshuis in de Korte Akkeren of een villa in Voorburg heeft –
+              wij ontruimen professioneel en tegen de scherpste prijs dankzij
+              onze laagste prijs garantie.
             </p>
 
             {/* Wijken */}
-            <div id="wijken-leidschendam-voorburg" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle kernen van Leidschendam-Voorburg:</h3>
+            <div
+              id="wijken-leidschendam-voorburg"
+              className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">
+                Actief in alle kernen van Leidschendam-Voorburg:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-foreground">
                     <span className="text-primary">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
@@ -378,10 +402,13 @@ export default function LeidschendamVoorburgPage() {
                   <div
                     key={index}
                     id={index === 1 ? "oplever-specialist" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                    className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">
+                      {situatie.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {situatie.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -394,7 +421,8 @@ export default function LeidschendamVoorburgPage() {
               Onze Diensten in Leidschendam-Voorburg
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit
+              één hand.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -402,7 +430,9 @@ export default function LeidschendamVoorburgPage() {
                   Volledige Woningontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen, appartementen en
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens
+                  gemeentelijke richtlijnen.
                 </p>
               </div>
 
@@ -411,7 +441,11 @@ export default function LeidschendamVoorburgPage() {
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders. Zonder pluggen en spijkergaten, volledig leeg en schoon.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders.
+                  Zonder pluggen en spijkergaten, volledig leeg en schoon. Wij
+                  kennen de oplevereisen van corporaties zoals Vidomes en
+                  Wooninvest door en door. Wij zorgen dat de voor- en
+                  eindinspectie zonder opmerkingen verloopt
                 </p>
               </div>
 
@@ -420,7 +454,8 @@ export default function LeidschendamVoorburgPage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                  Met respect en zorg helpen bij het ontruimen na overlijden.
+                  Discreet en zorgvuldig.
                 </p>
               </div>
 
@@ -429,7 +464,8 @@ export default function LeidschendamVoorburgPage() {
                   Spoedontruiming 24 uur
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
+                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden
+                  beschikbaar voor spoedgevallen.
                 </p>
               </div>
 
@@ -438,7 +474,9 @@ export default function LeidschendamVoorburgPage() {
                   Seniorenverhuizing
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij verhuizing naar een verzorgingstehuis of kleinere woning begeleiden wij het hele proces en ontruimen we de oude woning compleet.
+                  Bij verhuizing naar een verzorgingstehuis of kleinere woning
+                  begeleiden wij het hele proces en ontruimen we de oude woning
+                  compleet.
                 </p>
               </div>
 
@@ -447,7 +485,8 @@ export default function LeidschendamVoorburgPage() {
                   Extra Diensten
                 </h3>
                 <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
+                  schilderwerk en inpakservice.
                 </p>
               </div>
             </div>
@@ -466,7 +505,8 @@ export default function LeidschendamVoorburgPage() {
                     Laagste Prijs Garantie
                   </h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij
+                    gaan eronder. Geen verborgen kosten.
                   </p>
                 </div>
               </div>
@@ -478,7 +518,8 @@ export default function LeidschendamVoorburgPage() {
                     Snel & Flexibel
                   </h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur.
+                    Ook avond- en weekendwerk mogelijk.
                   </p>
                 </div>
               </div>
@@ -490,7 +531,8 @@ export default function LeidschendamVoorburgPage() {
                     Milieuvriendelijk
                   </h3>
                   <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar
+                    kringloop. WEEE-richtlijnen voor elektronica.
                   </p>
                 </div>
               </div>
@@ -502,7 +544,8 @@ export default function LeidschendamVoorburgPage() {
                     All-in Ontzorging
                   </h3>
                   <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van verhuurders en woningcorporaties.
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen
+                    alle eisen van verhuurders en woningcorporaties.
                   </p>
                 </div>
               </div>
@@ -517,18 +560,17 @@ export default function LeidschendamVoorburgPage() {
               Veelgestelde vragen over woningontruiming in Leidschendam-Voorburg
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Leidschendam-Voorburg
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming
+              in Leidschendam-Voorburg
             </p>
-            
+
             <div className="max-w-3xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-card border rounded-lg p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -536,10 +578,13 @@ export default function LeidschendamVoorburgPage() {
         </section>
 
         {/* GemeenteMap */}
-        <GemeenteMap gemeenteNaam="Leidschendam-Voorburg" postcodes="2260-2275" />
+        <GemeenteMap
+          gemeenteNaam="Leidschendam-Voorburg"
+          postcodes="2260-2275"
+        />
 
         <Footer />
       </main>
     </>
-  )
+  );
 }

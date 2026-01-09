@@ -1,15 +1,16 @@
-import type { Metadata } from "next"
-import { TopBanner } from "@/components/top-banner"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { GemeenteMap } from "@/components/gemeente-map"
-import { AIQuoteForm } from "@/components/ai-quote-form"
-import { Breadcrumb } from "@/components/breadcrumb"
+import type { Metadata } from "next";
+import { TopBanner } from "@/components/top-banner";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { GemeenteMap } from "@/components/gemeente-map";
+import { AIQuoteForm } from "@/components/ai-quote-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Voorne aan Zee | Brielle & Hellevoetsluis | Laagste Prijs",
+  title:
+    "Woningontruiming Voorne aan Zee | Brielle & Hellevoetsluis | Laagste Prijs",
   description:
-    "Woningontruiming in heel Voorne aan Zee (Brielle, Hellevoetsluis, Rockanje). Specialist in vakantiewoningen en permanente bewoning. Laagste prijs garantie.",
+    "Woningontruiming Voorne aan Zee? Wij duiken onder elke offerte! Snel & bezemschoon opgeleverd. Bereken uw prijs.",
   keywords:
     "woningontruiming voorne aan zee, ontruiming rockanje, vakantiehuis ontruimen rockanje, huis ontruimen voorne aan zee, bezemschoon opleveren rockanje, strandhuisje ontruimen, kustgebied ontruiming",
   openGraph: {
@@ -23,7 +24,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Woningontruiming Voorne aan Zee - Laagste Prijs Garantie",
-    description: "Professionele woningontruiming in Voorne aan Zee. Rockanje specialist.",
+    description:
+      "Professionele woningontruiming in Voorne aan Zee. Rockanje specialist.",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl/woningontruiming-voorne-aan-zee",
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-}
+};
 
 export default function VoorneAanZeePage() {
   // FAQs
@@ -55,7 +57,8 @@ export default function VoorneAanZeePage() {
         "Absoluut. Wij hebben ruime ervaring met het ontruimen en bezemschoon opleveren van zowel vakantiehuizen als permanente woningen in de kustkernen van Voorne aan Zee.",
     },
     {
-      question: "Hoe snel kunnen jullie een woning in Voorne aan Zee ontruimen?",
+      question:
+        "Hoe snel kunnen jullie een woning in Voorne aan Zee ontruimen?",
       answer:
         "Meestal kunnen we binnen 1-3 werkdagen starten. Bij spoedgevallen in Voorne aan Zee kunnen we vaak binnen 24 uur beginnen.",
     },
@@ -64,7 +67,7 @@ export default function VoorneAanZeePage() {
       answer:
         "Vindt u het elders op Voorne-Putten goedkoper? Wij duiken onder die prijs! Zo bent u altijd verzekerd van de voordeligste ontruiming.",
     },
-  ]
+  ];
 
   // Wijken
   const wijken = [
@@ -75,7 +78,7 @@ export default function VoorneAanZeePage() {
     "Oostvoorne",
     "Vierpolders",
     "Zwartewaal",
-  ]
+  ];
 
   // Waarom kiezen
   const waaromKiezen = [
@@ -84,7 +87,7 @@ export default function VoorneAanZeePage() {
     "Bezemschone oplevering conform de eisen van lokale woningcorporaties en parkbeheerders",
     "Laagste prijs garantie: Wij duiken onder elke offerte op Voorne-Putten",
     "Lokale kennis van alle kernen en snelle service",
-  ]
+  ];
 
   // Situaties
   const situaties = [
@@ -108,91 +111,92 @@ export default function VoorneAanZeePage() {
       description:
         "Moet het snel? In Voorne aan Zee kunnen we vaak binnen 24-48 uur starten met de ontruiming van uw woning of vakantiehuis.",
     },
-  ]
+  ];
 
   // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://www.budgetontruiming.nl/voorne-aan-zee/#service",
-    "name": "Woningontruiming Voorne aan Zee",
-    "provider": {
+    name: "Woningontruiming Voorne aan Zee",
+    provider: {
       "@type": "MovingCompany",
-      "name": "Budget Ontruiming",
-      "url": "https://www.budgetontruiming.nl/",
-      "telephone": "+31629759181"
+      name: "Budget Ontruiming",
+      url: "https://www.budgetontruiming.nl/",
+      telephone: "+31629759181",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "AdministrativeArea",
-      "name": "Voorne aan Zee",
-      "sameAs": "https://www.wikidata.org/wiki/Q111537237"
+      name: "Voorne aan Zee",
+      sameAs: "https://www.wikidata.org/wiki/Q111537237",
     },
-    "description": "Professionele woningontruiming in Voorne aan Zee. Expertise in vakantiewoningen in Rockanje en Oostvoorne, en ontruimingen in Brielle en Hellevoetsluis. Laagste prijs garantie.",
-    "knowsAbout": [
+    description:
+      "Professionele woningontruiming in Voorne aan Zee. Expertise in vakantiewoningen in Rockanje en Oostvoorne, en ontruimingen in Brielle en Hellevoetsluis. Laagste prijs garantie.",
+    knowsAbout: [
       "Woningontruiming Brielle en Hellevoetsluis",
       "Vakantiehuis ontruimen Rockanje",
       "Ontruiming Oostvoorne en Zwartewaal",
-      "Bezemschoon opleveren Voorne aan Zee"
-    ]
-  }
+      "Bezemschoon opleveren Voorne aan Zee",
+    ],
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+        text: faq.answer,
+      },
+    })),
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Budget Ontruiming Voorne aan Zee",
-    "telephone": "+31629759181",
-    "priceRange": "€",
-    "address": {
+    name: "Budget Ontruiming Voorne aan Zee",
+    telephone: "+31629759181",
+    priceRange: "€",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Voorne aan Zee",
-      "addressRegion": "Zuid-Holland",
-      "postalCode": "3230-3249",
-      "addressCountry": "NL"
+      addressLocality: "Voorne aan Zee",
+      addressRegion: "Zuid-Holland",
+      postalCode: "3230-3249",
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 51.9000,
-      "longitude": 4.1667
-    }
-  }
+      latitude: 51.9,
+      longitude: 4.1667,
+    },
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://budgetontruiming.nl"
+        position: 1,
+        name: "Home",
+        item: "https://budgetontruiming.nl",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Rijnmond",
-        "item": "https://budgetontruiming.nl/regio/rijnmond"
+        position: 2,
+        name: "Rijnmond",
+        item: "https://budgetontruiming.nl/regio/rijnmond",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Voorne aan Zee",
-        "item": "https://budgetontruiming.nl/woningontruiming-voorne-aan-zee"
-      }
-    ]
-  }
+        position: 3,
+        name: "Voorne aan Zee",
+        item: "https://budgetontruiming.nl/woningontruiming-voorne-aan-zee",
+      },
+    ],
+  };
 
   return (
     <>
@@ -207,7 +211,9 @@ export default function VoorneAanZeePage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -216,12 +222,14 @@ export default function VoorneAanZeePage() {
 
       <TopBanner />
       <Header />
-      <Breadcrumb items={[
-        { label: "Home", href: "/" },
-        { label: "Rijnmond", href: "/regio/rijnmond" },
-        { label: "Voorne aan Zee" }
-      ]} />
-      
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Rijnmond", href: "/regio/rijnmond" },
+          { label: "Voorne aan Zee" },
+        ]}
+      />
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -246,7 +254,9 @@ export default function VoorneAanZeePage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Kustspecialist voor woningontruiming in Voorne aan Zee en Rockanje. Van vakantiehuizen tot permanente bewoning – professioneel en betaalbaar.
+                  Kustspecialist voor woningontruiming in Voorne aan Zee en
+                  Rockanje. Van vakantiehuizen tot permanente bewoning –
+                  professioneel en betaalbaar.
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -280,7 +290,7 @@ export default function VoorneAanZeePage() {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
@@ -290,8 +300,9 @@ export default function VoorneAanZeePage() {
                   Prijs berekenen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
-                  Goedkoper gevonden? Wij betalen het verschil.
+                  Ons slimme AI formulier berekent direct jouw prijs. Een
+                  woningbezoek is niet nodig. Goedkoper gevonden? Wij betalen
+                  het verschil.
                 </p>
               </div>
 
@@ -303,8 +314,9 @@ export default function VoorneAanZeePage() {
                   Datum kiezen
                 </h3>
                 <p className="text-muted-foreground">
-                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
-                  beschikbaar, bij spoed binnen 24 uur.
+                  Kies de datum wanneer jij de woning ontruimd wil hebben.
+                  Meestal binnen 1-3 werkdagen beschikbaar, bij spoed binnen 24
+                  uur.
                 </p>
               </div>
 
@@ -316,8 +328,8 @@ export default function VoorneAanZeePage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig
+                  uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
@@ -327,19 +339,28 @@ export default function VoorneAanZeePage() {
         {/* SEO Content - Direct in page */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="voorne-aan-zee-info" className="text-3xl font-bold text-foreground mb-6">
+            <h2
+              id="voorne-aan-zee-info"
+              className="text-3xl font-bold text-foreground mb-6">
               Woningontruiming in Voorne aan Zee
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Voorne aan Zee is een kustgemeente met historische steden en kustdorpen. Van vakantiewoningen in Rockanje tot permanente woningen in Brielle en Hellevoetsluis – wij bieden professionele woningontruiming tegen de laagste prijs, gegarandeerd.
+              Voorne aan Zee is een kustgemeente met historische steden en
+              kustdorpen. Van vakantiewoningen in Rockanje tot permanente
+              woningen in Brielle en Hellevoetsluis – wij bieden professionele
+              woningontruiming tegen de laagste prijs, gegarandeerd.
             </p>
 
             {/* Wijken */}
             <div id="voorne-kernen" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle kernen van Voorne aan Zee:</h3>
+              <h3 className="font-bold text-xl text-foreground mb-4">
+                Actief in alle kernen van Voorne aan Zee:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-foreground">
                     <span className="text-primary">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
@@ -378,10 +399,13 @@ export default function VoorneAanZeePage() {
                   <div
                     key={index}
                     id={index === 0 ? "kustspecialist-ontruiming" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                    className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">
+                      {situatie.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {situatie.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -394,7 +418,8 @@ export default function VoorneAanZeePage() {
               Onze Diensten in Voorne aan Zee
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit
+              één hand.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -402,7 +427,9 @@ export default function VoorneAanZeePage() {
                   Volledige Woningontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen, appartementen en
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens
+                  gemeentelijke richtlijnen.
                 </p>
               </div>
 
@@ -411,7 +438,8 @@ export default function VoorneAanZeePage() {
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties. Perfect voor huurwoningen.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en
+                  woningcorporaties. Perfect voor huurwoningen.
                 </p>
               </div>
 
@@ -420,7 +448,8 @@ export default function VoorneAanZeePage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                  Met respect en zorg helpen bij het ontruimen na overlijden.
+                  Discreet en zorgvuldig.
                 </p>
               </div>
 
@@ -429,7 +458,8 @@ export default function VoorneAanZeePage() {
                   Spoedontruiming 24 uur
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
+                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden
+                  beschikbaar voor spoedgevallen.
                 </p>
               </div>
 
@@ -438,7 +468,9 @@ export default function VoorneAanZeePage() {
                   Vakantiewoningen
                 </h3>
                 <p className="text-muted-foreground">
-                  Specialisatie in het ontruimen van vakantiehuizen op recreatieparken in Rockanje en Oostvoorne. Bezemschoon opleveren volgens parkreglementen.
+                  Specialisatie in het ontruimen van vakantiehuizen op
+                  recreatieparken in Rockanje en Oostvoorne. Bezemschoon
+                  opleveren volgens parkreglementen.
                 </p>
               </div>
 
@@ -447,7 +479,8 @@ export default function VoorneAanZeePage() {
                   Extra Diensten
                 </h3>
                 <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
+                  schilderwerk en inpakservice.
                 </p>
               </div>
             </div>
@@ -466,7 +499,8 @@ export default function VoorneAanZeePage() {
                     Laagste Prijs Garantie
                   </h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij
+                    gaan eronder. Geen verborgen kosten.
                   </p>
                 </div>
               </div>
@@ -478,7 +512,8 @@ export default function VoorneAanZeePage() {
                     Snel & Flexibel
                   </h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur.
+                    Ook avond- en weekendwerk mogelijk.
                   </p>
                 </div>
               </div>
@@ -490,7 +525,8 @@ export default function VoorneAanZeePage() {
                     Milieuvriendelijk
                   </h3>
                   <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar
+                    kringloop. WEEE-richtlijnen voor elektronica.
                   </p>
                 </div>
               </div>
@@ -502,7 +538,8 @@ export default function VoorneAanZeePage() {
                     All-in Ontzorging
                   </h3>
                   <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van verhuurders en woningcorporaties.
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen
+                    alle eisen van verhuurders en woningcorporaties.
                   </p>
                 </div>
               </div>
@@ -517,18 +554,17 @@ export default function VoorneAanZeePage() {
               Veelgestelde vragen over woningontruiming in Voorne aan Zee
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Voorne aan Zee
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming
+              in Voorne aan Zee
             </p>
-            
+
             <div className="max-w-3xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-card border rounded-lg p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -541,5 +577,5 @@ export default function VoorneAanZeePage() {
         <Footer />
       </main>
     </>
-  )
+  );
 }

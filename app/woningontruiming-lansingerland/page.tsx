@@ -1,20 +1,21 @@
-import type { Metadata } from "next"
-import { TopBanner } from "@/components/top-banner"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { GemeenteMap } from "@/components/gemeente-map"
-import { AIQuoteForm } from "@/components/ai-quote-form"
-import { Breadcrumb } from "@/components/breadcrumb"
+import type { Metadata } from "next";
+import { TopBanner } from "@/components/top-banner";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { GemeenteMap } from "@/components/gemeente-map";
+import { AIQuoteForm } from "@/components/ai-quote-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Woningontruiming Lansingerland | Berkel, Bleiswijk & Bergschenhoek",
   description:
-    "Woningontruiming in heel Lansingerland (Berkel en Rodenrijs, Bleiswijk, Bergschenhoek). Specialist in bezemschone oplevering & bedrijfsontruiming. Laagste prijs garantie.",
+    "Woningontruiming Lansingerland? Wij duiken onder elke offerte! Snel en vakkundig bezemschoon. Bereken direct uw prijs.",
   keywords:
     "woningontruiming lansingerland, ontruiming lansingerland, ontruiming bergschenhoek, ontruiming berkel en rodenrijs, ontruiming bleiswijk, bezemschoon lansingerland 2650-2665, spoedontruiming lansingerland, ontruiming na overlijden lansingerland",
   openGraph: {
     title: "Ontruiming Lansingerland | Laagste Prijs",
-    description: "Ontruiming Lansingerland: Bergschenhoek, Berkel, Bleiswijk. 2650-2665. Vindt u goedkoper? Eronder!",
+    description:
+      "Ontruiming Lansingerland: Bergschenhoek, Berkel, Bleiswijk. 2650-2665. Vindt u goedkoper? Eronder!",
     url: "https://budgetontruiming.nl/woningontruiming-lansingerland",
     type: "website",
     locale: "nl_NL",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-}
+};
 
 export default function LansingerlandPage() {
   // FAQs
@@ -63,14 +64,10 @@ export default function LansingerlandPage() {
       answer:
         "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u in Lansingerland altijd verzekerd van de voordeligste prijs voor uw ontruiming.",
     },
-  ]
+  ];
 
   // Wijken
-  const wijken = [
-    "Berkel en Rodenrijs",
-    "Bleiswijk",
-    "Bergschenhoek",
-  ]
+  const wijken = ["Berkel en Rodenrijs", "Bleiswijk", "Bergschenhoek"];
 
   // Waarom kiezen
   const waaromKiezen = [
@@ -79,7 +76,7 @@ export default function LansingerlandPage() {
     "Bezemschone oplevering conform de eisen van lokale verhuurders en woningcorporaties",
     "Laagste prijs garantie: Wij duiken onder elke offerte in de regio",
     "Lokale kennis van alle kernen en snelle service",
-  ]
+  ];
 
   // Situaties
   const situaties = [
@@ -90,12 +87,12 @@ export default function LansingerlandPage() {
     },
     {
       title: "Huurwoning bezemschoon opleveren",
-  description:
+      description:
         "Voor woningcorporaties in Lansingerland leveren wij bezemschoon op volgens de strikte oplevervoorwaarden. Geen discussie bij de eindoplevering.",
     },
     {
       title: "Seniorenverhuizing",
-    description:
+      description:
         "Bij verhuizing naar een zorginstelling begeleiden wij u volledig en ontruimen we de oude woning compleet. In alle drie de kernen.",
     },
     {
@@ -103,91 +100,92 @@ export default function LansingerlandPage() {
       description:
         "Met respect en zorg helpen wij bij het ontruimen na overlijden. Wij nemen alle zorgen uit handen tijdens deze moeilijke periode.",
     },
-  ]
+  ];
 
   // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://www.budgetontruiming.nl/lansingerland/#service",
-    "name": "Woningontruiming Lansingerland",
-    "provider": {
+    name: "Woningontruiming Lansingerland",
+    provider: {
       "@type": "MovingCompany",
-      "name": "Budget Ontruiming",
-      "url": "https://www.budgetontruiming.nl/",
-      "telephone": "+31629759181"
+      name: "Budget Ontruiming",
+      url: "https://www.budgetontruiming.nl/",
+      telephone: "+31629759181",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "AdministrativeArea",
-      "name": "Lansingerland",
-      "sameAs": "https://www.wikidata.org/wiki/Q610446"
+      name: "Lansingerland",
+      sameAs: "https://www.wikidata.org/wiki/Q610446",
     },
-    "description": "Professionele woningontruiming en bedrijfsontruiming in Lansingerland. Actief in Berkel en Rodenrijs, Bleiswijk en Bergschenhoek. Laagste prijs garantie en bezemschone oplevering.",
-    "knowsAbout": [
+    description:
+      "Professionele woningontruiming en bedrijfsontruiming in Lansingerland. Actief in Berkel en Rodenrijs, Bleiswijk en Bergschenhoek. Laagste prijs garantie en bezemschone oplevering.",
+    knowsAbout: [
       "Woningontruiming Berkel en Rodenrijs",
       "Ontruiming Bleiswijk en Bergschenhoek",
       "Bedrijfsontruiming Lansingerland",
-      "Seniorenverhuizing Lansingerland"
-    ]
-  }
+      "Seniorenverhuizing Lansingerland",
+    ],
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+        text: faq.answer,
+      },
+    })),
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Budget Ontruiming Lansingerland",
-    "telephone": "+31629759181",
-    "priceRange": "€",
-    "address": {
+    name: "Budget Ontruiming Lansingerland",
+    telephone: "+31629759181",
+    priceRange: "€",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Lansingerland",
-      "addressRegion": "Zuid-Holland",
-      "postalCode": "2650-2665",
-      "addressCountry": "NL"
+      addressLocality: "Lansingerland",
+      addressRegion: "Zuid-Holland",
+      postalCode: "2650-2665",
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 52.0167,
-      "longitude": 4.5167
-    }
-  }
+      latitude: 52.0167,
+      longitude: 4.5167,
+    },
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://budgetontruiming.nl"
+        position: 1,
+        name: "Home",
+        item: "https://budgetontruiming.nl",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Rijnmond",
-        "item": "https://budgetontruiming.nl/regio/rijnmond"
+        position: 2,
+        name: "Rijnmond",
+        item: "https://budgetontruiming.nl/regio/rijnmond",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Lansingerland",
-        "item": "https://budgetontruiming.nl/woningontruiming-lansingerland"
-      }
-    ]
-  }
+        position: 3,
+        name: "Lansingerland",
+        item: "https://budgetontruiming.nl/woningontruiming-lansingerland",
+      },
+    ],
+  };
 
   return (
     <>
@@ -202,7 +200,9 @@ export default function LansingerlandPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -211,12 +211,14 @@ export default function LansingerlandPage() {
 
       <TopBanner />
       <Header />
-      <Breadcrumb items={[
-        { label: "Home", href: "/" },
-        { label: "Rijnmond", href: "/regio/rijnmond" },
-        { label: "Lansingerland" }
-      ]} />
-      
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Rijnmond", href: "/regio/rijnmond" },
+          { label: "Lansingerland" },
+        ]}
+      />
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -241,7 +243,9 @@ export default function LansingerlandPage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Woningontruiming in alle drie de kernen van Lansingerland: Berkel en Rodenrijs, Bleiswijk en Bergschenhoek. Lokale expertise met de laagste prijs garantie.
+                  Woningontruiming in alle drie de kernen van Lansingerland:
+                  Berkel en Rodenrijs, Bleiswijk en Bergschenhoek. Lokale
+                  expertise met de laagste prijs garantie.
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -275,7 +279,7 @@ export default function LansingerlandPage() {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
@@ -285,8 +289,9 @@ export default function LansingerlandPage() {
                   Prijs berekenen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
-                  Goedkoper gevonden? Wij betalen het verschil.
+                  Ons slimme AI formulier berekent direct jouw prijs. Een
+                  woningbezoek is niet nodig. Goedkoper gevonden? Wij betalen
+                  het verschil.
                 </p>
               </div>
 
@@ -298,8 +303,9 @@ export default function LansingerlandPage() {
                   Datum kiezen
                 </h3>
                 <p className="text-muted-foreground">
-                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
-                  beschikbaar, bij spoed binnen 24 uur.
+                  Kies de datum wanneer jij de woning ontruimd wil hebben.
+                  Meestal binnen 1-3 werkdagen beschikbaar, bij spoed binnen 24
+                  uur.
                 </p>
               </div>
 
@@ -311,8 +317,8 @@ export default function LansingerlandPage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig
+                  uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
@@ -322,19 +328,30 @@ export default function LansingerlandPage() {
         {/* SEO Content - Direct in page */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="lansingerland-info" className="text-3xl font-bold text-foreground mb-6">
+            <h2
+              id="lansingerland-info"
+              className="text-3xl font-bold text-foreground mb-6">
               Woningontruiming in Lansingerland
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Lansingerland is een gemeente met drie kernen: Berkel en Rodenrijs, Bleiswijk en Bergschenhoek. Wij bieden professionele woningontruiming en bedrijfsontruiming in alle drie de kernen tegen de laagste prijs, gegarandeerd.
+              Lansingerland is een gemeente met drie kernen: Berkel en
+              Rodenrijs, Bleiswijk en Bergschenhoek. Wij bieden professionele
+              woningontruiming en bedrijfsontruiming in alle drie de kernen
+              tegen de laagste prijs, gegarandeerd.
             </p>
 
             {/* Wijken */}
-            <div id="lansingerland-kernen" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle kernen van Lansingerland:</h3>
+            <div
+              id="lansingerland-kernen"
+              className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">
+                Actief in alle kernen van Lansingerland:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-foreground">
                     <span className="text-primary">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
@@ -372,11 +389,18 @@ export default function LansingerlandPage() {
                 {situaties.map((situatie, index) => (
                   <div
                     key={index}
-                    id={index === 0 ? "zakelijk-ontruimen-lansingerland" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                    id={
+                      index === 0
+                        ? "zakelijk-ontruimen-lansingerland"
+                        : undefined
+                    }
+                    className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">
+                      {situatie.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {situatie.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -389,7 +413,8 @@ export default function LansingerlandPage() {
               Onze Diensten in Lansingerland
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit
+              één hand.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -397,7 +422,9 @@ export default function LansingerlandPage() {
                   Volledige Woningontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen, appartementen en
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens
+                  gemeentelijke richtlijnen.
                 </p>
               </div>
 
@@ -406,7 +433,10 @@ export default function LansingerlandPage() {
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties. Perfect voor huurwoningen.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en
+                  woningcorporaties. Perfect voor huurwoningen. Wij zorgen voor
+                  een oplevering die volledig voldoet aan de eisen van 3B Wonen,
+                  zodat u zonder zorgen de sleuteloverdracht kunt doen.
                 </p>
               </div>
 
@@ -415,7 +445,8 @@ export default function LansingerlandPage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                  Met respect en zorg helpen bij het ontruimen na overlijden.
+                  Discreet en zorgvuldig.
                 </p>
               </div>
 
@@ -424,7 +455,8 @@ export default function LansingerlandPage() {
                   Spoedontruiming 24 uur
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
+                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden
+                  beschikbaar voor spoedgevallen.
                 </p>
               </div>
 
@@ -433,7 +465,8 @@ export default function LansingerlandPage() {
                   Bedrijfsontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ook bedrijfsruimtes en kantoren in Lansingerland ontruimen we professioneel. Van inventaris tot inrichting, wij regelen het.
+                  Ook bedrijfsruimtes en kantoren in Lansingerland ontruimen we
+                  professioneel. Van inventaris tot inrichting, wij regelen het.
                 </p>
               </div>
 
@@ -442,7 +475,8 @@ export default function LansingerlandPage() {
                   Extra Diensten
                 </h3>
                 <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
+                  schilderwerk en inpakservice.
                 </p>
               </div>
             </div>
@@ -461,7 +495,8 @@ export default function LansingerlandPage() {
                     Laagste Prijs Garantie
                   </h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij
+                    gaan eronder. Geen verborgen kosten.
                   </p>
                 </div>
               </div>
@@ -473,7 +508,8 @@ export default function LansingerlandPage() {
                     Snel & Flexibel
                   </h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur.
+                    Ook avond- en weekendwerk mogelijk.
                   </p>
                 </div>
               </div>
@@ -485,7 +521,8 @@ export default function LansingerlandPage() {
                     Milieuvriendelijk
                   </h3>
                   <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar
+                    kringloop. WEEE-richtlijnen voor elektronica.
                   </p>
                 </div>
               </div>
@@ -497,7 +534,8 @@ export default function LansingerlandPage() {
                     All-in Ontzorging
                   </h3>
                   <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van verhuurders en woningcorporaties.
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen
+                    alle eisen van verhuurders en woningcorporaties.
                   </p>
                 </div>
               </div>
@@ -512,18 +550,17 @@ export default function LansingerlandPage() {
               Veelgestelde vragen over woningontruiming in Lansingerland
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Lansingerland
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming
+              in Lansingerland
             </p>
-            
+
             <div className="max-w-3xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-card border rounded-lg p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -536,5 +573,5 @@ export default function LansingerlandPage() {
         <Footer />
       </main>
     </>
-  )
+  );
 }

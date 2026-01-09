@@ -1,15 +1,16 @@
-import type { Metadata } from "next"
-import { TopBanner } from "@/components/top-banner"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { GemeenteMap } from "@/components/gemeente-map"
-import { AIQuoteForm } from "@/components/ai-quote-form"
-import { Breadcrumb } from "@/components/breadcrumb"
+import type { Metadata } from "next";
+import { TopBanner } from "@/components/top-banner";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { GemeenteMap } from "@/components/gemeente-map";
+import { AIQuoteForm } from "@/components/ai-quote-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Schiedam | Laagste Prijs Garantie | Budgetontruiming.nl",
+  title:
+    "Woningontruiming Schiedam | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Woningontruiming in Schiedam tegen de laagste prijs. Specialist in het historisch centrum en hoogbouw in Nieuwland. Laagste prijs garantie en bezemschone oplevering.",
+    "Woningontruiming Schiedam? Wij duiken onder elke offerte! Snel, vakkundig en bezemschoon. Bereken direct uw prijs.",
   keywords:
     "woningontruiming schiedam, ontruiming schiedam, ontruiming centrum schiedam, ontruiming nieuwland schiedam, ontruiming groenoord schiedam, ontruiming kethel schiedam, ontruiming spaland schiedam, bezemschoon schiedam 3110-3125, spoedontruiming schiedam, ontruiming na overlijden schiedam",
   openGraph: {
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-}
+};
 
 export default function SchiedamPage() {
   // FAQs
@@ -65,16 +66,10 @@ export default function SchiedamPage() {
       answer:
         "Vindt u het elders in Schiedam goedkoper? Wij duiken onder die prijs! Zo bent u altijd verzekerd van de voordeligste woningontruiming.",
     },
-  ]
+  ];
 
   // Wijken
-  const wijken = [
-    "Centrum",
-    "Nieuwland",
-    "Groenoord",
-    "Kethel",
-    "Spaland",
-  ]
+  const wijken = ["Centrum", "Nieuwland", "Groenoord", "Kethel", "Spaland"];
 
   // Waarom kiezen
   const waaromKiezen = [
@@ -83,7 +78,7 @@ export default function SchiedamPage() {
     "Snelle service: Start vaak binnen 1-2 werkdagen mogelijk, bij spoed sneller",
     "Laagste prijs garantie: Wij duiken onder elke offerte in Schiedam",
     "Bezemschone oplevering conform de strengste verhuurderseisen",
-  ]
+  ];
 
   // Situaties
   const situaties = [
@@ -99,7 +94,7 @@ export default function SchiedamPage() {
     },
     {
       title: "Huurwoning bezemschoon opleveren",
-  description:
+      description:
         "Voor woningcorporaties in Schiedam leveren wij bezemschoon op volgens de strikte oplevervoorwaarden. Geen discussie bij de eindoplevering.",
     },
     {
@@ -107,91 +102,92 @@ export default function SchiedamPage() {
       description:
         "Met respect en zorg helpen wij bij het ontruimen van een woning na overlijden. Wij nemen alle zorgen uit handen tijdens deze moeilijke periode.",
     },
-  ]
+  ];
 
   // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://www.budgetontruiming.nl/schiedam/#service",
-    "name": "Woningontruiming Schiedam",
-    "provider": {
+    name: "Woningontruiming Schiedam",
+    provider: {
       "@type": "MovingCompany",
-      "name": "Budget Ontruiming",
-      "url": "https://www.budgetontruiming.nl/",
-      "telephone": "+31629759181"
+      name: "Budget Ontruiming",
+      url: "https://www.budgetontruiming.nl/",
+      telephone: "+31629759181",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "City",
-      "name": "Schiedam",
-      "sameAs": "https://www.wikidata.org/wiki/Q10080"
+      name: "Schiedam",
+      sameAs: "https://www.wikidata.org/wiki/Q10080",
     },
-    "description": "Professionele woningontruiming in Schiedam. Expertise in monumentale panden in het centrum en hoogbouw appartementen in Nieuwland en Groenoord. Laagste prijs garantie.",
-    "knowsAbout": [
+    description:
+      "Professionele woningontruiming in Schiedam. Expertise in monumentale panden in het centrum en hoogbouw appartementen in Nieuwland en Groenoord. Laagste prijs garantie.",
+    knowsAbout: [
       "Ontruiming historisch centrum Schiedam",
       "Hoogbouw ontruimen Schiedam Nieuwland",
       "Bezemschoon opleveren huurwoning Schiedam",
-      "Spoedontruiming Schiedam"
-    ]
-  }
+      "Spoedontruiming Schiedam",
+    ],
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+        text: faq.answer,
+      },
+    })),
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Budget Ontruiming Schiedam",
-    "telephone": "+31629759181",
-    "priceRange": "€",
-    "address": {
+    name: "Budget Ontruiming Schiedam",
+    telephone: "+31629759181",
+    priceRange: "€",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Schiedam",
-      "addressRegion": "Zuid-Holland",
-      "postalCode": "3110-3125",
-      "addressCountry": "NL"
+      addressLocality: "Schiedam",
+      addressRegion: "Zuid-Holland",
+      postalCode: "3110-3125",
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 51.9192,
-      "longitude": 4.3881
-    }
-  }
+      latitude: 51.9192,
+      longitude: 4.3881,
+    },
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://budgetontruiming.nl"
+        position: 1,
+        name: "Home",
+        item: "https://budgetontruiming.nl",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Rijnmond",
-        "item": "https://budgetontruiming.nl/regio/rijnmond"
+        position: 2,
+        name: "Rijnmond",
+        item: "https://budgetontruiming.nl/regio/rijnmond",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Schiedam",
-        "item": "https://budgetontruiming.nl/woningontruiming-schiedam"
-      }
-    ]
-  }
+        position: 3,
+        name: "Schiedam",
+        item: "https://budgetontruiming.nl/woningontruiming-schiedam",
+      },
+    ],
+  };
 
   return (
     <>
@@ -206,7 +202,9 @@ export default function SchiedamPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -215,12 +213,14 @@ export default function SchiedamPage() {
 
       <TopBanner />
       <Header />
-      <Breadcrumb items={[
-        { label: "Home", href: "/" },
-        { label: "Rijnmond", href: "/regio/rijnmond" },
-        { label: "Schiedam" }
-      ]} />
-      
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Rijnmond", href: "/regio/rijnmond" },
+          { label: "Schiedam" },
+        ]}
+      />
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -245,7 +245,9 @@ export default function SchiedamPage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Woningontruiming in Schiedam tegen de laagste prijs. Van historisch centrum tot moderne wijken – wij ontruimen professioneel en snel.
+                  Woningontruiming in Schiedam tegen de laagste prijs. Van
+                  historisch centrum tot moderne wijken – wij ontruimen
+                  professioneel en snel.
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -279,7 +281,7 @@ export default function SchiedamPage() {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
@@ -289,8 +291,9 @@ export default function SchiedamPage() {
                   Prijs berekenen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
-                  Goedkoper gevonden? Wij betalen het verschil.
+                  Ons slimme AI formulier berekent direct jouw prijs. Een
+                  woningbezoek is niet nodig. Goedkoper gevonden? Wij betalen
+                  het verschil.
                 </p>
               </div>
 
@@ -302,8 +305,9 @@ export default function SchiedamPage() {
                   Datum kiezen
                 </h3>
                 <p className="text-muted-foreground">
-                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
-                  beschikbaar, bij spoed binnen 24 uur.
+                  Kies de datum wanneer jij de woning ontruimd wil hebben.
+                  Meestal binnen 1-3 werkdagen beschikbaar, bij spoed binnen 24
+                  uur.
                 </p>
               </div>
 
@@ -315,8 +319,8 @@ export default function SchiedamPage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig
+                  uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
@@ -326,19 +330,30 @@ export default function SchiedamPage() {
         {/* SEO Content - Direct in page */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="schiedam-info" className="text-3xl font-bold text-foreground mb-6">
+            <h2
+              id="schiedam-info"
+              className="text-3xl font-bold text-foreground mb-6">
               Woningontruiming in Schiedam
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Schiedam is een stad met een rijk historisch verleden en moderne woonwijken. Van monumentale panden in het centrum tot hoogbouw appartementen in Nieuwland – wij ontruimen professioneel en betaalbaar met onze laagste prijs garantie.
+              Schiedam is een stad met een rijk historisch verleden en moderne
+              woonwijken. Van monumentale panden in het centrum tot hoogbouw
+              appartementen in Nieuwland – wij ontruimen professioneel en
+              betaalbaar met onze laagste prijs garantie.
             </p>
 
             {/* Wijken */}
-            <div id="schiedam-wijken" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle wijken van Schiedam:</h3>
+            <div
+              id="schiedam-wijken"
+              className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">
+                Actief in alle wijken van Schiedam:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-foreground">
                     <span className="text-primary">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
@@ -377,10 +392,13 @@ export default function SchiedamPage() {
                   <div
                     key={index}
                     id={index === 0 ? "historisch-centrum-expert" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                    className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">
+                      {situatie.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {situatie.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -393,7 +411,8 @@ export default function SchiedamPage() {
               Onze Diensten in Schiedam
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit
+              één hand.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -401,7 +420,9 @@ export default function SchiedamPage() {
                   Volledige Woningontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen, appartementen en
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens
+                  gemeentelijke richtlijnen.
                 </p>
               </div>
 
@@ -410,7 +431,8 @@ export default function SchiedamPage() {
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties. Perfect voor huurwoningen.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en
+                  woningcorporaties. Perfect voor huurwoningen.
                 </p>
               </div>
 
@@ -419,7 +441,8 @@ export default function SchiedamPage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                  Met respect en zorg helpen bij het ontruimen na overlijden.
+                  Discreet en zorgvuldig.
                 </p>
               </div>
 
@@ -428,7 +451,8 @@ export default function SchiedamPage() {
                   Spoedontruiming 24 uur
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
+                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden
+                  beschikbaar voor spoedgevallen.
                 </p>
               </div>
 
@@ -437,7 +461,9 @@ export default function SchiedamPage() {
                   Monumentale Panden
                 </h3>
                 <p className="text-muted-foreground">
-                  Specialisatie in het ontruimen van monumentale panden in het historische centrum. Met respect voor de karakteristieke architectuur.
+                  Specialisatie in het ontruimen van monumentale panden in het
+                  historische centrum. Met respect voor de karakteristieke
+                  architectuur.
                 </p>
               </div>
 
@@ -446,7 +472,9 @@ export default function SchiedamPage() {
                   Hoogbouw Appartementen
                 </h3>
                 <p className="text-muted-foreground">
-                  Expertise in het ontruimen van hoogbouw appartementen in Nieuwland en Groenoord. Wij gebruiken liften volgens huisregels.
+                  Expertise in het ontruimen van hoogbouw appartementen in
+                  Nieuwland en Groenoord. Wij gebruiken liften volgens
+                  huisregels.
                 </p>
               </div>
             </div>
@@ -465,7 +493,8 @@ export default function SchiedamPage() {
                     Laagste Prijs Garantie
                   </h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij
+                    gaan eronder. Geen verborgen kosten.
                   </p>
                 </div>
               </div>
@@ -477,7 +506,8 @@ export default function SchiedamPage() {
                     Snel & Flexibel
                   </h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur.
+                    Ook avond- en weekendwerk mogelijk.
                   </p>
                 </div>
               </div>
@@ -489,7 +519,8 @@ export default function SchiedamPage() {
                     Milieuvriendelijk
                   </h3>
                   <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar
+                    kringloop. WEEE-richtlijnen voor elektronica.
                   </p>
                 </div>
               </div>
@@ -501,7 +532,8 @@ export default function SchiedamPage() {
                     All-in Ontzorging
                   </h3>
                   <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van verhuurders en woningcorporaties.
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen
+                    alle eisen van verhuurders en woningcorporaties.
                   </p>
                 </div>
               </div>
@@ -516,18 +548,17 @@ export default function SchiedamPage() {
               Veelgestelde vragen over woningontruiming in Schiedam
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Schiedam
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming
+              in Schiedam
             </p>
-            
+
             <div className="max-w-3xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-card border rounded-lg p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -540,5 +571,5 @@ export default function SchiedamPage() {
         <Footer />
       </main>
     </>
-  )
+  );
 }

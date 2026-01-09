@@ -1,15 +1,16 @@
-import type { Metadata } from "next"
-import { TopBanner } from "@/components/top-banner"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { GemeenteMap } from "@/components/gemeente-map"
-import { AIQuoteForm } from "@/components/ai-quote-form"
-import { Breadcrumb } from "@/components/breadcrumb"
+import type { Metadata } from "next";
+import { TopBanner } from "@/components/top-banner";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { GemeenteMap } from "@/components/gemeente-map";
+import { AIQuoteForm } from "@/components/ai-quote-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Westland | Laagste Prijs Garantie | Budgetontruiming.nl",
+  title:
+    "Woningontruiming Westland | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Woningontruiming in heel Westland (Naaldwijk, Wateringen, Monster, De Lier). Specialist in woningen met kassen of bedrijfsruimtes. Laagste prijs garantie.",
+    "Woningontruiming Westland? Wij duiken onder elke offerte! Snel en vakkundig bezemschoon. Bereken direct uw prijs online.",
   keywords:
     "woningontruiming westland, ontruiming naaldwijk, ontruiming wateringen, ontruiming monster, ontruiming de lier, huis ontruimen westland, bezemschoon opleveren westland, kas ontruimen, spoedontruiming westland",
   openGraph: {
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-}
+};
 
 export default function WestlandPage() {
   // FAQs
@@ -65,7 +66,7 @@ export default function WestlandPage() {
       answer:
         "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo weet u zeker dat u bij ons altijd de beste prijs krijgt.",
     },
-  ]
+  ];
 
   // Wijken
   const wijken = [
@@ -76,7 +77,7 @@ export default function WestlandPage() {
     "'s-Gravenzande",
     "Poeldijk",
     "Ter Heijde",
-  ]
+  ];
 
   // Waarom kiezen
   const waaromKiezen = [
@@ -85,7 +86,7 @@ export default function WestlandPage() {
     "Snelle service en flexibele planning",
     "Laagste prijs garantie voor complete gemoedsrust",
     "Ervaring met zowel dorpswoningen als nieuwbouw",
-  ]
+  ];
 
   // Situaties
   const situaties = [
@@ -109,91 +110,92 @@ export default function WestlandPage() {
       description:
         "Moet het snel? In Westland kunnen we vaak binnen 24-48 uur starten met de ontruiming van uw woning.",
     },
-  ]
+  ];
 
   // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://www.budgetontruiming.nl/westland/#service",
-    "name": "Woningontruiming Westland",
-    "provider": {
+    name: "Woningontruiming Westland",
+    provider: {
       "@type": "MovingCompany",
-      "name": "Budget Ontruiming",
-      "url": "https://www.budgetontruiming.nl/",
-      "telephone": "+31629759181"
+      name: "Budget Ontruiming",
+      url: "https://www.budgetontruiming.nl/",
+      telephone: "+31629759181",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "AdministrativeArea",
-      "name": "Westland",
-      "sameAs": "https://www.wikidata.org/wiki/Q5915"
+      name: "Westland",
+      sameAs: "https://www.wikidata.org/wiki/Q5915",
     },
-    "description": "Professionele woningontruiming in alle kernen van Westland. Expertise in woningen met kassen, schuren en bedrijfsruimtes. Laagste prijs garantie.",
-    "knowsAbout": [
+    description:
+      "Professionele woningontruiming in alle kernen van Westland. Expertise in woningen met kassen, schuren en bedrijfsruimtes. Laagste prijs garantie.",
+    knowsAbout: [
       "Woningontruiming Westland",
       "Kas ontruimen Westland",
       "Bedrijfsruimte ontruimen",
-      "Bezemschoon opleveren Westland"
-    ]
-  }
+      "Bezemschoon opleveren Westland",
+    ],
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+        text: faq.answer,
+      },
+    })),
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Budget Ontruiming Westland",
-    "telephone": "+31629759181",
-    "priceRange": "€",
-    "address": {
+    name: "Budget Ontruiming Westland",
+    telephone: "+31629759181",
+    priceRange: "€",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Westland",
-      "addressRegion": "Zuid-Holland",
-      "postalCode": "2670-2685",
-      "addressCountry": "NL"
+      addressLocality: "Westland",
+      addressRegion: "Zuid-Holland",
+      postalCode: "2670-2685",
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 51.9992,
-      "longitude": 4.2208
-    }
-  }
+      latitude: 51.9992,
+      longitude: 4.2208,
+    },
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://budgetontruiming.nl"
+        position: 1,
+        name: "Home",
+        item: "https://budgetontruiming.nl",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Haaglanden",
-        "item": "https://budgetontruiming.nl/regio/haaglanden"
+        position: 2,
+        name: "Haaglanden",
+        item: "https://budgetontruiming.nl/regio/haaglanden",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Westland",
-        "item": "https://budgetontruiming.nl/woningontruiming-westland"
-      }
-    ]
-  }
+        position: 3,
+        name: "Westland",
+        item: "https://budgetontruiming.nl/woningontruiming-westland",
+      },
+    ],
+  };
 
   return (
     <>
@@ -208,7 +210,9 @@ export default function WestlandPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -217,12 +221,14 @@ export default function WestlandPage() {
 
       <TopBanner />
       <Header />
-      <Breadcrumb items={[
-        { label: "Home", href: "/" },
-        { label: "Haaglanden", href: "/regio/haaglanden" },
-        { label: "Westland" }
-      ]} />
-      
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Haaglanden", href: "/regio/haaglanden" },
+          { label: "Westland" },
+        ]}
+      />
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -247,7 +253,9 @@ export default function WestlandPage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Woningontruiming in heel Westland: Naaldwijk, Wateringen, Monster en De Lier. Professioneel en betaalbaar met laagste prijs garantie.
+                  Woningontruiming in heel Westland: Naaldwijk, Wateringen,
+                  Monster en De Lier. Professioneel en betaalbaar met laagste
+                  prijs garantie.
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -281,7 +289,7 @@ export default function WestlandPage() {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
@@ -291,8 +299,9 @@ export default function WestlandPage() {
                   Prijs berekenen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
-                  Goedkoper gevonden? Wij betalen het verschil.
+                  Ons slimme AI formulier berekent direct jouw prijs. Een
+                  woningbezoek is niet nodig. Goedkoper gevonden? Wij betalen
+                  het verschil.
                 </p>
               </div>
 
@@ -304,8 +313,9 @@ export default function WestlandPage() {
                   Datum kiezen
                 </h3>
                 <p className="text-muted-foreground">
-                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
-                  beschikbaar, bij spoed binnen 24 uur.
+                  Kies de datum wanneer jij de woning ontruimd wil hebben.
+                  Meestal binnen 1-3 werkdagen beschikbaar, bij spoed binnen 24
+                  uur.
                 </p>
               </div>
 
@@ -317,8 +327,8 @@ export default function WestlandPage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig
+                  uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
@@ -328,19 +338,30 @@ export default function WestlandPage() {
         {/* SEO Content - Direct in page */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="westland-info" className="text-3xl font-bold text-foreground mb-6">
+            <h2
+              id="westland-info"
+              className="text-3xl font-bold text-foreground mb-6">
               Woningontruiming in Westland
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Westland is een grote gemeente met diverse kernen. Of u nu in Naaldwijk, Wateringen, Monster of De Lier woont – wij bieden professionele woningontruiming tegen de laagste prijs in heel Westland.
+              Westland is een grote gemeente met diverse kernen. Of u nu in
+              Naaldwijk, Wateringen, Monster of De Lier woont – wij bieden
+              professionele woningontruiming tegen de laagste prijs in heel
+              Westland.
             </p>
 
             {/* Wijken */}
-            <div id="westland-kernen" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle kernen van Westland:</h3>
+            <div
+              id="westland-kernen"
+              className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">
+                Actief in alle kernen van Westland:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-foreground">
                     <span className="text-primary">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
@@ -379,10 +400,13 @@ export default function WestlandPage() {
                   <div
                     key={index}
                     id={index === 0 ? "kas-specialist" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                    className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">
+                      {situatie.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {situatie.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -395,7 +419,8 @@ export default function WestlandPage() {
               Onze Diensten in Westland
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit
+              één hand.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -403,7 +428,9 @@ export default function WestlandPage() {
                   Volledige Woningontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen, appartementen en
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens
+                  gemeentelijke richtlijnen.
                 </p>
               </div>
 
@@ -412,7 +439,8 @@ export default function WestlandPage() {
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties. Perfect voor huurwoningen.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en
+                  woningcorporaties. Perfect voor huurwoningen.
                 </p>
               </div>
 
@@ -421,7 +449,8 @@ export default function WestlandPage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                  Met respect en zorg helpen bij het ontruimen na overlijden.
+                  Discreet en zorgvuldig.
                 </p>
               </div>
 
@@ -430,7 +459,8 @@ export default function WestlandPage() {
                   Spoedontruiming 24 uur
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
+                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden
+                  beschikbaar voor spoedgevallen.
                 </p>
               </div>
 
@@ -439,7 +469,9 @@ export default function WestlandPage() {
                   Kassen & Bedrijfsruimtes
                 </h3>
                 <p className="text-muted-foreground">
-                  Specialisatie in het ontruimen van woningen met bijbehorende kassen, schuren en bedrijfsruimtes. Neem contact op voor een offerte op maat.
+                  Specialisatie in het ontruimen van woningen met bijbehorende
+                  kassen, schuren en bedrijfsruimtes. Neem contact op voor een
+                  offerte op maat.
                 </p>
               </div>
 
@@ -448,7 +480,8 @@ export default function WestlandPage() {
                   Extra Diensten
                 </h3>
                 <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
+                  schilderwerk en inpakservice.
                 </p>
               </div>
             </div>
@@ -467,7 +500,8 @@ export default function WestlandPage() {
                     Laagste Prijs Garantie
                   </h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij
+                    gaan eronder. Geen verborgen kosten.
                   </p>
                 </div>
               </div>
@@ -479,7 +513,8 @@ export default function WestlandPage() {
                     Snel & Flexibel
                   </h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur.
+                    Ook avond- en weekendwerk mogelijk.
                   </p>
                 </div>
               </div>
@@ -491,7 +526,8 @@ export default function WestlandPage() {
                     Milieuvriendelijk
                   </h3>
                   <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar
+                    kringloop. WEEE-richtlijnen voor elektronica.
                   </p>
                 </div>
               </div>
@@ -503,7 +539,8 @@ export default function WestlandPage() {
                     All-in Ontzorging
                   </h3>
                   <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van verhuurders en woningcorporaties.
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen
+                    alle eisen van verhuurders en woningcorporaties.
                   </p>
                 </div>
               </div>
@@ -518,18 +555,17 @@ export default function WestlandPage() {
               Veelgestelde vragen over woningontruiming in Westland
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Westland
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming
+              in Westland
             </p>
-            
+
             <div className="max-w-3xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-card border rounded-lg p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -542,5 +578,5 @@ export default function WestlandPage() {
         <Footer />
       </main>
     </>
-  )
+  );
 }

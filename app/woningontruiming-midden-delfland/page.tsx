@@ -1,15 +1,16 @@
-import type { Metadata } from "next"
-import { TopBanner } from "@/components/top-banner"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { GemeenteMap } from "@/components/gemeente-map"
-import { AIQuoteForm } from "@/components/ai-quote-form"
-import { Breadcrumb } from "@/components/breadcrumb"
+import type { Metadata } from "next";
+import { TopBanner } from "@/components/top-banner";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { GemeenteMap } from "@/components/gemeente-map";
+import { AIQuoteForm } from "@/components/ai-quote-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Woningontruiming Midden-Delfland | Laagste Prijs Garantie | Budgetontruiming.nl",
+  title:
+    "Woningontruiming Midden-Delfland | Laagste Prijs Garantie | Budgetontruiming.nl",
   description:
-    "Woningontruiming in Midden-Delfland (Schipluiden, Maasland, Den Hoorn). Specialist in boerderijen en grote woningen met bijgebouwen. Laagste prijs garantie.",
+    "Woningontruiming Midden-Delfland? Wij duiken onder elke offerte! Lokale experts in ontruimen. Bereken direct uw prijs.",
   keywords:
     "woningontruiming midden-delfland, ontruiming maassluis, ontruiming schipluiden, ontruiming maasland, huis ontruimen midden-delfland, bezemschoon opleveren maassluis, boerderij ontruimen, spoedontruiming midden-delfland",
   openGraph: {
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-}
+};
 
 export default function MiddenDelflandPage() {
   // FAQs
@@ -65,15 +66,10 @@ export default function MiddenDelflandPage() {
       answer:
         "Vindt u het elders goedkoper? Wij duiken onder die prijs! Zo bent u ook in Midden-Delfland verzekerd van de voordeligste prijs voor uw woningontruiming.",
     },
-  ]
+  ];
 
   // Wijken
-  const wijken = [
-    "Maassluis",
-    "Schipluiden",
-    "Maasland",
-    "Den Hoorn",
-  ]
+  const wijken = ["Maassluis", "Schipluiden", "Maasland", "Den Hoorn"];
 
   // Waarom kiezen
   const waaromKiezen = [
@@ -82,7 +78,7 @@ export default function MiddenDelflandPage() {
     "Flexibel en snel beschikbaar",
     "Laagste prijs garantie voor complete gemoedsrust",
     "Ervaring met zowel oude als nieuwe woningen",
-  ]
+  ];
 
   // Situaties
   const situaties = [
@@ -106,93 +102,94 @@ export default function MiddenDelflandPage() {
       description:
         "Ook in Midden-Delfland gelden strikte oplevervoorwaarden. Wij zorgen dat uw huurwoning volledig aan de eisen voldoet.",
     },
-  ]
+  ];
 
   // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://www.budgetontruiming.nl/midden-delfland/#service",
-    "name": "Woningontruiming Midden-Delfland",
-    "provider": {
+    name: "Woningontruiming Midden-Delfland",
+    provider: {
       "@type": "MovingCompany",
-      "name": "Budget Ontruiming",
-      "url": "https://www.budgetontruiming.nl/",
-      "telephone": "+31629759181"
+      name: "Budget Ontruiming",
+      url: "https://www.budgetontruiming.nl/",
+      telephone: "+31629759181",
     },
-    "areaServed": [
+    areaServed: [
       {
         "@type": "AdministrativeArea",
-        "name": "Midden-Delfland",
-        "sameAs": "https://www.wikidata.org/wiki/Q610443"
-      }
+        name: "Midden-Delfland",
+        sameAs: "https://www.wikidata.org/wiki/Q610443",
+      },
     ],
-    "description": "Professionele woningontruiming in Midden-Delfland. Expertise in boerderijen, grote panden met bijgebouwen en bezemschone oplevering in Schipluiden, Maasland en Den Hoorn.",
-    "knowsAbout": [
+    description:
+      "Professionele woningontruiming in Midden-Delfland. Expertise in boerderijen, grote panden met bijgebouwen en bezemschone oplevering in Schipluiden, Maasland en Den Hoorn.",
+    knowsAbout: [
       "Boerderij ontruimen Midden-Delfland",
       "Grote schuur of bijgebouw ontruimen",
       "Woningontruiming Schipluiden en Maasland",
-      "Seniorenverhuizing Den Hoorn"
-    ]
-  }
+      "Seniorenverhuizing Den Hoorn",
+    ],
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+        text: faq.answer,
+      },
+    })),
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Budget Ontruiming Midden-Delfland",
-    "telephone": "+31629759181",
-    "priceRange": "€",
-    "address": {
+    name: "Budget Ontruiming Midden-Delfland",
+    telephone: "+31629759181",
+    priceRange: "€",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Midden-Delfland",
-      "addressRegion": "Zuid-Holland",
-      "postalCode": "2636-2652",
-      "addressCountry": "NL"
+      addressLocality: "Midden-Delfland",
+      addressRegion: "Zuid-Holland",
+      postalCode: "2636-2652",
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 51.9750,
-      "longitude": 4.3167
-    }
-  }
+      latitude: 51.975,
+      longitude: 4.3167,
+    },
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://budgetontruiming.nl"
+        position: 1,
+        name: "Home",
+        item: "https://budgetontruiming.nl",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Haaglanden",
-        "item": "https://budgetontruiming.nl/regio/haaglanden"
+        position: 2,
+        name: "Haaglanden",
+        item: "https://budgetontruiming.nl/regio/haaglanden",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Midden-Delfland",
-        "item": "https://budgetontruiming.nl/woningontruiming-midden-delfland"
-      }
-    ]
-  }
+        position: 3,
+        name: "Midden-Delfland",
+        item: "https://budgetontruiming.nl/woningontruiming-midden-delfland",
+      },
+    ],
+  };
 
   return (
     <>
@@ -207,7 +204,9 @@ export default function MiddenDelflandPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -216,12 +215,14 @@ export default function MiddenDelflandPage() {
 
       <TopBanner />
       <Header />
-      <Breadcrumb items={[
-        { label: "Home", href: "/" },
-        { label: "Haaglanden", href: "/regio/haaglanden" },
-        { label: "Midden-Delfland" }
-      ]} />
-      
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Haaglanden", href: "/regio/haaglanden" },
+          { label: "Midden-Delfland" },
+        ]}
+      />
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -246,7 +247,9 @@ export default function MiddenDelflandPage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Woningontruiming in Midden-Delfland: Maassluis, Schipluiden en Maasland. Persoonlijke service tegen de laagste prijs gegarandeerd.
+                  Woningontruiming in Midden-Delfland: Maassluis, Schipluiden en
+                  Maasland. Persoonlijke service tegen de laagste prijs
+                  gegarandeerd.
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -280,7 +283,7 @@ export default function MiddenDelflandPage() {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
@@ -290,8 +293,9 @@ export default function MiddenDelflandPage() {
                   Prijs berekenen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
-                  Goedkoper gevonden? Wij betalen het verschil.
+                  Ons slimme AI formulier berekent direct jouw prijs. Een
+                  woningbezoek is niet nodig. Goedkoper gevonden? Wij betalen
+                  het verschil.
                 </p>
               </div>
 
@@ -303,8 +307,9 @@ export default function MiddenDelflandPage() {
                   Datum kiezen
                 </h3>
                 <p className="text-muted-foreground">
-                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
-                  beschikbaar, bij spoed binnen 24 uur.
+                  Kies de datum wanneer jij de woning ontruimd wil hebben.
+                  Meestal binnen 1-3 werkdagen beschikbaar, bij spoed binnen 24
+                  uur.
                 </p>
               </div>
 
@@ -316,8 +321,8 @@ export default function MiddenDelflandPage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig
+                  uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
@@ -327,19 +332,30 @@ export default function MiddenDelflandPage() {
         {/* SEO Content - Direct in page */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="midden-delfland-info" className="text-3xl font-bold text-foreground mb-6">
+            <h2
+              id="midden-delfland-info"
+              className="text-3xl font-bold text-foreground mb-6">
               Woningontruiming in Midden-Delfland
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Midden-Delfland kent een mix van karakteristieke dorpswoningen en moderne nieuwbouw. Of het nu gaat om een woning in Maassluis, Schipluiden of Maasland – wij bieden professionele ontruiming tegen de laagste prijs, gegarandeerd.
+              Midden-Delfland kent een mix van karakteristieke dorpswoningen en
+              moderne nieuwbouw. Of het nu gaat om een woning in Maassluis,
+              Schipluiden of Maasland – wij bieden professionele ontruiming
+              tegen de laagste prijs, gegarandeerd.
             </p>
 
             {/* Wijken */}
-            <div id="midden-delfland-kernen" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle kernen van Midden-Delfland:</h3>
+            <div
+              id="midden-delfland-kernen"
+              className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">
+                Actief in alle kernen van Midden-Delfland:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-foreground">
                     <span className="text-primary">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
@@ -378,10 +394,13 @@ export default function MiddenDelflandPage() {
                   <div
                     key={index}
                     id={index === 0 ? "boerderij-specialist" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                    className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">
+                      {situatie.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {situatie.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -394,7 +413,8 @@ export default function MiddenDelflandPage() {
               Onze Diensten in Midden-Delfland
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit
+              één hand.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -402,7 +422,9 @@ export default function MiddenDelflandPage() {
                   Volledige Woningontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, boerderijen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen, boerderijen en
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens
+                  gemeentelijke richtlijnen.
                 </p>
               </div>
 
@@ -411,7 +433,11 @@ export default function MiddenDelflandPage() {
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties. Perfect voor huurwoningen.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en
+                  woningcorporaties. Perfect voor huurwoningen. Wij zorgen voor
+                  een oplevering die naadloos aansluit bij de eisen van Wonen
+                  Midden-Delfland, zodat de eindinspectie zonder problemen
+                  verloopt
                 </p>
               </div>
 
@@ -420,7 +446,8 @@ export default function MiddenDelflandPage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en respectvol, passend bij de kleine gemeenschap.
+                  Met respect en zorg helpen bij het ontruimen na overlijden.
+                  Discreet en respectvol, passend bij de kleine gemeenschap.
                 </p>
               </div>
 
@@ -429,7 +456,8 @@ export default function MiddenDelflandPage() {
                   Spoedontruiming 24 uur
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
+                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden
+                  beschikbaar voor spoedgevallen.
                 </p>
               </div>
 
@@ -438,7 +466,9 @@ export default function MiddenDelflandPage() {
                   Boerderijen & Bijgebouwen
                 </h3>
                 <p className="text-muted-foreground">
-                  Specialisatie in het ontruimen van boerderijen en grote panden met bijgebouwen, schuren en grote tuinen. Alles wordt grondig ontruimd.
+                  Specialisatie in het ontruimen van boerderijen en grote panden
+                  met bijgebouwen, schuren en grote tuinen. Alles wordt grondig
+                  ontruimd.
                 </p>
               </div>
 
@@ -447,7 +477,8 @@ export default function MiddenDelflandPage() {
                   Extra Diensten
                 </h3>
                 <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
+                  schilderwerk en inpakservice.
                 </p>
               </div>
             </div>
@@ -466,7 +497,8 @@ export default function MiddenDelflandPage() {
                     Laagste Prijs Garantie
                   </h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij
+                    gaan eronder. Geen verborgen kosten.
                   </p>
                 </div>
               </div>
@@ -478,7 +510,8 @@ export default function MiddenDelflandPage() {
                     Snel & Flexibel
                   </h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur.
+                    Ook avond- en weekendwerk mogelijk.
                   </p>
                 </div>
               </div>
@@ -490,7 +523,8 @@ export default function MiddenDelflandPage() {
                     Milieuvriendelijk
                   </h3>
                   <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar
+                    kringloop. WEEE-richtlijnen voor elektronica.
                   </p>
                 </div>
               </div>
@@ -502,7 +536,8 @@ export default function MiddenDelflandPage() {
                     Persoonlijke Aanpak
                   </h3>
                   <p className="text-muted-foreground">
-                    Passend bij de kleinschaligheid van Midden-Delfland. Persoonlijke benadering en aandacht voor detail.
+                    Passend bij de kleinschaligheid van Midden-Delfland.
+                    Persoonlijke benadering en aandacht voor detail.
                   </p>
                 </div>
               </div>
@@ -511,24 +546,25 @@ export default function MiddenDelflandPage() {
         </article>
 
         {/* FAQ Section */}
-        <section id="midden-delfland-faq" className="bg-muted/50 py-12 lg:py-16">
+        <section
+          id="midden-delfland-faq"
+          className="bg-muted/50 py-12 lg:py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
               Veelgestelde vragen over woningontruiming in Midden-Delfland
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Midden-Delfland
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming
+              in Midden-Delfland
             </p>
-            
+
             <div className="max-w-3xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-card border rounded-lg p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -541,5 +577,5 @@ export default function MiddenDelflandPage() {
         <Footer />
       </main>
     </>
-  )
+  );
 }

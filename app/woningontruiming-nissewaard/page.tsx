@@ -1,15 +1,15 @@
-import type { Metadata } from "next"
-import { TopBanner } from "@/components/top-banner"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { GemeenteMap } from "@/components/gemeente-map"
-import { AIQuoteForm } from "@/components/ai-quote-form"
-import { Breadcrumb } from "@/components/breadcrumb"
+import type { Metadata } from "next";
+import { TopBanner } from "@/components/top-banner";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { GemeenteMap } from "@/components/gemeente-map";
+import { AIQuoteForm } from "@/components/ai-quote-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Woningontruiming Nissewaard | Spijkenisse & Bernisse | Laagste Prijs",
   description:
-    "Woningontruiming in heel Nissewaard: Spijkenisse en alle 7 dorpen (o.a. Zuidland, Heenvliet). Specialist in hoogbouw en bezemschone oplevering. Laagste prijs garantie.",
+    "Woningontruiming Nissewaard? Wij duiken onder elke offerte! Snel en vakkundig bezemschoon. Bereken direct uw prijs.",
   keywords:
     "woningontruiming nissewaard, ontruiming spijkenisse, ontruiming bernisse, huis ontruimen nissewaard, hoogbouw ontruimen spijkenisse, bezemschoon opleveren nissewaard, spoedontruiming spijkenisse",
   openGraph: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-}
+};
 
 export default function NissewaardPage() {
   // FAQs
@@ -64,7 +64,7 @@ export default function NissewaardPage() {
       answer:
         "Vindt u het elders in Nissewaard of Spijkenisse goedkoper? Wij duiken onder die prijs! Zo bent u altijd verzekerd van de voordeligste woningontruiming.",
     },
-  ]
+  ];
 
   // Wijken
   const wijken = [
@@ -76,7 +76,7 @@ export default function NissewaardPage() {
     "Simonshaven",
     "Zuidland",
     "Oudenhoorn",
-  ]
+  ];
 
   // Waarom kiezen
   const waaromKiezen = [
@@ -85,7 +85,7 @@ export default function NissewaardPage() {
     "Bezemschone oplevering conform de eisen van lokale woningcorporaties",
     "Laagste prijs garantie: Wij duiken onder elke offerte op Voorne-Putten",
     "Lokale kennis van alle kernen en snelle service",
-  ]
+  ];
 
   // Situaties
   const situaties = [
@@ -109,91 +109,92 @@ export default function NissewaardPage() {
       description:
         "Met respect en zorg helpen wij bij het ontruimen na overlijden. Wij nemen alle zorgen uit handen tijdens deze moeilijke periode.",
     },
-  ]
+  ];
 
   // Schema's
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://www.budgetontruiming.nl/nissewaard/#service",
-    "name": "Woningontruiming Nissewaard",
-    "provider": {
+    name: "Woningontruiming Nissewaard",
+    provider: {
       "@type": "MovingCompany",
-      "name": "Budget Ontruiming",
-      "url": "https://www.budgetontruiming.nl/",
-      "telephone": "+31629759181"
+      name: "Budget Ontruiming",
+      url: "https://www.budgetontruiming.nl/",
+      telephone: "+31629759181",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "AdministrativeArea",
-      "name": "Nissewaard",
-      "sameAs": "https://www.wikidata.org/wiki/Q15111162"
+      name: "Nissewaard",
+      sameAs: "https://www.wikidata.org/wiki/Q15111162",
     },
-    "description": "Professionele woningontruiming in Nissewaard. Expertise in hoogbouw in Spijkenisse en woningontruiming in de dorpen Abbenbroek, Geervliet, Heenvliet, Hekelingen, Simonshaven, Zuidland en Oudenhoorn.",
-    "knowsAbout": [
+    description:
+      "Professionele woningontruiming in Nissewaard. Expertise in hoogbouw in Spijkenisse en woningontruiming in de dorpen Abbenbroek, Geervliet, Heenvliet, Hekelingen, Simonshaven, Zuidland en Oudenhoorn.",
+    knowsAbout: [
       "Woningontruiming Spijkenisse hoogbouw",
       "Woningontruiming Zuidland en Heenvliet",
       "Bezemschoon opleveren Nissewaard",
-      "Seniorenverhuizing Spijkenisse"
-    ]
-  }
+      "Seniorenverhuizing Spijkenisse",
+    ],
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  }
+        text: faq.answer,
+      },
+    })),
+  };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Budget Ontruiming Nissewaard",
-    "telephone": "+31629759181",
-    "priceRange": "€",
-    "address": {
+    name: "Budget Ontruiming Nissewaard",
+    telephone: "+31629759181",
+    priceRange: "€",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Nissewaard",
-      "addressRegion": "Zuid-Holland",
-      "postalCode": "3200-3209",
-      "addressCountry": "NL"
+      addressLocality: "Nissewaard",
+      addressRegion: "Zuid-Holland",
+      postalCode: "3200-3209",
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 51.8447,
-      "longitude": 4.3250
-    }
-  }
+      latitude: 51.8447,
+      longitude: 4.325,
+    },
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://budgetontruiming.nl"
+        position: 1,
+        name: "Home",
+        item: "https://budgetontruiming.nl",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Rijnmond",
-        "item": "https://budgetontruiming.nl/regio/rijnmond"
+        position: 2,
+        name: "Rijnmond",
+        item: "https://budgetontruiming.nl/regio/rijnmond",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Nissewaard",
-        "item": "https://budgetontruiming.nl/woningontruiming-nissewaard"
-      }
-    ]
-  }
+        position: 3,
+        name: "Nissewaard",
+        item: "https://budgetontruiming.nl/woningontruiming-nissewaard",
+      },
+    ],
+  };
 
   return (
     <>
@@ -208,7 +209,9 @@ export default function NissewaardPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -217,12 +220,14 @@ export default function NissewaardPage() {
 
       <TopBanner />
       <Header />
-      <Breadcrumb items={[
-        { label: "Home", href: "/" },
-        { label: "Rijnmond", href: "/regio/rijnmond" },
-        { label: "Nissewaard" }
-      ]} />
-      
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Rijnmond", href: "/regio/rijnmond" },
+          { label: "Nissewaard" },
+        ]}
+      />
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative min-h-[500px] lg:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -247,7 +252,9 @@ export default function NissewaardPage() {
                 </p>
 
                 <p className="hidden sm:block text-lg sm:text-xl text-white mb-6 leading-relaxed text-pretty">
-                  Specialist in woningontruiming Spijkenisse en Bernisse. Van hoogbouw tot eengezinswoningen – wij ontruimen professioneel en betaalbaar in heel Nissewaard.
+                  Specialist in woningontruiming Spijkenisse en Bernisse. Van
+                  hoogbouw tot eengezinswoningen – wij ontruimen professioneel
+                  en betaalbaar in heel Nissewaard.
                 </p>
 
                 <div className="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-4">
@@ -281,7 +288,7 @@ export default function NissewaardPage() {
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               In 3 eenvoudige stappen naar een ontruimde woning zonder gedoe
             </p>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
@@ -291,8 +298,9 @@ export default function NissewaardPage() {
                   Prijs berekenen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons slimme AI formulier berekent direct jouw prijs. Een woningbezoek is niet nodig. 
-                  Goedkoper gevonden? Wij betalen het verschil.
+                  Ons slimme AI formulier berekent direct jouw prijs. Een
+                  woningbezoek is niet nodig. Goedkoper gevonden? Wij betalen
+                  het verschil.
                 </p>
               </div>
 
@@ -304,8 +312,9 @@ export default function NissewaardPage() {
                   Datum kiezen
                 </h3>
                 <p className="text-muted-foreground">
-                  Kies de datum wanneer jij de woning ontruimd wil hebben. Meestal binnen 1-3 werkdagen 
-                  beschikbaar, bij spoed binnen 24 uur.
+                  Kies de datum wanneer jij de woning ontruimd wil hebben.
+                  Meestal binnen 1-3 werkdagen beschikbaar, bij spoed binnen 24
+                  uur.
                 </p>
               </div>
 
@@ -317,8 +326,8 @@ export default function NissewaardPage() {
                   Ontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Ons professionele team voert de ontruiming snel en zorgvuldig uit op het afgesproken 
-                  moment. Bezemschoon opgeleverd.
+                  Ons professionele team voert de ontruiming snel en zorgvuldig
+                  uit op het afgesproken moment. Bezemschoon opgeleverd.
                 </p>
               </div>
             </div>
@@ -328,19 +337,30 @@ export default function NissewaardPage() {
         {/* SEO Content - Direct in page */}
         <article className="container mx-auto px-4 py-12 lg:py-16">
           <section className="prose prose-lg max-w-none mb-12">
-            <h2 id="nissewaard-info" className="text-3xl font-bold text-foreground mb-6">
+            <h2
+              id="nissewaard-info"
+              className="text-3xl font-bold text-foreground mb-6">
               Woningontruiming in Nissewaard
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Nissewaard is een gemeente met de stad Spijkenisse en 7 dorpen. Van hoogbouw appartementen in Spijkenisse tot karakteristieke woningen in de dorpen – wij bieden professionele woningontruiming tegen de laagste prijs, gegarandeerd.
+              Nissewaard is een gemeente met de stad Spijkenisse en 7 dorpen.
+              Van hoogbouw appartementen in Spijkenisse tot karakteristieke
+              woningen in de dorpen – wij bieden professionele woningontruiming
+              tegen de laagste prijs, gegarandeerd.
             </p>
 
             {/* Wijken */}
-            <div id="nissewaard-kernen" className="bg-muted/50 rounded-lg p-6 mb-8">
-              <h3 className="font-bold text-xl text-foreground mb-4">Actief in alle kernen van Nissewaard:</h3>
+            <div
+              id="nissewaard-kernen"
+              className="bg-muted/50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-xl text-foreground mb-4">
+                Actief in alle kernen van Nissewaard:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {wijken.map((wijk, index) => (
-                  <div key={index} className="flex items-center gap-2 text-foreground">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-foreground">
                     <span className="text-primary">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
@@ -378,11 +398,18 @@ export default function NissewaardPage() {
                 {situaties.map((situatie, index) => (
                   <div
                     key={index}
-                    id={index === 0 ? "hoogbouw-specialist-spijkenisse" : undefined}
-                    className="border rounded-lg p-6 bg-card"
-                  >
-                    <h3 className="font-bold text-lg text-foreground mb-3">{situatie.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{situatie.description}</p>
+                    id={
+                      index === 0
+                        ? "hoogbouw-specialist-spijkenisse"
+                        : undefined
+                    }
+                    className="border rounded-lg p-6 bg-card">
+                    <h3 className="font-bold text-lg text-foreground mb-3">
+                      {situatie.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {situatie.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -395,7 +422,8 @@ export default function NissewaardPage() {
               Onze Diensten in Nissewaard
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Van eerste prijsindicatie tot bezemschone oplevering - alles uit één hand.
+              Van eerste prijsindicatie tot bezemschone oplevering - alles uit
+              één hand.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -403,7 +431,9 @@ export default function NissewaardPage() {
                   Volledige Woningontruiming
                 </h3>
                 <p className="text-muted-foreground">
-                  Complete ontruiming van woningen, appartementen en bedrijfspanden. Milieuvriendelijke verwerking volgens gemeentelijke richtlijnen.
+                  Complete ontruiming van woningen, appartementen en
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens
+                  gemeentelijke richtlijnen.
                 </p>
               </div>
 
@@ -412,7 +442,12 @@ export default function NissewaardPage() {
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en woningcorporaties. Perfect voor huurwoningen.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en
+                  woningcorporaties. Perfect voor huurwoningen. Wij zijn
+                  volledig op de hoogte van de oplevereisen van corporaties
+                  zoals Maasdelta en Woonbron. Of het nu gaat om een flat in de
+                  Akkers of een woning in de Maaswijk, wij zorgen voor een
+                  vlekkeloze overdracht.
                 </p>
               </div>
 
@@ -421,7 +456,8 @@ export default function NissewaardPage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden. Discreet en zorgvuldig.
+                  Met respect en zorg helpen bij het ontruimen na overlijden.
+                  Discreet en zorgvuldig.
                 </p>
               </div>
 
@@ -430,7 +466,8 @@ export default function NissewaardPage() {
                   Spoedontruiming 24 uur
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden beschikbaar voor spoedgevallen.
+                  Bij spoed vaak binnen 24 uur starten. Ook in weekenden
+                  beschikbaar voor spoedgevallen.
                 </p>
               </div>
 
@@ -439,7 +476,9 @@ export default function NissewaardPage() {
                   Hoogbouw Appartementen
                 </h3>
                 <p className="text-muted-foreground">
-                  Specialisatie in het ontruimen van hoogbouw appartementen in Spijkenisse. Wij gebruiken liften efficiënt en beschermen trappenhuizen.
+                  Specialisatie in het ontruimen van hoogbouw appartementen in
+                  Spijkenisse. Wij gebruiken liften efficiënt en beschermen
+                  trappenhuizen.
                 </p>
               </div>
 
@@ -448,7 +487,8 @@ export default function NissewaardPage() {
                   Extra Diensten
                 </h3>
                 <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen, schilderwerk en inpakservice.
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
+                  schilderwerk en inpakservice.
                 </p>
               </div>
             </div>
@@ -467,7 +507,8 @@ export default function NissewaardPage() {
                     Laagste Prijs Garantie
                   </h3>
                   <p className="text-muted-foreground">
-                    Vindt u het elders goedkoper? Stuur ons de offerte en wij gaan eronder. Geen verborgen kosten.
+                    Vindt u het elders goedkoper? Stuur ons de offerte en wij
+                    gaan eronder. Geen verborgen kosten.
                   </p>
                 </div>
               </div>
@@ -479,7 +520,8 @@ export default function NissewaardPage() {
                     Snel & Flexibel
                   </h3>
                   <p className="text-muted-foreground">
-                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur. Ook avond- en weekendwerk mogelijk.
+                    Binnen 1-3 werkdagen beschikbaar. Bij spoed binnen 24 uur.
+                    Ook avond- en weekendwerk mogelijk.
                   </p>
                 </div>
               </div>
@@ -491,7 +533,8 @@ export default function NissewaardPage() {
                     Milieuvriendelijk
                   </h3>
                   <p className="text-muted-foreground">
-                    Materialen gescheiden en gerecycled. Bruikbare spullen naar kringloop. WEEE-richtlijnen voor elektronica.
+                    Materialen gescheiden en gerecycled. Bruikbare spullen naar
+                    kringloop. WEEE-richtlijnen voor elektronica.
                   </p>
                 </div>
               </div>
@@ -503,7 +546,8 @@ export default function NissewaardPage() {
                     All-in Ontzorging
                   </h3>
                   <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen alle eisen van verhuurders en woningcorporaties.
+                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen
+                    alle eisen van verhuurders en woningcorporaties.
                   </p>
                 </div>
               </div>
@@ -518,18 +562,17 @@ export default function NissewaardPage() {
               Veelgestelde vragen over woningontruiming in Nissewaard
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Alles wat u moet weten over woningontruiming met Budget Ontruiming in Nissewaard
+              Alles wat u moet weten over woningontruiming met Budget Ontruiming
+              in Nissewaard
             </p>
-            
+
             <div className="max-w-3xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-card border rounded-lg p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -542,5 +585,5 @@ export default function NissewaardPage() {
         <Footer />
       </main>
     </>
-  )
+  );
 }

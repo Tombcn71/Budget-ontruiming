@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   title:
     "Woningontruiming Haaglanden & Rijnmond | Laagste Prijs Garantie | Budget Ontruiming",
   description:
-    "Professionele woningontruiming met de laagste prijs garantie en directe AI-prijsindicatie. Actief in 22+ gemeentes waaronder Den Haag en Rotterdam.",
+    "Woningontruiming in Haaglanden of Rijnmond? Wij duiken onder elke offerte! Snel, vakkundig en bezemschoon opgeleverd. Bereken direct uw prijs online.",
   keywords:
-    "woningontruiming haaglanden, woningontruiming rijnmond, ontruiming haaglanden, ontruiming rijnmond, bezemschoon, spoedontruiming, laagste prijs garantie",
+    "woningontruiming haaglanden, woningontruiming rijnmond, ontruiming den haag, ontruiming rotterdam, bezemschoon, spoedontruiming, laagste prijs garantie",
   openGraph: {
-    title: "Budget Ontruiming | Laagste Prijs Garantie voor Woningontruiming",
+    title: "Woningontruiming Haaglanden & Rijnmond - Laagste Prijs Garantie",
     description:
-      "Vindt u het elders goedkoper? Wij duiken onder die prijs! Actief in Den Haag, Rotterdam en 20+ gemeentes.",
+      "Professionele woningontruiming in Den Haag, Rotterdam en 20+ gemeentes. Vindt u het elders goedkoper? Wij duiken onder die prijs!",
     url: "https://budgetontruiming.nl",
     type: "website",
     locale: "nl_NL",
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Budget Ontruiming | Laagste Prijs Garantie",
+    title: "Woningontruiming Haaglanden & Rijnmond - Laagste Prijs Garantie",
     description:
-      "Woningontruiming met AI-prijscalculator. Start binnen 24 uur mogelijk.",
+      "Ontruiming in heel Zuid-Holland met AI-prijscalculator. Wij duiken onder elke offerte!",
   },
   alternates: {
     canonical: "https://budgetontruiming.nl",
