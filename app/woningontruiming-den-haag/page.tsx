@@ -359,7 +359,7 @@ export default function DenHaagPage() {
                 professionele en respectvolle ontruiming tegen de laagste prijs.
               </p>
 
-              {/* Blok voor Corporaties */}
+              {/* Blok voor Haagse Corporaties */}
               <div className="bg-primary/5 border-l-4 border-[#0077B5] p-6 my-8 rounded-r-lg not-prose">
                 <h3 className="text-xl font-bold text-foreground mb-2">
                   Gespecialiseerd in Haagse corporatiewoningen
@@ -373,12 +373,12 @@ export default function DenHaagPage() {
                   . Wij zorgen ervoor dat de woning exact volgens hun
                   protocollen wordt opgeleverd: van het vakkundig verwijderen
                   van vloeren tot het dichten van gaten in de muren. Wij
-                  garanderen een goedgekeurde eindinspectie.
+                  garanderen een goedgekeurde eindinspectie door de opzichter.
                 </p>
               </div>
             </div>
 
-            {/* Wijken */}
+            {/* Wijken Den Haag */}
             <div
               id="den-haag-wijken"
               className="bg-muted/50 rounded-lg p-6 mb-8 not-prose">
@@ -398,7 +398,7 @@ export default function DenHaagPage() {
             </div>
           </section>
 
-          {/* Waarom Kiezen */}
+          {/* Waarom Kiezen Den Haag */}
           <section className="py-12 lg:py-16 bg-muted/30 mb-12 rounded-xl">
             <div className="max-w-4xl mx-auto px-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
@@ -419,7 +419,7 @@ export default function DenHaagPage() {
             </div>
           </section>
 
-          {/* Situaties */}
+          {/* Situaties Den Haag */}
           <section className="mb-12">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
@@ -442,14 +442,14 @@ export default function DenHaagPage() {
             </div>
           </section>
 
-          {/* Diensten */}
+          {/* Diensten Den Haag */}
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
               Onze Diensten in Den Haag
             </h2>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
               Van eerste prijsindicatie tot bezemschone oplevering - alles uit
-              één hand.
+              één hand in regio Haaglanden.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="border rounded-lg p-6 bg-card">
@@ -458,8 +458,8 @@ export default function DenHaagPage() {
                 </h3>
                 <p className="text-muted-foreground">
                   Complete ontruiming van woningen, appartementen en
-                  bedrijfspanden. Milieuvriendelijke verwerking volgens
-                  gemeentelijke richtlijnen.
+                  bedrijfspanden. Milieuvriendelijke verwerking volgens Haagse
+                  richtlijnen.
                 </p>
               </div>
 
@@ -469,7 +469,7 @@ export default function DenHaagPage() {
                 </h3>
                 <p className="text-muted-foreground">
                   Woning bezemschoon opgeleverd volgens eisen van verhuurders en
-                  woningcorporaties zoals Haag Wonen en Staedion.
+                  Haagse corporaties zoals Haag Wonen en Staedion.
                 </p>
               </div>
 
@@ -478,8 +478,8 @@ export default function DenHaagPage() {
                   Ontruiming na Overlijden
                 </h3>
                 <p className="text-muted-foreground">
-                  Met respect en zorg helpen bij het ontruimen na overlijden.
-                  Discreet en zorgvuldig.
+                  Met respect en zorg helpen bij het ontruimen na overlijden in
+                  heel Den Haag. Discreet en zorgvuldig.
                 </p>
               </div>
 
@@ -488,8 +488,8 @@ export default function DenHaagPage() {
                   Spoedontruiming 24 uur
                 </h3>
                 <p className="text-muted-foreground">
-                  Bij spoed vaak binnen 24 uur starten. In Den Haag 24/7
-                  bereikbaar voor urgente situaties.
+                  Bij spoed vaak binnen 24 uur starten. In Den Haag en omstreken
+                  24/7 bereikbaar voor urgente situaties.
                 </p>
               </div>
 
@@ -499,7 +499,7 @@ export default function DenHaagPage() {
                 </h3>
                 <p className="text-muted-foreground">
                   Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
-                  schilderwerk en inpakservice.
+                  schilderwerk en inpakservice voor seniorenverhuizingen.
                 </p>
               </div>
 
@@ -508,8 +508,8 @@ export default function DenHaagPage() {
                   Bedrijfsontruimingen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ook voor kantoren, winkels en horeca. Ervaring met grote
-                  volumes en tijdskritische projecten.
+                  Ook voor kantoren, winkels en horeca in het Haagse centrum.
+                  Ervaring met grote volumes.
                 </p>
               </div>
             </div>
