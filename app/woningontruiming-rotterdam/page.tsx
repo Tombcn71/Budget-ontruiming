@@ -348,21 +348,38 @@ export default function RotterdamPage() {
             <h2
               id="rotterdam-info"
               className="text-3xl font-bold text-foreground mb-6">
-              Woningontruiming in Rotterdam
+              Professionele Woningontruiming in Rotterdam
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Rotterdam is de tweede stad van Nederland met diverse wijken zoals
-              Centrum, Zuid, Noord, Kralingen-Crooswijk, Delfshaven, Overschie,
-              Prins Alexander en IJsselmonde. Wij bieden professionele
-              woningontruiming in heel Rotterdam tegen de laagste prijs,
-              gegarandeerd. Wij voldoen aan de eisen van Woonstad Rotterdam,
-              Havensteder en Vestia voor bezemschone oplevering.
-            </p>
+            <div className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="mb-4">
+                Woningontruiming in Rotterdam vraagt om een aanpak die past bij
+                de dynamiek van de stad. Of het nu gaat om een appartement in de
+                woontorens van het Centrum, een karakteristiek pand in Kralingen
+                of een eengezinswoning op Zuid – wij zorgen voor een snelle en
+                efficiënte afwikkeling tegen de laagste prijs van de regio.
+              </p>
+
+              {/* Blok voor Rotterdamse Corporaties */}
+              <div className="bg-primary/5 border-l-4 border-[#0077B5] p-6 my-8 rounded-r-lg not-prose">
+                <h3 className="text-xl font-bold text-foreground mb-2">
+                  Gespecialiseerd in Rotterdamse corporatiewoningen
+                </h3>
+                <p className="text-base text-muted-foreground">
+                  Wij zijn volledig op de hoogte van de strenge
+                  opleverprotocollen van de grote Rotterdamse verhuurders zoals
+                  <strong> Woonstad Rotterdam, Havensteder en Woonbron</strong>.
+                  Wij garanderen een bezemschone oplevering die voldoet aan al
+                  hun eisen: van het professioneel verwijderen van diverse
+                  soorten vloerbedekking tot het herstellen van wanden en het
+                  technisch in orde maken van de woning voor de eindinspectie.
+                </p>
+              </div>
+            </div>
 
             {/* Wijken */}
             <div
               id="rotterdam-wijken"
-              className="bg-muted/50 rounded-lg p-6 mb-8">
+              className="bg-muted/50 rounded-lg p-6 mb-8 not-prose">
               <h3 className="font-bold text-xl text-foreground mb-4">
                 Actief in alle wijken van Rotterdam:
               </h3>
@@ -371,7 +388,7 @@ export default function RotterdamPage() {
                   <div
                     key={index}
                     className="flex items-center gap-2 text-foreground">
-                    <span className="text-primary">✓</span>
+                    <span className="text-[#0077B5]">✓</span>
                     <span className="text-sm">{wijk}</span>
                   </div>
                 ))}
@@ -380,16 +397,18 @@ export default function RotterdamPage() {
           </section>
 
           {/* Waarom Kiezen */}
-          <section className="py-12 lg:py-16 bg-muted/30 mb-12">
-            <div className="max-w-4xl mx-auto">
+          <section className="py-12 lg:py-16 bg-muted/30 mb-12 rounded-xl">
+            <div className="max-w-4xl mx-auto px-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
                 Waarom kiezen voor Budget Ontruiming in Rotterdam?
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {waaromKiezen.map((reden, index) => (
-                  <div key={index} className="border rounded-lg p-6 bg-card">
+                  <div
+                    key={index}
+                    className="border rounded-lg p-6 bg-card shadow-sm">
                     <div className="flex gap-3">
-                      <span className="text-primary text-xl">✓</span>
+                      <span className="text-[#0077B5] text-xl">✓</span>
                       <p className="text-foreground leading-relaxed">{reden}</p>
                     </div>
                   </div>
@@ -408,8 +427,7 @@ export default function RotterdamPage() {
                 {situaties.map((situatie, index) => (
                   <div
                     key={index}
-                    id={index === 0 ? "hoogbouw-specialist" : undefined}
-                    className="border rounded-lg p-6 bg-card">
+                    className="border rounded-lg p-6 bg-card hover:shadow-md transition-shadow">
                     <h3 className="font-bold text-lg text-foreground mb-3">
                       {situatie.title}
                     </h3>
@@ -439,18 +457,17 @@ export default function RotterdamPage() {
                 <p className="text-muted-foreground">
                   Complete ontruiming van woningen, appartementen en
                   bedrijfspanden. Milieuvriendelijke verwerking volgens
-                  gemeentelijke richtlijnen.
+                  Rotterdamse richtlijnen.
                 </p>
               </div>
 
-              <div className="border rounded-lg p-6 bg-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">
+              <div className="border rounded-lg p-6 bg-card border-[#0077B5]/20">
+                <h3 className="text-xl font-bold text-[#0077B5] mb-3">
                   Bezemschoon Opleveren
                 </h3>
                 <p className="text-muted-foreground">
-                  Woning bezemschoon opgeleverd volgens eisen van verhuurders en
-                  woningcorporaties zoals Woonstad Rotterdam, Havensteder en
-                  Vestia.
+                  Woning bezemschoon opgeleverd volgens eisen van verhuurders
+                  zoals Woonstad Rotterdam, Havensteder en Woonbron.
                 </p>
               </div>
 
@@ -460,7 +477,7 @@ export default function RotterdamPage() {
                 </h3>
                 <p className="text-muted-foreground">
                   Met respect en zorg helpen bij het ontruimen na overlijden.
-                  Discreet en zorgvuldig.
+                  Discreet en zorgvuldig in heel regio Rijnmond.
                 </p>
               </div>
 
@@ -479,8 +496,8 @@ export default function RotterdamPage() {
                   Extra Diensten
                 </h3>
                 <p className="text-muted-foreground">
-                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen,
-                  schilderwerk en inpakservice.
+                  Vloerbedekking verwijderen, behang afstomen, gaatjes vullen en
+                  technische herstelwerkzaamheden.
                 </p>
               </div>
 
@@ -489,8 +506,8 @@ export default function RotterdamPage() {
                   Bedrijfsontruimingen
                 </h3>
                 <p className="text-muted-foreground">
-                  Ook voor kantoren, winkels en horeca. Ervaring met grote
-                  volumes en tijdskritische projecten.
+                  Ook voor kantoren in de haven of winkelpanden in de Koopgoot.
+                  Ervaring met grote volumes.
                 </p>
               </div>
             </div>
@@ -536,7 +553,7 @@ export default function RotterdamPage() {
                   </h3>
                   <p className="text-muted-foreground">
                     Materialen gescheiden en gerecycled. Bruikbare spullen naar
-                    kringloop. WEEE-richtlijnen voor elektronica.
+                    kringloop.
                   </p>
                 </div>
               </div>
@@ -548,8 +565,8 @@ export default function RotterdamPage() {
                     All-in Ontzorging
                   </h3>
                   <p className="text-muted-foreground">
-                    Van ontruiming tot oplevering. Eén aanspreekpunt. Kennen
-                    alle eisen van woningcorporaties.
+                    Van ontruiming tot oplevering. Eén aanspreekpunt voor alle
+                    Rotterdamse verhuurders.
                   </p>
                 </div>
               </div>
