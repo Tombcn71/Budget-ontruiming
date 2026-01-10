@@ -1,8 +1,8 @@
-import type { Metadata } from "next"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { ContactForm } from "@/components/contact-form"
-import { Mail, Phone, Clock, MapPin } from "lucide-react"
+import type { Metadata } from "next";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { ContactForm } from "@/components/contact-form";
+import { Mail, Phone, Clock, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact | Budgetontruiming.nl",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-}
+};
 
 export default function ContactPage() {
   return (
@@ -39,8 +39,9 @@ export default function ContactPage() {
                 Neem Contact Op
               </h1>
               <p className="text-lg lg:text-xl text-muted-foreground">
-                Heeft u vragen over woningontruiming? Wij staan voor u klaar! Bel ons direct, stuur een bericht of
-                plan een gratis adviesgesprek.
+                Heeft u vragen over woningontruiming? Wij staan voor u klaar!
+                Bel ons direct, stuur een bericht of plan een gratis
+                adviesgesprek.
               </p>
             </div>
           </div>
@@ -53,9 +54,12 @@ export default function ContactPage() {
               {/* Contact Information */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-3xl font-bold text-foreground mb-6">Contactgegevens</h2>
+                  <h2 className="text-3xl font-bold text-foreground mb-6">
+                    Contactgegevens
+                  </h2>
                   <p className="text-muted-foreground mb-8">
-                    Wij zijn bereikbaar via telefoon, email of plan direct een gratis adviesgesprek in.
+                    Wij zijn bereikbaar via telefoon, email of plan direct een
+                    gratis adviesgesprek in.
                   </p>
                 </div>
 
@@ -66,14 +70,17 @@ export default function ContactPage() {
                       <Phone className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Telefoon</h3>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        Telefoon
+                      </h3>
                       <a
-                        href="tel:0629759181"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        0629 759 181
+                        href="tel:0617638215"
+                        className="text-muted-foreground hover:text-primary transition-colors">
+                        0617 638 215
                       </a>
-                      <p className="text-sm text-muted-foreground mt-1">Bel ons direct voor spoedgevallen</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Bel ons direct voor spoedgevallen
+                      </p>
                     </div>
                   </div>
 
@@ -83,14 +90,17 @@ export default function ContactPage() {
                       <Mail className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        Email
+                      </h3>
                       <a
                         href="mailto:info@budgetontruiming.nl"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
+                        className="text-muted-foreground hover:text-primary transition-colors">
                         info@budgetontruiming.nl
                       </a>
-                      <p className="text-sm text-muted-foreground mt-1">We reageren binnen 24 uur</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        We reageren binnen 24 uur
+                      </p>
                     </div>
                   </div>
 
@@ -100,7 +110,9 @@ export default function ContactPage() {
                       <Clock className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Openingstijden</h3>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        Openingstijden
+                      </h3>
                       <div className="text-muted-foreground space-y-1">
                         <p>Maandag - Vrijdag: 08:00 - 18:00</p>
                         <p>Zaterdag: 09:00 - 17:00</p>
@@ -115,9 +127,15 @@ export default function ContactPage() {
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Werkgebied</h3>
-                      <p className="text-muted-foreground">Haaglanden & Rijnmond</p>
-                      <p className="text-sm text-muted-foreground mt-1">22 gemeentes in Zuid-Holland</p>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        Werkgebied
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Haaglanden & Rijnmond
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        22 gemeentes in Zuid-Holland
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -128,8 +146,7 @@ export default function ContactPage() {
                     href="https://calendly.com/budgetgroep/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary/90 transition-colors"
-                  >
+                    className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary/90 transition-colors">
                     📅 Plan Gratis Adviesgesprek
                   </a>
                 </div>
@@ -137,8 +154,13 @@ export default function ContactPage() {
 
               {/* Contact Form */}
               <div className="bg-card border border-border rounded-lg p-8 shadow-sm">
-                <h2 className="text-2xl font-bold text-foreground mb-2">Stuur ons een bericht</h2>
-                <p className="text-muted-foreground mb-6">Vul het formulier in en wij nemen zo snel mogelijk contact met u op.</p>
+                <h2 className="text-2xl font-bold text-foreground mb-2">
+                  Stuur ons een bericht
+                </h2>
+                <p className="text-muted-foreground mb-6">
+                  Vul het formulier in en wij nemen zo snel mogelijk contact met
+                  u op.
+                </p>
                 <ContactForm />
               </div>
             </div>
@@ -151,15 +173,21 @@ export default function ContactPage() {
             <div className="max-w-4xl mx-auto">
               <div className="grid sm:grid-cols-3 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">24/7</div>
+                  <div className="text-4xl font-bold text-primary mb-2">
+                    24/7
+                  </div>
                   <p className="text-sm text-muted-foreground">Bereikbaar</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">&lt;24u</div>
+                  <div className="text-4xl font-bold text-primary mb-2">
+                    &lt;24u
+                  </div>
                   <p className="text-sm text-muted-foreground">Reactietijd</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">100%</div>
+                  <div className="text-4xl font-bold text-primary mb-2">
+                    100%
+                  </div>
                   <p className="text-sm text-muted-foreground">Gratis Advies</p>
                 </div>
               </div>
@@ -169,6 +197,5 @@ export default function ContactPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
-
