@@ -107,7 +107,7 @@ export default function WassenaarPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: {
       "@type": "City",
@@ -168,7 +168,7 @@ export default function WassenaarPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-wassenaar/#localbusiness",
     name: "Budget Ontruiming Wassenaar",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€€", // Aangepast naar segment
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

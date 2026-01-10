@@ -109,7 +109,7 @@ export default function Home() {
     image: "https://www.budgetontruiming.nl/logo.png", // WWW FIX
     "@id": "https://www.budgetontruiming.nl", // WWW FIX
     url: "https://www.budgetontruiming.nl", // WWW FIX
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     email: "info@budgetontruiming.nl",
     priceRange: "€€",
     address: {

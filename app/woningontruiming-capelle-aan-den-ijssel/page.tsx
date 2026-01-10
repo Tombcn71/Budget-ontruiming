@@ -107,7 +107,7 @@ export default function CapelleAanDenIJsselPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: {
       "@type": "City",
@@ -168,7 +168,7 @@ export default function CapelleAanDenIJsselPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-capelle-aan-den-ijssel/#localbusiness",
     name: "Budget Ontruiming Capelle aan den IJssel",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

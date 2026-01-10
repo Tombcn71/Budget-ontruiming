@@ -106,7 +106,7 @@ export default function ZoetermeerPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: {
       "@type": "City",
@@ -167,7 +167,7 @@ export default function ZoetermeerPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-zoetermeer/#localbusiness",
     name: "Budget Ontruiming Zoetermeer",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

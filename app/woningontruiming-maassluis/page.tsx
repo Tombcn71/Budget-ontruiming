@@ -100,7 +100,7 @@ export default function MaassluisPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: {
       "@type": "City",
@@ -161,7 +161,7 @@ export default function MaassluisPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-maassluis/#localbusiness",
     name: "Budget Ontruiming Maassluis",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

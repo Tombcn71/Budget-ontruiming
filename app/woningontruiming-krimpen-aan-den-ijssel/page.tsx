@@ -102,7 +102,7 @@ export default function KrimpenAanDenIJsselPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: [
       {
@@ -170,7 +170,7 @@ export default function KrimpenAanDenIJsselPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-krimpen-aan-den-ijssel/#localbusiness",
     name: "Budget Ontruiming Krimpen aan den IJssel",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

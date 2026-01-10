@@ -109,7 +109,7 @@ export default function NissewaardPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: {
       "@type": "AdministrativeArea",
@@ -170,7 +170,7 @@ export default function NissewaardPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-nissewaard/#localbusiness",
     name: "Budget Ontruiming Nissewaard",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

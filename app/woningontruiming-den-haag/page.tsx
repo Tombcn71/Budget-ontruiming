@@ -115,7 +115,7 @@ export default function DenHaagPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: {
       "@type": "City",
@@ -176,7 +176,7 @@ export default function DenHaagPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-den-haag/#localbusiness",
     name: "Budget Ontruiming Den Haag",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

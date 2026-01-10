@@ -99,7 +99,7 @@ export default function LansingerlandPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: {
       "@type": "AdministrativeArea",
@@ -160,7 +160,7 @@ export default function LansingerlandPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-lansingerland/#localbusiness",
     name: "Budget Ontruiming Lansingerland",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

@@ -102,7 +102,7 @@ export default function MiddenDelflandPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: [
       {
@@ -165,7 +165,7 @@ export default function MiddenDelflandPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-midden-delfland/#localbusiness",
     name: "Budget Ontruiming Midden-Delfland",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

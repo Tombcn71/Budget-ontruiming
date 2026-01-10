@@ -114,7 +114,7 @@ export default function RotterdamPage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: {
       "@type": "City",
@@ -174,7 +174,7 @@ export default function RotterdamPage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-rotterdam/#localbusiness",
     name: "Budget Ontruiming Rotterdam",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",

@@ -111,7 +111,7 @@ export default function VoorneAanZeePage() {
       "@type": "MovingCompany",
       name: "Budget Ontruiming",
       url: "https://www.budgetontruiming.nl/",
-      telephone: "+31629759181",
+      telephone: "+31617638215",
     },
     areaServed: {
       "@type": "AdministrativeArea",
@@ -172,7 +172,7 @@ export default function VoorneAanZeePage() {
     "@id":
       "https://www.budgetontruiming.nl/woningontruiming-voorne-aan-zee/#localbusiness",
     name: "Budget Ontruiming Voorne aan Zee",
-    telephone: "+31629759181",
+    telephone: "+31617638215",
     priceRange: "€",
     image:
       "https://www.budgetontruiming.nl/professional-movers-carrying-boxes-in-modern-home.jpg",
