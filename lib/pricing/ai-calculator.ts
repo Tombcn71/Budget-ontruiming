@@ -8,7 +8,14 @@ interface FormData {
   liftAanwezig: boolean;
   vloerVerwijderen: boolean;
   vloerM2: string;
-  vloerType?: string; // 'normaal' of 'vastgelijmd'
+  vloerType?:
+    | "laminaat"
+    | "tapijt"
+    | "pvc-click"
+    | "pvc-gelijmd"
+    | "parket-gelijmd"
+    | "tegels"
+    | "kurk";
   behangVerwijderen: boolean;
   behangM2: string;
   gaatjesToppen: boolean;
@@ -16,6 +23,9 @@ interface FormData {
   schilderwerk: boolean;
   schilderwerkM2: string;
   gordijnenVerwijderen: boolean;
+  naam?: string;
+  email?: string;
+  telefoon?: string;
 }
 
 interface AIAnalysis {
@@ -62,8 +72,16 @@ const BASE_RATES = {
 
   // Extra diensten - BLIJVEN WINSTGEVEND (hier zit je marge!)
   extraServices: {
-    vloerVerwijderenNormaal: 3, // €3 per m² (zwaar werk)
-    vloerVerwijderenVastgelijmd: 5, // €5 per m² (héél zwaar werk)
+    // VLOER VERWIJDEREN - LAAGSTE marktprijzen (ondergrens!)
+    vloerLaminaat: 2.5, // €2,50/m² - Laminaat niet gelijmd (markt: €2,50-5)
+    vloerTapijt: 3, // €3/m² - Tapijt/vloerbedekking (markt: €3-20)
+    vloerPVCClick: 4, // €4/m² - PVC click (markt: €4-6)
+    vloerPVCGelijmd: 10, // €10/m² - PVC gelijmd (markt: €10-15)
+    vloerParketGelijmd: 10, // €10/m² - Parket gelijmd (markt: €10-15)
+    vloerTegels: 10, // €10/m² - Tegelvloer (markt: €10-40)
+    vloerKurk: 13, // €13/m² - Kurkvloer (markt: €13-16)
+
+    // Overige extra diensten
     behangVerwijderen: 4, // €4 per m²
     gaatjesToppen: 1.5, // €1,50 per m²
     schilderwerk: 15, // €15 per m² (veel werk)
@@ -131,13 +149,23 @@ export function calculatePriceFromAI(
   // HIER ZIT JE MARGE - klanten betalen goed voor zwaar werk
   let extrasCost = 0;
 
-  // Vloer verwijderen - 2 types (normaal vs vastgelijmd)
-  if (formData.vloerVerwijderen && formData.vloerM2) {
+  // Vloer verwijderen - 7 specifieke types
+  if (formData.vloerVerwijderen && formData.vloerM2 && formData.vloerType) {
     const vloerM2 = parseInt(formData.vloerM2);
-    const isVastgelijmd = formData.vloerType === "vastgelijmd";
-    const vloerPrijs = isVastgelijmd
-      ? BASE_RATES.extraServices.vloerVerwijderenVastgelijmd
-      : BASE_RATES.extraServices.vloerVerwijderenNormaal;
+
+    const vloerPrijzen = {
+      laminaat: BASE_RATES.extraServices.vloerLaminaat,
+      tapijt: BASE_RATES.extraServices.vloerTapijt,
+      "pvc-click": BASE_RATES.extraServices.vloerPVCClick,
+      "pvc-gelijmd": BASE_RATES.extraServices.vloerPVCGelijmd,
+      "parket-gelijmd": BASE_RATES.extraServices.vloerParketGelijmd,
+      tegels: BASE_RATES.extraServices.vloerTegels,
+      kurk: BASE_RATES.extraServices.vloerKurk,
+    };
+
+    const vloerPrijs =
+      vloerPrijzen[formData.vloerType] ||
+      BASE_RATES.extraServices.vloerLaminaat;
     extrasCost += vloerPrijs * vloerM2;
   }
 
@@ -147,16 +175,19 @@ export function calculatePriceFromAI(
     extrasCost += BASE_RATES.extraServices.behangVerwijderen * behangM2;
   }
 
+  // Gaatjes toppen
   if (formData.gaatjesToppen && formData.gaatjesM2) {
     const gaatjesM2 = parseInt(formData.gaatjesM2);
     extrasCost += BASE_RATES.extraServices.gaatjesToppen * gaatjesM2;
   }
 
+  // Schilderwerk
   if (formData.schilderwerk && formData.schilderwerkM2) {
     const schilderwerkM2 = parseInt(formData.schilderwerkM2);
     extrasCost += BASE_RATES.extraServices.schilderwerk * schilderwerkM2;
   }
 
+  // Gordijnen verwijderen
   if (formData.gordijnenVerwijderen) {
     extrasCost += BASE_RATES.extraServices.gordijnenVerwijderen;
   }

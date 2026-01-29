@@ -45,7 +45,14 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
     liftAanwezig: false,
     vloerVerwijderen: false,
     vloerM2: "",
-    vloerType: "normaal", // 'normaal' of 'vastgelijmd'
+    vloerType: "laminaat" as
+      | "laminaat"
+      | "tapijt"
+      | "pvc-click"
+      | "pvc-gelijmd"
+      | "parket-gelijmd"
+      | "tegels"
+      | "kurk",
     behangVerwijderen: false,
     behangM2: "",
     gaatjesToppen: false,
@@ -75,12 +82,12 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
 
     try {
       for (const photo of photos) {
-        const formData = new FormData();
-        formData.append("file", photo);
+        const formDataUpload = new FormData();
+        formDataUpload.append("file", photo);
 
         const uploadRes = await fetch("/api/upload", {
           method: "POST",
-          body: formData,
+          body: formDataUpload,
         });
         const { url } = await uploadRes.json();
 
@@ -279,6 +286,37 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
     };
   };
 
+  // Helper functie voor vloerprijs weergave
+  const getVloerPriceDisplay = () => {
+    const prices = {
+      laminaat: "€2,50",
+      tapijt: "€3",
+      "pvc-click": "€4",
+      "pvc-gelijmd": "€10",
+      "parket-gelijmd": "€10",
+      tegels: "€10",
+      kurk: "€13",
+    };
+    return prices[formData.vloerType] || "€2,50";
+  };
+
+  // Helper functie voor vloerprijs berekening
+  const calculateVloerPrice = () => {
+    if (!formData.vloerVerwijderen || !formData.vloerM2) return 0;
+
+    const prices = {
+      laminaat: 2.5,
+      tapijt: 3,
+      "pvc-click": 4,
+      "pvc-gelijmd": 10,
+      "parket-gelijmd": 10,
+      tegels: 10,
+      kurk: 13,
+    };
+
+    return (prices[formData.vloerType] || 2.5) * parseInt(formData.vloerM2);
+  };
+
   return (
     <Card className={`p-6 lg:p-8 bg-white shadow-2xl border-0 ${className}`}>
       {currentStep < 3 ? (
@@ -382,7 +420,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                     required
                   />
                   <p className="text-xs text-muted-foreground mt-1">
-                    Vul het exacte aantal vierkante meters in (€10/m²)
+                    Vul het exacte aantal vierkante meters in (€5,50/m²)
                   </p>
                 </div>
 
@@ -447,6 +485,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                     Extra Werkzaamheden (optioneel)
                   </Label>
 
+                  {/* VLOER VERWIJDEREN - NIEUWE DROPDOWN */}
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
                       <Checkbox
@@ -473,50 +512,43 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                           <label className="text-xs text-muted-foreground">
                             Type vloer:
                           </label>
-                          <div className="flex gap-4">
-                            <div className="flex items-center space-x-2">
-                              <input
-                                type="radio"
-                                id="vloer-normaal"
-                                name="vloerType"
-                                value="normaal"
-                                checked={formData.vloerType === "normaal"}
-                                onChange={(e) =>
-                                  setFormData({
-                                    ...formData,
-                                    vloerType: e.target.value,
-                                  })
-                                }
-                                className="w-4 h-4 text-primary border-gray-900 focus:ring-primary"
-                              />
-                              <label
-                                htmlFor="vloer-normaal"
-                                className="text-sm text-foreground cursor-pointer">
-                                Normaal (€2/m²)
-                              </label>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              <input
-                                type="radio"
-                                id="vloer-vastgelijmd"
-                                name="vloerType"
-                                value="vastgelijmd"
-                                checked={formData.vloerType === "vastgelijmd"}
-                                onChange={(e) =>
-                                  setFormData({
-                                    ...formData,
-                                    vloerType: e.target.value,
-                                  })
-                                }
-                                className="w-4 h-4 text-primary border-gray-900 focus:ring-primary"
-                              />
-                              <label
-                                htmlFor="vloer-vastgelijmd"
-                                className="text-sm text-foreground cursor-pointer">
-                                Vastgelijmd (€3,50/m²)
-                              </label>
-                            </div>
-                          </div>
+                          <Select
+                            value={formData.vloerType}
+                            onValueChange={(value: any) =>
+                              setFormData({
+                                ...formData,
+                                vloerType: value,
+                              })
+                            }>
+                            <SelectTrigger
+                              className="bg-background border-border h-10"
+                              aria-label="Selecteer vloertype">
+                              <SelectValue placeholder="Selecteer type vloer" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="laminaat">
+                                Laminaat (niet gelijmd) (€2,50/m²)
+                              </SelectItem>
+                              <SelectItem value="tapijt">
+                                Tapijt / Vloerbedekking (€3/m²)
+                              </SelectItem>
+                              <SelectItem value="pvc-click">
+                                PVC click (€4/m²)
+                              </SelectItem>
+                              <SelectItem value="pvc-gelijmd">
+                                PVC gelijmd (€10/m²)
+                              </SelectItem>
+                              <SelectItem value="parket-gelijmd">
+                                Parket gelijmd (€10/m²)
+                              </SelectItem>
+                              <SelectItem value="tegels">
+                                Tegelvloer (€10/m²)
+                              </SelectItem>
+                              <SelectItem value="kurk">
+                                Kurkvloer (€13/m²)
+                              </SelectItem>
+                            </SelectContent>
+                          </Select>
                         </div>
                         <Input
                           type="number"
@@ -533,7 +565,8 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                           required
                         />
                         <p className="text-xs text-muted-foreground">
-                          Vul exacte oppervlakte in
+                          Vul exacte oppervlakte in ({getVloerPriceDisplay()}
+                          /m²)
                         </p>
                       </div>
                     )}
@@ -556,7 +589,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       <label
                         htmlFor="behang"
                         className="text-sm text-foreground cursor-pointer">
-                        Behang verwijderen (€3,50/m²)
+                        Behang verwijderen (€4/m²)
                       </label>
                     </div>
                     {formData.behangVerwijderen && (
@@ -599,7 +632,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       <label
                         htmlFor="gaatjes"
                         className="text-sm text-foreground cursor-pointer">
-                        Gaatjes stoppen (€1/m²)
+                        Gaatjes stoppen (€1,50/m²)
                       </label>
                     </div>
                     {formData.gaatjesToppen && (
@@ -644,7 +677,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                       <label
                         htmlFor="schilderwerk"
                         className="text-sm text-foreground cursor-pointer">
-                        Schilderwerk (€12,50/m²)
+                        Schilderwerk (€15/m²)
                       </label>
                     </div>
                     {formData.schilderwerk && (
@@ -685,7 +718,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                     <label
                       htmlFor="gordijnen"
                       className="text-sm text-foreground cursor-pointer">
-                      Gordijnen verwijderen (€50)
+                      Gordijnen verwijderen (€40)
                     </label>
                   </div>
                 </div>
@@ -852,7 +885,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                   Transport & verwerking
                 </span>
                 <span className="font-medium">
-                  €{priceResult?.breakdown.transport || 150}
+                  €{priceResult?.breakdown.transport || 100}
                 </span>
               </div>
             </div>
@@ -872,53 +905,52 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">
                     • Vloer verwijderen{" "}
-                    {formData.vloerType === "vastgelijmd"
-                      ? "vastgelijmd"
-                      : "normaal"}{" "}
-                    ({formData.vloerM2}m² × €
-                    {formData.vloerType === "vastgelijmd" ? "3,50" : "2"})
+                    {formData.vloerType === "laminaat" && "laminaat"}
+                    {formData.vloerType === "tapijt" && "tapijt/vloerbedekking"}
+                    {formData.vloerType === "pvc-click" && "PVC click"}
+                    {formData.vloerType === "pvc-gelijmd" && "PVC gelijmd"}
+                    {formData.vloerType === "parket-gelijmd" &&
+                      "parket gelijmd"}
+                    {formData.vloerType === "tegels" && "tegels"}
+                    {formData.vloerType === "kurk" && "kurk"} (
+                    {formData.vloerM2}m² × {getVloerPriceDisplay()})
                   </span>
                   <span className="font-medium">
-                    €
-                    {(
-                      parseInt(formData.vloerM2) *
-                      (formData.vloerType === "vastgelijmd" ? 3.5 : 2)
-                    ).toLocaleString("nl-NL")}
+                    €{calculateVloerPrice().toLocaleString("nl-NL")}
                   </span>
                 </div>
               )}
               {formData.behangVerwijderen && formData.behangM2 && (
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">
-                    • Behang verwijderen ({formData.behangM2}m² × €3,50)
+                    • Behang verwijderen ({formData.behangM2}m² × €4)
                   </span>
                   <span className="font-medium">
-                    €
-                    {(parseInt(formData.behangM2) * 3.5).toLocaleString(
-                      "nl-NL",
-                    )}
+                    €{(parseInt(formData.behangM2) * 4).toLocaleString("nl-NL")}
                   </span>
                 </div>
               )}
               {formData.gaatjesToppen && formData.gaatjesM2 && (
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">
-                    • Gaatjes stoppen ({formData.gaatjesM2}m² × €1)
+                    • Gaatjes stoppen ({formData.gaatjesM2}m² × €1,50)
                   </span>
                   <span className="font-medium">
                     €
-                    {(parseInt(formData.gaatjesM2) * 1).toLocaleString("nl-NL")}
+                    {(parseInt(formData.gaatjesM2) * 1.5).toLocaleString(
+                      "nl-NL",
+                    )}
                   </span>
                 </div>
               )}
               {formData.schilderwerk && formData.schilderwerkM2 && (
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">
-                    • Schilderwerk ({formData.schilderwerkM2}m² × €12,50)
+                    • Schilderwerk ({formData.schilderwerkM2}m² × €15)
                   </span>
                   <span className="font-medium">
                     €
-                    {(parseInt(formData.schilderwerkM2) * 12.5).toLocaleString(
+                    {(parseInt(formData.schilderwerkM2) * 15).toLocaleString(
                       "nl-NL",
                     )}
                   </span>
@@ -929,7 +961,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                   <span className="text-muted-foreground">
                     • Gordijnen verwijderen
                   </span>
-                  <span className="font-medium">€50</span>
+                  <span className="font-medium">€40</span>
                 </div>
               )}
               <div className="flex justify-between text-sm border-t border-border pt-2 font-semibold">
@@ -1083,7 +1115,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
               💰 Laagste Prijs Garantie
             </p>
             <p className="text-foreground text-sm">
-              Vindt u elders een lagere prijs? Dan duiken wij onder die prijs!!
+              Vindt u elders een lagere prijs? Dan duiken wij onder die prijs!
             </p>
           </div>
 
@@ -1197,7 +1229,7 @@ export function AIQuoteForm({ className = "" }: AIQuoteFormProps) {
                   liftAanwezig: false,
                   vloerVerwijderen: false,
                   vloerM2: "",
-                  vloerType: "normaal",
+                  vloerType: "laminaat",
                   behangVerwijderen: false,
                   behangM2: "",
                   gaatjesToppen: false,
