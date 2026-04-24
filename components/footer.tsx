@@ -187,7 +187,7 @@ export function Footer() {
                 <Link
                   href="/woningontruiming-voorne-aan-zee"
                   className="hover:text-primary-foreground transition-colors">
-                  Voorne aan Zee
+                  Voorne aan zee
                 </Link>
               </li>
             </ul>
