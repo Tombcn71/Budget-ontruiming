@@ -76,7 +76,7 @@ export default function ContactPage() {
                       <a
                         href="tel:0617638215"
                         className="text-muted-foreground hover:text-primary transition-colors">
-                        0617 638 215
+                        0680 118 357
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">
                         Bel ons direct voor spoedgevallen
